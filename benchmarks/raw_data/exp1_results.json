@@ -1,0 +1,8253 @@
+[
+  {
+    "index": 0,
+    "query": "记录今天的支出",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": false,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1412
+    },
+    "pte_fd": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 809
+    },
+    "pte_fd_itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    }
+  },
+  {
+    "index": 1,
+    "query": "查看系统进程列表，尽快完成",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3519230769230769,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4342
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 818
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    }
+  },
+  {
+    "index": 2,
+    "query": "查询GDP经济数据，请帮我处理",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.308211113406321,
+    "static": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4337
+    },
+    "pte_fd": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4337,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 874
+    },
+    "pte_fd_itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4337,
+      "escalated": false
+    }
+  },
+  {
+    "index": 3,
+    "query": "推荐一些经典诗词",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.8048780487804879,
+    "static": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894
+    },
+    "pte_fd": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 790
+    },
+    "pte_fd_itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894,
+      "escalated": false
+    }
+  },
+  {
+    "index": 4,
+    "query": "帮我访问这个网站并获取内容",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 852
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2351,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2534,
+      "escalated": true
+    }
+  },
+  {
+    "index": 5,
+    "query": "查询通胀率CPI数据，详细一点",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.308211113406321,
+    "static": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4337
+    },
+    "pte_fd": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4337,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 874
+    },
+    "pte_fd_itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4337,
+      "escalated": false
+    }
+  },
+  {
+    "index": 6,
+    "query": "管理相册中的照片",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "family_album",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "family_album",
+      "correct": true,
+      "tokens": 1414
+    },
+    "pte_fd": {
+      "selected": "family_album",
+      "correct": true,
+      "tokens": 1414,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 776
+    },
+    "pte_fd_itr": {
+      "selected": "family_album",
+      "correct": true,
+      "tokens": 1414,
+      "escalated": false
+    }
+  },
+  {
+    "index": 7,
+    "query": "查看课程表安排",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "education",
+    "confidence": 0.30063199711087035,
+    "static": {
+      "selected": "course_schedule",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "course_schedule",
+      "correct": true,
+      "tokens": 4330
+    },
+    "pte_fd": {
+      "selected": "course_schedule",
+      "correct": true,
+      "tokens": 4330,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "course_schedule",
+      "correct": true,
+      "tokens": 4330,
+      "escalated": false
+    }
+  },
+  {
+    "index": 8,
+    "query": "分析投资组合收益",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.3120567375886525,
+    "static": {
+      "selected": "finance",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 4340
+    },
+    "pte_fd": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 4340,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 828
+    },
+    "pte_fd_itr": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 4340,
+      "escalated": false
+    }
+  },
+  {
+    "index": 9,
+    "query": "记录今天的支出，请帮我处理",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1416
+    },
+    "pte_fd": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1416,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 813
+    },
+    "pte_fd_itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1416,
+      "escalated": false
+    }
+  },
+  {
+    "index": 10,
+    "query": "截取屏幕并OCR识别",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3275919732441471,
+    "static": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4341
+    },
+    "pte_fd": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 799
+    },
+    "pte_fd_itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    }
+  },
+  {
+    "index": 11,
+    "query": "在浏览器中登录网站",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8545454545454546,
+    "static": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "self_control",
+      "correct": false,
+      "tokens": 2347,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 792
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "self_control",
+      "correct": false,
+      "tokens": 2530,
+      "escalated": true
+    }
+  },
+  {
+    "index": 12,
+    "query": "关机倒计时设置，尽快完成",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.33205128205128204,
+    "static": {
+      "selected": "cron",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4342
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    }
+  },
+  {
+    "index": 13,
+    "query": "统计分析这组数据，尽快完成",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "data_analysis",
+    "confidence": 0.30874125874125874,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "clipboard",
+      "correct": false,
+      "tokens": 4334
+    },
+    "pte_fd": {
+      "selected_initial": "clipboard",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 5690,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 893
+    },
+    "pte_fd_itr": {
+      "selected_initial": "experience_recall",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 6312,
+      "escalated": true
+    }
+  },
+  {
+    "index": 14,
+    "query": "设置每日任务清单，请帮我处理",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8076923076923077,
+    "static": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 1417
+    },
+    "pte_fd": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 1417,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 792
+    },
+    "pte_fd_itr": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 1417,
+      "escalated": false
+    }
+  },
+  {
+    "index": 15,
+    "query": "查询GDP经济数据",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.308211113406321,
+    "static": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4333
+    },
+    "pte_fd": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 870
+    },
+    "pte_fd_itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    }
+  },
+  {
+    "index": 16,
+    "query": "查看系统进程列表，谢谢",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3519230769230769,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4341
+    },
+    "pte_fd": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5713,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 817
+    },
+    "pte_fd_itr": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5962,
+      "escalated": true
+    }
+  },
+  {
+    "index": 17,
+    "query": "创建月度报告文档",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 765
+    },
+    "pte_fd": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 765,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 874
+    },
+    "pte_fd_itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 765,
+      "escalated": false
+    }
+  },
+  {
+    "index": 18,
+    "query": "计算折扣后的价格",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "calculator",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "calculator",
+      "correct": true,
+      "tokens": 2398,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "calculator",
+      "correct": true,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2581,
+      "escalated": true
+    }
+  },
+  {
+    "index": 19,
+    "query": "创建新的目录结构",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8166666666666668,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 567
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 567,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 802
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 567,
+      "escalated": false
+    }
+  },
+  {
+    "index": 20,
+    "query": "找一首李白的诗",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4323
+    },
+    "pte_fd": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4323,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": false,
+      "tokens": 776
+    },
+    "pte_fd_itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4323,
+      "escalated": false
+    }
+  },
+  {
+    "index": 21,
+    "query": "登录网站并提取数据",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8363636363636364,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2347,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 853
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2784,
+      "escalated": true
+    }
+  },
+  {
+    "index": 22,
+    "query": "帮我分析这批论文，谢谢",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4324
+    },
+    "pte_fd": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4324,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 833
+    },
+    "pte_fd_itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4324,
+      "escalated": false
+    }
+  },
+  {
+    "index": 23,
+    "query": "语音转成文字",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1121
+    },
+    "pte_fd": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1121,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 786
+    },
+    "pte_fd_itr": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1121,
+      "escalated": false
+    }
+  },
+  {
+    "index": 24,
+    "query": "管理家庭成员信息",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "family_member",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "family_member",
+      "correct": true,
+      "tokens": 1412
+    },
+    "pte_fd": {
+      "selected": "family_member",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "ai_writer",
+      "correct": false,
+      "tokens": 774
+    },
+    "pte_fd_itr": {
+      "selected": "family_member",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    }
+  },
+  {
+    "index": 25,
+    "query": "电脑运行很慢帮我诊断",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4324
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4324,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 786
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4324,
+      "escalated": false
+    }
+  },
+  {
+    "index": 26,
+    "query": "在浏览器中搜索信息，请帮我处理",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 854
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2355,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 845
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2721,
+      "escalated": true
+    }
+  },
+  {
+    "index": 27,
+    "query": "录制一段音频",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8021739130434783,
+    "static": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 1120
+    },
+    "pte_fd": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 1120,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 774
+    },
+    "pte_fd_itr": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 1120,
+      "escalated": false
+    }
+  },
+  {
+    "index": 28,
+    "query": "重命名文件 report.docx，尽快完成",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.35,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4333
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 869
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    }
+  },
+  {
+    "index": 29,
+    "query": "查询美联储利率",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8085106382978724,
+    "static": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 679
+    },
+    "pte_fd": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 679,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "browser_use",
+      "correct": false,
+      "tokens": 774
+    },
+    "pte_fd_itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 679,
+      "escalated": false
+    }
+  },
+  {
+    "index": 30,
+    "query": "拆分PDF文件",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.3109649122807017,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4338
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4338,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 857
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4338,
+      "escalated": false
+    }
+  },
+  {
+    "index": 31,
+    "query": "帮我算一下税费",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "experience_recall",
+      "correct": false,
+      "tokens": 5675,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "datetime_tool",
+      "correct": true,
+      "tokens": 5858,
+      "escalated": true
+    }
+  },
+  {
+    "index": 32,
+    "query": "截屏当前桌面",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 756
+    },
+    "pte_fd": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 756,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 773
+    },
+    "pte_fd_itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 756,
+      "escalated": false
+    }
+  },
+  {
+    "index": 33,
+    "query": "导出为PPT格式",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8210526315789474,
+    "static": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 884
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "ppt_generator",
+      "correct": true,
+      "tokens": 2561,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 821
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "ppt_generator",
+      "correct": true,
+      "tokens": 2744,
+      "escalated": true
+    }
+  },
+  {
+    "index": 34,
+    "query": "截屏当前桌面，谢谢",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 758
+    },
+    "pte_fd": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 758,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 758,
+      "escalated": false
+    }
+  },
+  {
+    "index": 35,
+    "query": "计算这组数据的平均值",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 851
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2400,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 868
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2845,
+      "escalated": true
+    }
+  },
+  {
+    "index": 36,
+    "query": "记录体重变化",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "health",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "health",
+      "correct": true,
+      "tokens": 1412
+    },
+    "pte_fd": {
+      "selected": "health",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "chat_history",
+      "correct": false,
+      "tokens": 786
+    },
+    "pte_fd_itr": {
+      "selected": "health",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    }
+  },
+  {
+    "index": 37,
+    "query": "管理注册表项",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 756
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2126,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "app_control",
+      "correct": true,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2309,
+      "escalated": true
+    }
+  },
+  {
+    "index": 38,
+    "query": "查询诗词相关的内容",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.8097560975609757,
+    "static": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894
+    },
+    "pte_fd": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 790
+    },
+    "pte_fd_itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894,
+      "escalated": false
+    }
+  },
+  {
+    "index": 39,
+    "query": "生成PPT演示文稿",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8210526315789474,
+    "static": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 884
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "ppt_generator",
+      "correct": true,
+      "tokens": 2561,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 790
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "ppt_generator",
+      "correct": true,
+      "tokens": 2744,
+      "escalated": true
+    }
+  },
+  {
+    "index": 40,
+    "query": "读取文件 content.txt 的内容",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8166666666666668,
+    "static": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 569
+    },
+    "pte_fd": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 569,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 849
+    },
+    "pte_fd_itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 569,
+      "escalated": false
+    }
+  },
+  {
+    "index": 41,
+    "query": "录制一段音频，详细一点",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8021739130434783,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 1123
+    },
+    "pte_fd": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 1123,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 777
+    },
+    "pte_fd_itr": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 1123,
+      "escalated": false
+    }
+  },
+  {
+    "index": 42,
+    "query": "检查电脑性能",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.31346153846153846,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4338
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4338,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 794
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4338,
+      "escalated": false
+    }
+  },
+  {
+    "index": 43,
+    "query": "数据分组聚合计算",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "statistics",
+      "correct": true,
+      "tokens": 2398,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 867
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "data_processor",
+      "correct": true,
+      "tokens": 2843,
+      "escalated": true
+    }
+  },
+  {
+    "index": 44,
+    "query": "生成数据分析报告",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.3181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5701,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": false,
+      "tokens": 896
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "self_control",
+      "correct": false,
+      "tokens": 6330,
+      "escalated": true
+    }
+  },
+  {
+    "index": 45,
+    "query": "监控磁盘读写速度",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.31153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4332
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4332,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 795
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4332,
+      "escalated": false
+    }
+  },
+  {
+    "index": 46,
+    "query": "生成一份Word文档报告",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8400000000000001,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 766
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2325,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 875
+    },
+    "pte_fd_itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 766,
+      "escalated": false
+    }
+  },
+  {
+    "index": 47,
+    "query": "组装文档包含摘要和分析，详细一点",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 769
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 769,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 902
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 769,
+      "escalated": false
+    }
+  },
+  {
+    "index": 48,
+    "query": "批量分析论文摘要",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 831
+    },
+    "pte_fd_itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    }
+  },
+  {
+    "index": 49,
+    "query": "查看电池健康状态",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.3435897435897436,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4332
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4332,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "app_control",
+      "correct": true,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4332,
+      "escalated": false
+    }
+  },
+  {
+    "index": 50,
+    "query": "搜索相关图片素材",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "stock_photo",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "stock_photo",
+      "correct": true,
+      "tokens": 1121
+    },
+    "pte_fd": {
+      "selected": "stock_photo",
+      "correct": true,
+      "tokens": 1121,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "stock_photo",
+      "correct": true,
+      "tokens": 852
+    },
+    "pte_fd_itr": {
+      "selected": "stock_photo",
+      "correct": true,
+      "tokens": 1121,
+      "escalated": false
+    }
+  },
+  {
+    "index": 51,
+    "query": "统计分析这组数据",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "data_analysis",
+    "confidence": 0.3102971462194763,
+    "static": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4331
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5684,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 890
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 6306,
+      "escalated": true
+    }
+  },
+  {
+    "index": 52,
+    "query": "管理家庭大事记",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 1413
+    },
+    "pte_fd": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 1413,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 1413,
+      "escalated": false
+    }
+  },
+  {
+    "index": 53,
+    "query": "播放音乐",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.3044593088071349,
+    "static": {
+      "selected": "music_player",
+      "correct": true,
+      "tokens": 4695
+    },
+    "pte": {
+      "selected": "music_player",
+      "correct": true,
+      "tokens": 4346
+    },
+    "pte_fd": {
+      "selected": "music_player",
+      "correct": true,
+      "tokens": 4346,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "music_player",
+      "correct": true,
+      "tokens": 786
+    },
+    "pte_fd_itr": {
+      "selected": "music_player",
+      "correct": true,
+      "tokens": 4346,
+      "escalated": false
+    }
+  },
+  {
+    "index": 54,
+    "query": "移动文件到指定位置，尽快完成",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.3769230769230769,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "remote_file_share",
+      "correct": false,
+      "tokens": 4333
+    },
+    "pte_fd": {
+      "selected_initial": "remote_file_share",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5697,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 851
+    },
+    "pte_fd_itr": {
+      "selected_initial": "remote_file_share",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 6068,
+      "escalated": true
+    }
+  },
+  {
+    "index": 55,
+    "query": "打开URL并分析页面内容",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 851
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2349,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 833
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2715,
+      "escalated": true
+    }
+  },
+  {
+    "index": 56,
+    "query": "组装文档包含摘要和分析",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 766
+    },
+    "pte_fd": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 766,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 899
+    },
+    "pte_fd_itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 766,
+      "escalated": false
+    }
+  },
+  {
+    "index": 57,
+    "query": "截图并保存到桌面",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3330267558528428,
+    "static": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4340
+    },
+    "pte_fd": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4340,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 774
+    },
+    "pte_fd_itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4340,
+      "escalated": false
+    }
+  },
+  {
+    "index": 58,
+    "query": "设置定时任务每天执行",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.3588071348940914,
+    "static": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4342
+    },
+    "pte_fd": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 825
+    },
+    "pte_fd_itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    }
+  },
+  {
+    "index": 59,
+    "query": "帮我操作网页上的表单，谢谢",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 852
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2351,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2534,
+      "escalated": true
+    }
+  },
+  {
+    "index": 60,
+    "query": "查询贵州茅台股价，详细一点",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8042553191489362,
+    "static": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 683
+    },
+    "pte_fd": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 683,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 779
+    },
+    "pte_fd_itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 683,
+      "escalated": false
+    }
+  },
+  {
+    "index": 61,
+    "query": "查看实时行情数据",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8085106382978724,
+    "static": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 680
+    },
+    "pte_fd": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 680,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 868
+    },
+    "pte_fd_itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 680,
+      "escalated": false
+    }
+  },
+  {
+    "index": 62,
+    "query": "格式转换docx到pdf",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8315789473684211,
+    "static": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 886
+    },
+    "pte_fd": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 886,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 886,
+      "escalated": false
+    }
+  },
+  {
+    "index": 63,
+    "query": "处理Excel表格数据",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "data_analysis",
+    "confidence": 0.8060606060606061,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 698
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2189,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 870
+    },
+    "pte_fd_itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 698,
+      "escalated": false
+    }
+  },
+  {
+    "index": 64,
+    "query": "对比两组数据的差异",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 870
+    },
+    "pte_fd_itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    }
+  },
+  {
+    "index": 65,
+    "query": "查看系统服务状态",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8307692307692308,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 756
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 756,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 815
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 756,
+      "escalated": false
+    }
+  },
+  {
+    "index": 66,
+    "query": "记录今天的支出",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": false,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1412
+    },
+    "pte_fd": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 809
+    },
+    "pte_fd_itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    }
+  },
+  {
+    "index": 67,
+    "query": "分析股票基本面数据",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8127659574468086,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 680
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2106,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 877
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2606,
+      "escalated": true
+    }
+  },
+  {
+    "index": 68,
+    "query": "生成幻灯片演示",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8105263157894738,
+    "static": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 883
+    },
+    "pte_fd": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 883,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 789
+    },
+    "pte_fd_itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 883,
+      "escalated": false
+    }
+  },
+  {
+    "index": 69,
+    "query": "帮我分析这批论文，尽快完成",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 1416
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 3579,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 834
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 3887,
+      "escalated": true
+    }
+  },
+  {
+    "index": 70,
+    "query": "截取屏幕并OCR识别，请帮我处理",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3275919732441471,
+    "static": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4703
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4345
+    },
+    "pte_fd": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4345,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 803
+    },
+    "pte_fd_itr": {
+      "selected": "screen",
+      "correct": true,
+      "tokens": 4345,
+      "escalated": false
+    }
+  },
+  {
+    "index": 71,
+    "query": "帮我访问这个网站并获取内容",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 852
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2351,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2534,
+      "escalated": true
+    }
+  },
+  {
+    "index": 72,
+    "query": "设置定时任务每天执行",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.3588071348940914,
+    "static": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4342
+    },
+    "pte_fd": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 825
+    },
+    "pte_fd_itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    }
+  },
+  {
+    "index": 73,
+    "query": "设置定时提醒",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.8260869565217391,
+    "static": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 849
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "cron",
+      "correct": true,
+      "tokens": 2396,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 801
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "cron",
+      "correct": true,
+      "tokens": 2579,
+      "escalated": true
+    }
+  },
+  {
+    "index": 74,
+    "query": "查看CPU和内存使用率",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.8200000000000001,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 689
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 689,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 797
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 689,
+      "escalated": false
+    }
+  },
+  {
+    "index": 75,
+    "query": "设置定时提醒",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.8260869565217391,
+    "static": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 849
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "cron",
+      "correct": true,
+      "tokens": 2396,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 801
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "cron",
+      "correct": true,
+      "tokens": 2579,
+      "escalated": true
+    }
+  },
+  {
+    "index": 76,
+    "query": "分析资源占用情况",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.8200000000000001,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 687
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 687,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 831
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 687,
+      "escalated": false
+    }
+  },
+  {
+    "index": 77,
+    "query": "查询今天的时间和日期",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 850,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 803
+    },
+    "pte_fd_itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 850,
+      "escalated": false
+    }
+  },
+  {
+    "index": 78,
+    "query": "计算这组数据的平均值",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 851
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2400,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 868
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2845,
+      "escalated": true
+    }
+  },
+  {
+    "index": 79,
+    "query": "打开链接并截取页面截图，谢谢",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.30699300699300697,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5703,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5886,
+      "escalated": true
+    }
+  },
+  {
+    "index": 80,
+    "query": "创建文档包含这些数据，请帮我处理",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 770
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 2333,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 914
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 2907,
+      "escalated": true
+    }
+  },
+  {
+    "index": 81,
+    "query": "搜索向量数据库中的内容，请帮我处理",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.8048780487804879,
+    "static": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 899
+    },
+    "pte_fd": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 899,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 882
+    },
+    "pte_fd_itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 899,
+      "escalated": false
+    }
+  },
+  {
+    "index": 82,
+    "query": "查看系统性能信息",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3519230769230769,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5709,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 815
+    },
+    "pte_fd_itr": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "system_monitor",
+      "correct": false,
+      "tokens": 5958,
+      "escalated": true
+    }
+  },
+  {
+    "index": 83,
+    "query": "帮我整理文件夹中的文件",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8500000000000001,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 568
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 568,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 568,
+      "escalated": false
+    }
+  },
+  {
+    "index": 84,
+    "query": "语音转成文字，请帮我处理",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1125
+    },
+    "pte_fd": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1125,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 790
+    },
+    "pte_fd_itr": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1125,
+      "escalated": false
+    }
+  },
+  {
+    "index": 85,
+    "query": "加密PDF文档",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.3192982456140351,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4338
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4338,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 887
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4338,
+      "escalated": false
+    }
+  },
+  {
+    "index": 86,
+    "query": "合并两个PDF文件，尽快完成",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.31535087719298244,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4332
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4332,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 861
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4332,
+      "escalated": false
+    }
+  },
+  {
+    "index": 87,
+    "query": "数据分组聚合计算",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "statistics",
+      "correct": true,
+      "tokens": 2398,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 867
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "data_processor",
+      "correct": true,
+      "tokens": 2843,
+      "escalated": true
+    }
+  },
+  {
+    "index": 88,
+    "query": "制作工作总结文档",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8133333333333334,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": false,
+      "tokens": 764
+    },
+    "pte_fd": {
+      "selected_initial": "screen",
+      "selected_retry": "datetime_tool",
+      "correct": false,
+      "tokens": 2321,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 873
+    },
+    "pte_fd_itr": {
+      "selected_initial": "screen",
+      "selected_retry": "experience_recall",
+      "correct": false,
+      "tokens": 2760,
+      "escalated": true
+    }
+  },
+  {
+    "index": 89,
+    "query": "查看系统服务状态，详细一点",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8307692307692308,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 759
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 759,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 818
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 759,
+      "escalated": false
+    }
+  },
+  {
+    "index": 90,
+    "query": "重命名文件 report.docx",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.35,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4330
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5691,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 866
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 6129,
+      "escalated": true
+    }
+  },
+  {
+    "index": 91,
+    "query": "查询贵州茅台股价",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8042553191489362,
+    "static": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 680
+    },
+    "pte_fd": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 680,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 776
+    },
+    "pte_fd_itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 680,
+      "escalated": false
+    }
+  },
+  {
+    "index": 92,
+    "query": "检查磁盘空间使用情况",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.31346153846153846,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4340
+    },
+    "pte_fd": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5711,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 796
+    },
+    "pte_fd_itr": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "system_monitor",
+      "correct": false,
+      "tokens": 5960,
+      "escalated": true
+    }
+  },
+  {
+    "index": 93,
+    "query": "帮我自动化网页操作",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 849
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2345,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2528,
+      "escalated": true
+    }
+  },
+  {
+    "index": 94,
+    "query": "检查磁盘空间使用情况，尽快完成",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.31346153846153846,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4343
+    },
+    "pte_fd": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 5717,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 799
+    },
+    "pte_fd_itr": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "system_monitor",
+      "correct": false,
+      "tokens": 5966,
+      "escalated": true
+    }
+  },
+  {
+    "index": 95,
+    "query": "生成一张概念图",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "concept",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "image_generator",
+      "correct": true,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected": "image_generator",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "browser_use",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "mind_map",
+      "selected_retry": "self_control",
+      "correct": false,
+      "tokens": 5858,
+      "escalated": true
+    }
+  },
+  {
+    "index": 96,
+    "query": "查询今天的时间和日期，请帮我处理",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 854
+    },
+    "pte_fd": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 854,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 807
+    },
+    "pte_fd_itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 854,
+      "escalated": false
+    }
+  },
+  {
+    "index": 97,
+    "query": "管理家庭大事记",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 1413
+    },
+    "pte_fd": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 1413,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "family_milestone",
+      "correct": true,
+      "tokens": 1413,
+      "escalated": false
+    }
+  },
+  {
+    "index": 98,
+    "query": "生成幻灯片演示，详细一点",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8105263157894738,
+    "static": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 886
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2565,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 792
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "ppt_generator",
+      "correct": true,
+      "tokens": 2748,
+      "escalated": true
+    }
+  },
+  {
+    "index": 99,
+    "query": "帮我整理文件夹中的文件，请帮我处理",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8500000000000001,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 572
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 572,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 852
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 572,
+      "escalated": false
+    }
+  },
+  {
+    "index": 100,
+    "query": "搜索向量数据库中的内容",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.8048780487804879,
+    "static": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 895
+    },
+    "pte_fd": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 895,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 878
+    },
+    "pte_fd_itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 895,
+      "escalated": false
+    }
+  },
+  {
+    "index": 101,
+    "query": "查看我的待办事项，请帮我处理",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8051282051282052,
+    "static": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 1418
+    },
+    "pte_fd": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 1418,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 793
+    },
+    "pte_fd_itr": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 1418,
+      "escalated": false
+    }
+  },
+  {
+    "index": 102,
+    "query": "数据透视表分析",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 890
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 6297,
+      "escalated": true
+    }
+  },
+  {
+    "index": 103,
+    "query": "语音转成文字，谢谢",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1123
+    },
+    "pte_fd": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1123,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "voice_input",
+      "correct": true,
+      "tokens": 788
+    },
+    "pte_fd_itr": {
+      "selected": "speech_to_text",
+      "correct": true,
+      "tokens": 1123,
+      "escalated": false
+    }
+  },
+  {
+    "index": 104,
+    "query": "查找关于AI的文献资料，详细一点",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "research",
+    "confidence": 0.8009708737864079,
+    "static": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 754
+    },
+    "pte_fd": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 754,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 782
+    },
+    "pte_fd_itr": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 754,
+      "escalated": false
+    }
+  },
+  {
+    "index": 105,
+    "query": "生成包含图片的文档",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.3278985507246377,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4341
+    },
+    "pte_fd": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 890
+    },
+    "pte_fd_itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    }
+  },
+  {
+    "index": 106,
+    "query": "查询贵州茅台股价，请帮我处理",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8042553191489362,
+    "static": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 684
+    },
+    "pte_fd": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 684,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 780
+    },
+    "pte_fd_itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 684,
+      "escalated": false
+    }
+  },
+  {
+    "index": 107,
+    "query": "设置每日任务清单",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8076923076923077,
+    "static": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 1413
+    },
+    "pte_fd": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 1413,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 788
+    },
+    "pte_fd_itr": {
+      "selected": "daily_task",
+      "correct": true,
+      "tokens": 1413,
+      "escalated": false
+    }
+  },
+  {
+    "index": 108,
+    "query": "帮我访问这个网站并获取内容",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 852
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2351,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2534,
+      "escalated": true
+    }
+  },
+  {
+    "index": 109,
+    "query": "查看家庭食谱",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8051282051282052,
+    "static": {
+      "selected": "meal_menu",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "meal_menu",
+      "correct": true,
+      "tokens": 1412
+    },
+    "pte_fd": {
+      "selected": "meal_menu",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "chat_history",
+      "correct": false,
+      "tokens": 774
+    },
+    "pte_fd_itr": {
+      "selected": "meal_menu",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    }
+  },
+  {
+    "index": 110,
+    "query": "查看文件内容并总结",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8333333333333334,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 568
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 1929,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2300,
+      "escalated": true
+    }
+  },
+  {
+    "index": 111,
+    "query": "索引这些文档到知识库",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.3089430894308943,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 4342
+    },
+    "pte_fd": {
+      "selected_initial": "shell",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 5707,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 876
+    },
+    "pte_fd_itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    }
+  },
+  {
+    "index": 112,
+    "query": "搜索RAG知识库",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.8097560975609757,
+    "static": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 895
+    },
+    "pte_fd": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 895,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 895,
+      "escalated": false
+    }
+  },
+  {
+    "index": 113,
+    "query": "解压压缩文件 archive.zip",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8500000000000001,
+    "static": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 569
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 569,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 849
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 569,
+      "escalated": false
+    }
+  },
+  {
+    "index": 114,
+    "query": "分析CSV数据文件",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.3265151515151515,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4330
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5691,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 877
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 6191,
+      "escalated": true
+    }
+  },
+  {
+    "index": 115,
+    "query": "解压压缩文件 archive.zip，谢谢",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8500000000000001,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 571
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 571,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 851
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 571,
+      "escalated": false
+    }
+  },
+  {
+    "index": 116,
+    "query": "录制视频，详细一点",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1122
+    },
+    "pte_fd": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1122,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 776
+    },
+    "pte_fd_itr": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1122,
+      "escalated": false
+    }
+  },
+  {
+    "index": 117,
+    "query": "帮我计算一下汇率",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2398,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2581,
+      "escalated": true
+    }
+  },
+  {
+    "index": 118,
+    "query": "查看网络使用情况",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.81,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 687
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 687,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 687,
+      "escalated": false
+    }
+  },
+  {
+    "index": 119,
+    "query": "把Word转换成PDF",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.3192982456140351,
+    "static": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 846
+    },
+    "pte_fd_itr": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    }
+  },
+  {
+    "index": 120,
+    "query": "查找关于AI的文献资料",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "research",
+    "confidence": 0.8009708737864079,
+    "static": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 751
+    },
+    "pte_fd": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 751,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 779
+    },
+    "pte_fd_itr": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 751,
+      "escalated": false
+    }
+  },
+  {
+    "index": 121,
+    "query": "识别图片中的文字",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8065217391304348,
+    "static": {
+      "selected": "ocr",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "ocr",
+      "correct": true,
+      "tokens": 1121
+    },
+    "pte_fd": {
+      "selected": "ocr",
+      "correct": true,
+      "tokens": 1121,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "ocr",
+      "correct": true,
+      "tokens": 816
+    },
+    "pte_fd_itr": {
+      "selected": "ocr",
+      "correct": true,
+      "tokens": 1121,
+      "escalated": false
+    }
+  },
+  {
+    "index": 122,
+    "query": "监控系统状态，谢谢",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.31153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4333
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 816
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    }
+  },
+  {
+    "index": 123,
+    "query": "查找关于AI的文献资料",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "research",
+    "confidence": 0.8009708737864079,
+    "static": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 751
+    },
+    "pte_fd": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 751,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 779
+    },
+    "pte_fd_itr": {
+      "selected": "literature_search",
+      "correct": true,
+      "tokens": 751,
+      "escalated": false
+    }
+  },
+  {
+    "index": 124,
+    "query": "帮我写一份项目文档，谢谢",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8133333333333334,
+    "static": {
+      "selected": "ai_writer",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 768
+    },
+    "pte_fd": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 768,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 877
+    },
+    "pte_fd_itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 768,
+      "escalated": false
+    }
+  },
+  {
+    "index": 125,
+    "query": "录制视频",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 4695
+    },
+    "pte": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1119
+    },
+    "pte_fd": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1119,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "app_control",
+      "correct": false,
+      "tokens": 773
+    },
+    "pte_fd_itr": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1119,
+      "escalated": false
+    }
+  },
+  {
+    "index": 126,
+    "query": "录制视频",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8043478260869565,
+    "static": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 4695
+    },
+    "pte": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1119
+    },
+    "pte_fd": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1119,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 773
+    },
+    "pte_fd_itr": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1119,
+      "escalated": false
+    }
+  },
+  {
+    "index": 127,
+    "query": "关机倒计时设置",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 756
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 756,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 756,
+      "escalated": false
+    }
+  },
+  {
+    "index": 128,
+    "query": "生成幻灯片演示",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8105263157894738,
+    "static": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 883
+    },
+    "pte_fd": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 883,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 789
+    },
+    "pte_fd_itr": {
+      "selected": "ppt_generator",
+      "correct": true,
+      "tokens": 883,
+      "escalated": false
+    }
+  },
+  {
+    "index": 129,
+    "query": "帮我计算一下汇率，尽快完成",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.3153288740245262,
+    "static": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4344
+    },
+    "pte_fd": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4344,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4344,
+      "escalated": false
+    }
+  },
+  {
+    "index": 130,
+    "query": "分析股票基本面数据，详细一点",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8127659574468086,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 683
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2112,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 880
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2612,
+      "escalated": true
+    }
+  },
+  {
+    "index": 131,
+    "query": "查看今天的日程安排，谢谢",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.3153288740245262,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4343
+    },
+    "pte_fd": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4343,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 780
+    },
+    "pte_fd_itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4343,
+      "escalated": false
+    }
+  },
+  {
+    "index": 132,
+    "query": "查看系统温度信息",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.31346153846153846,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 815
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    }
+  },
+  {
+    "index": 133,
+    "query": "在浏览器中搜索信息",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "search",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "search",
+      "selected_retry": "search",
+      "correct": false,
+      "tokens": 2347,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 841
+    },
+    "pte_fd_itr": {
+      "selected_initial": "search",
+      "selected_retry": "duckduckgo",
+      "correct": false,
+      "tokens": 2713,
+      "escalated": true
+    }
+  },
+  {
+    "index": 134,
+    "query": "生成一份带图表的报告文档，尽快完成",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.3515151515151515,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4703
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4346
+    },
+    "pte_fd": {
+      "selected_initial": "datetime_tool",
+      "selected_retry": "datetime_tool",
+      "correct": false,
+      "tokens": 5910,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "data_visualization",
+      "correct": false,
+      "tokens": 899
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 6417,
+      "escalated": true
+    }
+  },
+  {
+    "index": 135,
+    "query": "帮我分析这批论文",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 831
+    },
+    "pte_fd_itr": {
+      "selected": "batch_paper_analyzer",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    }
+  },
+  {
+    "index": 136,
+    "query": "创建文档包含这些数据，谢谢",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 768
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2329,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 912
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2903,
+      "escalated": true
+    }
+  },
+  {
+    "index": 137,
+    "query": "统计分析这组数据，尽快完成",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "data_analysis",
+    "confidence": 0.30874125874125874,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "clipboard",
+      "correct": false,
+      "tokens": 4334
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 5690,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "statistics",
+      "correct": true,
+      "tokens": 893
+    },
+    "pte_fd_itr": {
+      "selected_initial": "clipboard",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 6312,
+      "escalated": true
+    }
+  },
+  {
+    "index": 138,
+    "query": "访问网站并下载文件",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.34924242424242424,
+    "static": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4335
+    },
+    "pte_fd": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4335,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 830
+    },
+    "pte_fd_itr": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4335,
+      "escalated": false
+    }
+  },
+  {
+    "index": 139,
+    "query": "数据透视表分析，谢谢",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4324
+    },
+    "pte_fd": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4324,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 892
+    },
+    "pte_fd_itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4324,
+      "escalated": false
+    }
+  },
+  {
+    "index": 140,
+    "query": "创建文档包含这些数据",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 766
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 2325,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 910
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2899,
+      "escalated": true
+    }
+  },
+  {
+    "index": 141,
+    "query": "搜索文件中的关键词",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8166666666666668,
+    "static": {
+      "selected": "codebase_search",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 567
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "codebase_search",
+      "correct": false,
+      "tokens": 1927,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 853
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "codebase_search",
+      "correct": false,
+      "tokens": 2356,
+      "escalated": true
+    }
+  },
+  {
+    "index": 142,
+    "query": "复制文件到另一个目录",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8500000000000001,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 568
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 568,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 568,
+      "escalated": false
+    }
+  },
+  {
+    "index": 143,
+    "query": "生成柱状图和折线图",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "data_analysis",
+    "confidence": 0.8121212121212121,
+    "static": {
+      "selected": "data_visualization",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 701
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 701,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "data_visualization",
+      "correct": true,
+      "tokens": 800
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 701,
+      "escalated": false
+    }
+  },
+  {
+    "index": 144,
+    "query": "查看股票K线走势",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8042553191489362,
+    "static": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 681
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "stock_query",
+      "correct": true,
+      "tokens": 2108,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 777
+    },
+    "pte_fd_itr": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 681,
+      "escalated": false
+    }
+  },
+  {
+    "index": 145,
+    "query": "推荐一些经典诗词",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.8048780487804879,
+    "static": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894
+    },
+    "pte_fd": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 790
+    },
+    "pte_fd_itr": {
+      "selected": "poetry",
+      "correct": true,
+      "tokens": 894,
+      "escalated": false
+    }
+  },
+  {
+    "index": 146,
+    "query": "清洗数据中的异常值，尽快完成",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 1417
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 3581,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 874
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "data_processor",
+      "correct": true,
+      "tokens": 4021,
+      "escalated": true
+    }
+  },
+  {
+    "index": 147,
+    "query": "记录今天的支出，请帮我处理",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1416
+    },
+    "pte_fd": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1416,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 813
+    },
+    "pte_fd_itr": {
+      "selected": "finance",
+      "correct": true,
+      "tokens": 1416,
+      "escalated": false
+    }
+  },
+  {
+    "index": 148,
+    "query": "整合资料生成报告",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 765
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2323,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 796
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2506,
+      "escalated": true
+    }
+  },
+  {
+    "index": 149,
+    "query": "合并两个PDF文件",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.31535087719298244,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4329
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4329,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 858
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4329,
+      "escalated": false
+    }
+  },
+  {
+    "index": 150,
+    "query": "帮我写一份项目文档",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8133333333333334,
+    "static": {
+      "selected": "ai_writer",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 766
+    },
+    "pte_fd": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 766,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 875
+    },
+    "pte_fd_itr": {
+      "selected": "doc_generator",
+      "correct": true,
+      "tokens": 766,
+      "escalated": false
+    }
+  },
+  {
+    "index": 151,
+    "query": "今天天气怎么样",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.808695652173913,
+    "static": {
+      "selected": "weather",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 849
+    },
+    "pte_fd": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 849,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "weather",
+      "correct": true,
+      "tokens": 788
+    },
+    "pte_fd_itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 849,
+      "escalated": false
+    }
+  },
+  {
+    "index": 152,
+    "query": "打开网页 https://example.com 并截图",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.35244755244755244,
+    "static": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    }
+  },
+  {
+    "index": 153,
+    "query": "帮我操作网页上的表单",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "browser_use",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "screen",
+      "correct": false,
+      "tokens": 850
+    },
+    "pte_fd": {
+      "selected_initial": "screen",
+      "selected_retry": "screen",
+      "correct": false,
+      "tokens": 2347,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 776
+    },
+    "pte_fd_itr": {
+      "selected_initial": "screen",
+      "selected_retry": "screen",
+      "correct": false,
+      "tokens": 2530,
+      "escalated": true
+    }
+  },
+  {
+    "index": 154,
+    "query": "监控系统状态",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.31153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4331
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4331,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 814
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4331,
+      "escalated": false
+    }
+  },
+  {
+    "index": 155,
+    "query": "搜索知识库中的论文",
+    "intent": "knowledge",
+    "ground_truth": [
+      "batch_paper_analyzer",
+      "file",
+      "knowledge_rag",
+      "literature_review",
+      "literature_search",
+      "poetry",
+      "python_runner",
+      "search"
+    ],
+    "detected_intent": "knowledge",
+    "confidence": 0.3097679374852001,
+    "static": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4344
+    },
+    "pte_fd": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4344,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected": "knowledge_rag",
+      "correct": true,
+      "tokens": 4344,
+      "escalated": false
+    }
+  },
+  {
+    "index": 156,
+    "query": "批量重命名文件夹中的文件",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8500000000000001,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 569
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 569,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 849
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 569,
+      "escalated": false
+    }
+  },
+  {
+    "index": 157,
+    "query": "帮我访问这个网站并获取内容，请帮我处理",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4704
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 856
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2359,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 782
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2542,
+      "escalated": true
+    }
+  },
+  {
+    "index": 158,
+    "query": "查看系统详细信息，请帮我处理",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 759
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 759,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 818
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 759,
+      "escalated": false
+    }
+  },
+  {
+    "index": 159,
+    "query": "记录今天的日记",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8025641025641026,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": false,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "diary",
+      "correct": true,
+      "tokens": 1412
+    },
+    "pte_fd": {
+      "selected": "diary",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "diary",
+      "correct": true,
+      "tokens": 786
+    },
+    "pte_fd_itr": {
+      "selected": "diary",
+      "correct": true,
+      "tokens": 1412,
+      "escalated": false
+    }
+  },
+  {
+    "index": 160,
+    "query": "查看股票K线走势，详细一点",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8042553191489362,
+    "static": {
+      "selected": "stock_query",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 684
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2114,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": false,
+      "tokens": 780
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2297,
+      "escalated": true
+    }
+  },
+  {
+    "index": 161,
+    "query": "拆分PDF文件，请帮我处理",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.3109649122807017,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4342
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "file",
+      "correct": false,
+      "tokens": 861
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4342,
+      "escalated": false
+    }
+  },
+  {
+    "index": 162,
+    "query": "转换文档格式",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.30701754385964913,
+    "static": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 873
+    },
+    "pte_fd_itr": {
+      "selected": "format_converter",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    }
+  },
+  {
+    "index": 163,
+    "query": "清理系统临时文件",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.33525641025641023,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 854
+    },
+    "pte_fd_itr": {
+      "selected_initial": "system_monitor",
+      "selected_retry": "system_monitor",
+      "correct": false,
+      "tokens": 6081,
+      "escalated": true
+    }
+  },
+  {
+    "index": 164,
+    "query": "设置每天早上的闹钟",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.8173913043478261,
+    "static": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 852
+    },
+    "pte_fd": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 852,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "app_control",
+      "correct": false,
+      "tokens": 780
+    },
+    "pte_fd_itr": {
+      "selected": "cron",
+      "correct": true,
+      "tokens": 852,
+      "escalated": false
+    }
+  },
+  {
+    "index": 165,
+    "query": "管理系统启动项",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 755
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 755,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 814
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 755,
+      "escalated": false
+    }
+  },
+  {
+    "index": 166,
+    "query": "拍照并保存",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "multimedia",
+    "confidence": 0.8021739130434783,
+    "static": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1120
+    },
+    "pte_fd": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1120,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 786
+    },
+    "pte_fd_itr": {
+      "selected": "media_capture",
+      "correct": true,
+      "tokens": 1120,
+      "escalated": false
+    }
+  },
+  {
+    "index": 167,
+    "query": "数据透视表分析",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4322
+    },
+    "pte_fd": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 4322,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 890
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 6297,
+      "escalated": true
+    }
+  },
+  {
+    "index": 168,
+    "query": "分析资源占用情况，详细一点",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.8200000000000001,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 690
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 690,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "statistics",
+      "correct": false,
+      "tokens": 834
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 690,
+      "escalated": false
+    }
+  },
+  {
+    "index": 169,
+    "query": "制作文档整合本周内容",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8400000000000001,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 766
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "datetime_tool",
+      "correct": false,
+      "tokens": 2325,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 875
+    },
+    "pte_fd_itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 766,
+      "escalated": false
+    }
+  },
+  {
+    "index": 170,
+    "query": "清洗数据中的异常值",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "",
+    "confidence": 0.0,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4323
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4323,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "data_processor",
+      "correct": true,
+      "tokens": 871
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4323,
+      "escalated": false
+    }
+  },
+  {
+    "index": 171,
+    "query": "移动文件到指定位置，请帮我处理",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8333333333333334,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4702
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 572
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 572,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 852
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2308,
+      "escalated": true
+    }
+  },
+  {
+    "index": 172,
+    "query": "移动文件到指定位置",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8333333333333334,
+    "static": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 568
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "shell",
+      "correct": true,
+      "tokens": 1929,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 848
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2300,
+      "escalated": true
+    }
+  },
+  {
+    "index": 173,
+    "query": "监控磁盘读写速度，详细一点",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.31153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4335
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4335,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 798
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4335,
+      "escalated": false
+    }
+  },
+  {
+    "index": 174,
+    "query": "生成一份带图表的报告文档",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.3515151515151515,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4343
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "datetime_tool",
+      "correct": false,
+      "tokens": 5904,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "ai_writer",
+      "correct": false,
+      "tokens": 896
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 6411,
+      "escalated": true
+    }
+  },
+  {
+    "index": 175,
+    "query": "读取文件 content.txt 的内容，谢谢",
+    "intent": "file_operation",
+    "ground_truth": [
+      "file",
+      "shell"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.8166666666666668,
+    "static": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 571
+    },
+    "pte_fd": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 571,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 851
+    },
+    "pte_fd_itr": {
+      "selected": "file",
+      "correct": true,
+      "tokens": 571,
+      "escalated": false
+    }
+  },
+  {
+    "index": 176,
+    "query": "解密受保护的PDF",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.8105263157894738,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 884
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 884,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 817
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 884,
+      "escalated": false
+    }
+  },
+  {
+    "index": 177,
+    "query": "监控系统状态，请帮我处理",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_monitoring",
+    "confidence": 0.31153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4335
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4335,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 818
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4335,
+      "escalated": false
+    }
+  },
+  {
+    "index": 178,
+    "query": "分析量化交易信号",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8085106382978724,
+    "static": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 680
+    },
+    "pte_fd": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 680,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 831
+    },
+    "pte_fd_itr": {
+      "selected": "quant_trading",
+      "correct": true,
+      "tokens": 680,
+      "escalated": false
+    }
+  },
+  {
+    "index": 179,
+    "query": "合并两个PDF文件，请帮我处理",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "file_operation",
+    "confidence": 0.31535087719298244,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4333
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 862
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4333,
+      "escalated": false
+    }
+  },
+  {
+    "index": 180,
+    "query": "打开链接并截取页面截图",
+    "intent": "browser_automation",
+    "ground_truth": [
+      "browser",
+      "browser_use",
+      "mcp_browserbase",
+      "mcp_browserbase-csdn"
+    ],
+    "detected_intent": "browser_automation",
+    "confidence": 0.30699300699300697,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4700
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4337
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5699,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "browser",
+      "correct": true,
+      "tokens": 776
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 5882,
+      "escalated": true
+    }
+  },
+  {
+    "index": 181,
+    "query": "查看基金净值",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.8042553191489362,
+    "static": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 679
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "tool_info",
+      "correct": false,
+      "tokens": 2104,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 775
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2287,
+      "escalated": true
+    }
+  },
+  {
+    "index": 182,
+    "query": "拆分PDF文件，尽快完成",
+    "intent": "document_processing",
+    "ground_truth": [
+      "format_converter",
+      "pdf_generator",
+      "pdf_tool",
+      "ppt_generator",
+      "stock_photo"
+    ],
+    "detected_intent": "document_processing",
+    "confidence": 0.3109649122807017,
+    "static": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4341
+    },
+    "pte_fd": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 860
+    },
+    "pte_fd_itr": {
+      "selected": "pdf_tool",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    }
+  },
+  {
+    "index": 183,
+    "query": "扫描文档并识别",
+    "intent": "multimedia",
+    "ground_truth": [
+      "concept_diagrams",
+      "document_scanner",
+      "image_generator",
+      "media_capture",
+      "meme_generation",
+      "music_player",
+      "ocr",
+      "screen",
+      "speech_to_text",
+      "stock_photo",
+      "voice_input",
+      "voice_output"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.322463768115942,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4340
+    },
+    "pte_fd": {
+      "selected": "document_scanner",
+      "correct": true,
+      "tokens": 4340,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "document_scanner",
+      "correct": true,
+      "tokens": 884
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "document_scanner",
+      "correct": true,
+      "tokens": 6268,
+      "escalated": true
+    }
+  },
+  {
+    "index": 184,
+    "query": "查看系统详细信息",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.8153846153846154,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4696
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 755
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 755,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 814
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 755,
+      "escalated": false
+    }
+  },
+  {
+    "index": 185,
+    "query": "生成数据可视化图表",
+    "intent": "data_analysis",
+    "ground_truth": [
+      "data_processor",
+      "data_visualization",
+      "file",
+      "shell",
+      "statistics"
+    ],
+    "detected_intent": "data_analysis",
+    "confidence": 0.8181818181818182,
+    "static": {
+      "selected": "data_visualization",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "tool_info",
+      "correct": false,
+      "tokens": 698
+    },
+    "pte_fd": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2189,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "data_visualization",
+      "correct": true,
+      "tokens": 870
+    },
+    "pte_fd_itr": {
+      "selected_initial": "tool_info",
+      "selected_retry": "",
+      "correct": false,
+      "tokens": 2559,
+      "escalated": true
+    }
+  },
+  {
+    "index": 186,
+    "query": "查询通胀率CPI数据",
+    "intent": "financial_activity",
+    "ground_truth": [
+      "fred_query",
+      "quant_trading",
+      "search",
+      "shell",
+      "stock_query"
+    ],
+    "detected_intent": "financial_activity",
+    "confidence": 0.308211113406321,
+    "static": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4334
+    },
+    "pte_fd": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4334,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "fred",
+      "correct": false,
+      "tokens": 871
+    },
+    "pte_fd_itr": {
+      "selected": "search",
+      "correct": true,
+      "tokens": 4334,
+      "escalated": false
+    }
+  },
+  {
+    "index": 187,
+    "query": "查看我的待办事项",
+    "intent": "life_management",
+    "ground_truth": [
+      "course_schedule",
+      "cron",
+      "daily_task",
+      "diary",
+      "family_album",
+      "family_member",
+      "family_milestone",
+      "finance",
+      "fitness_nutrition",
+      "health",
+      "meal_menu",
+      "medication",
+      "music_player",
+      "todo",
+      "user_profile"
+    ],
+    "detected_intent": "life_management",
+    "confidence": 0.8051282051282052,
+    "static": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 4698
+    },
+    "pte": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 1414
+    },
+    "pte_fd": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 1414,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 789
+    },
+    "pte_fd_itr": {
+      "selected": "todo",
+      "correct": true,
+      "tokens": 1414,
+      "escalated": false
+    }
+  },
+  {
+    "index": 188,
+    "query": "创建文档包含这些数据，详细一点",
+    "intent": "document_assembly",
+    "ground_truth": [
+      "doc_generator",
+      "file",
+      "image_generator",
+      "search",
+      "shell",
+      "weather"
+    ],
+    "detected_intent": "document_assembly",
+    "confidence": 0.8266666666666667,
+    "static": {
+      "selected": "",
+      "correct": false,
+      "tokens": 4701
+    },
+    "pte": {
+      "selected": "",
+      "correct": false,
+      "tokens": 769
+    },
+    "pte_fd": {
+      "selected_initial": "",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 2331,
+      "escalated": true
+    },
+    "itr": {
+      "selected": "",
+      "correct": false,
+      "tokens": 913
+    },
+    "pte_fd_itr": {
+      "selected_initial": "",
+      "selected_retry": "clipboard",
+      "correct": false,
+      "tokens": 2905,
+      "escalated": true
+    }
+  },
+  {
+    "index": 189,
+    "query": "检查电脑性能，详细一点",
+    "intent": "system_monitoring",
+    "ground_truth": [
+      "app_control",
+      "shell",
+      "system_monitor"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.31346153846153846,
+    "static": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4699
+    },
+    "pte": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4341
+    },
+    "pte_fd": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 797
+    },
+    "pte_fd_itr": {
+      "selected": "system_monitor",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    }
+  },
+  {
+    "index": 190,
+    "query": "查看今天的日程安排",
+    "intent": "daily_assistant",
+    "ground_truth": [
+      "calculator",
+      "cron",
+      "datetime_tool",
+      "search",
+      "statistics",
+      "weather"
+    ],
+    "detected_intent": "daily_assistant",
+    "confidence": 0.3153288740245262,
+    "static": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4341
+    },
+    "pte_fd": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 778
+    },
+    "pte_fd_itr": {
+      "selected": "datetime_tool",
+      "correct": true,
+      "tokens": 4341,
+      "escalated": false
+    }
+  },
+  {
+    "index": 191,
+    "query": "查看系统进程列表",
+    "intent": "system_admin",
+    "ground_truth": [
+      "app_control",
+      "clipboard",
+      "notify",
+      "screen",
+      "shell"
+    ],
+    "detected_intent": "system_admin",
+    "confidence": 0.3519230769230769,
+    "static": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 4697
+    },
+    "pte": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4339
+    },
+    "pte_fd": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    },
+    "itr": {
+      "selected": "system_monitor",
+      "correct": false,
+      "tokens": 815
+    },
+    "pte_fd_itr": {
+      "selected": "shell",
+      "correct": true,
+      "tokens": 4339,
+      "escalated": false
+    }
+  }
+]

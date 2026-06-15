@@ -1,0 +1,38 @@
+{
+  "raw": {
+    "api_errors_per_conv": 14.6,
+    "jitter_events_per_conv": 0.0,
+    "prefix_hit_rate": 0.0,
+    "compression_savings": 0.0
+  },
+  "pruning": {
+    "api_errors_per_conv": 14.6,
+    "jitter_events_per_conv": 0.0,
+    "prefix_hit_rate": 0.0,
+    "compression_savings": 49.9
+  },
+  "s1_s4": {
+    "api_errors_per_conv": 0.0,
+    "jitter_events_per_conv": 0.0,
+    "prefix_hit_rate": 0.0,
+    "compression_savings": 49.0
+  },
+  "s1_s5": {
+    "api_errors_per_conv": 0.0,
+    "jitter_events_per_conv": 0.0,
+    "prefix_hit_rate": 0.0,
+    "compression_savings": 49.0
+  },
+  "full_rcr": {
+    "api_errors_per_conv": 0.0,
+    "jitter_events_per_conv": 0.0,
+    "prefix_hit_rate": 60.0,
+    "compression_savings": 48.5
+  },
+  "llmlingua": {
+    "api_errors_per_conv": 53.9,
+    "jitter_events_per_conv": 0.6,
+    "prefix_hit_rate": 13.0,
+    "compression_savings": 34.0
+  }
+}

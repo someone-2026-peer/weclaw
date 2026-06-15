@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WeClaw Multistep 100",
+  "type": "object",
+  "required": ["dataset_name", "version", "items"],
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "const": "weclaw_multistep_100"
+    },
+    "version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["task_id", "task", "domain", "steps", "success_criteria"],
+        "properties": {
+          "task_id": { "type": "string" },
+          "task": { "type": "string" },
+          "domain": { "type": "string" },
+          "difficulty": { "type": "string" },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["step_id", "instruction", "acceptable_tools"],
+              "properties": {
+                "step_id": { "type": "string" },
+                "instruction": { "type": "string" },
+                "acceptable_tools": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "notes": { "type": "string" }
+              }
+            }
+          },
+          "success_criteria": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

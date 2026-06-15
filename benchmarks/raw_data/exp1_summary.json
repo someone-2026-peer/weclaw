@@ -1,0 +1,47 @@
+{
+  "static": {
+    "accuracy": 69.3,
+    "token_reduction": 0,
+    "recovery_rate": 0,
+    "total_correct": 133,
+    "total_queries": 192,
+    "total_tokens": 902078,
+    "total_schema_bytes": 3758016
+  },
+  "pte": {
+    "accuracy": 67.2,
+    "token_reduction": 57.3,
+    "recovery_rate": 24.6,
+    "total_correct": 129,
+    "total_queries": 192,
+    "total_tokens": 414942,
+    "total_schema_bytes": 1604240
+  },
+  "pte_fd": {
+    "accuracy": 76.0,
+    "token_reduction": 53.6,
+    "recovery_rate": 24.6,
+    "total_correct": 146,
+    "total_queries": 192,
+    "total_tokens": 506286,
+    "total_schema_bytes": 1743524
+  },
+  "itr": {
+    "accuracy": 60.4,
+    "token_reduction": 87.5,
+    "recovery_rate": 0,
+    "total_correct": 116,
+    "total_queries": 192,
+    "total_tokens": 158199,
+    "total_schema_bytes": 469526
+  },
+  "pte_fd_itr": {
+    "accuracy": 75.5,
+    "token_reduction": 52.3,
+    "recovery_rate": 24.2,
+    "total_correct": 145,
+    "total_queries": 192,
+    "total_tokens": 528956,
+    "total_schema_bytes": 1791792
+  }
+}

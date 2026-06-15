@@ -1,0 +1,4012 @@
+{
+  "dataset_name": "weclaw_multistep_100",
+  "version": "0.2.0-release-candidate99",
+  "notes": "Paper-grade multistep release candidate for exp8 execution-level evaluation. This version expands the formal sample to 99 tasks with broad domain coverage, 2-4 steps per task, and diversified execution-level tool-routing patterns.",
+  "items": [
+    {
+      "task_id": "ms001",
+      "task": "搜索关于agent runtime的论文并下载开放 PDF",
+      "domain": "research",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索最近关于agent runtime的论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "学术搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "检查候选论文是否存在开放获取 PDF",
+          "acceptable_tools": [
+            "oss_pdf_search",
+            "literature_search"
+          ],
+          "notes": "开放 PDF 检索。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "下载开放 PDF 到 paper_archive",
+          "acceptable_tools": [
+            "oss_pdf_download",
+            "oss_pdf_search",
+            "file"
+          ],
+          "notes": "下载并保存。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关论文",
+        "确认存在开放 PDF",
+        "成功下载 PDF"
+      ]
+    },
+    {
+      "task_id": "ms002",
+      "task": "搜索关于tool routing的论文并下载开放 PDF",
+      "domain": "research",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索最近关于tool routing的论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "学术搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "检查候选论文是否存在开放获取 PDF",
+          "acceptable_tools": [
+            "oss_pdf_search",
+            "literature_search"
+          ],
+          "notes": "开放 PDF 检索。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "下载开放 PDF 到 literature_cache",
+          "acceptable_tools": [
+            "oss_pdf_download",
+            "oss_pdf_search",
+            "file"
+          ],
+          "notes": "下载并保存。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关论文",
+        "确认存在开放 PDF",
+        "成功下载 PDF"
+      ]
+    },
+    {
+      "task_id": "ms003",
+      "task": "搜索关于context compression的论文并下载开放 PDF",
+      "domain": "research",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索最近关于context compression的论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "学术搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "检查候选论文是否存在开放获取 PDF",
+          "acceptable_tools": [
+            "oss_pdf_search",
+            "literature_search"
+          ],
+          "notes": "开放 PDF 检索。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "下载开放 PDF 到 research_pdfs",
+          "acceptable_tools": [
+            "oss_pdf_download",
+            "oss_pdf_search",
+            "file"
+          ],
+          "notes": "下载并保存。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关论文",
+        "确认存在开放 PDF",
+        "成功下载 PDF"
+      ]
+    },
+    {
+      "task_id": "ms004",
+      "task": "评估desktop agent benchmark论文的投稿方向并建立项目",
+      "domain": "research",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于desktop agent benchmark的代表性论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "先找代表论文。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "评估这类研究适合投稿哪些期刊",
+          "acceptable_tools": [
+            "journal_intelligence",
+            "literature_search"
+          ],
+          "notes": "期刊评估。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "创建一个新的论文写作项目并设置阶段",
+          "acceptable_tools": [
+            "paper_lifecycle",
+            "journal_intelligence"
+          ],
+          "notes": "论文项目管理。"
+        }
+      ],
+      "success_criteria": [
+        "找到代表论文",
+        "完成期刊评估",
+        "建立论文项目"
+      ]
+    },
+    {
+      "task_id": "ms005",
+      "task": "评估experience replay论文的投稿方向并建立项目",
+      "domain": "research",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于experience replay的代表性论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "先找代表论文。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "评估这类研究适合投稿哪些期刊",
+          "acceptable_tools": [
+            "journal_intelligence",
+            "literature_search"
+          ],
+          "notes": "期刊评估。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "创建一个新的论文写作项目并设置阶段",
+          "acceptable_tools": [
+            "paper_lifecycle",
+            "journal_intelligence"
+          ],
+          "notes": "论文项目管理。"
+        }
+      ],
+      "success_criteria": [
+        "找到代表论文",
+        "完成期刊评估",
+        "建立论文项目"
+      ]
+    },
+    {
+      "task_id": "ms006",
+      "task": "评估hybrid tool routing论文的投稿方向并建立项目",
+      "domain": "research",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于hybrid tool routing的代表性论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "先找代表论文。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "评估这类研究适合投稿哪些期刊",
+          "acceptable_tools": [
+            "journal_intelligence",
+            "literature_search"
+          ],
+          "notes": "期刊评估。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "创建一个新的论文写作项目并设置阶段",
+          "acceptable_tools": [
+            "paper_lifecycle",
+            "journal_intelligence"
+          ],
+          "notes": "论文项目管理。"
+        }
+      ],
+      "success_criteria": [
+        "找到代表论文",
+        "完成期刊评估",
+        "建立论文项目"
+      ]
+    },
+    {
+      "task_id": "ms007",
+      "task": "分析tool-use benchmark研究领域并整理研究地图",
+      "domain": "research",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于tool-use benchmark的代表性论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "论文搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成该方向的 research landscape",
+          "acceptable_tools": [
+            "research_landscape",
+            "literature_search"
+          ],
+          "notes": "研究地图。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "追踪关键方法的发展谱系",
+          "acceptable_tools": [
+            "research_lineage",
+            "literature_search"
+          ],
+          "notes": "研究谱系。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "把结论整理成一份简短研究备忘",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成备忘。"
+        }
+      ],
+      "success_criteria": [
+        "找到代表论文",
+        "得到研究地图",
+        "得到谱系分析",
+        "形成研究备忘"
+      ]
+    },
+    {
+      "task_id": "ms008",
+      "task": "分析agent memory研究领域并整理研究地图",
+      "domain": "research",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于agent memory的代表性论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "论文搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成该方向的 research landscape",
+          "acceptable_tools": [
+            "research_landscape",
+            "literature_search"
+          ],
+          "notes": "研究地图。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "追踪关键方法的发展谱系",
+          "acceptable_tools": [
+            "research_lineage",
+            "literature_search"
+          ],
+          "notes": "研究谱系。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "把结论整理成一份简短研究备忘",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成备忘。"
+        }
+      ],
+      "success_criteria": [
+        "找到代表论文",
+        "得到研究地图",
+        "得到谱系分析",
+        "形成研究备忘"
+      ]
+    },
+    {
+      "task_id": "ms009",
+      "task": "分析context management研究领域并整理研究地图",
+      "domain": "research",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于context management的代表性论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "论文搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成该方向的 research landscape",
+          "acceptable_tools": [
+            "research_landscape",
+            "literature_search"
+          ],
+          "notes": "研究地图。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "追踪关键方法的发展谱系",
+          "acceptable_tools": [
+            "research_lineage",
+            "literature_search"
+          ],
+          "notes": "研究谱系。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "把结论整理成一份简短研究备忘",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成备忘。"
+        }
+      ],
+      "success_criteria": [
+        "找到代表论文",
+        "得到研究地图",
+        "得到谱系分析",
+        "形成研究备忘"
+      ]
+    },
+    {
+      "task_id": "ms010",
+      "task": "查询AAPL价格并输出简要风险判断",
+      "domain": "financial_activity",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询AAPL最新股价",
+          "acceptable_tools": [
+            "stock_query",
+            "search"
+          ],
+          "notes": "股价查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "分析当前持仓风险并给出一句话建议",
+          "acceptable_tools": [
+            "quant_trading",
+            "stock_query"
+          ],
+          "notes": "风险分析。"
+        }
+      ],
+      "success_criteria": [
+        "成功查询价格",
+        "成功输出风险判断"
+      ]
+    },
+    {
+      "task_id": "ms011",
+      "task": "查询腾讯控股价格并输出简要风险判断",
+      "domain": "financial_activity",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询腾讯控股最新股价",
+          "acceptable_tools": [
+            "stock_query",
+            "search"
+          ],
+          "notes": "股价查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "分析当前持仓风险并给出一句话建议",
+          "acceptable_tools": [
+            "quant_trading",
+            "stock_query"
+          ],
+          "notes": "风险分析。"
+        }
+      ],
+      "success_criteria": [
+        "成功查询价格",
+        "成功输出风险判断"
+      ]
+    },
+    {
+      "task_id": "ms012",
+      "task": "查询比亚迪价格并输出简要风险判断",
+      "domain": "financial_activity",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询比亚迪最新股价",
+          "acceptable_tools": [
+            "stock_query",
+            "search"
+          ],
+          "notes": "股价查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "分析当前持仓风险并给出一句话建议",
+          "acceptable_tools": [
+            "quant_trading",
+            "stock_query"
+          ],
+          "notes": "风险分析。"
+        }
+      ],
+      "success_criteria": [
+        "成功查询价格",
+        "成功输出风险判断"
+      ]
+    },
+    {
+      "task_id": "ms013",
+      "task": "获取美国 CPI并写成宏观研究备忘",
+      "domain": "financial_activity",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "从 FRED 查询美国 CPI时间序列",
+          "acceptable_tools": [
+            "fred_query",
+            "search"
+          ],
+          "notes": "宏观数据查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "搜索最近关于美国 CPI影响的研究论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "相关研究。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将数据和文献信息整理成研究备忘",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "写研究备忘。"
+        }
+      ],
+      "success_criteria": [
+        "获取宏观数据",
+        "找到相关研究",
+        "形成研究备忘"
+      ]
+    },
+    {
+      "task_id": "ms014",
+      "task": "获取美国失业率并写成宏观研究备忘",
+      "domain": "financial_activity",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "从 FRED 查询美国失业率时间序列",
+          "acceptable_tools": [
+            "fred_query",
+            "search"
+          ],
+          "notes": "宏观数据查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "搜索最近关于美国失业率影响的研究论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "相关研究。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将数据和文献信息整理成研究备忘",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "写研究备忘。"
+        }
+      ],
+      "success_criteria": [
+        "获取宏观数据",
+        "找到相关研究",
+        "形成研究备忘"
+      ]
+    },
+    {
+      "task_id": "ms015",
+      "task": "获取联邦基金利率并写成宏观研究备忘",
+      "domain": "financial_activity",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "从 FRED 查询联邦基金利率时间序列",
+          "acceptable_tools": [
+            "fred_query",
+            "search"
+          ],
+          "notes": "宏观数据查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "搜索最近关于联邦基金利率影响的研究论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "相关研究。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将数据和文献信息整理成研究备忘",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "写研究备忘。"
+        }
+      ],
+      "success_criteria": [
+        "获取宏观数据",
+        "找到相关研究",
+        "形成研究备忘"
+      ]
+    },
+    {
+      "task_id": "ms016",
+      "task": "分析半导体组合交易信号并生成图表摘要",
+      "domain": "financial_activity",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询半导体组合最近价格走势",
+          "acceptable_tools": [
+            "stock_query",
+            "search"
+          ],
+          "notes": "价格走势。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "分析半导体组合当前量化交易信号",
+          "acceptable_tools": [
+            "quant_trading",
+            "stock_query"
+          ],
+          "notes": "量化信号分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "绘制相关收益与波动图表",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "图表生成。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "整理成一页简报摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "ppt_generator"
+          ],
+          "notes": "摘要整理。"
+        }
+      ],
+      "success_criteria": [
+        "完成价格查询",
+        "完成信号分析",
+        "生成图表",
+        "完成摘要简报"
+      ]
+    },
+    {
+      "task_id": "ms017",
+      "task": "分析新能源仓位交易信号并生成图表摘要",
+      "domain": "financial_activity",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询新能源仓位最近价格走势",
+          "acceptable_tools": [
+            "stock_query",
+            "search"
+          ],
+          "notes": "价格走势。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "分析新能源仓位当前量化交易信号",
+          "acceptable_tools": [
+            "quant_trading",
+            "stock_query"
+          ],
+          "notes": "量化信号分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "绘制相关收益与波动图表",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "图表生成。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "整理成一页简报摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "ppt_generator"
+          ],
+          "notes": "摘要整理。"
+        }
+      ],
+      "success_criteria": [
+        "完成价格查询",
+        "完成信号分析",
+        "生成图表",
+        "完成摘要简报"
+      ]
+    },
+    {
+      "task_id": "ms018",
+      "task": "分析纳斯达克指数交易信号并生成图表摘要",
+      "domain": "financial_activity",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询纳斯达克指数最近价格走势",
+          "acceptable_tools": [
+            "stock_query",
+            "search"
+          ],
+          "notes": "价格走势。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "分析纳斯达克指数当前量化交易信号",
+          "acceptable_tools": [
+            "quant_trading",
+            "stock_query"
+          ],
+          "notes": "量化信号分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "绘制相关收益与波动图表",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "图表生成。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "整理成一页简报摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "ppt_generator"
+          ],
+          "notes": "摘要整理。"
+        }
+      ],
+      "success_criteria": [
+        "完成价格查询",
+        "完成信号分析",
+        "生成图表",
+        "完成摘要简报"
+      ]
+    },
+    {
+      "task_id": "ms019",
+      "task": "查看系统状态并清理temp_cache",
+      "domain": "system_admin",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看当前 CPU、内存和磁盘使用率",
+          "acceptable_tools": [
+            "system_monitor",
+            "shell"
+          ],
+          "notes": "系统资源检查。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "清理temp_cache目录中的临时文件",
+          "acceptable_tools": [
+            "file",
+            "shell"
+          ],
+          "notes": "本地文件清理。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送桌面通知说明清理完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "发送通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成状态检查",
+        "完成临时文件清理",
+        "已通知用户"
+      ]
+    },
+    {
+      "task_id": "ms020",
+      "task": "查看系统状态并清理download_cache",
+      "domain": "system_admin",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看当前 CPU、内存和磁盘使用率",
+          "acceptable_tools": [
+            "system_monitor",
+            "shell"
+          ],
+          "notes": "系统资源检查。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "清理download_cache目录中的临时文件",
+          "acceptable_tools": [
+            "file",
+            "shell"
+          ],
+          "notes": "本地文件清理。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送桌面通知说明清理完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "发送通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成状态检查",
+        "完成临时文件清理",
+        "已通知用户"
+      ]
+    },
+    {
+      "task_id": "ms021",
+      "task": "查看系统状态并清理old_logs",
+      "domain": "system_admin",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看当前 CPU、内存和磁盘使用率",
+          "acceptable_tools": [
+            "system_monitor",
+            "shell"
+          ],
+          "notes": "系统资源检查。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "清理old_logs目录中的临时文件",
+          "acceptable_tools": [
+            "file",
+            "shell"
+          ],
+          "notes": "本地文件清理。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送桌面通知说明清理完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "发送通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成状态检查",
+        "完成临时文件清理",
+        "已通知用户"
+      ]
+    },
+    {
+      "task_id": "ms022",
+      "task": "检查浏览器资源占用并截屏留档",
+      "domain": "system_admin",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看浏览器当前的 CPU 和内存占用",
+          "acceptable_tools": [
+            "system_monitor",
+            "app_control"
+          ],
+          "notes": "资源检查。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "截取当前异常窗口画面",
+          "acceptable_tools": [
+            "screen"
+          ],
+          "notes": "截图留档。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送通知提示资源检查完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成资源检查",
+        "完成截图留档",
+        "发送完成通知"
+      ]
+    },
+    {
+      "task_id": "ms023",
+      "task": "检查数据库客户端资源占用并截屏留档",
+      "domain": "system_admin",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看数据库客户端当前的 CPU 和内存占用",
+          "acceptable_tools": [
+            "system_monitor",
+            "app_control"
+          ],
+          "notes": "资源检查。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "截取当前异常窗口画面",
+          "acceptable_tools": [
+            "screen"
+          ],
+          "notes": "截图留档。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送通知提示资源检查完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成资源检查",
+        "完成截图留档",
+        "发送完成通知"
+      ]
+    },
+    {
+      "task_id": "ms024",
+      "task": "检查PDF 阅读器资源占用并截屏留档",
+      "domain": "system_admin",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看PDF 阅读器当前的 CPU 和内存占用",
+          "acceptable_tools": [
+            "system_monitor",
+            "app_control"
+          ],
+          "notes": "资源检查。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "截取当前异常窗口画面",
+          "acceptable_tools": [
+            "screen"
+          ],
+          "notes": "截图留档。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送通知提示资源检查完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成资源检查",
+        "完成截图留档",
+        "发送完成通知"
+      ]
+    },
+    {
+      "task_id": "ms025",
+      "task": "启动记事本、读取剪贴板并保存记录",
+      "domain": "system_admin",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "启动记事本并切换到前台",
+          "acceptable_tools": [
+            "app_control",
+            "shell"
+          ],
+          "notes": "打开应用。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "读取当前剪贴板文本",
+          "acceptable_tools": [
+            "clipboard"
+          ],
+          "notes": "剪贴板读取。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将读取结果保存到本地文件",
+          "acceptable_tools": [
+            "file"
+          ],
+          "notes": "保存结果。"
+        }
+      ],
+      "success_criteria": [
+        "启动应用",
+        "读取剪贴板",
+        "保存结果"
+      ]
+    },
+    {
+      "task_id": "ms026",
+      "task": "启动设置、读取剪贴板并保存记录",
+      "domain": "system_admin",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "启动设置并切换到前台",
+          "acceptable_tools": [
+            "app_control",
+            "shell"
+          ],
+          "notes": "打开应用。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "读取当前剪贴板文本",
+          "acceptable_tools": [
+            "clipboard"
+          ],
+          "notes": "剪贴板读取。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将读取结果保存到本地文件",
+          "acceptable_tools": [
+            "file"
+          ],
+          "notes": "保存结果。"
+        }
+      ],
+      "success_criteria": [
+        "启动应用",
+        "读取剪贴板",
+        "保存结果"
+      ]
+    },
+    {
+      "task_id": "ms027",
+      "task": "启动资源管理器、读取剪贴板并保存记录",
+      "domain": "system_admin",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "启动资源管理器并切换到前台",
+          "acceptable_tools": [
+            "app_control",
+            "shell"
+          ],
+          "notes": "打开应用。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "读取当前剪贴板文本",
+          "acceptable_tools": [
+            "clipboard"
+          ],
+          "notes": "剪贴板读取。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将读取结果保存到本地文件",
+          "acceptable_tools": [
+            "file"
+          ],
+          "notes": "保存结果。"
+        }
+      ],
+      "success_criteria": [
+        "启动应用",
+        "读取剪贴板",
+        "保存结果"
+      ]
+    },
+    {
+      "task_id": "ms028",
+      "task": "读取sales.csv并生成统计图表",
+      "domain": "data_analysis",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取sales.csv并清洗缺失值",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "数据清洗。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "计算均值与方差",
+          "acceptable_tools": [
+            "statistics",
+            "data_processor"
+          ],
+          "notes": "统计摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "绘制相关趋势图",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "图表绘制。"
+        }
+      ],
+      "success_criteria": [
+        "完成数据清洗",
+        "完成统计计算",
+        "生成趋势图"
+      ]
+    },
+    {
+      "task_id": "ms029",
+      "task": "读取metrics.xlsx并生成统计图表",
+      "domain": "data_analysis",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取metrics.xlsx并清洗缺失值",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "数据清洗。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "计算均值与方差",
+          "acceptable_tools": [
+            "statistics",
+            "data_processor"
+          ],
+          "notes": "统计摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "绘制相关趋势图",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "图表绘制。"
+        }
+      ],
+      "success_criteria": [
+        "完成数据清洗",
+        "完成统计计算",
+        "生成趋势图"
+      ]
+    },
+    {
+      "task_id": "ms030",
+      "task": "读取survey.csv并生成统计图表",
+      "domain": "data_analysis",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取survey.csv并清洗缺失值",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "数据清洗。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "计算均值与方差",
+          "acceptable_tools": [
+            "statistics",
+            "data_processor"
+          ],
+          "notes": "统计摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "绘制相关趋势图",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "图表绘制。"
+        }
+      ],
+      "success_criteria": [
+        "完成数据清洗",
+        "完成统计计算",
+        "生成趋势图"
+      ]
+    },
+    {
+      "task_id": "ms031",
+      "task": "清洗orders.xlsx并导出分析报告",
+      "domain": "data_analysis",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取orders.xlsx并处理重复项",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "清洗数据。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "计算关键统计指标",
+          "acceptable_tools": [
+            "statistics",
+            "data_processor"
+          ],
+          "notes": "统计分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将分析结论整理为文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成报告。"
+        }
+      ],
+      "success_criteria": [
+        "读取并清洗数据",
+        "完成统计分析",
+        "导出分析报告"
+      ]
+    },
+    {
+      "task_id": "ms032",
+      "task": "清洗benchmark_results.csv并导出分析报告",
+      "domain": "data_analysis",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取benchmark_results.csv并处理重复项",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "清洗数据。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "计算关键统计指标",
+          "acceptable_tools": [
+            "statistics",
+            "data_processor"
+          ],
+          "notes": "统计分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将分析结论整理为文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成报告。"
+        }
+      ],
+      "success_criteria": [
+        "读取并清洗数据",
+        "完成统计分析",
+        "导出分析报告"
+      ]
+    },
+    {
+      "task_id": "ms033",
+      "task": "清洗latency_logs.csv并导出分析报告",
+      "domain": "data_analysis",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取latency_logs.csv并处理重复项",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "清洗数据。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "计算关键统计指标",
+          "acceptable_tools": [
+            "statistics",
+            "data_processor"
+          ],
+          "notes": "统计分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将分析结论整理为文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成报告。"
+        }
+      ],
+      "success_criteria": [
+        "读取并清洗数据",
+        "完成统计分析",
+        "导出分析报告"
+      ]
+    },
+    {
+      "task_id": "ms034",
+      "task": "读取ablation_results.csv并生成演示图表简报",
+      "domain": "data_analysis",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取ablation_results.csv并准备作图数据",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "准备数据。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "绘制主要对比图表",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "制作图表。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将图表整理为一页简报",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "形成简报。"
+        }
+      ],
+      "success_criteria": [
+        "完成数据准备",
+        "完成图表制作",
+        "生成简报"
+      ]
+    },
+    {
+      "task_id": "ms035",
+      "task": "读取dataset_distribution.xlsx并生成演示图表简报",
+      "domain": "data_analysis",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取dataset_distribution.xlsx并准备作图数据",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "准备数据。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "绘制主要对比图表",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "制作图表。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将图表整理为一页简报",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "形成简报。"
+        }
+      ],
+      "success_criteria": [
+        "完成数据准备",
+        "完成图表制作",
+        "生成简报"
+      ]
+    },
+    {
+      "task_id": "ms036",
+      "task": "读取runtime_metrics.csv并生成演示图表简报",
+      "domain": "data_analysis",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取runtime_metrics.csv并准备作图数据",
+          "acceptable_tools": [
+            "data_processor",
+            "file"
+          ],
+          "notes": "准备数据。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "绘制主要对比图表",
+          "acceptable_tools": [
+            "data_visualization",
+            "statistics"
+          ],
+          "notes": "制作图表。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将图表整理为一页简报",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "形成简报。"
+        }
+      ],
+      "success_criteria": [
+        "完成数据准备",
+        "完成图表制作",
+        "生成简报"
+      ]
+    },
+    {
+      "task_id": "ms037",
+      "task": "把meeting.wav转写并整理成文档",
+      "domain": "multimedia",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "将meeting.wav转成文字稿",
+          "acceptable_tools": [
+            "speech_to_text",
+            "voice_input"
+          ],
+          "notes": "音频转写。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "把转写内容整理为会议纪要文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "文档生成。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出一份 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成语音转写",
+        "生成文档",
+        "导出 PDF"
+      ]
+    },
+    {
+      "task_id": "ms038",
+      "task": "把interview_recording.mp3转写并整理成文档",
+      "domain": "multimedia",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "将interview_recording.mp3转成文字稿",
+          "acceptable_tools": [
+            "speech_to_text",
+            "voice_input"
+          ],
+          "notes": "音频转写。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "把转写内容整理为会议纪要文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "文档生成。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出一份 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成语音转写",
+        "生成文档",
+        "导出 PDF"
+      ]
+    },
+    {
+      "task_id": "ms039",
+      "task": "把lecture_audio.m4a转写并整理成文档",
+      "domain": "multimedia",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "将lecture_audio.m4a转成文字稿",
+          "acceptable_tools": [
+            "speech_to_text",
+            "voice_input"
+          ],
+          "notes": "音频转写。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "把转写内容整理为会议纪要文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "文档生成。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出一份 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成语音转写",
+        "生成文档",
+        "导出 PDF"
+      ]
+    },
+    {
+      "task_id": "ms040",
+      "task": "识别发票图片并整理成可读文档",
+      "domain": "multimedia",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "对发票图片执行 OCR 识别",
+          "acceptable_tools": [
+            "ocr",
+            "file"
+          ],
+          "notes": "执行 OCR。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将识别文字整理为结构化文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "整理文本。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成 OCR",
+        "形成文档",
+        "导出 PDF"
+      ]
+    },
+    {
+      "task_id": "ms041",
+      "task": "识别扫描合同并整理成可读文档",
+      "domain": "multimedia",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "对扫描合同执行 OCR 识别",
+          "acceptable_tools": [
+            "ocr",
+            "file"
+          ],
+          "notes": "执行 OCR。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将识别文字整理为结构化文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "整理文本。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成 OCR",
+        "形成文档",
+        "导出 PDF"
+      ]
+    },
+    {
+      "task_id": "ms042",
+      "task": "识别白板截图并整理成可读文档",
+      "domain": "multimedia",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "对白板截图执行 OCR 识别",
+          "acceptable_tools": [
+            "ocr",
+            "file"
+          ],
+          "notes": "执行 OCR。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将识别文字整理为结构化文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "整理文本。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成 OCR",
+        "形成文档",
+        "导出 PDF"
+      ]
+    },
+    {
+      "task_id": "ms043",
+      "task": "搜索桌面 AI 助手图片并制作演示封面",
+      "domain": "multimedia",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索与桌面 AI 助手相关的免费图片",
+          "acceptable_tools": [
+            "stock_photo",
+            "search"
+          ],
+          "notes": "图片搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "选择一张合适图片并生成封面页",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator",
+            "stock_photo"
+          ],
+          "notes": "封面制作。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出一页式简报",
+          "acceptable_tools": [
+            "ppt_generator",
+            "format_converter"
+          ],
+          "notes": "导出简报。"
+        }
+      ],
+      "success_criteria": [
+        "找到图片",
+        "生成封面页",
+        "导出简报"
+      ]
+    },
+    {
+      "task_id": "ms044",
+      "task": "搜索学术演示图片并制作演示封面",
+      "domain": "multimedia",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索与学术演示相关的免费图片",
+          "acceptable_tools": [
+            "stock_photo",
+            "search"
+          ],
+          "notes": "图片搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "选择一张合适图片并生成封面页",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator",
+            "stock_photo"
+          ],
+          "notes": "封面制作。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出一页式简报",
+          "acceptable_tools": [
+            "ppt_generator",
+            "format_converter"
+          ],
+          "notes": "导出简报。"
+        }
+      ],
+      "success_criteria": [
+        "找到图片",
+        "生成封面页",
+        "导出简报"
+      ]
+    },
+    {
+      "task_id": "ms045",
+      "task": "搜索benchmark 报告图片并制作演示封面",
+      "domain": "multimedia",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索与benchmark 报告相关的免费图片",
+          "acceptable_tools": [
+            "stock_photo",
+            "search"
+          ],
+          "notes": "图片搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "选择一张合适图片并生成封面页",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator",
+            "stock_photo"
+          ],
+          "notes": "封面制作。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出一页式简报",
+          "acceptable_tools": [
+            "ppt_generator",
+            "format_converter"
+          ],
+          "notes": "导出简报。"
+        }
+      ],
+      "success_criteria": [
+        "找到图片",
+        "生成封面页",
+        "导出简报"
+      ]
+    },
+    {
+      "task_id": "ms046",
+      "task": "打开官网首页并提取标题后截图保存",
+      "domain": "browser_automation",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "打开官网首页并等待首页加载完成",
+          "acceptable_tools": [
+            "browser",
+            "browser_use",
+            "mcp_browserbase"
+          ],
+          "notes": "打开网页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "提取页面主标题文本",
+          "acceptable_tools": [
+            "browser",
+            "browser_use"
+          ],
+          "notes": "读取标题。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "截取首屏并保存为图片",
+          "acceptable_tools": [
+            "screen",
+            "browser",
+            "browser_use"
+          ],
+          "notes": "截图保存。"
+        }
+      ],
+      "success_criteria": [
+        "成功打开网页",
+        "成功提取标题",
+        "成功保存截图"
+      ]
+    },
+    {
+      "task_id": "ms047",
+      "task": "打开帮助中心页面并提取标题后截图保存",
+      "domain": "browser_automation",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "打开帮助中心页面并等待首页加载完成",
+          "acceptable_tools": [
+            "browser",
+            "browser_use",
+            "mcp_browserbase"
+          ],
+          "notes": "打开网页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "提取页面主标题文本",
+          "acceptable_tools": [
+            "browser",
+            "browser_use"
+          ],
+          "notes": "读取标题。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "截取首屏并保存为图片",
+          "acceptable_tools": [
+            "screen",
+            "browser",
+            "browser_use"
+          ],
+          "notes": "截图保存。"
+        }
+      ],
+      "success_criteria": [
+        "成功打开网页",
+        "成功提取标题",
+        "成功保存截图"
+      ]
+    },
+    {
+      "task_id": "ms048",
+      "task": "打开活动落地页并提取标题后截图保存",
+      "domain": "browser_automation",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "打开活动落地页并等待首页加载完成",
+          "acceptable_tools": [
+            "browser",
+            "browser_use",
+            "mcp_browserbase"
+          ],
+          "notes": "打开网页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "提取页面主标题文本",
+          "acceptable_tools": [
+            "browser",
+            "browser_use"
+          ],
+          "notes": "读取标题。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "截取首屏并保存为图片",
+          "acceptable_tools": [
+            "screen",
+            "browser",
+            "browser_use"
+          ],
+          "notes": "截图保存。"
+        }
+      ],
+      "success_criteria": [
+        "成功打开网页",
+        "成功提取标题",
+        "成功保存截图"
+      ]
+    },
+    {
+      "task_id": "ms049",
+      "task": "登录实验监控面板后台并导出结果页面",
+      "domain": "browser_automation",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "打开实验监控面板登录页面",
+          "acceptable_tools": [
+            "browser_use",
+            "browser",
+            "mcp_browserbase"
+          ],
+          "notes": "打开登录页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "自动填写账号并完成登录",
+          "acceptable_tools": [
+            "browser_use",
+            "mcp_browserbase",
+            "browser"
+          ],
+          "notes": "网页登录自动化。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出当前报表页面内容",
+          "acceptable_tools": [
+            "browser_use",
+            "browser",
+            "mcp_browserbase"
+          ],
+          "notes": "导出页面。"
+        }
+      ],
+      "success_criteria": [
+        "打开登录页",
+        "完成登录",
+        "导出结果页面"
+      ]
+    },
+    {
+      "task_id": "ms050",
+      "task": "登录报销系统后台并导出结果页面",
+      "domain": "browser_automation",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "打开报销系统登录页面",
+          "acceptable_tools": [
+            "browser_use",
+            "browser",
+            "mcp_browserbase"
+          ],
+          "notes": "打开登录页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "自动填写账号并完成登录",
+          "acceptable_tools": [
+            "browser_use",
+            "mcp_browserbase",
+            "browser"
+          ],
+          "notes": "网页登录自动化。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出当前报表页面内容",
+          "acceptable_tools": [
+            "browser_use",
+            "browser",
+            "mcp_browserbase"
+          ],
+          "notes": "导出页面。"
+        }
+      ],
+      "success_criteria": [
+        "打开登录页",
+        "完成登录",
+        "导出结果页面"
+      ]
+    },
+    {
+      "task_id": "ms051",
+      "task": "登录项目管理平台后台并导出结果页面",
+      "domain": "browser_automation",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "打开项目管理平台登录页面",
+          "acceptable_tools": [
+            "browser_use",
+            "browser",
+            "mcp_browserbase"
+          ],
+          "notes": "打开登录页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "自动填写账号并完成登录",
+          "acceptable_tools": [
+            "browser_use",
+            "mcp_browserbase",
+            "browser"
+          ],
+          "notes": "网页登录自动化。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出当前报表页面内容",
+          "acceptable_tools": [
+            "browser_use",
+            "browser",
+            "mcp_browserbase"
+          ],
+          "notes": "导出页面。"
+        }
+      ],
+      "success_criteria": [
+        "打开登录页",
+        "完成登录",
+        "导出结果页面"
+      ]
+    },
+    {
+      "task_id": "ms052",
+      "task": "访问新闻页面并读取正文后保存到文件",
+      "domain": "browser_automation",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "使用浏览器打开新闻页面",
+          "acceptable_tools": [
+            "browser",
+            "browser_use",
+            "mcp_browserbase"
+          ],
+          "notes": "访问网页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "提取页面正文内容",
+          "acceptable_tools": [
+            "browser",
+            "browser_use"
+          ],
+          "notes": "读取正文。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把正文保存到本地笔记文件",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "保存正文。"
+        }
+      ],
+      "success_criteria": [
+        "成功访问网页",
+        "成功读取正文",
+        "成功保存文件"
+      ]
+    },
+    {
+      "task_id": "ms053",
+      "task": "访问内部公告页并读取正文后保存到文件",
+      "domain": "browser_automation",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "使用浏览器打开内部公告页",
+          "acceptable_tools": [
+            "browser",
+            "browser_use",
+            "mcp_browserbase"
+          ],
+          "notes": "访问网页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "提取页面正文内容",
+          "acceptable_tools": [
+            "browser",
+            "browser_use"
+          ],
+          "notes": "读取正文。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把正文保存到本地笔记文件",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "保存正文。"
+        }
+      ],
+      "success_criteria": [
+        "成功访问网页",
+        "成功读取正文",
+        "成功保存文件"
+      ]
+    },
+    {
+      "task_id": "ms054",
+      "task": "访问会员专区页面并读取正文后保存到文件",
+      "domain": "browser_automation",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "使用浏览器打开会员专区页面",
+          "acceptable_tools": [
+            "browser",
+            "browser_use",
+            "mcp_browserbase"
+          ],
+          "notes": "访问网页。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "提取页面正文内容",
+          "acceptable_tools": [
+            "browser",
+            "browser_use"
+          ],
+          "notes": "读取正文。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把正文保存到本地笔记文件",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "保存正文。"
+        }
+      ],
+      "success_criteria": [
+        "成功访问网页",
+        "成功读取正文",
+        "成功保存文件"
+      ]
+    },
+    {
+      "task_id": "ms055",
+      "task": "在知识库中查context compression并写入项目笔记",
+      "domain": "knowledge",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "在知识库中搜索context compression的说明",
+          "acceptable_tools": [
+            "knowledge_rag",
+            "file"
+          ],
+          "notes": "知识库检索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "把找到的要点整理成三条摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "摘要整理。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把摘要保存到项目 notes.md 中",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "写入笔记。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关知识",
+        "形成摘要",
+        "保存到项目笔记"
+      ]
+    },
+    {
+      "task_id": "ms056",
+      "task": "在知识库中查tool exposure并写入项目笔记",
+      "domain": "knowledge",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "在知识库中搜索tool exposure的说明",
+          "acceptable_tools": [
+            "knowledge_rag",
+            "file"
+          ],
+          "notes": "知识库检索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "把找到的要点整理成三条摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "摘要整理。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把摘要保存到项目 notes.md 中",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "写入笔记。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关知识",
+        "形成摘要",
+        "保存到项目笔记"
+      ]
+    },
+    {
+      "task_id": "ms057",
+      "task": "在知识库中查prompt cache并写入项目笔记",
+      "domain": "knowledge",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "在知识库中搜索prompt cache的说明",
+          "acceptable_tools": [
+            "knowledge_rag",
+            "file"
+          ],
+          "notes": "知识库检索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "把找到的要点整理成三条摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "摘要整理。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把摘要保存到项目 notes.md 中",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "写入笔记。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关知识",
+        "形成摘要",
+        "保存到项目笔记"
+      ]
+    },
+    {
+      "task_id": "ms058",
+      "task": "搜索月夜诗词并整理成学习卡片",
+      "domain": "knowledge",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于月夜的经典诗词",
+          "acceptable_tools": [
+            "poetry",
+            "search"
+          ],
+          "notes": "查诗词。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "整理诗句与简短解释",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "整理解释。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "保存到学习卡片文件",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "保存卡片。"
+        }
+      ],
+      "success_criteria": [
+        "找到诗词",
+        "形成解释",
+        "保存卡片"
+      ]
+    },
+    {
+      "task_id": "ms059",
+      "task": "搜索秋风诗词并整理成学习卡片",
+      "domain": "knowledge",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于秋风的经典诗词",
+          "acceptable_tools": [
+            "poetry",
+            "search"
+          ],
+          "notes": "查诗词。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "整理诗句与简短解释",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "整理解释。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "保存到学习卡片文件",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "保存卡片。"
+        }
+      ],
+      "success_criteria": [
+        "找到诗词",
+        "形成解释",
+        "保存卡片"
+      ]
+    },
+    {
+      "task_id": "ms060",
+      "task": "搜索故乡诗词并整理成学习卡片",
+      "domain": "knowledge",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索关于故乡的经典诗词",
+          "acceptable_tools": [
+            "poetry",
+            "search"
+          ],
+          "notes": "查诗词。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "整理诗句与简短解释",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "整理解释。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "保存到学习卡片文件",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "保存卡片。"
+        }
+      ],
+      "success_criteria": [
+        "找到诗词",
+        "形成解释",
+        "保存卡片"
+      ]
+    },
+    {
+      "task_id": "ms061",
+      "task": "批量分析tool-use benchmark论文并生成摘要备忘",
+      "domain": "knowledge",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索与tool-use benchmark相关的论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "搜索论文。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "批量分析这些论文的方法部分",
+          "acceptable_tools": [
+            "batch_paper_analyzer",
+            "literature_search"
+          ],
+          "notes": "批量分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把分析结果整理成备忘文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成备忘。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关论文",
+        "完成批量分析",
+        "形成摘要备忘"
+      ]
+    },
+    {
+      "task_id": "ms062",
+      "task": "批量分析experience replay论文并生成摘要备忘",
+      "domain": "knowledge",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索与experience replay相关的论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "搜索论文。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "批量分析这些论文的方法部分",
+          "acceptable_tools": [
+            "batch_paper_analyzer",
+            "literature_search"
+          ],
+          "notes": "批量分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把分析结果整理成备忘文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成备忘。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关论文",
+        "完成批量分析",
+        "形成摘要备忘"
+      ]
+    },
+    {
+      "task_id": "ms063",
+      "task": "批量分析hybrid routing论文并生成摘要备忘",
+      "domain": "knowledge",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索与hybrid routing相关的论文",
+          "acceptable_tools": [
+            "literature_search",
+            "search"
+          ],
+          "notes": "搜索论文。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "批量分析这些论文的方法部分",
+          "acceptable_tools": [
+            "batch_paper_analyzer",
+            "literature_search"
+          ],
+          "notes": "批量分析。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把分析结果整理成备忘文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成备忘。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关论文",
+        "完成批量分析",
+        "形成摘要备忘"
+      ]
+    },
+    {
+      "task_id": "ms064",
+      "task": "创建提醒并记录明天下午三点提交论文到待办与日记",
+      "domain": "life_management",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "创建一个提醒：明天下午三点提交论文",
+          "acceptable_tools": [
+            "cron",
+            "notify",
+            "datetime_tool"
+          ],
+          "notes": "创建提醒。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "新增一个与明天下午三点提交论文相关的待办事项",
+          "acceptable_tools": [
+            "todo"
+          ],
+          "notes": "添加待办。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "在日记中记录今天的准备情况",
+          "acceptable_tools": [
+            "diary"
+          ],
+          "notes": "写日记。"
+        }
+      ],
+      "success_criteria": [
+        "提醒已创建",
+        "待办已创建",
+        "日记已记录"
+      ]
+    },
+    {
+      "task_id": "ms065",
+      "task": "创建提醒并记录周五晚上整理 benchmark到待办与日记",
+      "domain": "life_management",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "创建一个提醒：周五晚上整理 benchmark",
+          "acceptable_tools": [
+            "cron",
+            "notify",
+            "datetime_tool"
+          ],
+          "notes": "创建提醒。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "新增一个与周五晚上整理 benchmark相关的待办事项",
+          "acceptable_tools": [
+            "todo"
+          ],
+          "notes": "添加待办。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "在日记中记录今天的准备情况",
+          "acceptable_tools": [
+            "diary"
+          ],
+          "notes": "写日记。"
+        }
+      ],
+      "success_criteria": [
+        "提醒已创建",
+        "待办已创建",
+        "日记已记录"
+      ]
+    },
+    {
+      "task_id": "ms066",
+      "task": "创建提醒并记录下周一更新附录说明到待办与日记",
+      "domain": "life_management",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "创建一个提醒：下周一更新附录说明",
+          "acceptable_tools": [
+            "cron",
+            "notify",
+            "datetime_tool"
+          ],
+          "notes": "创建提醒。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "新增一个与下周一更新附录说明相关的待办事项",
+          "acceptable_tools": [
+            "todo"
+          ],
+          "notes": "添加待办。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "在日记中记录今天的准备情况",
+          "acceptable_tools": [
+            "diary"
+          ],
+          "notes": "写日记。"
+        }
+      ],
+      "success_criteria": [
+        "提醒已创建",
+        "待办已创建",
+        "日记已记录"
+      ]
+    },
+    {
+      "task_id": "ms067",
+      "task": "记录体重和睡眠质量并整理健康摘要",
+      "domain": "life_management",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "记录今天的体重和睡眠质量",
+          "acceptable_tools": [
+            "health",
+            "diary"
+          ],
+          "notes": "健康记录。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将记录内容整理成简短摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "整理摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把摘要保存到健康日志",
+          "acceptable_tools": [
+            "file",
+            "diary"
+          ],
+          "notes": "写入日志。"
+        }
+      ],
+      "success_criteria": [
+        "完成健康记录",
+        "形成摘要",
+        "保存到日志"
+      ]
+    },
+    {
+      "task_id": "ms068",
+      "task": "记录血压和心率并整理健康摘要",
+      "domain": "life_management",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "记录今天的血压和心率",
+          "acceptable_tools": [
+            "health",
+            "diary"
+          ],
+          "notes": "健康记录。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将记录内容整理成简短摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "整理摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把摘要保存到健康日志",
+          "acceptable_tools": [
+            "file",
+            "diary"
+          ],
+          "notes": "写入日志。"
+        }
+      ],
+      "success_criteria": [
+        "完成健康记录",
+        "形成摘要",
+        "保存到日志"
+      ]
+    },
+    {
+      "task_id": "ms069",
+      "task": "记录运动时长并整理健康摘要",
+      "domain": "life_management",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "记录今天的运动时长",
+          "acceptable_tools": [
+            "health",
+            "diary"
+          ],
+          "notes": "健康记录。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将记录内容整理成简短摘要",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "整理摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把摘要保存到健康日志",
+          "acceptable_tools": [
+            "file",
+            "diary"
+          ],
+          "notes": "写入日志。"
+        }
+      ],
+      "success_criteria": [
+        "完成健康记录",
+        "形成摘要",
+        "保存到日志"
+      ]
+    },
+    {
+      "task_id": "ms070",
+      "task": "更新父亲资料并记录变更说明",
+      "domain": "life_management",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看父亲当前家庭资料",
+          "acceptable_tools": [
+            "family_member"
+          ],
+          "notes": "查看资料。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "更新父亲的联系方式",
+          "acceptable_tools": [
+            "family_member"
+          ],
+          "notes": "更新联系方式。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将变更内容记录到日记",
+          "acceptable_tools": [
+            "diary"
+          ],
+          "notes": "记录变更。"
+        }
+      ],
+      "success_criteria": [
+        "查看资料",
+        "更新联系方式",
+        "完成变更记录"
+      ]
+    },
+    {
+      "task_id": "ms071",
+      "task": "更新母亲资料并记录变更说明",
+      "domain": "life_management",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看母亲当前家庭资料",
+          "acceptable_tools": [
+            "family_member"
+          ],
+          "notes": "查看资料。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "更新母亲的联系方式",
+          "acceptable_tools": [
+            "family_member"
+          ],
+          "notes": "更新联系方式。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将变更内容记录到日记",
+          "acceptable_tools": [
+            "diary"
+          ],
+          "notes": "记录变更。"
+        }
+      ],
+      "success_criteria": [
+        "查看资料",
+        "更新联系方式",
+        "完成变更记录"
+      ]
+    },
+    {
+      "task_id": "ms072",
+      "task": "更新姐姐资料并记录变更说明",
+      "domain": "life_management",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查看姐姐当前家庭资料",
+          "acceptable_tools": [
+            "family_member"
+          ],
+          "notes": "查看资料。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "更新姐姐的联系方式",
+          "acceptable_tools": [
+            "family_member"
+          ],
+          "notes": "更新联系方式。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "将变更内容记录到日记",
+          "acceptable_tools": [
+            "diary"
+          ],
+          "notes": "记录变更。"
+        }
+      ],
+      "success_criteria": [
+        "查看资料",
+        "更新联系方式",
+        "完成变更记录"
+      ]
+    },
+    {
+      "task_id": "ms073",
+      "task": "查询上海天气并生成出行建议",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询上海明天的天气和温度",
+          "acceptable_tools": [
+            "weather",
+            "search"
+          ],
+          "notes": "天气查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "补充上海当前时间",
+          "acceptable_tools": [
+            "datetime_tool"
+          ],
+          "notes": "时间查询。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "给出一句话出行建议",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "生成建议。"
+        }
+      ],
+      "success_criteria": [
+        "获得天气信息",
+        "获得时间信息",
+        "完成出行建议"
+      ]
+    },
+    {
+      "task_id": "ms074",
+      "task": "查询深圳天气并生成出行建议",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询深圳明天的天气和温度",
+          "acceptable_tools": [
+            "weather",
+            "search"
+          ],
+          "notes": "天气查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "补充深圳当前时间",
+          "acceptable_tools": [
+            "datetime_tool"
+          ],
+          "notes": "时间查询。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "给出一句话出行建议",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "生成建议。"
+        }
+      ],
+      "success_criteria": [
+        "获得天气信息",
+        "获得时间信息",
+        "完成出行建议"
+      ]
+    },
+    {
+      "task_id": "ms075",
+      "task": "查询杭州天气并生成出行建议",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询杭州明天的天气和温度",
+          "acceptable_tools": [
+            "weather",
+            "search"
+          ],
+          "notes": "天气查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "补充杭州当前时间",
+          "acceptable_tools": [
+            "datetime_tool"
+          ],
+          "notes": "时间查询。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "给出一句话出行建议",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "生成建议。"
+        }
+      ],
+      "success_criteria": [
+        "获得天气信息",
+        "获得时间信息",
+        "完成出行建议"
+      ]
+    },
+    {
+      "task_id": "ms076",
+      "task": "安排周五下午提交稿件并发送完成提醒",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "为周五下午提交稿件设置定时提醒",
+          "acceptable_tools": [
+            "cron",
+            "notify",
+            "datetime_tool"
+          ],
+          "notes": "定时提醒。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "创建一个相关待办事项",
+          "acceptable_tools": [
+            "todo",
+            "cron"
+          ],
+          "notes": "待办创建。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送一条桌面通知确认设置完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "发送通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成提醒设置",
+        "完成待办创建",
+        "发送确认通知"
+      ]
+    },
+    {
+      "task_id": "ms077",
+      "task": "安排今晚检查日志结果并发送完成提醒",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "为今晚检查日志结果设置定时提醒",
+          "acceptable_tools": [
+            "cron",
+            "notify",
+            "datetime_tool"
+          ],
+          "notes": "定时提醒。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "创建一个相关待办事项",
+          "acceptable_tools": [
+            "todo",
+            "cron"
+          ],
+          "notes": "待办创建。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送一条桌面通知确认设置完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "发送通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成提醒设置",
+        "完成待办创建",
+        "发送确认通知"
+      ]
+    },
+    {
+      "task_id": "ms078",
+      "task": "安排明早同步 benchmark 表格并发送完成提醒",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "为明早同步 benchmark 表格设置定时提醒",
+          "acceptable_tools": [
+            "cron",
+            "notify",
+            "datetime_tool"
+          ],
+          "notes": "定时提醒。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "创建一个相关待办事项",
+          "acceptable_tools": [
+            "todo",
+            "cron"
+          ],
+          "notes": "待办创建。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "发送一条桌面通知确认设置完成",
+          "acceptable_tools": [
+            "notify",
+            "cron"
+          ],
+          "notes": "发送通知。"
+        }
+      ],
+      "success_criteria": [
+        "完成提醒设置",
+        "完成待办创建",
+        "发送确认通知"
+      ]
+    },
+    {
+      "task_id": "ms079",
+      "task": "查询纽约当前时间并完成快速计算",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询纽约现在几点",
+          "acceptable_tools": [
+            "datetime_tool"
+          ],
+          "notes": "时间查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "帮我算一下 235*48",
+          "acceptable_tools": [
+            "calculator"
+          ],
+          "notes": "简单计算。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把结果整理成一句提醒文本",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "文字整理。"
+        }
+      ],
+      "success_criteria": [
+        "获得时间",
+        "完成计算",
+        "整理提醒文本"
+      ]
+    },
+    {
+      "task_id": "ms080",
+      "task": "查询伦敦当前时间并完成快速计算",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询伦敦现在几点",
+          "acceptable_tools": [
+            "datetime_tool"
+          ],
+          "notes": "时间查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "帮我算一下 128+76+19",
+          "acceptable_tools": [
+            "calculator"
+          ],
+          "notes": "简单计算。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把结果整理成一句提醒文本",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "文字整理。"
+        }
+      ],
+      "success_criteria": [
+        "获得时间",
+        "完成计算",
+        "整理提醒文本"
+      ]
+    },
+    {
+      "task_id": "ms081",
+      "task": "查询新加坡当前时间并完成快速计算",
+      "domain": "daily_assistant",
+      "difficulty": "easy",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "查询新加坡现在几点",
+          "acceptable_tools": [
+            "datetime_tool"
+          ],
+          "notes": "时间查询。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "帮我算一下 97*88",
+          "acceptable_tools": [
+            "calculator"
+          ],
+          "notes": "简单计算。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把结果整理成一句提醒文本",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "文字整理。"
+        }
+      ],
+      "success_criteria": [
+        "获得时间",
+        "完成计算",
+        "整理提醒文本"
+      ]
+    },
+    {
+      "task_id": "ms082",
+      "task": "在历史对话和日志中定位empty_result",
+      "domain": "self_reflection",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索之前关于empty_result的聊天记录",
+          "acceptable_tools": [
+            "chat_history"
+          ],
+          "notes": "历史聊天回溯。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看最近日志中是否再次出现empty_result",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志检查。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "回忆是否有相似修复经验",
+          "acceptable_tools": [
+            "experience_recall",
+            "tool_audit"
+          ],
+          "notes": "经验回忆。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "定位相关代码实现位置",
+          "acceptable_tools": [
+            "codebase_search"
+          ],
+          "notes": "代码定位。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关聊天",
+        "确认日志情况",
+        "找到相似经验",
+        "定位代码位置"
+      ]
+    },
+    {
+      "task_id": "ms083",
+      "task": "在历史对话和日志中定位structured_output_unsupported",
+      "domain": "self_reflection",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索之前关于structured_output_unsupported的聊天记录",
+          "acceptable_tools": [
+            "chat_history"
+          ],
+          "notes": "历史聊天回溯。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看最近日志中是否再次出现structured_output_unsupported",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志检查。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "回忆是否有相似修复经验",
+          "acceptable_tools": [
+            "experience_recall",
+            "tool_audit"
+          ],
+          "notes": "经验回忆。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "定位相关代码实现位置",
+          "acceptable_tools": [
+            "codebase_search"
+          ],
+          "notes": "代码定位。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关聊天",
+        "确认日志情况",
+        "找到相似经验",
+        "定位代码位置"
+      ]
+    },
+    {
+      "task_id": "ms084",
+      "task": "在历史对话和日志中定位file_not_found",
+      "domain": "self_reflection",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索之前关于file_not_found的聊天记录",
+          "acceptable_tools": [
+            "chat_history"
+          ],
+          "notes": "历史聊天回溯。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看最近日志中是否再次出现file_not_found",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志检查。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "回忆是否有相似修复经验",
+          "acceptable_tools": [
+            "experience_recall",
+            "tool_audit"
+          ],
+          "notes": "经验回忆。"
+        },
+        {
+          "step_id": "s4",
+          "instruction": "定位相关代码实现位置",
+          "acceptable_tools": [
+            "codebase_search"
+          ],
+          "notes": "代码定位。"
+        }
+      ],
+      "success_criteria": [
+        "找到相关聊天",
+        "确认日志情况",
+        "找到相似经验",
+        "定位代码位置"
+      ]
+    },
+    {
+      "task_id": "ms085",
+      "task": "生成browser 自动化失败的审计报告并回溯日志",
+      "domain": "self_reflection",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "生成最近与browser 自动化失败相关的审计报告",
+          "acceptable_tools": [
+            "tool_audit",
+            "log_viewer"
+          ],
+          "notes": "生成审计报告。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看对应的失败日志",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志回溯。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "查找是否有相似经验可供参考",
+          "acceptable_tools": [
+            "experience_recall",
+            "log_viewer"
+          ],
+          "notes": "查经验。"
+        }
+      ],
+      "success_criteria": [
+        "生成审计报告",
+        "完成日志回溯",
+        "找到相似经验"
+      ]
+    },
+    {
+      "task_id": "ms086",
+      "task": "生成OCR 调用错误的审计报告并回溯日志",
+      "domain": "self_reflection",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "生成最近与OCR 调用错误相关的审计报告",
+          "acceptable_tools": [
+            "tool_audit",
+            "log_viewer"
+          ],
+          "notes": "生成审计报告。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看对应的失败日志",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志回溯。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "查找是否有相似经验可供参考",
+          "acceptable_tools": [
+            "experience_recall",
+            "log_viewer"
+          ],
+          "notes": "查经验。"
+        }
+      ],
+      "success_criteria": [
+        "生成审计报告",
+        "完成日志回溯",
+        "找到相似经验"
+      ]
+    },
+    {
+      "task_id": "ms087",
+      "task": "生成benchmark 复跑异常的审计报告并回溯日志",
+      "domain": "self_reflection",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "生成最近与benchmark 复跑异常相关的审计报告",
+          "acceptable_tools": [
+            "tool_audit",
+            "log_viewer"
+          ],
+          "notes": "生成审计报告。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看对应的失败日志",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志回溯。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "查找是否有相似经验可供参考",
+          "acceptable_tools": [
+            "experience_recall",
+            "log_viewer"
+          ],
+          "notes": "查经验。"
+        }
+      ],
+      "success_criteria": [
+        "生成审计报告",
+        "完成日志回溯",
+        "找到相似经验"
+      ]
+    },
+    {
+      "task_id": "ms088",
+      "task": "搜索ToolExposureEngine实现并整理定位说明",
+      "domain": "self_reflection",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索代码库中 ToolExposureEngine 的实现位置",
+          "acceptable_tools": [
+            "codebase_search"
+          ],
+          "notes": "代码搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看最近相关日志或审计信息",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志与审计。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把定位结果整理成说明文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成说明。"
+        }
+      ],
+      "success_criteria": [
+        "找到实现位置",
+        "完成相关信息检查",
+        "形成定位说明"
+      ]
+    },
+    {
+      "task_id": "ms089",
+      "task": "搜索experience recall实现并整理定位说明",
+      "domain": "self_reflection",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索代码库中 experience recall 的实现位置",
+          "acceptable_tools": [
+            "codebase_search"
+          ],
+          "notes": "代码搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看最近相关日志或审计信息",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志与审计。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把定位结果整理成说明文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成说明。"
+        }
+      ],
+      "success_criteria": [
+        "找到实现位置",
+        "完成相关信息检查",
+        "形成定位说明"
+      ]
+    },
+    {
+      "task_id": "ms090",
+      "task": "搜索context compressor实现并整理定位说明",
+      "domain": "self_reflection",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "搜索代码库中 context compressor 的实现位置",
+          "acceptable_tools": [
+            "codebase_search"
+          ],
+          "notes": "代码搜索。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "查看最近相关日志或审计信息",
+          "acceptable_tools": [
+            "log_viewer",
+            "tool_audit"
+          ],
+          "notes": "日志与审计。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "把定位结果整理成说明文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "file"
+          ],
+          "notes": "形成说明。"
+        }
+      ],
+      "success_criteria": [
+        "找到实现位置",
+        "完成相关信息检查",
+        "形成定位说明"
+      ]
+    },
+    {
+      "task_id": "ms091",
+      "task": "整理benchmark 结果文档并生成演示材料",
+      "domain": "document_processing",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "把相关文档转换为 PDF",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "转换文档。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成一份 Word 摘要文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "生成摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "基于文档内容生成一页式 PPT",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "生成 PPT。"
+        }
+      ],
+      "success_criteria": [
+        "完成格式转换",
+        "生成摘要文档",
+        "生成 PPT"
+      ]
+    },
+    {
+      "task_id": "ms092",
+      "task": "整理投稿计划文档并生成演示材料",
+      "domain": "document_processing",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "把相关文档转换为 PDF",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "转换文档。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成一份 Word 摘要文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "生成摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "基于文档内容生成一页式 PPT",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "生成 PPT。"
+        }
+      ],
+      "success_criteria": [
+        "完成格式转换",
+        "生成摘要文档",
+        "生成 PPT"
+      ]
+    },
+    {
+      "task_id": "ms093",
+      "task": "整理系统架构说明文档并生成演示材料",
+      "domain": "document_processing",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "把相关文档转换为 PDF",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "转换文档。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成一份 Word 摘要文档",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "生成摘要。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "基于文档内容生成一页式 PPT",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "生成 PPT。"
+        }
+      ],
+      "success_criteria": [
+        "完成格式转换",
+        "生成摘要文档",
+        "生成 PPT"
+      ]
+    },
+    {
+      "task_id": "ms094",
+      "task": "合并附录说明文件并输出最终报告",
+      "domain": "document_processing",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "把相关 PDF 文件合并成一个文档",
+          "acceptable_tools": [
+            "pdf_tool"
+          ],
+          "notes": "合并 PDF。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将结论整理为 docx 报告",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "形成报告。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出最终 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出最终 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成 PDF 合并",
+        "生成 docx 报告",
+        "导出最终 PDF"
+      ]
+    },
+    {
+      "task_id": "ms095",
+      "task": "合并实验结果页文件并输出最终报告",
+      "domain": "document_processing",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "把相关 PDF 文件合并成一个文档",
+          "acceptable_tools": [
+            "pdf_tool"
+          ],
+          "notes": "合并 PDF。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将结论整理为 docx 报告",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "形成报告。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出最终 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出最终 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成 PDF 合并",
+        "生成 docx 报告",
+        "导出最终 PDF"
+      ]
+    },
+    {
+      "task_id": "ms096",
+      "task": "合并投稿材料文件并输出最终报告",
+      "domain": "document_processing",
+      "difficulty": "medium",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "把相关 PDF 文件合并成一个文档",
+          "acceptable_tools": [
+            "pdf_tool"
+          ],
+          "notes": "合并 PDF。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "将结论整理为 docx 报告",
+          "acceptable_tools": [
+            "doc_generator",
+            "format_converter"
+          ],
+          "notes": "形成报告。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出最终 PDF 版本",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出最终 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "完成 PDF 合并",
+        "生成 docx 报告",
+        "导出最终 PDF"
+      ]
+    },
+    {
+      "task_id": "ms097",
+      "task": "把ablation study内容整理成汇报简报",
+      "domain": "document_processing",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取并整理与ablation study相关的文档要点",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "整理要点。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成一份演示用 PPT 草稿",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "生成 PPT 草稿。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出为可分享 PDF",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "整理文档要点",
+        "生成演示草稿",
+        "导出分享版本"
+      ]
+    },
+    {
+      "task_id": "ms098",
+      "task": "把benchmark artifact内容整理成汇报简报",
+      "domain": "document_processing",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取并整理与benchmark artifact相关的文档要点",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "整理要点。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成一份演示用 PPT 草稿",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "生成 PPT 草稿。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出为可分享 PDF",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "整理文档要点",
+        "生成演示草稿",
+        "导出分享版本"
+      ]
+    },
+    {
+      "task_id": "ms099",
+      "task": "把submission roadmap内容整理成汇报简报",
+      "domain": "document_processing",
+      "difficulty": "hard",
+      "steps": [
+        {
+          "step_id": "s1",
+          "instruction": "读取并整理与submission roadmap相关的文档要点",
+          "acceptable_tools": [
+            "file",
+            "doc_generator"
+          ],
+          "notes": "整理要点。"
+        },
+        {
+          "step_id": "s2",
+          "instruction": "生成一份演示用 PPT 草稿",
+          "acceptable_tools": [
+            "ppt_generator",
+            "doc_generator"
+          ],
+          "notes": "生成 PPT 草稿。"
+        },
+        {
+          "step_id": "s3",
+          "instruction": "导出为可分享 PDF",
+          "acceptable_tools": [
+            "format_converter",
+            "pdf_tool"
+          ],
+          "notes": "导出 PDF。"
+        }
+      ],
+      "success_criteria": [
+        "整理文档要点",
+        "生成演示草稿",
+        "导出分享版本"
+      ]
+    }
+  ]
+}

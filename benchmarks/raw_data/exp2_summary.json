@@ -1,0 +1,26 @@
+{
+  "ERL": {
+    "llm_calls": 135,
+    "llm_calls_per_session": 2.7,
+    "cost_per_session_tokens": 715,
+    "cost_per_session_usd": 0.00014984,
+    "granularity": "task",
+    "patterns_captured": 369
+  },
+  "ExpeL": {
+    "llm_calls": 260,
+    "llm_calls_per_session": 5.2,
+    "cost_per_session_tokens": 868,
+    "cost_per_session_usd": 0.00016968,
+    "granularity": "task",
+    "patterns_captured": 381
+  },
+  "EBEAC": {
+    "llm_calls": 0,
+    "llm_calls_per_session": 0,
+    "cost_per_session_tokens": 0,
+    "cost_per_session_usd": 0,
+    "granularity": "tool-call",
+    "patterns_captured": 197
+  }
+}

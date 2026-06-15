@@ -1,0 +1,2635 @@
+{
+  "version": "1.0",
+  "description": "Weclaw 工具配置 — 定义所有可用工具的元信息与行为参数",
+  "onboarding_checklist": [
+    "1. 创建 src/tools/{name}.py 继承 BaseTool",
+    "2. 在本文件 tools 段添加工具配置（含 dependencies）",
+    "3. 在 registry.py _build_init_kwargs 添加参数映射（如需特殊参数）",
+    "4. 在 prompts.py INTENT_CATEGORIES 添加关键词到合适的意图",
+    "5. 在 prompts.py INTENT_TOOL_MAPPING 添加工具到对应意图",
+    "6. 在 prompts.py INTENT_PRIORITY_MAP 添加推荐/备选分组",
+    "7. 在 tool_exposure.py _extract_tool_name 添加多下划线前缀（如适用）",
+    "8. 在 tool_exposure.py CORE_TOOLS 或 EXTENDED_TOOLS 添加（如适用）",
+    "9. 运行 python scripts/validate_tool_chain.py 确认全绿",
+    "10. 运行 python tests/test_tool_optimization.py 确认测试通过"
+  ],
+  "tools": {
+    "shell": {
+      "enabled": true,
+      "module": "src.tools.shell",
+      "class": "ShellTool",
+      "display": {
+        "name": "命令行",
+        "emoji": "💻",
+        "description": "在 Windows 系统上执行 PowerShell 或 CMD 命令，获取命令输出结果",
+        "category": "system"
+      },
+      "config": {
+        "default_shell": "powershell",
+        "timeout": 30,
+        "max_output_length": 10000,
+        "working_directory": "",
+        "env_vars": {}
+      },
+      "security": {
+        "risk_level": "high",
+        "require_confirmation": false,
+        "blacklist": [
+          "format-volume",
+          "format c:",
+          "format d:",
+          "format e:",
+          "remove-item -recurse",
+          "rm -rf",
+          "del /s /q",
+          "rd /s /q",
+          "shutdown",
+          "restart-computer",
+          "stop-computer",
+          "clear-disk",
+          "diskpart",
+          "reg delete",
+          "new-service",
+          "set-executionpolicy",
+          "invoke-webrequest -outfile",
+          "python -c \"from src.tools",
+          "python -c 'from src.tools",
+          "python -c \"import src.tools",
+          "python -c 'import src.tools"
+        ],
+        "whitelist": [],
+        "whitelist_mode": false
+      },
+      "actions": [
+        "run"
+      ]
+    },
+    "file": {
+      "enabled": true,
+      "module": "src.tools.file",
+      "class": "FileTool",
+      "display": {
+        "name": "文件操作",
+        "emoji": "📄",
+        "description": "读取、写入、编辑文件内容，搜索文件内容，列出目录结构",
+        "category": "filesystem"
+      },
+      "config": {
+        "max_read_size": 1048576,
+        "max_lines_per_page": 200,
+        "allowed_dirs": [],
+        "denied_dirs": [
+          "C:\\Windows\\System32",
+          "C:\\Program Files"
+        ],
+        "allowed_extensions": [],
+        "denied_extensions": [
+          ".exe",
+          ".dll",
+          ".sys",
+          ".bat",
+          ".cmd",
+          ".ps1",
+          ".vbs"
+        ]
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "read",
+        "write",
+        "edit",
+        "search",
+        "list",
+        "tree"
+      ]
+    },
+    "screen": {
+      "enabled": true,
+      "module": "src.tools.screen",
+      "class": "ScreenTool",
+      "display": {
+        "name": "屏幕截图",
+        "emoji": "📸",
+        "description": "截取屏幕内容，支持全屏、指定区域、指定窗口截图，多显示器支持",
+        "category": "visual"
+      },
+      "config": {
+        "max_width": 1920,
+        "quality": 85,
+        "format": "png",
+        "compress_for_model": true,
+        "model_max_width": 1280
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "capture",
+        "capture_window",
+        "list_monitors"
+      ]
+    },
+    "browser": {
+      "enabled": true,
+      "module": "src.tools.browser",
+      "class": "BrowserTool",
+      "display": {
+        "name": "浏览器",
+        "emoji": "🌐",
+        "description": "自动化操作网页浏览器：打开URL、点击、输入、获取文本、截图",
+        "category": "web"
+      },
+      "config": {
+        "headless": false,
+        "timeout": 30000,
+        "viewport_width": 1280,
+        "viewport_height": 720
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "open_url",
+        "click",
+        "type_text",
+        "get_text",
+        "screenshot",
+        "go_back",
+        "go_forward",
+        "wait"
+      ]
+    },
+    "browser_use": {
+      "enabled": true,
+      "module": "src.tools.browser_use",
+      "class": "BrowserUseTool",
+      "display": {
+        "name": "智能浏览器",
+        "emoji": "🤖",
+        "description": "AI驱动的浏览器自动化：用自然语言描述任务，AI自动规划并执行网页操作",
+        "category": "web"
+      },
+      "config": {
+        "headless": false,
+        "max_steps": 50,
+        "use_vision": true
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "run_task",
+        "extract_data",
+        "fill_form",
+        "navigate_and_act",
+        "close"
+      ]
+    },
+    "crawlee_tool": {
+      "enabled": true,
+      "module": "src.tools.crawlee_tool",
+      "class": "CrawleeTool",
+      "display": {
+        "name": "批量爬虫",
+        "emoji": "🕷️",
+        "description": "基于Crawlee的批量网页爬取：批量URL采集、全站爬取、自动重试、robots.txt遵守",
+        "category": "web"
+      },
+      "config": {
+        "output_dir": "data/crawlee",
+        "max_pages": 50,
+        "max_depth": 3,
+        "max_workers": 10
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "crawl_urls",
+        "crawl_website",
+        "extract_data"
+      ]
+    },
+    "app_control": {
+      "enabled": true,
+      "module": "src.tools.app_control",
+      "class": "AppControlTool",
+      "display": {
+        "name": "应用控制",
+        "emoji": "🪟",
+        "description": "启动应用、列出窗口、切换窗口、关闭窗口、获取窗口信息",
+        "category": "system"
+      },
+      "config": {
+        "launch_timeout": 10
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "launch",
+        "list_windows",
+        "switch_window",
+        "close_window",
+        "get_window_info"
+      ]
+    },
+    "system_monitor": {
+      "enabled": true,
+      "module": "src.tools.system_monitor",
+      "class": "SystemMonitorTool",
+      "display": {
+        "name": "系统监控",
+        "emoji": "📊",
+        "description": "实时监控CPU、内存、磁盘、网络、进程状态",
+        "category": "system"
+      },
+      "config": {
+        "refresh_interval": 1.0,
+        "max_processes": 50
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "status",
+        "cpu_info",
+        "memory_info",
+        "disk_info",
+        "network_info",
+        "process_list",
+        "battery_info"
+      ]
+    },
+    "clipboard": {
+      "enabled": true,
+      "module": "src.tools.clipboard",
+      "class": "ClipboardTool",
+      "display": {
+        "name": "剪贴板",
+        "emoji": "📋",
+        "description": "读取、写入剪贴板文本和图片内容，清空剪贴板",
+        "category": "system"
+      },
+      "config": {
+        "max_text_length": 50000
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "read",
+        "write",
+        "read_image",
+        "clear"
+      ]
+    },
+    "notify": {
+      "enabled": true,
+      "module": "src.tools.notify",
+      "class": "NotifyTool",
+      "display": {
+        "name": "系统通知",
+        "emoji": "🔔",
+        "description": "发送 Windows 系统通知（Toast Notification）",
+        "category": "system"
+      },
+      "config": {
+        "app_id": "Weclaw"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "send",
+        "send_with_action"
+      ]
+    },
+    "search": {
+      "enabled": true,
+      "module": "src.tools.search",
+      "class": "SearchTool",
+      "display": {
+        "name": "搜索",
+        "emoji": "🔍",
+        "description": "搜索本地文件（按文件名或内容）和 Web 网页搜索",
+        "category": "search"
+      },
+      "config": {
+        "max_local_results": 50,
+        "max_web_results": 10,
+        "local_max_depth": 5,
+        "web_timeout": 15
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "local_search",
+        "web_search"
+      ]
+    },
+    "cron": {
+      "enabled": true,
+      "module": "src.tools.cron",
+      "class": "CronTool",
+      "display": {
+        "name": "定时任务",
+        "emoji": "⏰",
+        "description": "创建定时AI任务和定时命令任务。用 add_ai_task 创建定时提醒/通知/日记/报告等，用 add_cron/add_interval/add_once 执行Shell命令。支持cron表达式、间隔调度、一次性任务，重启后自动恢复。",
+        "category": "automation"
+      },
+      "config": {
+        "max_jobs": 50
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_cron",
+        "add_interval",
+        "add_once",
+        "add_ai_task",
+        "list_jobs",
+        "remove_job",
+        "pause_job",
+        "resume_job",
+        "create_schedule",
+        "query_schedules",
+        "update_schedule",
+        "delete_schedule",
+        "complete_schedule"
+      ]
+    },
+    "voice_input": {
+      "enabled": true,
+      "module": "src.tools.voice_input",
+      "class": "VoiceInputTool",
+      "display": {
+        "name": "语音输入",
+        "emoji": "🎤",
+        "description": "语音转文字,支持实时录音或从音频文件识别",
+        "category": "multimedia"
+      },
+      "config": {
+        "sample_rate": 16000
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "record_and_transcribe",
+        "record_audio",
+        "transcribe_file",
+        "list_devices"
+      ]
+    },
+    "wechat": {
+      "enabled": true,
+      "module": "src.tools.wechat",
+      "class": "WeChatTool",
+      "display": {
+        "name": "微信消息",
+        "emoji": "💬",
+        "description": "管理电脑端微信消息，支持查看、回复、切换聊天和智能客服",
+        "category": "communication"
+      },
+      "config": {
+        "config_path": "config/wechat_config.yaml",
+        "ocr_engine": "glm-4.5v",
+        "chat_model": "glm-4-flash",
+        "default_check_interval": 300,
+        "knowledge_base_path": "data/wechat_knowledge.db"
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false,
+        "permissions": [
+          "clipboard",
+          "screenshot",
+          "window_control"
+        ]
+      },
+      "dependencies": {
+        "input_sources": [
+          "cron",
+          "knowledge_rag",
+          "ocr",
+          "clipboard"
+        ],
+        "output_for": [
+          "doc_generator",
+          "cron"
+        ],
+        "standalone": true
+      },
+      "actions": [
+        "view_messages",
+        "send_message",
+        "switch_chat",
+        "search_messages",
+        "enable_auto_reply",
+        "get_chat_list",
+        "customer_service",
+        "add_to_knowledge"
+      ]
+    },
+    "voice_output": {
+      "enabled": true,
+      "module": "src.tools.voice_output",
+      "class": "VoiceOutputTool",
+      "display": {
+        "name": "语音输出",
+        "emoji": "🔊",
+        "description": "文字转语音,支持朗读文本或保存为音频文件",
+        "category": "multimedia"
+      },
+      "config": {
+        "default_rate": 200,
+        "default_volume": 1.0
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "speak",
+        "save_to_file",
+        "list_voices",
+        "stop",
+        "play_audio_file"
+      ]
+    },
+    "ocr": {
+      "enabled": true,
+      "module": "src.tools.ocr",
+      "class": "OCRTool",
+      "display": {
+        "name": "文字识别",
+        "emoji": "📝",
+        "description": "图片文字识别,支持从图片文件或 base64 数据提取文字",
+        "category": "multimedia"
+      },
+      "config": {
+        "max_file_size_mb": 10
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "recognize_file",
+        "recognize_base64",
+        "recognize_screenshot"
+      ]
+    },
+    "calculator": {
+      "enabled": true,
+      "module": "src.tools.calculator",
+      "class": "CalculatorTool",
+      "display": {
+        "name": "计算器",
+        "emoji": "🔢",
+        "description": "安全的数学表达式计算器，支持四则运算、括号、幂运算和常用数学函数",
+        "category": "utility"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "calculate"
+      ]
+    },
+    "weather": {
+      "enabled": true,
+      "module": "src.tools.weather",
+      "class": "WeatherTool",
+      "display": {
+        "name": "天气查询",
+        "emoji": "🌤️",
+        "description": "查询城市天气信息，支持实时天气和未来预报",
+        "category": "utility"
+      },
+      "config": {
+        "api_key": "",
+        "api_host": "",
+        "fallback_to_web": true
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "dependencies": {
+        "output_for": [
+          "doc_generator"
+        ],
+        "standalone": true
+      },
+      "actions": [
+        "get_weather"
+      ]
+    },
+    "stock_query": {
+      "enabled": true,
+      "module": "src.tools.stock_query_tool",
+      "class": "StockQueryTool",
+      "display": {
+        "name": "股票行情",
+        "emoji": "📈",
+        "description": "查询股票实时行情、历史数据、公司基本面，支持价格预警（FMP REST API + easyquotation 混合架构）",
+        "category": "life_service"
+      },
+      "config": {
+        "fmp_api_key": "",
+        "cache_ttl_realtime": 300,
+        "cache_ttl_history": 3600,
+        "cache_ttl_company": 86400
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "dependencies": {
+        "input_sources": [
+          "search"
+        ],
+        "standalone": true,
+        "description": "股票行情查询，基于OpenBB多数据源集成（FMP/AKShare/YFinance）"
+      },
+      "actions": [
+        "realtime",
+        "history",
+        "company",
+        "alert"
+      ]
+    },
+    "fred_query": {
+      "enabled": true,
+      "module": "src.tools.scientific.finance.fred_tool",
+      "class": "FREDQueryTool",
+      "display": {
+        "name": "FRED 经济数据",
+        "emoji": "📊",
+        "description": "查询美联储经济数据库（FRED），获取 GDP、通胀率、失业率等宏观经济数据",
+        "category": "finance"
+      },
+      "config": {
+        "api_key": "88d1f06f8ed0c44d787d7e1bff9164e2"
+      },
+      "dependencies": [
+        "fredapi"
+      ],
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "query_series",
+        "query_multiple_series",
+        "search_series",
+        "get_series_info"
+      ]
+    },
+    "literature_review": {
+      "enabled": true,
+      "module": "src.tools.scientific.research.literature_review_tool",
+      "class": "LiteratureReviewTool",
+      "display": {
+        "name": "文献综述",
+        "emoji": "📚",
+        "description": "自动生成系统性文献综述，整合 OpenAlex、CrossRef、arXiv 等数据源",
+        "category": "research"
+      },
+      "config": {
+        "default_year_range": [
+          2018,
+          2024
+        ],
+        "min_citations": 50
+      },
+      "dependencies": [
+        "pyalex",
+        "habanero",
+        "arxiv"
+      ],
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_review",
+        "compare_topics",
+        "identify_gaps",
+        "generate_full_report"
+      ]
+    },
+    "quant_trading": {
+      "enabled": true,
+      "module": "src.tools.quant_trading.tool",
+      "class": "QuantTradingTool",
+      "display": {
+        "name": "量化交易决策",
+        "emoji": "📊",
+        "description": "量化交易分析：四模型投票（趋势跟随/均值回归/动量突破/下降趋势）、信号反馈、风险管理、仓位控制、批量选股、策略回测",
+        "category": "life_service"
+      },
+      "config": {
+        "quant_db_path": "data/quant.db"
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": true
+      },
+      "dependencies": {
+        "input_sources": [
+          "stock_query"
+        ],
+        "standalone": false,
+        "inject": [
+          {
+            "param": "stock_query",
+            "tool": "stock_query"
+          },
+          {
+            "param": "ensemble",
+            "factory": "src.tools.quant_trading.factories:build_ensemble"
+          },
+          {
+            "param": "risk_manager",
+            "factory": "src.tools.quant_trading.factories:build_risk"
+          },
+          {
+            "param": "position_manager",
+            "factory": "src.tools.quant_trading.factories:build_position"
+          },
+          {
+            "param": "correlation_analyzer",
+            "factory": "src.tools.quant_trading.factories:build_correlation"
+          },
+          {
+            "param": "regime_detector",
+            "factory": "src.tools.quant_trading.factories:build_regime"
+          },
+          {
+            "param": "storage",
+            "factory": "src.tools.quant_trading.factories:build_storage"
+          },
+          {
+            "param": "feedback_loop",
+            "factory": "src.tools.quant_trading.factories:build_feedback"
+          }
+        ]
+      },
+      "actions": [
+        "signal_analysis",
+        "risk_management",
+        "position_management",
+        "portfolio_summary",
+        "stock_screen",
+        "backtest_run",
+        "walk_forward_run",
+        "generate_report"
+      ]
+    },
+    "datetime_tool": {
+      "enabled": true,
+      "module": "src.tools.datetime_tool",
+      "class": "DateTimeTool",
+      "display": {
+        "name": "日期时间",
+        "emoji": "🕐",
+        "description": "获取当前日期时间，支持多种格式和时区",
+        "category": "utility"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "get_datetime"
+      ]
+    },
+    "statistics": {
+      "enabled": true,
+      "module": "src.tools.statistics",
+      "class": "StatisticsTool",
+      "display": {
+        "name": "使用统计",
+        "emoji": "📊",
+        "description": "获取 Weclaw 使用统计信息（对话数、消息数等）",
+        "category": "utility"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "get_usage_stats"
+      ]
+    },
+    "chat_history": {
+      "enabled": true,
+      "module": "src.tools.chat_history",
+      "class": "ChatHistoryTool",
+      "display": {
+        "name": "聊天历史",
+        "emoji": "💬",
+        "description": "搜索和浏览历史对话记录",
+        "category": "utility"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "search_history",
+        "get_recent_sessions"
+      ]
+    },
+    "diary": {
+      "enabled": true,
+      "module": "src.tools.diary",
+      "class": "DiaryTool",
+      "display": {
+        "name": "日记管理",
+        "emoji": "📔",
+        "description": "写日记、查询日记、更新和删除日记，支持心情/天气/标签",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "write_diary",
+        "query_diary",
+        "update_diary",
+        "delete_diary"
+      ]
+    },
+    "finance": {
+      "enabled": true,
+      "module": "src.tools.finance",
+      "class": "FinanceTool",
+      "display": {
+        "name": "记账管理",
+        "emoji": "💰",
+        "description": "记录收支、查询账单、财务汇总统计",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_transaction",
+        "query_transactions",
+        "get_financial_summary",
+        "update_transaction",
+        "delete_transaction"
+      ]
+    },
+    "health": {
+      "enabled": true,
+      "module": "src.tools.health",
+      "class": "HealthTool",
+      "display": {
+        "name": "健康管理",
+        "emoji": "🏥",
+        "description": "记录健康数据、查询历史、趋势分析（体重/血压/心率等）",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "record_health_data",
+        "update_health_data",
+        "delete_health_data",
+        "query_health_data",
+        "get_health_trends"
+      ]
+    },
+    "medication": {
+      "enabled": true,
+      "module": "src.tools.medication",
+      "class": "MedicationTool",
+      "display": {
+        "name": "服药管理",
+        "emoji": "💊",
+        "description": "添加药物、查询服药计划、标记已服药、更新和停用药物",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_medication",
+        "query_medications",
+        "mark_medication_taken",
+        "update_medication",
+        "delete_medication"
+      ]
+    },
+    "user_profile": {
+      "enabled": true,
+      "module": "src.tools.user_profile",
+      "class": "UserProfileTool",
+      "display": {
+        "name": "用户档案",
+        "emoji": "👤",
+        "description": "管理用户个人信息、家庭成员、VIP社交联系人档案",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "update_profile",
+        "query_profile",
+        "add_family_member",
+        "update_family_member",
+        "add_social_contact",
+        "query_contacts",
+        "get_upcoming_birthdays",
+        "record_child_growth"
+      ]
+    },
+    "family_member": {
+      "enabled": true,
+      "module": "src.tools.family_member",
+      "class": "FamilyMemberTool",
+      "display": {
+        "name": "家庭成员管理",
+        "emoji": "👨‍👩‍👧‍👦",
+        "description": "创建、查询、编辑和删除家庭成员档案，管理家庭关系和重要日期",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_member",
+        "query_members",
+        "update_member",
+        "delete_member",
+        "get_family_tree"
+      ]
+    },
+    "knowledge_rag": {
+      "enabled": true,
+      "module": "src.tools.knowledge_rag",
+      "class": "KnowledgeRAGTool",
+      "display": {
+        "name": "智能知识库",
+        "emoji": "🧠",
+        "description": "基于向量检索的智能知识库，支持 PDF/DOCX/图片/URL 等格式的语义搜索",
+        "category": "knowledge"
+      },
+      "config": {
+        "db_path": "",
+        "doc_dir": "",
+        "vector_db_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_document",
+        "search",
+        "query_document",
+        "list_documents",
+        "remove_document"
+      ]
+    },
+    "attachment_search": {
+      "enabled": true,
+      "module": "src.tools.attachment_search",
+      "class": "AttachmentSearchTool",
+      "display": {
+        "name": "历史附件搜索",
+        "emoji": "📎",
+        "description": "搜索用户在历史对话中上传的附件（图片/音频/文件）",
+        "category": "knowledge"
+      },
+      "config": {
+        "timeout": 30,
+        "max_results": 50
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "search_history",
+        "get_current_session",
+        "get_recent",
+        "get_detail",
+        "stats"
+      ]
+    },
+    "batch_paper_analyzer": {
+      "enabled": true,
+      "module": "src.tools.batch_paper_analyzer",
+      "class": "BatchPaperAnalyzerTool",
+      "display": {
+        "name": "批量论文分析",
+        "emoji": "📚",
+        "description": "批量阅读和分析学术论文，从文件夹读取PDF/DOCX，解析后存入向量库，生成阅读大纲和学术建议",
+        "category": "knowledge"
+      },
+      "config": {
+        "output_dir": "generated/paper_analysis"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "scan_folder",
+        "batch_import",
+        "analyze_papers",
+        "generate_report",
+        "full_pipeline"
+      ]
+    },
+    "email": {
+      "enabled": true,
+      "module": "src.tools.email",
+      "class": "EmailTool",
+      "display": {
+        "name": "邮件管理",
+        "emoji": "📧",
+        "description": "管理邮箱账户、收取和发送邮件，支持 126/163/QQ/新浪邮箱",
+        "category": "communication"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": true
+      },
+      "actions": [
+        "add_email_account",
+        "query_email_accounts",
+        "fetch_emails",
+        "query_emails",
+        "get_email_detail",
+        "send_email"
+      ]
+    },
+    "doc_generator": {
+      "enabled": true,
+      "module": "src.tools.doc_generator",
+      "class": "DocGeneratorTool",
+      "display": {
+        "name": "文档生成",
+        "emoji": "📄",
+        "description": "生成 Word/HTML/PDF 文档，支持 Markdown 输入。KAMI Phase 1-3：意图提取、质量检查、PDF 渲染、SVG 图表、研报生成、执行摘要、高级质量检查",
+        "category": "generation"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "dependencies": {
+        "input_sources": [
+          "weather",
+          "image_generator",
+          "file",
+          "search"
+        ],
+        "standalone": false,
+        "description": "文档生成器，支持模板生成、文档验证、质量检查、PDF 渲染"
+      },
+      "actions": [
+        "generate_document",
+        "generate_from_template",
+        "list_templates",
+        "validate_document",
+        "check_document_quality",
+        "generate_pdf",
+        "generate_svg_chart",
+        "generate_report",
+        "generate_executive_summary",
+        "run_advanced_quality_check",
+        "get_brand_profile",
+        "update_brand_profile",
+        "recommend_chart",
+        "get_user_preferences",
+        "render_pdf_dual"
+      ]
+    },
+    "pdf_generator": {
+      "enabled": true,
+      "module": "src.tools.pdf_generator",
+      "class": "PDFGeneratorTool",
+      "display": {
+        "name": "PDF生成",
+        "emoji": "📑",
+        "description": "高质量 PDF 生成工具，支持 HTML/Markdown 转 PDF，使用 Playwright + Paged.js 实现专业分页控制",
+        "category": "generation"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "dependencies": {
+        "input_sources": [
+          "doc_generator"
+        ],
+        "standalone": false,
+        "description": "PDF 生成器，需要内容输入源"
+      },
+      "actions": [
+        "html_to_pdf",
+        "md_to_pdf",
+        "apply_print_style"
+      ]
+    },
+    "pdf_tool": {
+      "enabled": true,
+      "module": "src.tools.pdf_tool",
+      "class": "PDFTool",
+      "display": {
+        "name": "PDF处理",
+        "emoji": "📑",
+        "description": "PDF 文件处理：合并、拆分、提取页面、压缩、加密解密",
+        "category": "utility"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "merge_pdfs",
+        "split_pdf",
+        "extract_pages",
+        "compress_pdf",
+        "add_password",
+        "remove_password"
+      ]
+    },
+    "format_converter": {
+      "enabled": true,
+      "module": "src.tools.format_converter",
+      "class": "FormatConverterTool",
+      "display": {
+        "name": "格式转换",
+        "emoji": "🔄",
+        "description": "文档、数据、图片格式转换，支持 Markdown、Word、HTML、PDF、LaTeX、CSV、JSON、XML 等多种格式",
+        "category": "utility"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "convert_markdown_to_docx",
+        "convert_markdown_to_html",
+        "convert_markdown_to_pdf",
+        "convert_markdown_to_latex",
+        "convert_latex_to_pdf",
+        "convert_docx_to_markdown",
+        "convert_docx_to_html",
+        "convert_html_to_markdown",
+        "convert_csv_to_json",
+        "convert_json_to_csv",
+        "convert_json_to_xml",
+        "convert_image_format"
+      ]
+    },
+    "ppt_generator": {
+      "enabled": true,
+      "module": "src.tools.ppt_generator.ppt_tool",
+      "class": "PPTTool",
+      "display": {
+        "name": "PPT生成",
+        "emoji": "📊",
+        "description": "AI 生成演示文稿，支持 HTML（主）和 .pptx（辅）两种格式，36主题、8种布局、47种动画",
+        "category": "generation"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "system_prompt": "当用户请求生成PPT时，请使用 ppt_generator 工具。\n\n**🚫 绝对禁止：不要使用 shell.run 或任何命令行方式调用 PPT 工具！PPT 工具是内置的，直接调用 action 即可。即使工具调用失败，也不要尝试 shell 诊断。**\n\n### 推荐用法（最简单）\n当用户说'生成一个关于XX的PPT'时，直接调用：\n```\nppt_generator.generate_ppt_from_topic(topic='XX', theme='tokyo-night', slide_count=8)\n```\n这会自动生成完整的 HTML + PPTX 文件，无需手动构造 JSON。\n\n### 高级用法（自定义结构）\n当用户需要特定结构时，使用：\n```\nppt_generator.generate_ppt(presentation_data='...JSON...', output_formats=['html', 'pptx'])\n```\n\n### 输出格式\n系统会自动生成两种格式：\n1. **HTML 版本**（主输出）：支持演讲者模式、动画、键盘导航\n2. **PPTX 版本**（辅助输出）：PowerPoint/WPS 兼容，内容为截图\n\n### 支持的幻灯片类型\n- `cover`: 封面页\n- `toc`: 目录页\n- `content`: 内容页（支持 bullets、two_column 布局）\n- `kpi`: KPI 指标网格\n- `timeline`: 时间线\n- `comparison`: 对比分析\n- `thanks`: 感谢页\n\n### 支持的主题\n- 商务：minimal-white, corporate-clean, academic-paper\n- 技术：tokyo-night（推荐）, dracula, cyberpunk-neon\n- 创意：glassmorphism, neo-brutalism\n- 中文：xiaohongshu-white, japanese-minimal\n\n### 注意事项\n- PPTX 版本为截图版，内容不可编辑\n- HTML 版本支持按 S 键打开演讲者模式\n- **再次强调：绝对不要用 shell.run 调用 PPT 工具！**\n",
+      "actions": [
+        "generate_ppt",
+        "generate_ppt_from_topic"
+      ]
+    },
+    "image_generator": {
+      "enabled": true,
+      "module": "src.tools.image_generator",
+      "class": "ImageGeneratorTool",
+      "display": {
+        "name": "AI绘图",
+        "emoji": "🎨",
+        "description": "基于智谱 CogView-4 系列生成 AI 图像",
+        "category": "generation"
+      },
+      "config": {
+        "api_key": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "dependencies": {
+        "output_for": [
+          "doc_generator"
+        ],
+        "standalone": true
+      },
+      "actions": [
+        "generate_image"
+      ]
+    },
+    "stock_photo": {
+      "enabled": true,
+      "module": "src.tools.stock_photo",
+      "class": "StockPhotoTool",
+      "display": {
+        "name": "图库搜索",
+        "emoji": "📷",
+        "description": "从 Pexels 免费图库搜索和下载高质量配图",
+        "category": "generation"
+      },
+      "config": {
+        "api_key": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "system_prompt": "当用户需要配图、插图、搜索图片时，使用 stock_photo 工具。支持关键词搜索、指定横竖版、批量下载。下载的图片可直接用于 PPT 和 Word 文档。推荐使用 search_and_download 动作一步完成搜索和下载。",
+      "dependencies": {
+        "output_for": [
+          "doc_generator",
+          "ppt_generator"
+        ],
+        "standalone": true
+      },
+      "actions": [
+        "search_photos",
+        "download_photo",
+        "search_and_download"
+      ]
+    },
+    "ai_writer": {
+      "enabled": true,
+      "module": "src.tools.ai_writer",
+      "class": "AIWriterTool",
+      "display": {
+        "name": "AI写作",
+        "emoji": "✍️",
+        "description": "AI 辅助写作：生成论文框架、文章大纲、小说结构、续写提纲",
+        "category": "generation"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "write_paper",
+        "write_article",
+        "write_novel",
+        "continue_writing"
+      ]
+    },
+    "python_runner": {
+      "enabled": true,
+      "module": "src.tools.python_runner",
+      "class": "PythonRunnerTool",
+      "display": {
+        "name": "Python脚本执行器",
+        "emoji": "🐍",
+        "description": "智能执行Python脚本，自动检测虚拟环境、安装依赖、支持GUI程序非交互模式",
+        "category": "utility"
+      },
+      "config": {
+        "timeout": 300,
+        "max_output_length": 10000,
+        "prefer_uv": true,
+        "auto_install_deps": true,
+        "default_headless": true
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": false
+      },
+      "actions": [
+        "execute",
+        "detect_venv",
+        "analyze_script",
+        "create_venv",
+        "install_deps",
+        "run_code"
+      ]
+    },
+    "tool_info": {
+      "enabled": true,
+      "module": "src.tools.tool_info",
+      "class": "ToolInfoTool",
+      "display": {
+        "name": "工具信息",
+        "emoji": "🛠️",
+        "description": "查询系统可用工具清单、工具详情和分类信息",
+        "category": "utility"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "list_tools",
+        "get_tool_info",
+        "list_categories"
+      ]
+    },
+    "id_photo": {
+      "enabled": true,
+      "module": "src.tools.id_photo",
+      "class": "IDPhotoTool",
+      "display": {
+        "name": "证件照 & 智能抠图",
+        "emoji": "📷",
+        "description": "证件照制作(人像抠图+人脸对齐+换背景色)、通用智能抠图(产品/物品/任意前景)、压缩、水印",
+        "category": "visual"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "make_id_photo",
+        "change_background",
+        "remove_background",
+        "resize_photo",
+        "compress_photo",
+        "add_watermark"
+      ]
+    },
+    "data_processor": {
+      "enabled": true,
+      "module": "src.tools.data_processor",
+      "class": "DataProcessorTool",
+      "display": {
+        "name": "数据处理",
+        "emoji": "📊",
+        "description": "Excel/CSV 数据处理：读取、筛选、排序、聚合、合并、透视表、清洗、导出",
+        "category": "utility"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "read_excel",
+        "filter_data",
+        "sort_data",
+        "aggregate_data",
+        "merge_data",
+        "pivot_table",
+        "clean_data",
+        "export_data"
+      ]
+    },
+    "data_visualization": {
+      "enabled": true,
+      "module": "src.tools.data_visualization",
+      "class": "DataVisualizationTool",
+      "display": {
+        "name": "数据可视化",
+        "emoji": "📈",
+        "description": "数据可视化分析：柱状图、折线图、饼图、散点图、热力图、仪表盘",
+        "category": "utility"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "plot_bar",
+        "plot_line",
+        "plot_pie",
+        "plot_scatter",
+        "plot_heatmap",
+        "generate_dashboard"
+      ]
+    },
+    "literature_search": {
+      "enabled": true,
+      "module": "src.tools.literature_search",
+      "class": "LiteratureSearchTool",
+      "display": {
+        "name": "文献检索",
+        "emoji": "📚",
+        "description": "学术文献智能检索：支持关键词、语义、布尔、作者搜索，统计分析和搜索建议",
+        "category": "academic"
+      },
+      "config": {
+        "output_dir": "",
+        "pdf_library_root": "D:/pdf_library/worker-dell",
+        "db_path": "data/academic/pdf_export_worker_7550.db",
+        "note": "本地论文库有 37,463 篇论文，其中 24,816 篇有 PDF。搜索时优先返回本地已有 PDF 的论文。"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "search_papers",
+        "get_paper_details",
+        "download_pdf",
+        "get_citations",
+        "semantic_search",
+        "advanced_search",
+        "search_by_author",
+        "autocomplete",
+        "group_by_stats"
+      ]
+    },
+    "local_paper_search": {
+      "enabled": true,
+      "module": "src.tools.local_paper_search",
+      "class": "LocalPaperSearchTool",
+      "display": {
+        "name": "本地论文库",
+        "emoji": "📂",
+        "description": "搜索本地论文库（760,045篇论文，535,297篇有PDF），优先返回本地已有PDF的论文",
+        "category": "academic"
+      },
+      "config": {
+        "db_path": "data/academic/pdf_export_worker_7550.db",
+        "pdf_library_root": "D:/pdf_library/worker-dell"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "search_local_papers",
+        "get_paper_pdf_path",
+        "browse_categories",
+        "verify_pdf_exists"
+      ]
+    },
+    "oss_pdf_search": {
+      "enabled": true,
+      "module": "src.tools.oss_pdf_search",
+      "class": "OSSPDFSearchTool",
+      "display": {
+        "name": "OSS PDF库",
+        "emoji": "☁️",
+        "description": "搜索阿里云OSS中的PDF文件（460K+ PDF，678GB，100%可下载）",
+        "category": "academic"
+      },
+      "config": {
+        "db_path": "data/academic/oss_inventory.db"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "lookup_by_doi",
+        "search_oss_pdfs",
+        "get_pdf_info",
+        "check_pdf_exists",
+        "list_categories"
+      ]
+    },
+    "oss_pdf_download": {
+      "enabled": true,
+      "module": "src.tools.oss_pdf_download",
+      "class": "OSSPDFDownloadTool",
+      "display": {
+        "name": "OSS PDF下载",
+        "emoji": "⬇️",
+        "description": "从阿里云OSS下载PDF文件（100%成功率，内网速度快）",
+        "category": "academic"
+      },
+      "config": {
+        "save_dir": "data/academic/downloads"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "download_pdf",
+        "get_download_url",
+        "batch_download"
+      ],
+      "dependencies": {
+        "pip_packages": [
+          "oss2>=2.18.0"
+        ],
+        "description": "需要oss2 SDK（阿里云OSS Python客户端）"
+      }
+    },
+    "research_lineage": {
+      "enabled": true,
+      "module": "src.tools.research_lineage",
+      "class": "ResearchLineageTool",
+      "display": {
+        "name": "思想谱系",
+        "emoji": "🧬",
+        "description": "追踪学术思想的起源、演化和传承，发现开创性论文和学术脉络",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "trace_lineage",
+        "find_seminal_papers",
+        "get_citation_chain",
+        "get_research_community",
+        "trace_concept_migration",
+        "generate_interactive_network"
+      ]
+    },
+    "research_landscape": {
+      "enabled": true,
+      "module": "src.tools.research_landscape",
+      "class": "ResearchLandscapeTool",
+      "display": {
+        "name": "学术地形图",
+        "emoji": "🗺️",
+        "description": "生成研究领域的知识地形图，展示主题聚类、学者分布和研究趋势",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_landscape",
+        "get_topic_distribution",
+        "get_field_evolution",
+        "compare_fields",
+        "generate_landscape_chart",
+        "generate_interactive_chart"
+      ]
+    },
+    "qualitative_analysis": {
+      "enabled": true,
+      "module": "src.tools.research.qualitative_analysis",
+      "class": "QualitativeAnalysisTool",
+      "display": {
+        "name": "定性分析",
+        "emoji": "🔬",
+        "description": "Nvivo 风格定性研究分析：项目管理、编码系统、案例管理、备忘录、词频/文本/编码查询、框架矩阵、可视化、导出",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_project", "list_projects", "get_project_summary",
+        "import_data", "list_sources", "get_source_content",
+        "create_code", "code_text", "get_code_tree", "get_code_references",
+        "create_case", "list_cases",
+        "add_memo", "list_memos", "add_annotation",
+        "word_frequency_query", "text_search_query", "coding_query",
+        "build_framework_matrix",
+        "generate_word_cloud", "generate_coding_chart",
+        "ai_suggest_codes", "literature_review_matrix", "export_project"
+      ]
+    },
+    "research_lookup": {
+      "enabled": true,
+      "module": "src.tools.research_lookup_tool",
+      "class": "ResearchLookupTool",
+      "display": {
+        "name": "研究查询",
+        "emoji": "🔬",
+        "description": "智能研究信息查询，支持深度研究分析和学术论文搜索",
+        "category": "research"
+      },
+      "config": {
+        "timeout": 120
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "parallel_search",
+        "academic_search"
+      ]
+    },
+    "contrarian_finder": {
+      "enabled": true,
+      "module": "src.tools.contrarian_finder",
+      "class": "ContrarianFinderTool",
+      "display": {
+        "name": "反共识雷达",
+        "emoji": "🔍",
+        "description": "发现与主流观点相悖的论文和研究者，寻找学术争议和少数派观点",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "find_contrarian",
+        "find_minority_view",
+        "generate_controversy_radar"
+      ]
+    },
+    "idea_migration": {
+      "enabled": true,
+      "module": "src.tools.idea_migration",
+      "class": "IdeaMigrationToolWrapper",
+      "display": {
+        "name": "思想迁徙",
+        "emoji": "🚀",
+        "description": "追踪学术思想从一个领域传播到另一个领域，发现概念演化和知识桥梁",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "trace_migration",
+        "find_bridge_papers"
+      ]
+    },
+    "methodology_deconstructor": {
+      "enabled": true,
+      "module": "src.tools.methodology_deconstructor",
+      "class": "MethodologyDeconstructorToolWrapper",
+      "display": {
+        "name": "方法学解构",
+        "emoji": "🔬",
+        "description": "解构研究论文的方法学，提取关键技术组件，对比不同方法的应用",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "deconstruct_methods",
+        "compare_methods"
+      ]
+    },
+    "citation_storyteller": {
+      "enabled": true,
+      "module": "src.tools.citation_storyteller",
+      "class": "CitationStorytellerToolWrapper",
+      "display": {
+        "name": "引文叙事",
+        "emoji": "📖",
+        "description": "将引用关系转化为引人入胜的学术故事，推荐阅读路径",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "tell_story",
+        "generate_reading_path"
+      ]
+    },
+    "journal_intelligence": {
+      "enabled": true,
+      "module": "src.tools.journal_intelligence",
+      "class": "JournalIntelligenceTool",
+      "display": {
+        "name": "期刊情报局",
+        "emoji": "📊",
+        "description": "六维评分 + 趋势分析 + 投稿适配度，为学术投稿提供全景决策支持",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "full_assessment",
+        "track_trajectory",
+        "paper_journal_fit",
+        "find_special_issues",
+        "credibility_check",
+        "compare_journals"
+      ]
+    },
+    "paper_lifecycle": {
+      "enabled": true,
+      "module": "src.tools.paper_lifecycle.tool",
+      "class": "PaperLifecycleTool",
+      "display": {
+        "name": "论文全周期管家",
+        "emoji": "📝",
+        "description": "论文写作全流程管理（选题→检索→阅读→遴选→大纲→初稿→图表→引文定稿→参考文献→评审→修订→AI检测→学术修订→定稿→投稿），支持项目跟踪和阶段指导",
+        "category": "academic"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "start_project",
+        "list_projects",
+        "get_status",
+        "run_phase",
+        "update_phase",
+        "generate_report",
+        "assemble_paper",
+        "validate_references",
+        "check_data_consistency",
+        "prepare_chapter_prompt",
+        "prepare_review_prompt",
+        "archive_project",
+        "restore_project",
+        "list_archived_projects",
+        "search_projects",
+        "batch_create_projects",
+        "batch_update_phases"
+      ]
+    },
+    "gif_maker": {
+      "enabled": true,
+      "module": "src.tools.gif_maker",
+      "class": "GifMakerTool",
+      "display": {
+        "name": "GIF制作",
+        "emoji": "🎞️",
+        "description": "GIF 动图制作：视频转GIF、图片序列转GIF、屏幕区域录制GIF",
+        "category": "multimedia"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "video_to_gif",
+        "images_to_gif",
+        "capture_region_to_gif"
+      ]
+    },
+    "contract_generator": {
+      "enabled": true,
+      "module": "src.tools.contract_generator",
+      "class": "ContractGeneratorTool",
+      "display": {
+        "name": "合同生成器",
+        "emoji": "📄",
+        "description": "智能合同生成：支持多种合同模板、自定义条款、多格式导出",
+        "category": "document"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_contract",
+        "list_templates",
+        "customize_clause",
+        "export_contract"
+      ]
+    },
+    "financial_report": {
+      "enabled": true,
+      "module": "src.tools.financial_report",
+      "class": "FinancialReportTool",
+      "display": {
+        "name": "财务报告",
+        "emoji": "💰",
+        "description": "财务报告生成：资产负债表、损益表、现金流量表、财务分析",
+        "category": "data"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_balance_sheet",
+        "generate_income_statement",
+        "generate_cash_flow",
+        "financial_analysis",
+        "export_report"
+      ]
+    },
+    "resume_builder": {
+      "enabled": true,
+      "module": "src.tools.resume_builder",
+      "class": "ResumeBuilderTool",
+      "display": {
+        "name": "简历生成器",
+        "emoji": "📋",
+        "description": "专业简历生成：多种模板、智能排版、多格式导出",
+        "category": "document"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_resume",
+        "list_templates",
+        "export_resume"
+      ]
+    },
+    "mind_map": {
+      "enabled": true,
+      "module": "src.tools.mind_map",
+      "class": "MindMapTool",
+      "display": {
+        "name": "思维导图",
+        "emoji": "🧠",
+        "description": "思维导图生成：文本转思维导图、多种样式、多格式导出",
+        "category": "document"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_mindmap",
+        "text_to_mindmap",
+        "export_mindmap"
+      ]
+    },
+    "speech_to_text": {
+      "enabled": true,
+      "module": "src.tools.speech_to_text",
+      "class": "SpeechToTextTool",
+      "display": {
+        "name": "语音转文字",
+        "emoji": "🎙️",
+        "description": "语音识别：实时录音转文字、音频文件转写、批量转写",
+        "category": "media"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "transcribe_audio",
+        "transcribe_file",
+        "batch_transcribe"
+      ]
+    },
+    "document_scanner": {
+      "enabled": true,
+      "module": "src.tools.document_scanner",
+      "class": "DocumentScannerTool",
+      "display": {
+        "name": "高拍仪扫描",
+        "emoji": "📷",
+        "description": "高拍仪文档智能扫描与解析，支持试卷作业批改（GLM-4.6V）",
+        "category": "productivity"
+      },
+      "config": {
+        "db_path": "~/.weclaw/scanner.db",
+        "scan_folder": "<PROJECT>/docs/deli_scan_image"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "scan_file",
+        "scan_folder",
+        "query_history",
+        "clear_cache"
+      ]
+    },
+    "education_tool": {
+      "enabled": true,
+      "module": "src.tools.education_tool",
+      "class": "EducationTool",
+      "display": {
+        "name": "教育学习",
+        "emoji": "📚",
+        "description": "教育辅助：生成测验题、创建闪卡、制定学习计划、概念解释",
+        "category": "productivity"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "generate_quiz",
+        "create_flashcards",
+        "generate_study_plan",
+        "explain_concept"
+      ]
+    },
+    "coding_assistant": {
+      "enabled": true,
+      "module": "src.tools.coding_assistant",
+      "class": "CodingAssistantTool",
+      "display": {
+        "name": "编程辅助",
+        "emoji": "💻",
+        "description": "编程助手：代码模板生成、代码分析、测试生成、代码格式化",
+        "category": "development"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": true
+      },
+      "actions": [
+        "generate_code_template",
+        "analyze_code",
+        "generate_tests",
+        "format_code"
+      ]
+    },
+    "course_schedule": {
+      "enabled": true,
+      "module": "src.tools.course_schedule",
+      "class": "CourseScheduleTool",
+      "display": {
+        "name": "课程表",
+        "emoji": "📅",
+        "description": "家庭成员课程表管理：创建、查询、编辑、删除周课程表",
+        "category": "life"
+      },
+      "config": {
+        "schedules_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_schedule",
+        "search_courses",
+        "add_course",
+        "edit_course",
+        "delete_course"
+      ]
+    },
+    "meal_menu": {
+      "enabled": true,
+      "module": "src.tools.meal_menu",
+      "class": "MealMenuTool",
+      "display": {
+        "name": "食谱管理",
+        "emoji": "🍽️",
+        "description": "家庭成员营养食谱管理：创建、查询、编辑、删除学校食谱和家庭食谱，支持图片解析",
+        "category": "life"
+      },
+      "config": {
+        "menus_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_menu",
+        "query_menu",
+        "add_dish",
+        "edit_dish",
+        "delete_dish",
+        "parse_image",
+        "list_menus"
+      ]
+    },
+    "family_milestone": {
+      "enabled": true,
+      "module": "src.tools.family_milestone",
+      "class": "FamilyMilestoneTool",
+      "display": {
+        "name": "家庭大事记",
+        "emoji": "🎊",
+        "description": "记录家庭重大事件、纪念日、议程，支持多种展示模板",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_milestone",
+        "query_milestones",
+        "update_milestone",
+        "delete_milestone",
+        "get_timeline",
+        "get_upcoming",
+        "get_statistics",
+        "export_timeline"
+      ]
+    },
+    "english_conversation": {
+      "enabled": true,
+      "module": "src.tools.english_conversation",
+      "class": "EnglishConversationTool",
+      "display": {
+        "name": "英语口语练习",
+        "emoji": "🗣️",
+        "description": "多主题场景英语口语对话练习，支持语音识别和语音合成，随时随地练习口语",
+        "category": "education"
+      },
+      "config": {
+        "default_difficulty": "intermediate",
+        "topics": [
+          "restaurant",
+          "airport",
+          "hotel",
+          "shopping",
+          "travel",
+          "daily_chat",
+          "business"
+        ],
+        "enable_evaluation": true,
+        "tts_engine_for_dialog": "edge_tts"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "start_conversation",
+        "respond",
+        "end_conversation",
+        "list_topics"
+      ]
+    },
+    "study_solver": {
+      "enabled": true,
+      "module": "src.tools.study_solver",
+      "class": "StudySolverTool",
+      "display": {
+        "name": "试卷解答",
+        "emoji": "📝",
+        "description": "基于 GLM-4.6V 的试卷/作业智能解答工具，支持图片识别和 PDF 处理",
+        "category": "education"
+      },
+      "config": {
+        "timeout": 180,
+        "max_image_size_mb": 10
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "solve_from_image",
+        "solve_from_pdf",
+        "batch_solve"
+      ]
+    },
+    "music_player": {
+      "enabled": true,
+      "module": "src.tools.music_player",
+      "class": "MusicPlayerTool",
+      "display": {
+        "name": "歌曲库",
+        "emoji": "🎵",
+        "description": "歌曲库管理：播放音乐、管理标签、创建播放列表、扫描本地音乐",
+        "category": "multimedia"
+      },
+      "config": {
+        "library_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_songs",
+        "scan_local_music",
+        "download_song",
+        "delete_song",
+        "update_song_info",
+        "play_song",
+        "pause_song",
+        "resume_song",
+        "stop_song",
+        "next_song",
+        "prev_song",
+        "seek_to",
+        "set_volume",
+        "set_loop_mode",
+        "shuffle_play",
+        "search_songs",
+        "get_now_playing",
+        "get_playlist",
+        "create_tag",
+        "add_tag",
+        "remove_tag",
+        "create_playlist",
+        "add_to_playlist",
+        "remove_from_playlist",
+        "get_player_settings",
+        "set_player_settings"
+      ]
+    },
+    "todo": {
+      "enabled": true,
+      "module": "src.tools.todo",
+      "class": "TodoTool",
+      "display": {
+        "name": "待办事项",
+        "emoji": "📋",
+        "description": "管理短期、中期、远期所有任务事项，支持任务分解、优先级管理、关联家庭成员",
+        "category": "productivity"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_todo",
+        "update_todo",
+        "delete_todo",
+        "get_todo",
+        "list_todos",
+        "complete_todo",
+        "cancel_todo",
+        "decompose_todo",
+        "get_overdue_todos",
+        "get_upcoming_todos"
+      ]
+    },
+    "daily_task": {
+      "enabled": true,
+      "module": "src.tools.daily_task",
+      "class": "DailyTaskTool",
+      "display": {
+        "name": "每日任务",
+        "emoji": "📅",
+        "description": "管理每日任务清单，支持从待办事项提取、智能推荐、状态跟踪",
+        "category": "productivity"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_daily_task",
+        "update_daily_task",
+        "remove_daily_task",
+        "get_daily_tasks",
+        "start_task",
+        "complete_task",
+        "cancel_task",
+        "get_today_summary",
+        "generate_recommendations",
+        "accept_recommendations"
+      ]
+    },
+    "remote_file_share": {
+      "enabled": true,
+      "module": "src.tools.remote_file_share",
+      "class": "RemoteFileShareTool",
+      "display": {
+        "name": "远程文件分享",
+        "emoji": "📤",
+        "description": "将桌面端本地文件发送到 PWA 端（手机/浏览器），支持文档、图片、语音等所有类型",
+        "category": "communication"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "send_file",
+        "send_files",
+        "send_voice"
+      ]
+    },
+    "family_album": {
+      "enabled": true,
+      "module": "src.tools.family_album",
+      "class": "FamilyAlbumTool",
+      "display": {
+        "name": "家庭相册",
+        "emoji": "📷",
+        "description": "管理家庭相册和照片，支持创建相册、导入照片、AI分析、画廊展示",
+        "category": "life"
+      },
+      "config": {
+        "db_path": "",
+        "albums_dir": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_album",
+        "query_albums",
+        "get_album_detail",
+        "update_album",
+        "delete_album",
+        "add_photo",
+        "import_photos",
+        "remove_photos",
+        "update_photo",
+        "set_cover",
+        "reorder_photos",
+        "search_photos",
+        "get_gallery",
+        "analyze_photo",
+        "export_album",
+        "sync_to_remote"
+      ]
+    },
+    "media_capture": {
+      "enabled": true,
+      "module": "src.tools.media_capture_tool",
+      "class": "MediaCaptureTool",
+      "display": {
+        "name": "媒体捕获",
+        "emoji": "📹",
+        "description": "摄像头拍照、录像、麦克风录音、设备检测与切换，支持音视频合成",
+        "category": "multimedia"
+      },
+      "config": {
+        "output_dir": ""
+      },
+      "security": {
+        "risk_level": "medium",
+        "require_confirmation": true
+      },
+      "actions": [
+        "list_cameras",
+        "list_microphones",
+        "capture_photo",
+        "record_video",
+        "stop_recording",
+        "record_audio",
+        "record_video_with_audio",
+        "set_default_camera",
+        "set_default_microphone"
+      ]
+    },
+    "poetry": {
+      "enabled": true,
+      "module": "src.tools.poetry",
+      "class": "PoetryTool",
+      "display": {
+        "name": "古诗词库",
+        "emoji": "📜",
+        "description": "本地古诗词数据库，支持按作者/朝代/类型/关键词搜索，随机诗词推荐，全文检索",
+        "category": "knowledge"
+      },
+      "config": {
+        "db_path": "data/poetry/poetry.db"
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "search_poems",
+        "get_poem_detail",
+        "get_random_poem",
+        "get_author_poems",
+        "get_poems_by_dynasty",
+        "get_statistics",
+        "import_dataset"
+      ]
+    },
+    "tool_audit": {
+      "enabled": true,
+      "module": "src.tools.tool_audit",
+      "class": "ToolAuditTool",
+      "display": {
+        "name": "工具调用审计",
+        "emoji": "📋",
+        "description": "检索和分析 WeClaw 自身的工具调用历史记录，支持多维度查询、错误追踪和统计分析",
+        "category": "self_reflection"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "query",
+        "get_recent_errors",
+        "get_stats_summary",
+        "get_recent"
+      ]
+    },
+    "log_viewer": {
+      "enabled": true,
+      "module": "src.tools.log_viewer",
+      "class": "LogViewerTool",
+      "display": {
+        "name": "日志查看器",
+        "emoji": "📜",
+        "description": "检索和分析 WeClaw 自身的日志文件（weclaw.log / error_weclaw.log 等）",
+        "category": "self_reflection"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "read",
+        "search",
+        "recent_errors"
+      ]
+    },
+    "codebase_search": {
+      "enabled": true,
+      "module": "src.tools.codebase_search",
+      "class": "CodebaseSearchTool",
+      "display": {
+        "name": "代码库搜索",
+        "emoji": "🔍",
+        "description": "在 WeClaw 自身代码库中搜索代码内容、类/函数定义和目录结构",
+        "category": "self_reflection"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "grep",
+        "find_symbol",
+        "list_modules",
+        "get_file_summary"
+      ]
+    },
+    "self_control": {
+      "enabled": true,
+      "module": "src.tools.self_control",
+      "class": "SelfControlTool",
+      "display": {
+        "name": "自我控制",
+        "emoji": "🔄",
+        "description": "控制 WeClaw 自身的生命周期，包括优雅退出和请求重启。⚠️ 此操作将终止 WeClaw 应用程序及所有活跃会话",
+        "category": "self_reflection"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "high",
+        "require_confirmation": true
+      },
+      "actions": [
+        "exit",
+        "restart",
+        "get_status"
+      ]
+    },
+    "experience_recall": {
+      "enabled": true,
+      "module": "src.tools.experience_recall",
+      "class": "ExperienceRecallTool",
+      "display": {
+        "name": "经验回忆",
+        "emoji": "💡",
+        "description": "检索 WeClaw 历史诊断经验，帮助诊断当前问题；也可手动记录新的经验",
+        "category": "self_reflection"
+      },
+      "config": {},
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "recall",
+        "list_experiences",
+        "forget",
+        "record"
+      ]
+    },
+    "exercise_plan": {
+      "enabled": true,
+      "module": "src.tools.exercise_plan",
+      "class": "ExercisePlanTool",
+      "display": {
+        "name": "运动计划",
+        "emoji": "🏃",
+        "description": "创建运动计划、记录运动日志、查看运动统计摘要",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "create_plan",
+        "query_plans",
+        "log_exercise",
+        "get_exercise_summary",
+        "update_plan",
+        "delete_plan"
+      ]
+    },
+    "social_circle": {
+      "enabled": true,
+      "module": "src.tools.social_circle",
+      "class": "SocialCircleTool",
+      "display": {
+        "name": "社交圈",
+        "emoji": "👥",
+        "description": "管理社交联系人、VIP档案、问候和拜访提醒",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_contact",
+        "query_contacts",
+        "set_vip",
+        "get_vip_profiles",
+        "create_reminder",
+        "get_upcoming_reminders",
+        "update_contact",
+        "delete_contact"
+      ]
+    },
+    "storage_organizer": {
+      "enabled": true,
+      "module": "src.tools.storage_organizer",
+      "class": "StorageOrganizerTool",
+      "display": {
+        "name": "收纳管理",
+        "emoji": "📦",
+        "description": "管理家庭收纳位置、物品归类和过期提醒",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_location",
+        "add_item",
+        "query_items",
+        "search_items",
+        "move_item",
+        "delete_item",
+        "get_location_tree",
+        "get_expiry_alerts"
+      ]
+    },
+    "insurance": {
+      "enabled": true,
+      "module": "src.tools.insurance",
+      "class": "InsuranceTool",
+      "display": {
+        "name": "保险方案",
+        "emoji": "🛡️",
+        "description": "管理家庭保险保单、理赔记录和续保提醒",
+        "category": "life"
+      },
+      "config": {
+        "db_path": ""
+      },
+      "security": {
+        "risk_level": "low",
+        "require_confirmation": false
+      },
+      "actions": [
+        "add_policy",
+        "query_policies",
+        "update_policy",
+        "delete_policy",
+        "file_claim",
+        "get_claims",
+        "get_coverage_summary",
+        "get_renewal_reminders"
+      ]
+    }
+  },
+  "categories": {
+    "system": {
+      "name": "系统操作",
+      "emoji": "⚙️",
+      "description": "与操作系统交互的工具"
+    },
+    "filesystem": {
+      "name": "文件系统",
+      "emoji": "📂",
+      "description": "文件和目录操作工具"
+    },
+    "visual": {
+      "name": "视觉感知",
+      "emoji": "👁️",
+      "description": "屏幕截图和视觉相关工具"
+    },
+    "web": {
+      "name": "网页操作",
+      "emoji": "🌐",
+      "description": "浏览器自动化和网页交互工具"
+    },
+    "search": {
+      "name": "搜索",
+      "emoji": "🔍",
+      "description": "本地文件和互联网搜索工具"
+    },
+    "automation": {
+      "name": "自动化",
+      "emoji": "🤖",
+      "description": "任务自动化和工作流工具"
+    },
+    "multimedia": {
+      "name": "多媒体",
+      "emoji": "🎬",
+      "description": "语音、图片和多模态工具"
+    },
+    "utility": {
+      "name": "实用工具",
+      "emoji": "🧰",
+      "description": "计算器、天气、日期时间等轻量实用工具"
+    },
+    "life": {
+      "name": "生活管理",
+      "emoji": "🏠",
+      "description": "日记、记账、日程等个人生活管理工具"
+    },
+    "knowledge": {
+      "name": "知识库",
+      "emoji": "📚",
+      "description": "文档索引和知识检索工具"
+    },
+    "communication": {
+      "name": "通讯",
+      "emoji": "📬",
+      "description": "邮件收发和通讯工具"
+    },
+    "generation": {
+      "name": "内容生成",
+      "emoji": "✨",
+      "description": "文档生成、图像生成等 AI 内容创作工具"
+    },
+    "document": {
+      "name": "文档处理",
+      "emoji": "📄",
+      "description": "合同、简历、思维导图等文档生成工具"
+    },
+    "data": {
+      "name": "数据分析",
+      "emoji": "📊",
+      "description": "财务报告、数据处理等数据分析工具"
+    },
+    "media": {
+      "name": "媒体处理",
+      "emoji": "🎵",
+      "description": "语音识别、音视频处理等媒体工具"
+    },
+    "productivity": {
+      "name": "效率工具",
+      "emoji": "⚡",
+      "description": "教育学习、任务管理等提升效率的工具"
+    },
+    "development": {
+      "name": "开发工具",
+      "emoji": "🔧",
+      "description": "代码生成、代码分析等编程辅助工具"
+    },
+    "self_reflection": {
+      "name": "自我反思",
+      "emoji": "🔍",
+      "description": "审计日志、日志查看、代码搜索、自我控制等系统 introspection 工具"
+    }
+  },
+  "global_settings": {
+    "max_concurrent_tools": 3,
+    "default_timeout": 30,
+    "audit_all_calls": true,
+    "confirmation_for_high_risk": true
+  }
+}

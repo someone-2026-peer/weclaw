@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "num_sessions": 50,
+    "total_calls": 1172,
+    "total_failures": 513,
+    "failure_rate": 0.438,
+    "model": "deepseek-chat"
+  },
+  "ERL": {
+    "method": "ERL",
+    "llm_calls": 135,
+    "total_tokens": 35767,
+    "prompt_tokens": 18019,
+    "completion_tokens": 17748,
+    "cost_per_session": 0.00014984,
+    "patterns_captured": 369,
+    "granularity": "task"
+  },
+  "ExpeL": {
+    "method": "ExpeL",
+    "llm_calls": 260,
+    "total_tokens": 43409,
+    "prompt_tokens": 26218,
+    "completion_tokens": 17191,
+    "cost_per_session": 0.00016968,
+    "patterns_captured": 381,
+    "granularity": "task"
+  },
+  "EBEAC": {
+    "method": "EBEAC",
+    "llm_calls": 0,
+    "total_tokens": 0,
+    "cost_per_session": 0,
+    "patterns_captured": 197,
+    "granularity": "tool-call",
+    "total_events": 1172,
+    "elapsed_seconds": 0.009
+  }
+}

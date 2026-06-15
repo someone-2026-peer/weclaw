@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WeClaw EBEAC Log Replay",
+  "type": "object",
+  "required": ["dataset_name", "version", "items"],
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "const": "weclaw_ebeac_log_replay"
+    },
+    "version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "timestamp",
+          "session_id",
+          "tool_name",
+          "action",
+          "status",
+          "split"
+        ],
+        "properties": {
+          "event_id": { "type": "string" },
+          "timestamp": { "type": "string" },
+          "session_id": { "type": "string" },
+          "tool_name": { "type": "string" },
+          "action": { "type": "string" },
+          "status": { "type": "string" },
+          "error_type": { "type": ["string", "null"] },
+          "fix_pattern": { "type": ["string", "null"] },
+          "split": {
+            "type": "string",
+            "enum": ["train", "test"]
+          },
+          "metadata": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

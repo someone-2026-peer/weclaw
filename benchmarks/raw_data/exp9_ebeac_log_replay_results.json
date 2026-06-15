@@ -1,0 +1,231 @@
+{
+  "experiment": "exp9_ebeac_log_replay",
+  "status": "evaluated_with_experience_store_replay",
+  "dataset": "weclaw_ebeac_log_replay",
+  "dataset_version": "0.3.0-real-db-export",
+  "summary": {
+    "n_train": 7,
+    "n_test": 4,
+    "n_test_errors": 4,
+    "tools": {
+      "codebase_search": 3,
+      "format_converter": 1,
+      "literature_search": 2,
+      "paper_lifecycle": 1,
+      "shell": 2,
+      "todo": 2
+    },
+    "error_types": {
+      "generic_tool_retry": 9,
+      "network_error": 1,
+      "unsupported_format": 1
+    },
+    "baselines": {
+      "no_memory": {
+        "recall_at_1": 0.0,
+        "recall_at_3": 0.0,
+        "precision": 0.0,
+        "coverage_rate": 0.0,
+        "prevention_rate": 0.0,
+        "false_positive_rate": 0.0,
+        "miss_rate": 100.0,
+        "avg_latency_ms": 0.0
+      },
+      "experience_store_memory": {
+        "recall_at_1": 50.0,
+        "recall_at_3": 50.0,
+        "precision": 100.0,
+        "coverage_rate": 50.0,
+        "prevention_rate": 50.0,
+        "false_positive_rate": 0.0,
+        "miss_rate": 50.0,
+        "avg_latency_ms": 1.0278
+      },
+      "keyword_memory": {
+        "recall_at_1": 50.0,
+        "recall_at_3": 50.0,
+        "precision": 50.0,
+        "coverage_rate": 100.0,
+        "prevention_rate": 50.0,
+        "false_positive_rate": 50.0,
+        "miss_rate": 50.0,
+        "avg_latency_ms": 0.798
+      },
+      "similarity_memory": {
+        "recall_at_1": 50.0,
+        "recall_at_3": 50.0,
+        "precision": 50.0,
+        "coverage_rate": 100.0,
+        "prevention_rate": 50.0,
+        "false_positive_rate": 50.0,
+        "miss_rate": 50.0,
+        "avg_latency_ms": 0.3233
+      },
+      "hybrid_memory": {
+        "recall_at_1": 50.0,
+        "recall_at_3": 50.0,
+        "precision": 50.0,
+        "coverage_rate": 100.0,
+        "prevention_rate": 50.0,
+        "false_positive_rate": 50.0,
+        "miss_rate": 50.0,
+        "avg_latency_ms": 0.6367
+      }
+    },
+    "has_real_experience_store_integration": true,
+    "implemented_methods": [
+      "no_memory",
+      "experience_store_memory",
+      "keyword_memory",
+      "similarity_memory",
+      "hybrid_memory"
+    ]
+  },
+  "details": {
+    "lexical_replay": [
+      {
+        "event_id": "expdb_weclaw_experiences_00008",
+        "tool_name": "shell",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: shell工具重试成功",
+        "keyword_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "similarity_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "hybrid_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "keyword_preventable": true,
+        "similarity_preventable": true,
+        "hybrid_preventable": true
+      },
+      {
+        "event_id": "expdb_weclaw_experiences_00009",
+        "tool_name": "codebase_search",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: codebase_search工具重试成功",
+        "keyword_top3": [
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: literature_search工具重试成功"
+        ],
+        "similarity_top3": [
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: literature_search工具重试成功"
+        ],
+        "hybrid_top3": [
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: literature_search工具重试成功"
+        ],
+        "keyword_preventable": true,
+        "similarity_preventable": true,
+        "hybrid_preventable": true
+      },
+      {
+        "event_id": "expdb_weclaw_experiences_00010",
+        "tool_name": "todo",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: todo工具重试成功",
+        "keyword_top3": [
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: shell工具重试成功"
+        ],
+        "similarity_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "hybrid_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "keyword_preventable": false,
+        "similarity_preventable": false,
+        "hybrid_preventable": false
+      },
+      {
+        "event_id": "expdb_weclaw_experiences_00011",
+        "tool_name": "todo",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: todo工具重试成功",
+        "keyword_top3": [
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: shell工具重试成功"
+        ],
+        "similarity_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "hybrid_top3": [
+          "工具试错模式: shell工具重试成功",
+          "工具试错模式: codebase_search工具重试成功",
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "keyword_preventable": false,
+        "similarity_preventable": false,
+        "hybrid_preventable": false
+      }
+    ],
+    "experience_store_memory": [
+      {
+        "event_id": "expdb_weclaw_experiences_00008",
+        "tool_name": "shell",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: shell工具重试成功",
+        "experience_store_top3": [
+          "工具试错模式: shell工具重试成功"
+        ],
+        "preventable": true,
+        "recalled_patterns": [
+          "shell:generic_tool_retry:工具试错模式: shell工具重试成功"
+        ]
+      },
+      {
+        "event_id": "expdb_weclaw_experiences_00009",
+        "tool_name": "codebase_search",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: codebase_search工具重试成功",
+        "experience_store_top3": [
+          "工具试错模式: codebase_search工具重试成功"
+        ],
+        "preventable": true,
+        "recalled_patterns": [
+          "codebase_search:generic_tool_retry:工具试错模式: codebase_search工具重试成功"
+        ]
+      },
+      {
+        "event_id": "expdb_weclaw_experiences_00010",
+        "tool_name": "todo",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: todo工具重试成功",
+        "experience_store_top3": [],
+        "preventable": false,
+        "recalled_patterns": []
+      },
+      {
+        "event_id": "expdb_weclaw_experiences_00011",
+        "tool_name": "todo",
+        "error_type": "generic_tool_retry",
+        "ground_truth_fix_pattern": "工具试错模式: todo工具重试成功",
+        "experience_store_top3": [],
+        "preventable": false,
+        "recalled_patterns": []
+      }
+    ]
+  },
+  "next_step": "Export larger time-split replay sets from real experiences.db snapshots, compare multi-snapshot replay, and stabilize prevention-rate evaluation."
+}

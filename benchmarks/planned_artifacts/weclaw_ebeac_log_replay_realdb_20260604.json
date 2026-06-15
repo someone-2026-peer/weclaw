@@ -1,0 +1,269 @@
+{
+  "dataset_name": "weclaw_ebeac_log_replay",
+  "version": "0.3.0-real-db-export",
+  "notes": "Replay dataset exported from one or more ExperienceStore SQLite snapshots. Rows are deduplicated, sorted chronologically, and split into train/test partitions for exp9 replay evaluation.",
+  "export_summary": {
+    "source_db_count": 1,
+    "source_dbs": [
+      "<HOME>\\.weclaw\\experiences.db"
+    ],
+    "rows_before_dedup": 11,
+    "rows_after_dedup": 11,
+    "train_ratio": 0.7
+  },
+  "items": [
+    {
+      "event_id": "expdb_weclaw_experiences_00001",
+      "timestamp": "2026-05-30T08:40:06.093694",
+      "session_id": "9d60ec6f",
+      "tool_name": "codebase_search",
+      "action": "list_modules",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "codebase_search.list_modules 连续失败 2 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\src; 目录不存在: <PROJECT>\\src\\src",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00002",
+      "timestamp": "2026-05-30T08:40:19.070177",
+      "session_id": "9d60ec6f",
+      "tool_name": "codebase_search",
+      "action": "grep",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "codebase_search.grep 连续失败 2 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\src; 目录不存在: <PROJECT>\\src\\src",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00003",
+      "timestamp": "2026-05-30T22:55:06.509507",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780150057811",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00004",
+      "timestamp": "2026-05-30T22:57:30.490326",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780150057811",
+      "tool_name": "literature_search",
+      "action": "get_paper_details",
+      "status": "error",
+      "error_type": "network_error",
+      "fix_pattern": "工具试错模式: 连接重试",
+      "split": "train",
+      "metadata": {
+        "query": "literature_search.get_paper_details 连续失败 3 次后重试成功",
+        "diagnosis": "工具 literature_search 调用出错: PDF 下载失败，状态码: 403; 下载的内容不是 PDF 文件（类型: text/html;charset=UTF-8）; PDF 下载失败: All connection attempts failed",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "literature_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00005",
+      "timestamp": "2026-05-31T11:35:58.489009",
+      "session_id": "1e9267a8",
+      "tool_name": "paper_lifecycle",
+      "action": "detect_ai_patterns",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.detect_ai_patterns 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 项目目录中未找到论文文件: <PROJECT>\\src\\data\\academic\\projects\\78\n请先通过 assemble_paper 合并章节，或直接指定; 论文文件不存在: data/academic/projects/78/assembled_paper_20260531.md",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00006",
+      "timestamp": "2026-06-02T06:25:09.685892",
+      "session_id": "1f6ed85e",
+      "tool_name": "format_converter",
+      "action": "convert_markdown_to_docx",
+      "status": "error",
+      "error_type": "unsupported_format",
+      "fix_pattern": "工具试错模式: format_converter工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "format_converter.convert_markdown_to_docx 连续失败 2 次后重试成功",
+        "diagnosis": "工具 format_converter 调用出错: 格式转换失败: cannot identify image file 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-06-02\\\\fig1_ai_smp.; 格式转换失败: cannot identify image file 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-06-02\\\\fig2_prisma.",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "format_converter"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00007",
+      "timestamp": "2026-06-02T13:15:42.550998",
+      "session_id": "0cef0c0f",
+      "tool_name": "literature_search",
+      "action": "download_pdf",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: literature_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "literature_search.download_pdf 连续失败 2 次后重试成功",
+        "diagnosis": "工具 literature_search 调用出错: PDF 下载失败，状态码: 403; PDF 下载失败，状态码: 403",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "literature_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00008",
+      "timestamp": "2026-06-02T13:42:31.357955",
+      "session_id": "0cef0c0f",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00009",
+      "timestamp": "2026-06-04T02:07:02.537220",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780509711464",
+      "tool_name": "codebase_search",
+      "action": "find_symbol",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "codebase_search.find_symbol 连续失败 3 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\src\\core\\agent.py; 目录不存在: <PROJECT>\\src\\src\\core\\agent.py; 目录不存在: <PROJECT>\\src\\src\\core\\agent.py",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00010",
+      "timestamp": "2026-06-04T08:31:51.550114",
+      "session_id": "b345a824",
+      "tool_name": "todo",
+      "action": "get_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "todo.get_todo 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 1; 待办事项不存在: ID 2",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_weclaw_experiences_00011",
+      "timestamp": "2026-06-04T08:32:11.297658",
+      "session_id": "b345a824",
+      "tool_name": "todo",
+      "action": "cancel_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "todo.cancel_todo 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 5; 待办事项不存在: ID 18",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\.weclaw\\experiences.db",
+        "record_origin": "experience_store_export"
+      }
+    }
+  ]
+}

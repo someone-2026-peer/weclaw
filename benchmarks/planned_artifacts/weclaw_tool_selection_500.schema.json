@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WeClaw Tool Selection 500",
+  "type": "object",
+  "required": ["dataset_name", "version", "items"],
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "const": "weclaw_tool_selection_500"
+    },
+    "version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "query_id",
+          "query",
+          "language",
+          "primary_intent",
+          "acceptable_tools",
+          "primary_tool"
+        ],
+        "properties": {
+          "query_id": { "type": "string" },
+          "query": { "type": "string" },
+          "language": { "type": "string" },
+          "primary_intent": { "type": "string" },
+          "sub_intent": { "type": "string" },
+          "acceptable_tools": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "primary_tool": { "type": "string" },
+          "negative_tools": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+% Auto-generated on 2026-06-04 23:47:16
+
+% Draft tables for direct inclusion in the paper body or appendix.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Preliminary production-snapshot replay validation across available real \texttt{ExperienceStore} snapshots. Split denotes \texttt{train/test}. \emph{Cov.}: coverage rate. \emph{Prev.}: prevention rate. \emph{FP}: false-positive rate.}
+\label{tab:exp9_real_snapshot_runs}
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+\textbf{Snapshot} & \textbf{Split} & \textbf{R@1} & \textbf{R@3} & \textbf{Prec.} & \textbf{Cov.} & \textbf{Prev.} & \textbf{FP} & \textbf{Lat. (ms)} \\
+\midrule
+\texttt{realdb\_admin\_20260604} & 7/4 & 50.0\% & 50.0\% & 100.0\% & 50.0\% & 50.0\% & 0.0\% & 1.02 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Baseline comparison on the latest real-snapshot replay validation run (\texttt{realdb\_admin\_20260604}). \emph{Cov.}: coverage rate. \emph{Prev.}: prevention rate. \emph{FP}: false-positive rate. \emph{Miss}: miss rate.}
+\label{tab:exp9_real_snapshot_baselines}
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+\textbf{Method} & \textbf{R@1} & \textbf{R@3} & \textbf{Prec.} & \textbf{Cov.} & \textbf{Prev.} & \textbf{FP} & \textbf{Miss} & \textbf{Lat. (ms)} \\
+\midrule
+No memory & 0.0\% & 0.0\% & 0.0\% & 0.0\% & 0.0\% & 0.0\% & 100.0\% & 0.00 \\
+\textbf{ExperienceStore} & 50.0\% & 50.0\% & 100.0\% & 50.0\% & 50.0\% & 0.0\% & 50.0\% & 1.02 \\
+Keyword & 50.0\% & 50.0\% & 50.0\% & 100.0\% & 50.0\% & 50.0\% & 50.0\% & 0.79 \\
+Similarity & 50.0\% & 50.0\% & 50.0\% & 100.0\% & 50.0\% & 50.0\% & 50.0\% & 0.31 \\
+Hybrid & 50.0\% & 50.0\% & 50.0\% & 100.0\% & 50.0\% & 50.0\% & 50.0\% & 0.61 \\
+\bottomrule
+\end{tabular}
+\end{table}

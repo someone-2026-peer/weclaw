@@ -1,0 +1,96 @@
+{
+  "experiment": "ebeac_recall_vs_library_size",
+  "total_patterns": 57,
+  "failure_rate": 0.082,
+  "precision": 0.545,
+  "results": [
+    {
+      "library_size": 5,
+      "recall_mean": 0.2679285714285714,
+      "recall_std": 0.2475723868582558,
+      "prevention_mean": 0.14971428571428572,
+      "prevention_std": 0.208111250337426,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 10,
+      "recall_mean": 0.47485714285714287,
+      "recall_std": 0.2576832549156921,
+      "prevention_mean": 0.23835714285714288,
+      "prevention_std": 0.19627126312875945,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 15,
+      "recall_mean": 0.5714285714285714,
+      "recall_std": 0.2819566393707741,
+      "prevention_mean": 0.32671428571428573,
+      "prevention_std": 0.26727281873993136,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 20,
+      "recall_mean": 0.6932698412698413,
+      "recall_std": 0.30972695775438785,
+      "prevention_mean": 0.44034126984126987,
+      "prevention_std": 0.2935531863734965,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 25,
+      "recall_mean": 0.7973809523809524,
+      "recall_std": 0.23196718356362592,
+      "prevention_mean": 0.39839682539682536,
+      "prevention_std": 0.2347764728192933,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 30,
+      "recall_mean": 0.8868333333333333,
+      "recall_std": 0.16050346136800636,
+      "prevention_mean": 0.5173968253968254,
+      "prevention_std": 0.2583087955576307,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 35,
+      "recall_mean": 0.9281103896103896,
+      "recall_std": 0.13020009295201995,
+      "prevention_mean": 0.4126782106782107,
+      "prevention_std": 0.29787743562196106,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 40,
+      "recall_mean": 0.9653333333333335,
+      "recall_std": 0.14666060593538174,
+      "prevention_mean": 0.5109761904761904,
+      "prevention_std": 0.3024210968852369,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 45,
+      "recall_mean": 0.9808095238095238,
+      "recall_std": 0.05869790834812126,
+      "prevention_mean": 0.5201666666666667,
+      "prevention_std": 0.27979669591166356,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 50,
+      "recall_mean": 0.9966666666666667,
+      "recall_std": 0.023333333333333327,
+      "prevention_mean": 0.5831666666666667,
+      "prevention_std": 0.29870886276419306,
+      "n_simulations": 50
+    },
+    {
+      "library_size": 57,
+      "recall_mean": 1.0,
+      "recall_std": 0.0,
+      "prevention_mean": 0.5491746031746032,
+      "prevention_std": 0.2963100615188745,
+      "n_simulations": 50
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WeClaw RCR Trace Benchmark",
+  "type": "object",
+  "required": ["dataset_name", "version", "items"],
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "const": "weclaw_rcr_trace_benchmark"
+    },
+    "version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["trace_id", "scenario", "messages", "compression_trigger"],
+        "properties": {
+          "trace_id": { "type": "string" },
+          "scenario": { "type": "string" },
+          "compression_trigger": { "type": "string" },
+          "expected_orphan_count": { "type": "integer" },
+          "expected_contract_integrity": { "type": "boolean" },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["role", "content"],
+              "properties": {
+                "role": { "type": "string" },
+                "content": { "type": "string" },
+                "tool_calls": { "type": "array" },
+                "tool_name": { "type": "string" },
+                "metadata": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

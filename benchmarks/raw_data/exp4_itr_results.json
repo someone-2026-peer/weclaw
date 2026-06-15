@@ -1,0 +1,3629 @@
+{
+  "experiment": "itr_faithful_reproduction",
+  "model": "deepseek-chat",
+  "n_queries": 96,
+  "itr_params": {
+    "status": "completed",
+    "top_k": 20,
+    "rerank_n": 5,
+    "confidence_threshold": 0.7,
+    "bi_encoder": "all-MiniLM-L6-v2",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  },
+  "summary": {
+    "static": {
+      "accuracy": 63.541666666666664,
+      "avg_tokens_per_query": 5203.760416666667,
+      "n_correct": 61,
+      "n_total": 96
+    },
+    "pte_fd": {
+      "accuracy": 73.95833333333334,
+      "avg_tokens_per_query": 3613.3854166666665,
+      "n_correct": 71,
+      "n_total": 96,
+      "escalated": 22,
+      "recovered": 2,
+      "recovery_rate": 9.090909090909092
+    },
+    "itr": {
+      "accuracy": 22.916666666666664,
+      "avg_tokens_per_query": 623.8854166666666,
+      "n_correct": 22,
+      "n_total": 96,
+      "avg_confidence": 0.0013545319277628095
+    },
+    "keyword": {
+      "accuracy": 71.875,
+      "avg_tokens_per_query": 718.375,
+      "n_correct": 69,
+      "n_total": 96
+    }
+  },
+  "details": [
+    {
+      "query_id": "browser_automation_0",
+      "query": "请打开网页 https://example.com 并截图",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 5208
+      },
+      "pte_fd": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 5218,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 633,
+        "confidence": 0.0012,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 1359
+      }
+    },
+    {
+      "query_id": "browser_automation_1",
+      "query": "帮我帮我访问这个网站并获取内容",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 663,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 605,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 609
+      }
+    },
+    {
+      "query_id": "browser_automation_2",
+      "query": "我需要在浏览器中登录网站",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 661,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 607
+      }
+    },
+    {
+      "query_id": "browser_automation_3",
+      "query": "能不能打开链接并截取页面截图",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 5216,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 630,
+        "confidence": 0.0004,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 1357
+      }
+    },
+    {
+      "query_id": "browser_automation_4",
+      "query": "帮我操作网页上的表单",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 660,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 627,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 606
+      }
+    },
+    {
+      "query_id": "browser_automation_5",
+      "query": "请访问网站并下载文件",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 5214,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 624,
+        "confidence": 0.0004,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 607
+      }
+    },
+    {
+      "query_id": "browser_automation_6",
+      "query": "帮我在浏览器中搜索信息",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "search",
+        "correct": false,
+        "tokens": 661,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "search",
+        "correct": false,
+        "tokens": 629,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "search",
+        "correct": false,
+        "tokens": 607
+      }
+    },
+    {
+      "query_id": "browser_automation_7",
+      "query": "我需要打开URL并分析页面内容",
+      "intent": "browser_automation",
+      "ground_truth": [
+        "browser",
+        "browser_use",
+        "mcp_browserbase",
+        "mcp_browserbase-csdn"
+      ],
+      "static": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "browser_use",
+        "correct": true,
+        "tokens": 662,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 617,
+        "confidence": 0.0005,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "browser",
+        "correct": true,
+        "tokens": 608
+      }
+    },
+    {
+      "query_id": "file_operation_0",
+      "query": "请读取文件 content.txt 的内容",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 421,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 685,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 370
+      }
+    },
+    {
+      "query_id": "file_operation_1",
+      "query": "帮我帮我整理文件夹中的文件",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 420,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 693,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "file_operation_2",
+      "query": "我需要复制文件到另一个目录",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2049,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 614,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "file_operation_3",
+      "query": "能不能重命名文件 report.docx",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11631,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 615,
+        "confidence": 0.0006,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 536
+      }
+    },
+    {
+      "query_id": "file_operation_4",
+      "query": "解压压缩文件 archive.zip",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2049,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 636,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "file_operation_5",
+      "query": "请创建新的目录结构",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2046,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 607,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 368
+      }
+    },
+    {
+      "query_id": "file_operation_6",
+      "query": "帮我移动文件到指定位置",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2049,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 628,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "file_operation_7",
+      "query": "我需要查看文件内容并总结",
+      "intent": "file_operation",
+      "ground_truth": [
+        "file",
+        "shell"
+      ],
+      "static": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 420,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 628,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "document_assembly_0",
+      "query": "请生成一份包含天气和图片的Word文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5208
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 11837,
+        "escalated": true,
+        "recovered": true
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 630,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 1295
+      }
+    },
+    {
+      "query_id": "document_assembly_1",
+      "query": "帮我将诗歌和天气组合成文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5222,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 628,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 1102
+      }
+    },
+    {
+      "query_id": "document_assembly_2",
+      "query": "我需要把搜索结果整合成Word文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11613,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 615,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 537
+      }
+    },
+    {
+      "query_id": "document_assembly_3",
+      "query": "能不能创建一个包含图片的文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5220,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 626,
+        "confidence": 0.0004,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 1069
+      }
+    },
+    {
+      "query_id": "document_assembly_4",
+      "query": "将内容组装成DOCX格式文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 598,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 620,
+        "confidence": 0.0005,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 538
+      }
+    },
+    {
+      "query_id": "document_assembly_5",
+      "query": "请整合多种内容生成报告文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 597,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 537
+      }
+    },
+    {
+      "query_id": "document_assembly_6",
+      "query": "帮我生成一份包含天气和图片的Word文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5208
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 11837,
+        "escalated": true,
+        "recovered": true
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 628,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 1295
+      }
+    },
+    {
+      "query_id": "document_assembly_7",
+      "query": "我需要将诗歌和天气组合成文档",
+      "intent": "document_assembly",
+      "ground_truth": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "static": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 5222,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 616,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "doc_generator",
+        "correct": true,
+        "tokens": 1102
+      }
+    },
+    {
+      "query_id": "system_admin_0",
+      "query": "请帮我截个屏",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "screen",
+        "correct": true,
+        "tokens": 582,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "screen",
+        "correct": true,
+        "tokens": 603,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "screen",
+        "correct": true,
+        "tokens": 525
+      }
+    },
+    {
+      "query_id": "system_admin_1",
+      "query": "帮我查看当前系统进程",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11646,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 629,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "shell",
+        "correct": true,
+        "tokens": 570
+      }
+    },
+    {
+      "query_id": "system_admin_2",
+      "query": "我需要启动计算器应用",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "app_control",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "calculator",
+        "correct": false,
+        "tokens": 702,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 617,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 643
+      }
+    },
+    {
+      "query_id": "system_admin_3",
+      "query": "能不能重启电脑",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5201
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2372,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 611,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 523
+      }
+    },
+    {
+      "query_id": "system_admin_4",
+      "query": "读取剪贴板内容",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "clipboard",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "clipboard",
+        "correct": true,
+        "tokens": 5203,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 615,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 368
+      }
+    },
+    {
+      "query_id": "system_admin_5",
+      "query": "请发送系统通知提醒我",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "notify",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "notify",
+        "correct": true,
+        "tokens": 5219,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 627,
+        "confidence": 0.0004,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "notify",
+        "correct": true,
+        "tokens": 1511
+      }
+    },
+    {
+      "query_id": "system_admin_6",
+      "query": "帮我修改系统注册表",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2378,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 617,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 525
+      }
+    },
+    {
+      "query_id": "system_admin_7",
+      "query": "我需要检查系统服务状态",
+      "intent": "system_admin",
+      "ground_truth": [
+        "app_control",
+        "clipboard",
+        "notify",
+        "screen",
+        "shell"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "shell",
+        "correct": true,
+        "tokens": 582,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 618,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 525
+      }
+    },
+    {
+      "query_id": "system_monitoring_0",
+      "query": "请查看CPU和内存使用率",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 526,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 619,
+        "confidence": 0.0005,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 474
+      }
+    },
+    {
+      "query_id": "system_monitoring_1",
+      "query": "帮我系统状态如何",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 5215,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 602,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 569
+      }
+    },
+    {
+      "query_id": "system_monitoring_2",
+      "query": "我需要电脑是否卡顿",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "",
+        "correct": false,
+        "tokens": 11607,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 606,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 368
+      }
+    },
+    {
+      "query_id": "system_monitoring_3",
+      "query": "能不能检查磁盘空间",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11643,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 622,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 569
+      }
+    },
+    {
+      "query_id": "system_monitoring_4",
+      "query": "查看网络连接状态",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2299,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 626,
+        "confidence": 0.0012,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "shell",
+        "correct": true,
+        "tokens": 471
+      }
+    },
+    {
+      "query_id": "system_monitoring_5",
+      "query": "请监控系统温度和风扇",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11676,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 603,
+        "confidence": 0.0012,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 570
+      }
+    },
+    {
+      "query_id": "system_monitoring_6",
+      "query": "帮我电脑健康状态检查",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11629,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 630,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 1238
+      }
+    },
+    {
+      "query_id": "system_monitoring_7",
+      "query": "我需要查看电池电量",
+      "intent": "system_monitoring",
+      "ground_truth": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2299,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 605,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "system_monitor",
+        "correct": true,
+        "tokens": 471
+      }
+    },
+    {
+      "query_id": "daily_assistant_0",
+      "query": "请今天天气怎么样",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 701,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 628,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 642
+      }
+    },
+    {
+      "query_id": "daily_assistant_1",
+      "query": "帮我现在几点了",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "datetime_tool",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "datetime_tool",
+        "correct": true,
+        "tokens": 5202,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 602,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 367
+      }
+    },
+    {
+      "query_id": "daily_assistant_2",
+      "query": "我需要帮我算一下 123*456",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "calculator",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "calculator",
+        "correct": true,
+        "tokens": 5206,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 619,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 371
+      }
+    },
+    {
+      "query_id": "daily_assistant_3",
+      "query": "能不能设置每天早上8点的提醒",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "cron",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "cron",
+        "correct": true,
+        "tokens": 703,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "medication",
+        "correct": false,
+        "tokens": 626,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "cron",
+        "correct": true,
+        "tokens": 644
+      }
+    },
+    {
+      "query_id": "daily_assistant_4",
+      "query": "明天天气如何",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 5201
+      },
+      "pte_fd": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 700,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 635,
+        "confidence": 0.0,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 641
+      }
+    },
+    {
+      "query_id": "daily_assistant_5",
+      "query": "请帮我计算房贷月供",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "calculator",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "calculator",
+        "correct": true,
+        "tokens": 703,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 628,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "calculator",
+        "correct": true,
+        "tokens": 644
+      }
+    },
+    {
+      "query_id": "daily_assistant_6",
+      "query": "帮我提醒我下午3点开会",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "cron",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "cron",
+        "correct": true,
+        "tokens": 5220,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 618,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "cron",
+        "correct": true,
+        "tokens": 1355
+      }
+    },
+    {
+      "query_id": "daily_assistant_7",
+      "query": "我需要这周天气如何",
+      "intent": "daily_assistant",
+      "ground_truth": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "static": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 702,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 627,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "weather",
+        "correct": true,
+        "tokens": 643
+      }
+    },
+    {
+      "query_id": "knowledge_0",
+      "query": "请搜索知识库中关于机器学习的内容",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 5206
+      },
+      "pte_fd": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 775,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "local_paper_search",
+        "correct": false,
+        "tokens": 629,
+        "confidence": 0.001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 713
+      }
+    },
+    {
+      "query_id": "knowledge_1",
+      "query": "帮我帮我查一下李白的诗",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 5205,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 629,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 370
+      }
+    },
+    {
+      "query_id": "knowledge_2",
+      "query": "我需要搜索古诗词中含'月'的诗句",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 5208
+      },
+      "pte_fd": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 777,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 630,
+        "confidence": 0.0004,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 715
+      }
+    },
+    {
+      "query_id": "knowledge_3",
+      "query": "能不能用RAG检索相关文档",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 5221,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 625,
+        "confidence": 0.0026,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "knowledge_rag",
+        "correct": true,
+        "tokens": 879
+      }
+    },
+    {
+      "query_id": "knowledge_4",
+      "query": "帮我找一首苏轼的词",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 5203,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 368
+      }
+    },
+    {
+      "query_id": "knowledge_5",
+      "query": "请批量分析这些论文的摘要",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "batch_paper_analyzer",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "batch_paper_analyzer",
+        "correct": true,
+        "tokens": 5205,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "literature_search",
+        "correct": true,
+        "tokens": 628,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 370
+      }
+    },
+    {
+      "query_id": "knowledge_6",
+      "query": "帮我搜索关于深度学习的论文",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "literature_search",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "literature_search",
+        "correct": true,
+        "tokens": 1457,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "research",
+        "correct": false,
+        "tokens": 617,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "literature_search",
+        "correct": true,
+        "tokens": 1375
+      }
+    },
+    {
+      "query_id": "knowledge_7",
+      "query": "我需要查找唐诗中写春天的诗",
+      "intent": "knowledge",
+      "ground_truth": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "static": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 774,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 626,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "poetry",
+        "correct": true,
+        "tokens": 712
+      }
+    },
+    {
+      "query_id": "life_management_0",
+      "query": "请写一篇今天的日记",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "diary",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "diary",
+        "correct": true,
+        "tokens": 5229,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 627,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "diary",
+        "correct": true,
+        "tokens": 2140
+      }
+    },
+    {
+      "query_id": "life_management_1",
+      "query": "帮我记录今天花了50元",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "finance",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "finance",
+        "correct": true,
+        "tokens": 5204,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 615,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": false,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "life_management_2",
+      "query": "我需要记录今天的体重70kg",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "health",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "health",
+        "correct": true,
+        "tokens": 1205,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "finance",
+        "correct": true,
+        "tokens": 627,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "health",
+        "correct": true,
+        "tokens": 1135
+      }
+    },
+    {
+      "query_id": "life_management_3",
+      "query": "能不能添加服药提醒",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "medication",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "medication",
+        "correct": true,
+        "tokens": 5217,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "medication",
+        "correct": true,
+        "tokens": 615,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "medication",
+        "correct": true,
+        "tokens": 1352
+      }
+    },
+    {
+      "query_id": "life_management_4",
+      "query": "更新我的个人信息",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "user_profile",
+        "correct": true,
+        "tokens": 5201
+      },
+      "pte_fd": {
+        "selected": "user_profile",
+        "correct": true,
+        "tokens": 5201,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "user_profile",
+        "correct": true,
+        "tokens": 607,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 366
+      }
+    },
+    {
+      "query_id": "life_management_5",
+      "query": "请查看家庭成员列表",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "family_member",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "family_member",
+        "correct": true,
+        "tokens": 1203,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "family_member",
+        "correct": true,
+        "tokens": 607,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "family_member",
+        "correct": true,
+        "tokens": 1133
+      }
+    },
+    {
+      "query_id": "life_management_6",
+      "query": "帮我查看今天的课程表",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "course_schedule",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "course_schedule",
+        "correct": true,
+        "tokens": 5214,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 626,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "course_schedule",
+        "correct": true,
+        "tokens": 1380
+      }
+    },
+    {
+      "query_id": "life_management_7",
+      "query": "我需要查看学校这周的食谱",
+      "intent": "life_management",
+      "ground_truth": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "static": {
+        "selected": "meal_menu",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "meal_menu",
+        "correct": true,
+        "tokens": 1205,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 627,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "meal_menu",
+        "correct": true,
+        "tokens": 1135
+      }
+    },
+    {
+      "query_id": "financial_activity_0",
+      "query": "请查询茅台的实时股价",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "stock_query",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "stock_query",
+        "correct": true,
+        "tokens": 591,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0009,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "stock_query",
+        "correct": true,
+        "tokens": 538
+      }
+    },
+    {
+      "query_id": "financial_activity_1",
+      "query": "帮我分析A股大盘走势",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "stock_query",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 591,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 538
+      }
+    },
+    {
+      "query_id": "financial_activity_2",
+      "query": "我需要帮我选几只科技股",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "stock_query",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "stock_query",
+        "correct": true,
+        "tokens": 5204,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "stock_photo",
+        "correct": false,
+        "tokens": 613,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 369
+      }
+    },
+    {
+      "query_id": "financial_activity_3",
+      "query": "能不能查询GDP增长率",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 5202,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 626,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 367
+      }
+    },
+    {
+      "query_id": "financial_activity_4",
+      "query": "量化分析苹果公司的交易信号",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 591,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 616,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 538
+      }
+    },
+    {
+      "query_id": "financial_activity_5",
+      "query": "请查看FRED经济数据",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 5213,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 615,
+        "confidence": 0.024,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "fred",
+        "correct": false,
+        "tokens": 1488
+      }
+    },
+    {
+      "query_id": "financial_activity_6",
+      "query": "帮我回测这个交易策略",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 591,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 619,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "quant_trading",
+        "correct": true,
+        "tokens": 538
+      }
+    },
+    {
+      "query_id": "financial_activity_7",
+      "query": "我需要搜索最近的板块轮动信号",
+      "intent": "financial_activity",
+      "ground_truth": [
+        "fred_query",
+        "quant_trading",
+        "search",
+        "shell",
+        "stock_query"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 592,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 606,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "search",
+        "correct": true,
+        "tokens": 539
+      }
+    },
+    {
+      "query_id": "multimedia_0",
+      "query": "请把这段语音转成文字",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "voice_input",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "voice_input",
+        "correct": true,
+        "tokens": 1025,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0004,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "voice_input",
+        "correct": true,
+        "tokens": 961
+      }
+    },
+    {
+      "query_id": "multimedia_1",
+      "query": "帮我朗读这段文字",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "voice_output",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "voice_output",
+        "correct": true,
+        "tokens": 1022,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 612,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "voice_output",
+        "correct": true,
+        "tokens": 958
+      }
+    },
+    {
+      "query_id": "multimedia_2",
+      "query": "我需要识别图片中的文字",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "ocr",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "ocr",
+        "correct": true,
+        "tokens": 1023,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 624,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "ocr",
+        "correct": true,
+        "tokens": 959
+      }
+    },
+    {
+      "query_id": "multimedia_3",
+      "query": "能不能转录这个音频文件",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2046,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 623,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 368
+      }
+    },
+    {
+      "query_id": "multimedia_4",
+      "query": "解析这张试卷",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "ocr",
+        "correct": true,
+        "tokens": 5201
+      },
+      "pte_fd": {
+        "selected": "ocr",
+        "correct": true,
+        "tokens": 5201,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 623,
+        "confidence": 0.0007,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": false,
+        "tokens": 366
+      }
+    },
+    {
+      "query_id": "multimedia_5",
+      "query": "请播放一首钢琴曲",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "music_player",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "music_player",
+        "correct": true,
+        "tokens": 1023,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 630,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "music_player",
+        "correct": true,
+        "tokens": 959
+      }
+    },
+    {
+      "query_id": "multimedia_6",
+      "query": "帮我用摄像头拍张照",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "media_capture",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "media_capture",
+        "correct": true,
+        "tokens": 1024,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 618,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "media_capture",
+        "correct": true,
+        "tokens": 960
+      }
+    },
+    {
+      "query_id": "multimedia_7",
+      "query": "我需要搜索免费图片素材",
+      "intent": "multimedia",
+      "ground_truth": [
+        "concept_diagrams",
+        "document_scanner",
+        "image_generator",
+        "media_capture",
+        "meme_generation",
+        "music_player",
+        "ocr",
+        "screen",
+        "speech_to_text",
+        "stock_photo",
+        "voice_input",
+        "voice_output"
+      ],
+      "static": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 1023,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 618,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 959
+      }
+    },
+    {
+      "query_id": "document_processing_0",
+      "query": "请合并这些PDF文件",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "pdf_tool",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "pdf_tool",
+        "correct": true,
+        "tokens": 5210,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "pdf_tool",
+        "correct": true,
+        "tokens": 636,
+        "confidence": 0.0011,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "pdf_tool",
+        "correct": true,
+        "tokens": 653
+      }
+    },
+    {
+      "query_id": "document_processing_1",
+      "query": "帮我把Word转成PDF",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "format_converter",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "format_converter",
+        "correct": true,
+        "tokens": 5218,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 632,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "format_converter",
+        "correct": true,
+        "tokens": 821
+      }
+    },
+    {
+      "query_id": "document_processing_2",
+      "query": "我需要生成一份PPT演示",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "ppt_generator",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "ppt_generator",
+        "correct": true,
+        "tokens": 708,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "ppt_generator",
+        "correct": true,
+        "tokens": 624,
+        "confidence": 0.0008,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "ppt_generator",
+        "correct": true,
+        "tokens": 653
+      }
+    },
+    {
+      "query_id": "document_processing_3",
+      "query": "能不能拆分这个PDF",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2910,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 647,
+        "confidence": 0.0024,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 652
+      }
+    },
+    {
+      "query_id": "document_processing_4",
+      "query": "把Markdown转成DOCX",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "format_converter",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 2580,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 618,
+        "confidence": 0.0,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 537
+      }
+    },
+    {
+      "query_id": "document_processing_5",
+      "query": "请加密这个PDF文件",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11628,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 639,
+        "confidence": 0.0007,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 653
+      }
+    },
+    {
+      "query_id": "document_processing_6",
+      "query": "帮我搜索免费图片素材用于PPT",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 5205
+      },
+      "pte_fd": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 5219,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 623,
+        "confidence": 0.074,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "stock_photo",
+        "correct": true,
+        "tokens": 1190
+      }
+    },
+    {
+      "query_id": "document_processing_7",
+      "query": "我需要把HTML转成PDF",
+      "intent": "document_processing",
+      "ground_truth": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "static": {
+        "selected": "pdf_generator",
+        "correct": true,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "format_converter",
+        "correct": true,
+        "tokens": 709,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 651,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "format_converter",
+        "correct": true,
+        "tokens": 654
+      }
+    },
+    {
+      "query_id": "data_analysis_0",
+      "query": "请读取这个Excel文件",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 5210,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 696,
+        "confidence": 0.0005,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "file",
+        "correct": true,
+        "tokens": 526
+      }
+    },
+    {
+      "query_id": "data_analysis_1",
+      "query": "帮我生成柱状图",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 577,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 526
+      }
+    },
+    {
+      "query_id": "data_analysis_2",
+      "query": "我需要创建数据仪表盘",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 577,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 617,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 526
+      }
+    },
+    {
+      "query_id": "data_analysis_3",
+      "query": "能不能统计分析这些数据",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "statistics",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "statistics",
+        "correct": true,
+        "tokens": 5212,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "statistics",
+        "correct": true,
+        "tokens": 626,
+        "confidence": 0.0003,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 1531
+      }
+    },
+    {
+      "query_id": "data_analysis_4",
+      "query": "处理CSV文件",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "data_processor",
+        "correct": true,
+        "tokens": 5202
+      },
+      "pte_fd": {
+        "selected": "data_processor",
+        "correct": true,
+        "tokens": 5209,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 606,
+        "confidence": 0.0,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "data_processor",
+        "correct": true,
+        "tokens": 525
+      }
+    },
+    {
+      "query_id": "data_analysis_5",
+      "query": "请生成折线图可视化",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5204
+      },
+      "pte_fd": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 578,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 616,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "data_visualization",
+        "correct": true,
+        "tokens": 527
+      }
+    },
+    {
+      "query_id": "data_analysis_6",
+      "query": "帮我生成财务报表",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "financial_report",
+        "correct": false,
+        "tokens": 5201
+      },
+      "pte_fd": {
+        "selected": "financial_report",
+        "correct": false,
+        "tokens": 575,
+        "escalated": false,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 625,
+        "confidence": 0.0001,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "financial_report",
+        "correct": false,
+        "tokens": 524
+      }
+    },
+    {
+      "query_id": "data_analysis_7",
+      "query": "我需要数据清洗和过滤",
+      "intent": "data_analysis",
+      "ground_truth": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "static": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 5203
+      },
+      "pte_fd": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 11607,
+        "escalated": true,
+        "recovered": false
+      },
+      "itr": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 617,
+        "confidence": 0.0002,
+        "tools_count": 10
+      },
+      "keyword": {
+        "selected": "__need_more_tools__",
+        "correct": false,
+        "tokens": 368
+      }
+    }
+  ]
+}

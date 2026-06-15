@@ -1,0 +1,968 @@
+{
+  "experiment": "multi_step_tasks",
+  "model": "deepseek-chat",
+  "n_tasks": 19,
+  "n_steps": 44,
+  "summary": {
+    "static": {
+      "step_accuracy": 81.81818181818183,
+      "task_completion_rate": 63.1578947368421,
+      "avg_tokens_per_step": 3567.340909090909,
+      "n_steps_correct": 36,
+      "n_tasks_complete": 12,
+      "escalated": 0,
+      "recovered": 0,
+      "recovery_rate": 0
+    },
+    "pte_fd": {
+      "step_accuracy": 81.81818181818183,
+      "task_completion_rate": 68.42105263157895,
+      "avg_tokens_per_step": 1832.5681818181818,
+      "n_steps_correct": 36,
+      "n_tasks_complete": 13,
+      "escalated": 2,
+      "recovered": 0,
+      "recovery_rate": 0.0
+    }
+  },
+  "task_details": [
+    {
+      "task_id": "fin_01",
+      "description": "查询苹果公司股价，然后分析交易信号",
+      "category": "financial",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "查询苹果公司的实时股价",
+          "ground_truth": "stock_query",
+          "static": {
+            "selected": "stock_query",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "stock_query",
+            "correct": true,
+            "tokens": 538,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "分析AAPL的交易信号",
+          "ground_truth": "quant_trading",
+          "static": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 538,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "fin_02",
+      "description": "查看A股大盘并筛选科技股",
+      "category": "financial",
+      "n_steps": 2,
+      "static_all_correct": false,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "查看A股大盘走势",
+          "ground_truth": "stock_query",
+          "static": {
+            "selected": "stock_query",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "stock_query",
+            "correct": true,
+            "tokens": 538,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "帮我筛选科技板块买入信号",
+          "ground_truth": "quant_trading",
+          "static": {
+            "selected": "stock_query",
+            "correct": false,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 539,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "fin_03",
+      "description": "查询GDP数据并生成经济分析报告",
+      "category": "financial",
+      "n_steps": 2,
+      "static_all_correct": false,
+      "pte_fd_all_correct": false,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "查询美国GDP增长率数据",
+          "ground_truth": "fred_query",
+          "static": {
+            "selected": "fred",
+            "correct": false,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "fred",
+            "correct": false,
+            "tokens": 3567,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "生成经济分析Word文档",
+          "ground_truth": "doc_generator",
+          "static": {
+            "selected": "doc_generator",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "doc_generator",
+            "correct": true,
+            "tokens": 539,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "res_01",
+      "description": "搜索论文并下载PDF",
+      "category": "research",
+      "n_steps": 3,
+      "static_all_correct": true,
+      "pte_fd_all_correct": false,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "搜索关于LLM agent的论文",
+          "ground_truth": "literature_search",
+          "static": {
+            "selected": "literature_search",
+            "correct": true,
+            "tokens": 3569
+          },
+          "pte_fd": {
+            "selected": "literature_search",
+            "correct": true,
+            "tokens": 1465,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "检查这篇论文的PDF是否在OSS中",
+          "ground_truth": "oss_pdf_search",
+          "static": {
+            "selected": "oss_pdf_search",
+            "correct": true,
+            "tokens": 3571
+          },
+          "pte_fd": {
+            "selected": "file",
+            "correct": false,
+            "tokens": 653,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 3,
+          "query": "下载这篇论文的PDF",
+          "ground_truth": "oss_pdf_download",
+          "static": {
+            "selected": "oss_pdf_download",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "__need_more_tools__",
+            "correct": false,
+            "tokens": 2810,
+            "escalated": true,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "res_02",
+      "description": "分析研究领域并找反共识论文",
+      "category": "research",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "生成强化学习领域的学术地形图",
+          "ground_truth": "research_landscape",
+          "static": {
+            "selected": "research_landscape",
+            "correct": true,
+            "tokens": 3569
+          },
+          "pte_fd": {
+            "selected": "research_landscape",
+            "correct": true,
+            "tokens": 1465,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "找关于强化学习的反共识论文",
+          "ground_truth": "contrarian_finder",
+          "static": {
+            "selected": "contrarian_finder",
+            "correct": true,
+            "tokens": 3569
+          },
+          "pte_fd": {
+            "selected": "contrarian_finder",
+            "correct": true,
+            "tokens": 1465,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "res_03",
+      "description": "论文项目管理和文献检索",
+      "category": "research",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "创建一个新的论文写作项目",
+          "ground_truth": "paper_lifecycle",
+          "static": {
+            "selected": "paper_lifecycle",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "paper_lifecycle",
+            "correct": true,
+            "tokens": 1463,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "搜索相关文献",
+          "ground_truth": "literature_search",
+          "static": {
+            "selected": "literature_search",
+            "correct": true,
+            "tokens": 3565
+          },
+          "pte_fd": {
+            "selected": "literature_search",
+            "correct": true,
+            "tokens": 1461,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "doc_01",
+      "description": "搜索图片并生成PPT",
+      "category": "document",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "搜索AI相关的免费图片",
+          "ground_truth": "stock_photo",
+          "static": {
+            "selected": "stock_photo",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "stock_photo",
+            "correct": true,
+            "tokens": 1007,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "生成一份关于AI技术的PPT",
+          "ground_truth": "ppt_generator",
+          "static": {
+            "selected": "ppt_generator",
+            "correct": true,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "ppt_generator",
+            "correct": true,
+            "tokens": 650,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "doc_02",
+      "description": "读取数据并生成可视化图表",
+      "category": "document",
+      "n_steps": 2,
+      "static_all_correct": false,
+      "pte_fd_all_correct": false,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "读取sales_data.xlsx文件",
+          "ground_truth": "data_processor",
+          "static": {
+            "selected": "file",
+            "correct": false,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "file",
+            "correct": false,
+            "tokens": 3575,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "生成销售额柱状图",
+          "ground_truth": "data_visualization",
+          "static": {
+            "selected": "data_visualization",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "data_visualization",
+            "correct": true,
+            "tokens": 530,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "doc_03",
+      "description": "转换文档格式并合并PDF",
+      "category": "document",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "把report.md转成PDF格式",
+          "ground_truth": "format_converter",
+          "static": {
+            "selected": "format_converter",
+            "correct": true,
+            "tokens": 3569
+          },
+          "pte_fd": {
+            "selected": "format_converter",
+            "correct": true,
+            "tokens": 651,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "合并所有PDF文件",
+          "ground_truth": "pdf_tool",
+          "static": {
+            "selected": "pdf_tool",
+            "correct": true,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "pdf_tool",
+            "correct": true,
+            "tokens": 3573,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "life_01",
+      "description": "记录健康数据并制定健身计划",
+      "category": "life",
+      "n_steps": 2,
+      "static_all_correct": false,
+      "pte_fd_all_correct": false,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "记录今天的体重和血压",
+          "ground_truth": "health",
+          "static": {
+            "selected": "health",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "health",
+            "correct": true,
+            "tokens": 1233,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "制定一个减脂健身计划",
+          "ground_truth": "fitness_nutrition",
+          "static": {
+            "selected": "fitness",
+            "correct": false,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "fitness",
+            "correct": false,
+            "tokens": 1234,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "life_02",
+      "description": "查看课程表和食谱",
+      "category": "life",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "查看今天的课程安排",
+          "ground_truth": "course_schedule",
+          "static": {
+            "selected": "course_schedule",
+            "correct": true,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "course_schedule",
+            "correct": true,
+            "tokens": 3566,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "查看学校这周的食谱",
+          "ground_truth": "meal_menu",
+          "static": {
+            "selected": "meal_menu",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "meal_menu",
+            "correct": true,
+            "tokens": 1233,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "life_03",
+      "description": "添加待办并设置提醒",
+      "category": "life",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "添加一个明天开会的待办事项",
+          "ground_truth": "todo",
+          "static": {
+            "selected": "todo",
+            "correct": true,
+            "tokens": 3570
+          },
+          "pte_fd": {
+            "selected": "todo",
+            "correct": true,
+            "tokens": 1236,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "设置明天早上9点提醒我开会",
+          "ground_truth": "cron",
+          "static": {
+            "selected": "cron",
+            "correct": true,
+            "tokens": 3570
+          },
+          "pte_fd": {
+            "selected": "cron",
+            "correct": true,
+            "tokens": 3584,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "mul_01",
+      "description": "语音转文字后生成文档",
+      "category": "multimedia",
+      "n_steps": 2,
+      "static_all_correct": false,
+      "pte_fd_all_correct": false,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "把这段语音转成文字",
+          "ground_truth": "voice_input",
+          "static": {
+            "selected": "speech_to_text",
+            "correct": false,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "speech_to_text",
+            "correct": false,
+            "tokens": 1008,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "将文字内容生成Word文档",
+          "ground_truth": "doc_generator",
+          "static": {
+            "selected": "doc_generator",
+            "correct": true,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "doc_generator",
+            "correct": true,
+            "tokens": 540,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "mul_02",
+      "description": "截图并识别文字",
+      "category": "multimedia",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "截取屏幕",
+          "ground_truth": "screen",
+          "static": {
+            "selected": "screen",
+            "correct": true,
+            "tokens": 3565
+          },
+          "pte_fd": {
+            "selected": "screen",
+            "correct": true,
+            "tokens": 538,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "识别截图中的文字",
+          "ground_truth": "ocr",
+          "static": {
+            "selected": "ocr",
+            "correct": true,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "ocr",
+            "correct": true,
+            "tokens": 3584,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "brw_01",
+      "description": "打开网页并提取信息",
+      "category": "browser",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "打开https://example.com网站",
+          "ground_truth": "browser",
+          "static": {
+            "selected": "browser",
+            "correct": true,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "browser",
+            "correct": true,
+            "tokens": 608,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "截图保存网页内容",
+          "ground_truth": "screen",
+          "static": {
+            "selected": "screen",
+            "correct": true,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "screen",
+            "correct": true,
+            "tokens": 3574,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "sys_01",
+      "description": "检查系统状态并清理",
+      "category": "system",
+      "n_steps": 2,
+      "static_all_correct": false,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "查看CPU和内存使用率",
+          "ground_truth": "system_monitor",
+          "static": {
+            "selected": "system_monitor",
+            "correct": true,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "system_monitor",
+            "correct": true,
+            "tokens": 478,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "清理系统临时文件",
+          "ground_truth": "shell",
+          "static": {
+            "selected": "__need_more_tools__",
+            "correct": false,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "shell",
+            "correct": true,
+            "tokens": 3584,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "knw_01",
+      "description": "搜索诗词并生成思维导图",
+      "category": "knowledge",
+      "n_steps": 2,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "搜索李白的诗",
+          "ground_truth": "poetry",
+          "static": {
+            "selected": "poetry",
+            "correct": true,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "poetry",
+            "correct": true,
+            "tokens": 3566,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "生成唐诗思维导图",
+          "ground_truth": "mind_map",
+          "static": {
+            "selected": "mind_map",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "mind_map",
+            "correct": true,
+            "tokens": 3581,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "cpx_01",
+      "description": "完整的量化交易分析流程",
+      "category": "complex",
+      "n_steps": 5,
+      "static_all_correct": false,
+      "pte_fd_all_correct": false,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "查询茅台的实时股价",
+          "ground_truth": "stock_query",
+          "static": {
+            "selected": "stock_query",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "stock_query",
+            "correct": true,
+            "tokens": 538,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "分析600519的交易信号",
+          "ground_truth": "quant_trading",
+          "static": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 538,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 3,
+          "query": "评估这只股的风险",
+          "ground_truth": "quant_trading",
+          "static": {
+            "selected": "stock_query",
+            "correct": false,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "stock_query",
+            "correct": false,
+            "tokens": 5187,
+            "escalated": true,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 4,
+          "query": "计算合适的仓位",
+          "ground_truth": "quant_trading",
+          "static": {
+            "selected": "calculator",
+            "correct": false,
+            "tokens": 3565
+          },
+          "pte_fd": {
+            "selected": "calculator",
+            "correct": false,
+            "tokens": 3579,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 5,
+          "query": "生成量化分析日报",
+          "ground_truth": "quant_trading",
+          "static": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 3566
+          },
+          "pte_fd": {
+            "selected": "quant_trading",
+            "correct": true,
+            "tokens": 537,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "cpx_02",
+      "description": "学术论文全流程",
+      "category": "complex",
+      "n_steps": 4,
+      "static_all_correct": true,
+      "pte_fd_all_correct": true,
+      "steps": [
+        {
+          "step_index": 1,
+          "query": "搜索关于agent的学术论文",
+          "ground_truth": "literature_search",
+          "static": {
+            "selected": "literature_search",
+            "correct": true,
+            "tokens": 3568
+          },
+          "pte_fd": {
+            "selected": "literature_search",
+            "correct": true,
+            "tokens": 3568,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 2,
+          "query": "检查论文PDF在OSS中是否存在",
+          "ground_truth": "oss_pdf_search",
+          "static": {
+            "selected": "oss_pdf_search",
+            "correct": true,
+            "tokens": 3569
+          },
+          "pte_fd": {
+            "selected": "oss_pdf_search",
+            "correct": true,
+            "tokens": 3586,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 3,
+          "query": "追踪agent思想谱系",
+          "ground_truth": "research_lineage",
+          "static": {
+            "selected": "research_lineage",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "research_lineage",
+            "correct": true,
+            "tokens": 1463,
+            "escalated": false,
+            "recovered": false
+          }
+        },
+        {
+          "step_index": 4,
+          "query": "评估适合投稿的期刊",
+          "ground_truth": "journal_intelligence",
+          "static": {
+            "selected": "journal_intelligence",
+            "correct": true,
+            "tokens": 3567
+          },
+          "pte_fd": {
+            "selected": "journal_intelligence",
+            "correct": true,
+            "tokens": 1463,
+            "escalated": false,
+            "recovered": false
+          }
+        }
+      ]
+    }
+  ]
+}

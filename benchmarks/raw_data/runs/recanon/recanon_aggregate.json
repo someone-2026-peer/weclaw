@@ -1,0 +1,316 @@
+{
+  "per_model": {
+    "deepseek": {
+      "static": {
+        "acc_mean": 74.0,
+        "acc_std": 1.0,
+        "acc_per_seed": [
+          75.0,
+          72.92,
+          73.96
+        ],
+        "avg_tokens_mean": 4697.4,
+        "pooled_correct": 213,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          68.6,
+          78.69
+        ]
+      },
+      "pte": {
+        "acc_mean": 74.7,
+        "acc_std": 1.6,
+        "acc_per_seed": [
+          72.92,
+          76.04,
+          75.0
+        ],
+        "avg_tokens_mean": 2135.4,
+        "pooled_correct": 215,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          69.33,
+          79.33
+        ]
+      },
+      "pte_fd": {
+        "acc_mean": 86.8,
+        "acc_std": 2.4,
+        "acc_per_seed": [
+          89.58,
+          85.42,
+          85.42
+        ],
+        "avg_tokens_mean": 2528.9,
+        "pooled_correct": 250,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          82.41,
+          90.23
+        ]
+      },
+      "keyword": {
+        "acc_mean": 59.7,
+        "acc_std": 1.6,
+        "acc_per_seed": [
+          59.38,
+          58.33,
+          61.46
+        ],
+        "avg_tokens_mean": 822.5,
+        "pooled_correct": 172,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          53.97,
+          65.22
+        ]
+      },
+      "_mcnemar_fd_vs_pte": {
+        "n01": 37,
+        "n10": 2,
+        "chi2": 29.641,
+        "p": 5.199278556534704e-08
+      },
+      "_mcnemar_fd_vs_static": {
+        "n01": 50,
+        "n10": 13,
+        "chi2": 20.571,
+        "p": 5.7447119191568595e-06
+      }
+    },
+    "glm": {
+      "static": {
+        "acc_mean": 87.8,
+        "acc_std": 2.6,
+        "acc_per_seed": [
+          85.42,
+          90.62,
+          87.5
+        ],
+        "avg_tokens_mean": 7682.5,
+        "pooled_correct": 253,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          83.57,
+          91.13
+        ]
+      },
+      "pte": {
+        "acc_mean": 93.8,
+        "acc_std": 2.1,
+        "acc_per_seed": [
+          91.67,
+          95.83,
+          93.75
+        ],
+        "avg_tokens_mean": 3285.9,
+        "pooled_correct": 270,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          90.34,
+          96.01
+        ]
+      },
+      "pte_fd": {
+        "acc_mean": 96.5,
+        "acc_std": 0.6,
+        "acc_per_seed": [
+          96.88,
+          95.83,
+          96.88
+        ],
+        "avg_tokens_mean": 3427.8,
+        "pooled_correct": 278,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          93.73,
+          98.1
+        ]
+      },
+      "keyword": {
+        "acc_mean": 74.7,
+        "acc_std": 1.6,
+        "acc_per_seed": [
+          75.0,
+          76.04,
+          72.92
+        ],
+        "avg_tokens_mean": 1018.8,
+        "pooled_correct": 215,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          69.33,
+          79.33
+        ]
+      },
+      "_mcnemar_fd_vs_pte": {
+        "n01": 8,
+        "n10": 0,
+        "chi2": 6.125,
+        "p": 0.013328328780817557
+      },
+      "_mcnemar_fd_vs_static": {
+        "n01": 25,
+        "n10": 0,
+        "chi2": 23.04,
+        "p": 1.5866563039511898e-06
+      }
+    },
+    "kimi": {
+      "static": {
+        "acc_mean": 78.8,
+        "acc_std": 0.6,
+        "acc_per_seed": [
+          79.17,
+          79.17,
+          78.12
+        ],
+        "avg_tokens_mean": 2587.4,
+        "pooled_correct": 227,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          73.74,
+          83.14
+        ]
+      },
+      "pte": {
+        "acc_mean": 87.8,
+        "acc_std": 1.6,
+        "acc_per_seed": [
+          86.46,
+          87.5,
+          89.58
+        ],
+        "avg_tokens_mean": 1144.9,
+        "pooled_correct": 253,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          83.57,
+          91.13
+        ]
+      },
+      "pte_fd": {
+        "acc_mean": 93.1,
+        "acc_std": 0.6,
+        "acc_per_seed": [
+          93.75,
+          92.71,
+          92.71
+        ],
+        "avg_tokens_mean": 1240.5,
+        "pooled_correct": 268,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          89.52,
+          95.46
+        ]
+      },
+      "keyword": {
+        "acc_mean": 78.1,
+        "acc_std": 1.0,
+        "acc_per_seed": [
+          77.08,
+          78.12,
+          79.17
+        ],
+        "avg_tokens_mean": 383.3,
+        "pooled_correct": 225,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          73.0,
+          82.51
+        ]
+      },
+      "_mcnemar_fd_vs_pte": {
+        "n01": 17,
+        "n10": 2,
+        "chi2": 10.316,
+        "p": 0.0013189686125793583
+      },
+      "_mcnemar_fd_vs_static": {
+        "n01": 42,
+        "n10": 1,
+        "chi2": 37.209,
+        "p": 1.0610641964594883e-09
+      }
+    },
+    "qwen": {
+      "static": {
+        "acc_mean": 87.2,
+        "acc_std": 1.6,
+        "acc_per_seed": [
+          85.42,
+          88.54,
+          87.5
+        ],
+        "avg_tokens_mean": 5361.6,
+        "pooled_correct": 251,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          82.79,
+          90.53
+        ]
+      },
+      "pte": {
+        "acc_mean": 95.1,
+        "acc_std": 2.2,
+        "acc_per_seed": [
+          92.71,
+          96.88,
+          95.83
+        ],
+        "avg_tokens_mean": 2384.5,
+        "pooled_correct": 274,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          92.01,
+          97.08
+        ]
+      },
+      "pte_fd": {
+        "acc_mean": 97.9,
+        "acc_std": 1.0,
+        "acc_per_seed": [
+          96.88,
+          98.96,
+          97.92
+        ],
+        "avg_tokens_mean": 2465.6,
+        "pooled_correct": 282,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          95.53,
+          99.04
+        ]
+      },
+      "keyword": {
+        "acc_mean": 76.4,
+        "acc_std": 1.6,
+        "acc_per_seed": [
+          76.04,
+          78.12,
+          75.0
+        ],
+        "avg_tokens_mean": 862.2,
+        "pooled_correct": 220,
+        "pooled_total": 288,
+        "wilson_ci_pooled": [
+          71.16,
+          80.93
+        ]
+      },
+      "_mcnemar_fd_vs_pte": {
+        "n01": 9,
+        "n10": 1,
+        "chi2": 4.9,
+        "p": 0.02685669550752443
+      },
+      "_mcnemar_fd_vs_static": {
+        "n01": 32,
+        "n10": 1,
+        "chi2": 27.273,
+        "p": 1.7668604421878398e-07
+      }
+    }
+  }
+}
