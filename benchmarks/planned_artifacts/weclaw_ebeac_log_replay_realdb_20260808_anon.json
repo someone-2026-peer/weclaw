@@ -1,0 +1,4524 @@
+{
+  "dataset_name": "weclaw_ebeac_log_replay",
+  "version": "0.3.0-real-db-export",
+  "notes": "Replay dataset exported from one or more ExperienceStore SQLite snapshots. Rows are deduplicated, sorted chronologically, and split into train/test partitions for exp9 replay evaluation.",
+  "export_summary": {
+    "source_db_count": 1,
+    "source_dbs": [
+      "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db"
+    ],
+    "rows_before_dedup": 196,
+    "rows_after_dedup": 196,
+    "train_ratio": 0.7
+  },
+  "items": [
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00001",
+      "timestamp": "2026-05-30T08:40:06.093694",
+      "session_id": "9d60ec6f",
+      "tool_name": "codebase_search",
+      "action": "list_modules",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "codebase_search.list_modules 连续失败 2 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\src; 目录不存在: <PROJECT>\\src\\src",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00002",
+      "timestamp": "2026-05-30T08:40:19.070177",
+      "session_id": "9d60ec6f",
+      "tool_name": "codebase_search",
+      "action": "grep",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "codebase_search.grep 连续失败 2 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\src; 目录不存在: <PROJECT>\\src\\src",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00003",
+      "timestamp": "2026-05-30T22:55:06.509507",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780150057811",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00004",
+      "timestamp": "2026-05-30T22:57:30.490326",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780150057811",
+      "tool_name": "literature_search",
+      "action": "get_paper_details",
+      "status": "error",
+      "error_type": "network_error",
+      "fix_pattern": "工具试错模式: 连接重试",
+      "split": "train",
+      "metadata": {
+        "query": "literature_search.get_paper_details 连续失败 3 次后重试成功",
+        "diagnosis": "工具 literature_search 调用出错: PDF 下载失败，状态码: 403; 下载的内容不是 PDF 文件（类型: text/html;charset=UTF-8）; PDF 下载失败: All connection attempts failed",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "literature_search"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00005",
+      "timestamp": "2026-05-31T11:35:58.489009",
+      "session_id": "1e9267a8",
+      "tool_name": "paper_lifecycle",
+      "action": "detect_ai_patterns",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.detect_ai_patterns 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 项目目录中未找到论文文件: <PROJECT>\\src\\data\\academic\\projects\\78\n请先通过 assemble_paper 合并章节，或直接指定; 论文文件不存在: data/academic/projects/78/assembled_paper_20260531.md",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 8,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00006",
+      "timestamp": "2026-06-02T06:25:09.685892",
+      "session_id": "1f6ed85e",
+      "tool_name": "format_converter",
+      "action": "convert_markdown_to_docx",
+      "status": "error",
+      "error_type": "unsupported_format",
+      "fix_pattern": "工具试错模式: format_converter工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "format_converter.convert_markdown_to_docx 连续失败 2 次后重试成功",
+        "diagnosis": "工具 format_converter 调用出错: 格式转换失败: cannot identify image file 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-06-02\\\\fig1_ai_smp.; 格式转换失败: cannot identify image file 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-06-02\\\\fig2_prisma.",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "format_converter"
+        ],
+        "related_files": [],
+        "hit_count": 5,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00007",
+      "timestamp": "2026-06-02T13:15:42.550998",
+      "session_id": "0cef0c0f",
+      "tool_name": "literature_search",
+      "action": "download_pdf",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: literature_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "literature_search.download_pdf 连续失败 2 次后重试成功",
+        "diagnosis": "工具 literature_search 调用出错: PDF 下载失败，状态码: 403; PDF 下载失败，状态码: 403",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "literature_search"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00008",
+      "timestamp": "2026-06-02T13:42:31.357955",
+      "session_id": "0cef0c0f",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00009",
+      "timestamp": "2026-06-04T02:07:02.537220",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780509711464",
+      "tool_name": "codebase_search",
+      "action": "find_symbol",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "codebase_search.find_symbol 连续失败 3 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\src\\core\\agent.py; 目录不存在: <PROJECT>\\src\\src\\core\\agent.py; 目录不存在: <PROJECT>\\src\\src\\core\\agent.py",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00010",
+      "timestamp": "2026-06-04T08:31:51.550114",
+      "session_id": "b345a824",
+      "tool_name": "todo",
+      "action": "get_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "todo.get_todo 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 1; 待办事项不存在: ID 2",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00011",
+      "timestamp": "2026-06-04T08:32:11.297658",
+      "session_id": "b345a824",
+      "tool_name": "todo",
+      "action": "cancel_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "todo.cancel_todo 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 5; 待办事项不存在: ID 18",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00012",
+      "timestamp": "2026-06-06T09:08:25.673912",
+      "session_id": "1bf5056b",
+      "tool_name": "todo",
+      "action": "get_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "todo.get_todo 连续失败 3 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 1; 待办事项不存在: ID 26; 待办事项不存在: ID 27",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00013",
+      "timestamp": "2026-06-07T10:46:15.900895",
+      "session_id": "5e6db763",
+      "tool_name": "file",
+      "action": "list",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "train",
+      "metadata": {
+        "query": "file.list 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件不存在：<PROJECT>\\data\\academic\\projects\\81\\phase7_chart_data.md; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-06-05'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 10,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00014",
+      "timestamp": "2026-06-07T10:55:13.544147",
+      "session_id": "5e6db763",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00015",
+      "timestamp": "2026-06-07T11:17:23.145740",
+      "session_id": "5e6db763",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 6 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00016",
+      "timestamp": "2026-06-08T20:07:48.000084",
+      "session_id": "a726e50e",
+      "tool_name": "paper_lifecycle",
+      "action": "run_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.run_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 118 < 200（文件可能过短或为空）\n  - phase6_draft.md: 缺少预期章节 `Intr; 无法标记 Phase 7 为 completed：前置阶段未完成: Phase 6(初稿写作)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 10,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00017",
+      "timestamp": "2026-06-08T20:12:16.455686",
+      "session_id": "a726e50e",
+      "tool_name": "paper_lifecycle",
+      "action": "batch_update_phases",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.batch_update_phases 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 122 < 200（文件可能过短或为空）; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 181 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00018",
+      "timestamp": "2026-06-08T22:12:14.150826",
+      "session_id": "a726e50e",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "train",
+      "metadata": {
+        "query": "file.read 连续失败 3 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-06-08'; 检测到二进制文件：ZIP 压缩文件。请使用专门的工具处理此类文件（如图片请用 ocr.recognize_file 识别文字）。; 检测到二进制文件：PDF 文档。请使用专门的工具处理此类文件（如图片请用 ocr.recognize_file 识别文字）。",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 5,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00019",
+      "timestamp": "2026-06-08T23:32:50.294585",
+      "session_id": "cb7acb35",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 12 产出物内容质检未通过:\n  - phase12_revision_plan.md: 有效行数 28 < 30（文件可能过短或为空）; Phase 13 产出物内容质检未通过:\n  - phase13_cover_letter.md: 有效行数 19 < 20（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00020",
+      "timestamp": "2026-06-08T23:38:20.465808",
+      "session_id": "cb7acb35",
+      "tool_name": "format_converter",
+      "action": "convert_markdown_to_docx",
+      "status": "error",
+      "error_type": "unsupported_format",
+      "fix_pattern": "工具试错模式: 编码/解析容错",
+      "split": "train",
+      "metadata": {
+        "query": "format_converter.convert_markdown_to_docx 连续失败 2 次后重试成功",
+        "diagnosis": "工具 format_converter 调用出错: 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"<PROJECT>\\data\\academic\\project; 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"<PROJECT>\\data\\academic\\project",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "format_converter"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00021",
+      "timestamp": "2026-06-08T23:58:05.671806",
+      "session_id": "b76cd828",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 4 标记 completed 必须提供 artifacts（产出物文件路径）。\n预期文件: phase4_citation_roles.md\n请先将产出物保存到 data/academic; Phase 4 产出物内容质检未通过:\n  - phase4_citation_roles.md: 有效字符数 2106 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00022",
+      "timestamp": "2026-06-09T06:54:42.307091",
+      "session_id": "bdc0e8f9",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 96 < 120（文件可能过短或为空）; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 96 < 120（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00023",
+      "timestamp": "2026-06-09T06:58:11.200842",
+      "session_id": "bdc0e8f9",
+      "tool_name": "paper_lifecycle",
+      "action": "get_status",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.get_status 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 8 产出物内容质检未通过:\n  - phase8_cross_check_matrix.md: 有效字符数 1388 < 最低要求 2000; Phase 10 标记 completed 必须提供 artifacts（产出物文件路径）。\n预期文件: phase10_review_report.md\n请先将产出物保存到 data/academi; 无法标记 Phase 11 为 completed：前置阶段未完成: Phase 10(模拟评审)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 4,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00024",
+      "timestamp": "2026-06-09T07:25:01.236913",
+      "session_id": "bdc0e8f9",
+      "tool_name": "format_converter",
+      "action": "convert_markdown_to_docx",
+      "status": "error",
+      "error_type": "unsupported_format",
+      "fix_pattern": "工具试错模式: 编码/解析容错",
+      "split": "train",
+      "metadata": {
+        "query": "format_converter.convert_markdown_to_docx 连续失败 2 次后重试成功",
+        "diagnosis": "工具 format_converter 调用出错: 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"<PROJECT>\\data\\academic\\project; 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"<PROJECT>\\data\\academic\\project",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "format_converter"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00025",
+      "timestamp": "2026-06-09T08:57:52.869328",
+      "session_id": "e24c92a3",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 4 标记 completed 必须提供 artifacts（产出物文件路径）。\n预期文件: phase4_citation_roles.md, phase4_reference_pool.; 无法标记 Phase 8 为 completed：前置阶段未完成: Phase 4(文献遴选与引文库建设)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。; Phase 4 标记 completed 必须提供 artifacts（产出物文件路径）。\n预期文件: phase4_citation_roles.md, phase4_reference_pool.",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00026",
+      "timestamp": "2026-06-09T13:49:39.642358",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1780984105063",
+      "tool_name": "quant_trading",
+      "action": "stock_screen",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: quant_trading工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "quant_trading.stock_screen 连续失败 2 次后重试成功",
+        "diagnosis": "工具 quant_trading 调用出错: name 'logger' is not defined; name 'logger' is not defined",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "quant_trading"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00027",
+      "timestamp": "2026-06-09T14:38:59.409414",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_final_paper.md: 有效行数 178 < 200（文件可能过短或为空）\n  - phase6_final_paper.md: ; Phase 6 产出物内容质检未通过:\n  - phase6_final_paper.md: 有效行数 199 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00028",
+      "timestamp": "2026-06-09T15:09:20.070178",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "validate_references",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.validate_references 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 8 产出物内容质检未通过:\n  - phase8_cross_check_matrix.md: 有效字符数 1703 < 最低要求 2000; 未找到参考文献章节（需包含 ## References 或 ## 参考文献）; 未找到参考文献章节（需包含 ## References 或 ## 参考文献）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00029",
+      "timestamp": "2026-06-09T15:11:06.440548",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 9 产出物内容质检未通过:\n  - phase9_reference_validation.md: 有效字符数 800 < 最低要求 3000; Phase 9 产出物内容质检未通过:\n  - phase9_reference_validation.md: 有效字符数 2384 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00030",
+      "timestamp": "2026-06-09T15:13:31.567372",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2002 < 最低要求 3000; Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2561 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00031",
+      "timestamp": "2026-06-09T15:23:05.933726",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 未找到论文文件，请先执行assemble_paper或完成Phase 6; Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2277 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00032",
+      "timestamp": "2026-06-09T15:29:04.126801",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2829 < 最低要求 3000; Phase 12 产出物内容质检未通过:\n  - phase12_ai_detection_report.md: 有效字符数 1985 < 最低要求 4000\n  - phase12_ai_detec; Phase 12 产出物内容质检未通过:\n  - phase12_ai_detection_report.md: 有效字符数 2649 < 最低要求 4000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00033",
+      "timestamp": "2026-06-09T15:32:02.516310",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效行数 31 < 50（文件可能过短或为空）\n  - phase13_revision_plan; Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效字符数 2556 < 最低要求 4000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00034",
+      "timestamp": "2026-06-09T15:38:25.866929",
+      "session_id": "b628753d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 14 产出物内容质检未通过:\n  - phase14_cover_letter.md: 有效行数 17 < 20（文件可能过短或为空）; Phase 15 产出物内容质检未通过:\n  - phase15_submission_strategy.md: 有效字符数 1405 < 最低要求 1500",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00035",
+      "timestamp": "2026-06-10T05:00:22.711138",
+      "session_id": "8c20dd1b",
+      "tool_name": "wechat",
+      "action": "send_message",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.send_message 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 6,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00036",
+      "timestamp": "2026-06-10T05:26:09.454482",
+      "session_id": "8c20dd1b",
+      "tool_name": "wechat",
+      "action": "get_chat_list",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.get_chat_list 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00037",
+      "timestamp": "2026-06-10T07:45:11.045169",
+      "session_id": "e0565894",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00038",
+      "timestamp": "2026-06-10T07:46:15.812154",
+      "session_id": "e0565894",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00039",
+      "timestamp": "2026-06-10T10:11:32.987805",
+      "session_id": "3886afcb",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00040",
+      "timestamp": "2026-06-10T10:12:47.059734",
+      "session_id": "3886afcb",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00041",
+      "timestamp": "2026-06-10T10:29:03.434454",
+      "session_id": "4c2bd3f9",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00042",
+      "timestamp": "2026-06-10T10:29:13.833463",
+      "session_id": "4c2bd3f9",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00043",
+      "timestamp": "2026-06-10T10:37:31.012469",
+      "session_id": "4c2bd3f9",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00044",
+      "timestamp": "2026-06-10T10:40:15.121921",
+      "session_id": "4c2bd3f9",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00045",
+      "timestamp": "2026-06-10T17:32:17.323240",
+      "session_id": "6b954840",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00046",
+      "timestamp": "2026-06-10T17:32:34.095786",
+      "session_id": "6b954840",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00047",
+      "timestamp": "2026-06-10T17:33:24.811985",
+      "session_id": "6b954840",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00048",
+      "timestamp": "2026-06-10T17:36:00.222095",
+      "session_id": "6b954840",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00049",
+      "timestamp": "2026-06-10T17:39:15.598807",
+      "session_id": "6b954840",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00051",
+      "timestamp": "2026-06-10T22:07:27.614322",
+      "session_id": "e4fda456",
+      "tool_name": "wechat",
+      "action": "view_messages",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.view_messages 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00052",
+      "timestamp": "2026-06-10T22:12:26.072235",
+      "session_id": "e4fda456",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 3 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00053",
+      "timestamp": "2026-06-11T18:43:21.564314",
+      "session_id": "69ef5e2a",
+      "tool_name": "wechat",
+      "action": "send_message",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.send_message 连续失败 8 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00054",
+      "timestamp": "2026-06-11T21:01:16.101630",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1781182779150",
+      "tool_name": "wechat",
+      "action": "send_message",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.send_message 连续失败 5 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00055",
+      "timestamp": "2026-06-12T22:01:38.588801",
+      "session_id": "7a381ae7",
+      "tool_name": "codebase_search",
+      "action": "grep",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: codebase_search工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "codebase_search.grep 连续失败 2 次后重试成功",
+        "diagnosis": "工具 codebase_search 调用出错: 目录不存在: <PROJECT>\\src\\tools\\diary; 目录不存在: <PROJECT>\\src\\src\\tools\\diary.py",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "codebase_search"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00056",
+      "timestamp": "2026-06-14T01:09:25.910988",
+      "session_id": "91239d87",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00057",
+      "timestamp": "2026-06-14T12:10:13.378056",
+      "session_id": "6d1668be",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00058",
+      "timestamp": "2026-06-14T12:11:24.816742",
+      "session_id": "6d1668be",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00059",
+      "timestamp": "2026-06-14T15:47:01.464148",
+      "session_id": "506247f5",
+      "tool_name": "wechat",
+      "action": "switch_chat",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.switch_chat 连续失败 4 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信客户端未运行，请先打开微信并登录; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00060",
+      "timestamp": "2026-06-14T17:24:43.351947",
+      "session_id": "73dad43e",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00061",
+      "timestamp": "2026-06-14T22:31:04.861787",
+      "session_id": "d9d8b411",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00062",
+      "timestamp": "2026-06-14T22:31:21.326620",
+      "session_id": "d9d8b411",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00063",
+      "timestamp": "2026-06-14T22:31:35.659926",
+      "session_id": "d9d8b411",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00064",
+      "timestamp": "2026-06-15T00:28:18.362065",
+      "session_id": "70e22654",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "train",
+      "metadata": {
+        "query": "file.read 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw'; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00065",
+      "timestamp": "2026-06-17T06:01:49.375611",
+      "session_id": "4e9d7056",
+      "tool_name": "todo",
+      "action": "complete_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "todo.complete_todo 连续失败 3 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 35; 待办事项不存在: ID 35; 待办事项不存在: ID 36",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00066",
+      "timestamp": "2026-06-18T18:57:54.686492",
+      "session_id": "77c99e98",
+      "tool_name": "wechat",
+      "action": "launch",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.launch 连续失败 4 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00067",
+      "timestamp": "2026-06-20T06:16:28.571223",
+      "session_id": "127cae8a",
+      "tool_name": "stock_query",
+      "action": "company",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: stock_query工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "stock_query.company 连续失败 2 次后重试成功",
+        "diagnosis": "工具 stock_query 调用出错: 未获取到 合锻智能 的基本面数据; 未获取到 兆易创新 的基本面数据",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "stock_query"
+        ],
+        "related_files": [],
+        "hit_count": 7,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00068",
+      "timestamp": "2026-06-20T07:42:08.192132",
+      "session_id": "185a3d3a",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00069",
+      "timestamp": "2026-06-20T07:42:25.356473",
+      "session_id": "185a3d3a",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00070",
+      "timestamp": "2026-06-20T07:42:38.293527",
+      "session_id": "185a3d3a",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00071",
+      "timestamp": "2026-06-20T07:46:49.560591",
+      "session_id": "185a3d3a",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 4 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00072",
+      "timestamp": "2026-06-20T07:59:34.654463",
+      "session_id": "972200f8",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00073",
+      "timestamp": "2026-06-22T01:30:33.905991",
+      "session_id": "04040d93",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 3 artifacts 文件不存在: data/academic/projects/87/phase3_reading_notes.json。\n请先将产出物保存到 data/academi; 执行失败: slice(None, 150, None); Phase 4 产出物内容质检未通过:\n  - phase4_citation_roles.md: 有效字符数 2673 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00074",
+      "timestamp": "2026-06-22T01:39:49.784038",
+      "session_id": "04040d93",
+      "tool_name": "paper_lifecycle",
+      "action": "run_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.run_phase 连续失败 7 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 104 < 200（文件可能过短或为空）\n  - phase6_draft.md: 缺少预期章节 (任一: ; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 105 < 200（文件可能过短或为空）; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 167 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00075",
+      "timestamp": "2026-06-22T01:47:57.101806",
+      "session_id": "04040d93",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 无法标记 Phase 7 为 completed：前置阶段未完成: Phase 6(初稿写作)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。; 无法标记 Phase 7 为 completed：前置阶段未完成: Phase 6(初稿写作)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 6,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00076",
+      "timestamp": "2026-06-22T01:49:50.274636",
+      "session_id": "04040d93",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00077",
+      "timestamp": "2026-06-22T02:00:20.338113",
+      "session_id": "04040d93",
+      "tool_name": "paper_lifecycle",
+      "action": "run_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.run_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效行数 37 < 50（文件可能过短或为空）\n  - phase13_revision_plan; Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效字符数 1932 < 最低要求 4000; Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效字符数 2837 < 最低要求 4000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00078",
+      "timestamp": "2026-06-22T02:04:43.406146",
+      "session_id": "04040d93",
+      "tool_name": "format_converter",
+      "action": "convert_markdown_to_docx",
+      "status": "error",
+      "error_type": "unsupported_format",
+      "fix_pattern": "工具试错模式: 编码/解析容错",
+      "split": "train",
+      "metadata": {
+        "query": "format_converter.convert_markdown_to_docx 连续失败 4 次后重试成功",
+        "diagnosis": "工具 format_converter 调用出错: 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"data\\academic\\projects\\87\\phase6_draft.md\" (lin; 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"data\\academic\\projects\\87\\phase6_draft.md\" (lin; 格式转换失败: Pandoc 转换失败: Error parsing YAML metadata at \"data\\academic\\projects\\87\\phase6_draft.md\" (lin",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "format_converter"
+        ],
+        "related_files": [],
+        "hit_count": 9,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00079",
+      "timestamp": "2026-06-23T06:17:17.103178",
+      "session_id": "0451e2d3",
+      "tool_name": "stock_query",
+      "action": "company",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: stock_query工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "stock_query.company 连续失败 2 次后重试成功",
+        "diagnosis": "工具 stock_query 调用出错: 请提供股票代码; 未获取到 华特气体 的基本面数据",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "stock_query"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00080",
+      "timestamp": "2026-06-24T06:16:49.122866",
+      "session_id": "2be55ff1",
+      "tool_name": "stock_query",
+      "action": "company",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: stock_query工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "stock_query.company 连续失败 2 次后重试成功",
+        "diagnosis": "工具 stock_query 调用出错: 未获取到 华微电子 的基本面数据; 未获取到 盛新锂能 的基本面数据",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "stock_query"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00081",
+      "timestamp": "2026-06-24T22:17:02.034237",
+      "session_id": "1804cf9c",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "train",
+      "metadata": {
+        "query": "file.read 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件不存在：<PROJECT>\\generated\\diary\\draft_2026-06-24.md; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00082",
+      "timestamp": "2026-06-24T23:21:37.771093",
+      "session_id": "8c99b45e",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 1 标记 completed 必须提供 artifacts（产出物文件路径）。\n预期文件: phase1_topic_analysis.md\n请先将产出物保存到 data/academic; 无法标记 Phase 2 为 completed：前置阶段未完成: Phase 1(选题定位)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 21,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00083",
+      "timestamp": "2026-06-24T23:25:56.504742",
+      "session_id": "8c99b45e",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: 参数修正",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 2 artifacts 文件不存在: data/academic/projects/88/phase2_papers.json。\n请先将产出物保存到 data/academic/proje; 执行失败: ToolResult.__init__() got an unexpected keyword argument 'text'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 10,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00084",
+      "timestamp": "2026-06-25T00:16:22.203991",
+      "session_id": "8c99b45e",
+      "tool_name": "paper_lifecycle",
+      "action": "run_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.run_phase 连续失败 4 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 141 < 200（文件可能过短或为空）; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 187 < 200（文件可能过短或为空）; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 192 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00085",
+      "timestamp": "2026-06-25T00:33:37.226729",
+      "session_id": "c18854f8",
+      "tool_name": "paper_lifecycle",
+      "action": "batch_update_phases",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: 参数修正",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.batch_update_phases 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 执行失败: ToolResult.__init__() got an unexpected keyword argument 'text'; 无法标记 Phase 8 为 completed：前置阶段未完成: Phase 6(初稿写作), Phase 7(图表完善与数据可视化)。请先依次完成前置阶段，或使用 status='skipped'; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 194 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 14,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00086",
+      "timestamp": "2026-06-25T00:53:00.136569",
+      "session_id": "c18854f8",
+      "tool_name": "paper_lifecycle",
+      "action": "run_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.run_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 无法标记 Phase 10 为 completed：前置阶段未完成: Phase 6(初稿写作), Phase 7(图表完善与数据可视化), Phase 8(引文定稿与参考列表产出), Phase 9; 无法标记 Phase 11 为 completed：前置阶段未完成: Phase 6(初稿写作), Phase 7(图表完善与数据可视化), Phase 8(引文定稿与参考列表产出), Phase 9",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 4,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00087",
+      "timestamp": "2026-06-25T07:20:31.939264",
+      "session_id": "4c169369",
+      "tool_name": "poetry",
+      "action": "search_poems",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: poetry工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "poetry.search_poems 连续失败 2 次后重试成功",
+        "diagnosis": "工具 poetry 调用出错: 未找到匹配的诗词; 未找到匹配的诗词",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "poetry"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00088",
+      "timestamp": "2026-06-25T07:39:16.872597",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 89 < 200（文件可能过短或为空）\n  - phase6_draft.md: 缺少预期章节 (任一: R; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 108 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00089",
+      "timestamp": "2026-06-25T07:45:20.657445",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 4 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 无法标记 Phase 7 为 completed：前置阶段未完成: Phase 6(初稿写作)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 182 < 200（文件可能过短或为空）\n  - phase6_draft.md: 文件大小 17737B ; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 116 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00090",
+      "timestamp": "2026-06-25T07:54:54.611591",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 无法标记 Phase 7 为 completed：前置阶段未完成: Phase 6(初稿写作)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。; Phase 7 artifacts 文件不存在: data/academic/projects/89/fig2_conceptual_framework.html。\n请先将产出物保存到 data/ac",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00091",
+      "timestamp": "2026-06-25T07:56:53.568525",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 8 产出物内容质检未通过:\n  - phase8_cross_check_matrix.md: 有效字符数 1191 < 最低要求 2000; Phase 8 产出物内容质检未通过:\n  - phase8_cross_check_matrix.md: 有效字符数 1546 < 最低要求 2000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00092",
+      "timestamp": "2026-06-25T08:10:37.781209",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 1 产出物内容质检未通过:\n  - phase1_topic_analysis.md: 有效行数 9 < 10（文件可能过短或为空）; Phase 3 产出物内容质检未通过:\n  - phase3_reading_notes.json: 有效行数 1 < 20（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00093",
+      "timestamp": "2026-06-25T08:11:44.835623",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 4 产出物内容质检未通过:\n  - phase4_citation_roles.md: 有效字符数 880 < 最低要求 3000\n  - phase4_reference_pool.bi; Phase 4 产出物内容质检未通过:\n  - phase4_reference_pool.bib: 有效字符数 2105 < 最低要求 3000; Phase 4 产出物内容质检未通过:\n  - phase4_reference_pool.bib: 有效字符数 2901 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00094",
+      "timestamp": "2026-06-25T08:14:25.742023",
+      "session_id": "2b0efa95",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 65 < 200（文件可能过短或为空）\n  - phase6_draft.md: 文件大小 15215B <; Phase 6 产出物内容质检未通过:\n  - phase6_draft.md: 有效行数 79 < 200（文件可能过短或为空）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00095",
+      "timestamp": "2026-06-26T03:45:09.255743",
+      "session_id": "161f5d3c",
+      "tool_name": "file",
+      "action": "search",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: file工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "file.search 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件过大（1145241 字节），超过限制 1048576 字节; 文件过大（1145241 字节），超过限制 1048576 字节",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00096",
+      "timestamp": "2026-06-26T04:48:20.167496",
+      "session_id": "46d755a6",
+      "tool_name": "python_runner",
+      "action": "run_code",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: 参数修正",
+      "split": "train",
+      "metadata": {
+        "query": "python_runner.run_code 连续失败 2 次后重试成功",
+        "diagnosis": "工具 python_runner 调用出错: File \"<HOME>\\AppData\\Local\\Temp\\tmpycuk3dcq.py\", line 174\r\n    \"console.log('✅ 10个生成式AI基础概念 ·; Traceback (most recent call last):\r\n  File \"<HOME>\\AppData\\Local\\Temp\\tmpdb1c1axt.py\", line 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "python_runner"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00097",
+      "timestamp": "2026-06-26T11:24:13.387427",
+      "session_id": "98a0984f",
+      "tool_name": "wechat",
+      "action": "send_message",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.send_message 连续失败 3 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00098",
+      "timestamp": "2026-06-27T06:41:00.540563",
+      "session_id": "d22174ce",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00099",
+      "timestamp": "2026-06-30T06:16:59.732481",
+      "session_id": "dc4e1f3d",
+      "tool_name": "stock_query",
+      "action": "company",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: stock_query工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "stock_query.company 连续失败 3 次后重试成功",
+        "diagnosis": "工具 stock_query 调用出错: 未获取到 兆易创新 的基本面数据; 未获取到 华特气体 的基本面数据; 未获取到 华微电子 的基本面数据",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "stock_query"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00100",
+      "timestamp": "2026-06-30T22:03:11.872571",
+      "session_id": "295897c4",
+      "tool_name": "wechat",
+      "action": "send_message",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.send_message 连续失败 5 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00101",
+      "timestamp": "2026-06-30T22:27:07.900679",
+      "session_id": "730c3740",
+      "tool_name": "paper_lifecycle",
+      "action": "batch_update_phases",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.batch_update_phases 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 3 产出物内容质检未通过:\n  - phase3_reading_notes.json: 有效行数 1 < 20（文件可能过短或为空）; 执行失败: slice(None, 150, None)",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00102",
+      "timestamp": "2026-06-30T22:32:43.346777",
+      "session_id": "730c3740",
+      "tool_name": "paper_lifecycle",
+      "action": "batch_update_phases",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.batch_update_phases 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 4 产出物内容质检未通过:\n  - phase4_citation_roles.md: 有效字符数 2717 < 最低要求 3000; Phase 9 产出物内容质检未通过:\n  - phase9_reference_validation.md: 有效字符数 1714 < 最低要求 3000\n  - phase9_references",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00103",
+      "timestamp": "2026-06-30T22:37:32.779247",
+      "session_id": "730c3740",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2249 < 最低要求 3000; Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2400 < 最低要求 3000; Phase 10 产出物内容质检未通过:\n  - phase10_review_report.md: 有效字符数 2856 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00104",
+      "timestamp": "2026-06-30T22:40:21.754732",
+      "session_id": "730c3740",
+      "tool_name": "file",
+      "action": "edit",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: file工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "file.edit 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 起始行 103 超出范围（文件共 101 行）; 起始行 174 超出范围（文件共 146 行）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00105",
+      "timestamp": "2026-06-30T22:40:27.869093",
+      "session_id": "730c3740",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效行数 46 < 50（文件可能过短或为空）\n  - phase13_revision_plan; Phase 13 产出物内容质检未通过:\n  - phase13_revision_plan.md: 有效字符数 2481 < 最低要求 4000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00106",
+      "timestamp": "2026-07-01T06:17:09.386864",
+      "session_id": "a428e945",
+      "tool_name": "stock_query",
+      "action": "company",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: stock_query工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "stock_query.company 连续失败 2 次后重试成功",
+        "diagnosis": "工具 stock_query 调用出错: 未获取到 绿的谐波 的基本面数据; 未获取到 中科曙光 的基本面数据",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "stock_query"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00107",
+      "timestamp": "2026-07-01T15:20:08.749255",
+      "session_id": "6e94062c",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00108",
+      "timestamp": "2026-07-01T15:22:18.707326",
+      "session_id": "6e94062c",
+      "tool_name": "python_runner",
+      "action": "run_code",
+      "status": "error",
+      "error_type": "parse_error",
+      "fix_pattern": "工具试错模式: 编码/解析容错",
+      "split": "train",
+      "metadata": {
+        "query": "python_runner.run_code 连续失败 3 次后重试成功",
+        "diagnosis": "工具 python_runner 调用出错: Traceback (most recent call last):\r\n  File \"<HOME>\\AppData\\Local\\Temp\\tmp7amfviaq.py\", line 3; Traceback (most recent call last):\r\n  File \"<HOME>\\AppData\\Local\\Temp\\tmp0987kmc5.py\", line 3; Traceback (most recent call last):\r\n  File \"<HOME>\\AppData\\Local\\Temp\\tmpatz97lyz.py\", line 3",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "python_runner"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00109",
+      "timestamp": "2026-07-02T07:22:30.028518",
+      "session_id": "f1239d8f",
+      "tool_name": "file",
+      "action": "write",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "train",
+      "metadata": {
+        "query": "file.write 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated'; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 7,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00110",
+      "timestamp": "2026-07-02T10:50:27.483164",
+      "session_id": "a01d776e",
+      "tool_name": "wechat",
+      "action": "switch_chat",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.switch_chat 连续失败 3 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00111",
+      "timestamp": "2026-07-02T10:51:01.091016",
+      "session_id": "a01d776e",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00112",
+      "timestamp": "2026-07-02T14:51:30.668113",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1782975012647",
+      "tool_name": "quant_trading",
+      "action": "stock_screen",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: quant_trading工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "quant_trading.stock_screen 连续失败 3 次后重试成功",
+        "diagnosis": "工具 quant_trading 调用出错: name 'logger' is not defined; name 'logger' is not defined; name 'logger' is not defined",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "quant_trading"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00113",
+      "timestamp": "2026-07-02T18:19:04.968559",
+      "session_id": "50051d2f",
+      "tool_name": "ocr",
+      "action": "recognize_file",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: 参数修正",
+      "split": "train",
+      "metadata": {
+        "query": "ocr.recognize_file 连续失败 2 次后重试成功",
+        "diagnosis": "工具 ocr 调用出错: TypeError: OCRTool._recognize_region() missing 4 required positional arguments: 'x', 'y', 'width', a; 图片文件不存在: generated/2026-06-17/screenshot_20260617_211523.png",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "ocr"
+        ],
+        "related_files": [],
+        "hit_count": 4,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00114",
+      "timestamp": "2026-07-02T18:26:59.202718",
+      "session_id": "50051d2f",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 10 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00115",
+      "timestamp": "2026-07-02T18:29:09.856707",
+      "session_id": "50051d2f",
+      "tool_name": "wechat",
+      "action": "switch_chat",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.switch_chat 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 切换聊天失败：宽迪奥工作群; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00116",
+      "timestamp": "2026-07-02T18:30:45.917918",
+      "session_id": "50051d2f",
+      "tool_name": "wechat",
+      "action": "view_messages",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.view_messages 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00117",
+      "timestamp": "2026-07-02T18:41:23.585054",
+      "session_id": "50051d2f",
+      "tool_name": "wechat",
+      "action": "send_message",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.send_message 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 6,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00118",
+      "timestamp": "2026-07-02T18:53:07.180992",
+      "session_id": "50051d2f",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00119",
+      "timestamp": "2026-07-02T19:27:35.180898",
+      "session_id": "b7f5b728",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00120",
+      "timestamp": "2026-07-02T19:46:32.184816",
+      "session_id": "36a82a98",
+      "tool_name": "wechat",
+      "action": "switch_chat",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.switch_chat 连续失败 3 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00121",
+      "timestamp": "2026-07-03T12:52:17.106110",
+      "session_id": "b968c3ed",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00122",
+      "timestamp": "2026-07-03T23:18:08.276763",
+      "session_id": "6de74b41",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00123",
+      "timestamp": "2026-07-04T12:28:14.533287",
+      "session_id": "6f0d699e",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00124",
+      "timestamp": "2026-07-05T08:31:23.828238",
+      "session_id": "56e9229a",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00125",
+      "timestamp": "2026-07-05T08:35:40.841507",
+      "session_id": "9312bb37",
+      "tool_name": "wechat",
+      "action": "view_messages",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.view_messages 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00126",
+      "timestamp": "2026-07-05T08:48:41.535382",
+      "session_id": "9312bb37",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00127",
+      "timestamp": "2026-07-05T08:55:34.427302",
+      "session_id": "9312bb37",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00128",
+      "timestamp": "2026-07-05T08:57:43.580725",
+      "session_id": "9312bb37",
+      "tool_name": "wechat",
+      "action": "launch",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.launch 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00129",
+      "timestamp": "2026-07-05T22:49:25.627103",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1783261891295",
+      "tool_name": "python_runner",
+      "action": "execute",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: python_runner工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "python_runner.execute 连续失败 7 次后重试成功",
+        "diagnosis": "工具 python_runner 调用出错: 部分依赖安装失败; 部分依赖安装失败; Traceback (most recent call last):\r\n  File \"<PROJECT>\\generated\\2026-07-05\\sonatina_",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "python_runner"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00130",
+      "timestamp": "2026-07-06T08:30:57.440173",
+      "session_id": "17c26120",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00131",
+      "timestamp": "2026-07-06T08:31:14.638307",
+      "session_id": "a04ab400",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00132",
+      "timestamp": "2026-07-06T08:31:41.617586",
+      "session_id": "86a9f776",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00133",
+      "timestamp": "2026-07-07T00:00:53.624709",
+      "session_id": "a3105c33",
+      "tool_name": "todo",
+      "action": "get_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "todo.get_todo 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 1; 待办事项不存在: ID 2",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00134",
+      "timestamp": "2026-07-07T06:21:33.817520",
+      "session_id": "87f23794",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "train",
+      "metadata": {
+        "query": "file.read 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件不存在: <PROJECT>\\generated\\2026-07-07\\morning_market_report_20260707.html; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00135",
+      "timestamp": "2026-07-07T08:30:44.195460",
+      "session_id": "91e3f420",
+      "tool_name": "wechat",
+      "action": "view_messages",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.view_messages 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00136",
+      "timestamp": "2026-07-07T08:31:58.968219",
+      "session_id": "cb245f0a",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 4 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开; 微信客户端未运行，请先打开微信并登录",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00137",
+      "timestamp": "2026-07-09T01:09:21.237491",
+      "session_id": "03615e7a",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "train",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00138",
+      "timestamp": "2026-07-09T01:10:24.042608",
+      "session_id": "03615e7a",
+      "tool_name": "python_runner",
+      "action": "execute",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: 参数修正",
+      "split": "train",
+      "metadata": {
+        "query": "python_runner.execute 连续失败 2 次后重试成功",
+        "diagnosis": "工具 python_runner 调用出错: Traceback (most recent call last):\r\n  File \"<PROJECT>\\.venv\\Lib\\site-packages\\matplo; File \"<PROJECT>\\generated\\2026-07-09\\plot_science_v2.py\", line 26\r\n    from scipy.nd",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "python_runner"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00139",
+      "timestamp": "2026-07-09T02:11:18.567680",
+      "session_id": "0b44cf0a",
+      "tool_name": "email",
+      "action": "add_email_account",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: email工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "email.add_email_account 连续失败 5 次后重试成功",
+        "diagnosis": "工具 email 调用出错: 无法读取邮箱密码: anon@example.com; 邮箱已存在 (ID: 1)，无需重复添加; 无法读取邮箱密码: anon@example.com",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "email"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00140",
+      "timestamp": "2026-07-09T07:20:38.499965",
+      "session_id": "b848450a",
+      "tool_name": "poetry",
+      "action": "search_poems",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: poetry工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "poetry.search_poems 连续失败 2 次后重试成功",
+        "diagnosis": "工具 poetry 调用出错: 未找到匹配的诗词; 未找到匹配的诗词",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "poetry"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00141",
+      "timestamp": "2026-07-09T11:25:05.192999",
+      "session_id": "0b0bf2f9",
+      "tool_name": "browser",
+      "action": "screenshot",
+      "status": "error",
+      "error_type": "timeout_error",
+      "fix_pattern": "工具试错模式: 超时重试+参数修正",
+      "split": "test",
+      "metadata": {
+        "query": "browser.screenshot 连续失败 3 次后重试成功",
+        "diagnosis": "工具 browser 调用出错: 必须提供 seconds 或 selector 参数; 点击失败: Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\".imglist-wrapper img\"; 点击失败: Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"img[class*=\\\"main\\\"]\"",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "browser"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00142",
+      "timestamp": "2026-07-09T16:50:48.551435",
+      "session_id": "86ee3744",
+      "tool_name": "data_visualization",
+      "action": "plot_line",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: data_visualization工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "data_visualization.plot_line 连续失败 3 次后重试成功",
+        "diagnosis": "工具 data_visualization 调用出错: 文件不存在: 文件不存在: generated/data/gdp_comparison.csv; 文件不存在: 文件不存在: generated/data/gdp_per_capita_comparison.csv; 文件不存在: 文件不存在: generated/data/gdp_growth_comparison.csv",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "data_visualization"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00143",
+      "timestamp": "2026-07-09T18:12:59.327526",
+      "session_id": "88fab37a",
+      "tool_name": "literature_search",
+      "action": "get_paper_details",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: literature_search工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "literature_search.get_paper_details 连续失败 4 次后重试成功",
+        "diagnosis": "工具 literature_search 调用出错: 语义搜索失败: Client error '400 Bad Request' for url 'https://api.openalex.org/works?search=AI+and+entrepr; PDF 下载失败，状态码: 403; PDF 下载失败，状态码: 403",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "literature_search"
+        ],
+        "related_files": [],
+        "hit_count": 12,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00144",
+      "timestamp": "2026-07-09T18:36:28.354804",
+      "session_id": "3009ec3d",
+      "tool_name": "email",
+      "action": "fetch_emails",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: email工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "email.fetch_emails 连续失败 2 次后重试成功",
+        "diagnosis": "工具 email 调用出错: 邮箱已存在 (ID: 1)，无需重复添加; 无法读取邮箱密码: anon@example.com",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "email"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00145",
+      "timestamp": "2026-07-10T00:18:21.204214",
+      "session_id": "5d641830",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00146",
+      "timestamp": "2026-07-12T10:18:59.090738",
+      "session_id": "8e8c385b",
+      "tool_name": "app_control",
+      "action": "list_windows",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: app_control工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "app_control.list_windows 连续失败 3 次后重试成功",
+        "diagnosis": "工具 app_control 调用出错: 程序启动后立即退出，退出码: 1; 程序启动后立即退出，退出码: 1; 程序启动后立即退出，退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "app_control"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00147",
+      "timestamp": "2026-07-13T01:57:32.255884",
+      "session_id": "08d81c35",
+      "tool_name": "file",
+      "action": "list",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "test",
+      "metadata": {
+        "query": "file.list 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件不存在：<HOME>\\Desktop\\story_chapter1.md; 写入文件失败: [WinError 5] 拒绝访问。: 'C:\\\\Users\\\\Administrator'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 7,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00148",
+      "timestamp": "2026-07-14T06:00:05.064638",
+      "session_id": "d74239d5",
+      "tool_name": "todo",
+      "action": "get_todo",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "todo.get_todo 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 1; 待办事项不存在: ID 2",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00149",
+      "timestamp": "2026-07-14T14:33:26.748331",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1784010649635",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: file工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "file.read 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 检测到二进制文件：PDF 文档。请使用专门的工具处理此类文件（如图片请用 ocr.recognize_file 识别文字）。; 文件过大（1465009 字节），超过限制 1048576 字节",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 9,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00150",
+      "timestamp": "2026-07-16T07:20:52.242027",
+      "session_id": "60bf1505",
+      "tool_name": "poetry",
+      "action": "search_poems",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: poetry工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "poetry.search_poems 连续失败 2 次后重试成功",
+        "diagnosis": "工具 poetry 调用出错: 未找到匹配的诗词; 未找到匹配的诗词",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "poetry"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00151",
+      "timestamp": "2026-07-16T08:47:33.716311",
+      "session_id": "b00d6af3",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00152",
+      "timestamp": "2026-07-16T09:15:09.759846",
+      "session_id": "b00d6af3",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00153",
+      "timestamp": "2026-07-19T19:39:44.775193",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1784461066684",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00154",
+      "timestamp": "2026-07-19T19:45:03.622061",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1784461354614",
+      "tool_name": "wechat",
+      "action": "switch_chat",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "wechat.switch_chat 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 消息发送失败，请检查微信是否正常运行; 消息发送失败，请检查微信是否正常运行",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00155",
+      "timestamp": "2026-07-20T08:39:19.222319",
+      "session_id": "8a72c063",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 2 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00156",
+      "timestamp": "2026-07-20T09:17:28.161011",
+      "session_id": "c4309934",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00157",
+      "timestamp": "2026-07-21T09:18:53.635874",
+      "session_id": "353a0698",
+      "tool_name": "file",
+      "action": "write",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "test",
+      "metadata": {
+        "query": "file.write 连续失败 3 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件不存在：<PROJECT>\\generated\\daily_papers\\paper_history.md; 路径不是目录: <PROJECT>\\generated\\daily_papers; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-07-21'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 5,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00158",
+      "timestamp": "2026-07-21T21:02:01.036377",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1784638583350",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 3 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00159",
+      "timestamp": "2026-07-22T11:22:10.663842",
+      "session_id": "7b2138bc",
+      "tool_name": "wechat",
+      "action": "check_window",
+      "status": "error",
+      "error_type": "login_redirect_loop",
+      "fix_pattern": "工具试错模式: wechat工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "wechat.check_window 连续失败 3 次后重试成功",
+        "diagnosis": "工具 wechat 调用出错: 切换聊天失败：freelife; 微信客户端未运行，请先打开微信并登录; 微信已启动但未检测到窗口，请手动检查微信是否正常打开",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "wechat"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00160",
+      "timestamp": "2026-07-22T11:25:21.589382",
+      "session_id": "7b2138bc",
+      "tool_name": "ocr",
+      "action": "recognize_file",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: ocr工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "ocr.recognize_file 连续失败 2 次后重试成功",
+        "diagnosis": "工具 ocr 调用出错: 截图OCR失败: cannot access local variable 'monitor' where it is not associated with a value; 截图OCR失败: cannot access local variable 'monitor' where it is not associated with a value",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "ocr"
+        ],
+        "related_files": [],
+        "hit_count": 4,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00161",
+      "timestamp": "2026-07-22T11:36:08.916703",
+      "session_id": "7186a9fb",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00162",
+      "timestamp": "2026-07-23T06:34:52.559792",
+      "session_id": "de69515a",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00163",
+      "timestamp": "2026-07-23T14:58:10.812860",
+      "session_id": "babe63b6",
+      "tool_name": "quant_trading",
+      "action": "stock_screen",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: quant_trading工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "quant_trading.stock_screen 连续失败 2 次后重试成功",
+        "diagnosis": "工具 quant_trading 调用出错: name 'logger' is not defined; name 'logger' is not defined",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "quant_trading"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00164",
+      "timestamp": "2026-07-24T23:03:53.660432",
+      "session_id": "18c4fa10",
+      "tool_name": "research_lookup",
+      "action": "parallel_search",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: research_lookup工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "research_lookup.parallel_search 连续失败 2 次后重试成功",
+        "diagnosis": "工具 research_lookup 调用出错: 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions; 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "research_lookup"
+        ],
+        "related_files": [],
+        "hit_count": 6,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00165",
+      "timestamp": "2026-07-29T07:12:49.796631",
+      "session_id": "3141c3d6",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: file工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "file.read 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 文件不存在：<PROJECT>\\generated\\podcast\\家庭教育发展趋势_播客脚本.md; 目录不存在: <PROJECT>\\generated\\podcast",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 5,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00166",
+      "timestamp": "2026-07-29T09:23:36.917988",
+      "session_id": "3ec61730",
+      "tool_name": "todo",
+      "action": "list_todos",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: todo工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "todo.list_todos 连续失败 2 次后重试成功",
+        "diagnosis": "工具 todo 调用出错: 待办事项不存在: ID 1; 待办事项不存在: ID 2",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "todo"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00167",
+      "timestamp": "2026-07-29T20:17:57.210000",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1785327262488",
+      "tool_name": "remote_file_share",
+      "action": "send_file",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: remote_file_share工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "remote_file_share.send_file 连续失败 3 次后重试成功",
+        "diagnosis": "工具 remote_file_share 调用出错: 文件发送失败: shaoyang_tcm_emergency_slideshow_v3.html（可能是上传到服务器失败）; 文件发送失败: shaoyang_tcm_emergency_slideshow_v3.html（可能是上传到服务器失败）; 文件发送失败: shaoyang_v3.zip（可能是上传到服务器失败）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "remote_file_share"
+        ],
+        "related_files": [],
+        "hit_count": 7,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00168",
+      "timestamp": "2026-07-29T20:18:25.264679",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1785327262488",
+      "tool_name": "remote_file_share",
+      "action": "send_file",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: remote_file_share工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "remote_file_share.send_file 连续失败 2 次后重试成功",
+        "diagnosis": "工具 remote_file_share 调用出错: 文件发送失败: shaoyang_v3.zip（可能是上传到服务器失败）; 文件发送失败: shaoyang_tcm_emergency_slideshow_v3.html（可能是上传到服务器失败）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "remote_file_share"
+        ],
+        "related_files": [],
+        "hit_count": 7,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00169",
+      "timestamp": "2026-07-29T22:55:13.581692",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1785336347994",
+      "tool_name": "file",
+      "action": "read",
+      "status": "error",
+      "error_type": "permission_error",
+      "fix_pattern": "工具试错模式: 权限问题",
+      "split": "test",
+      "metadata": {
+        "query": "file.read 连续失败 3 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-07-29'; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-07-29'; 读取文件失败: [Errno 13] Permission denied: 'D:\\\\python_projects\\\\weclaw\\\\generated\\\\2026-07-29'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00170",
+      "timestamp": "2026-07-30T13:17:22.843391",
+      "session_id": "db64eb7d",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 4 产出物内容质检未通过:\n  - p185_phase04_citation_roles_20260730_125900.md: 有效字符数 1589 < 最低要求 3000; Phase 4 产出物内容质检未通过:\n  - p185_phase04_citation_roles_20260730_125900.md: 有效字符数 2843 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00171",
+      "timestamp": "2026-07-30T14:29:47.907693",
+      "session_id": "db64eb7d",
+      "tool_name": "paper_lifecycle",
+      "action": "batch_update_phases",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.batch_update_phases 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 执行失败: name '项目ID' is not defined; Phase 10 产出物内容质检未通过:\n  - p185_phase10_review_report_20260730_125900.md: 有效字符数 1287 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00172",
+      "timestamp": "2026-07-30T19:07:25.235727",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_68e2619e-a46d-42d5-a1f1-a70184724017_1785409590201",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 4 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00173",
+      "timestamp": "2026-07-31T15:01:20.244438",
+      "session_id": "6bb2f77d",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00174",
+      "timestamp": "2026-07-31T15:21:24.188529",
+      "session_id": "6bb2f77d",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00175",
+      "timestamp": "2026-07-31T19:41:12.709667",
+      "session_id": "275b6cf9",
+      "tool_name": "file",
+      "action": "write",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: file工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "file.write 连续失败 2 次后重试成功",
+        "diagnosis": "工具 file 调用出错: 目录不存在: <PROJECT>\\data\\menus; 目录不存在: <PROJECT>\\data\\schedules",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "file"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00176",
+      "timestamp": "2026-08-04T12:51:45.490918",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785818006936",
+      "tool_name": "quant_trading",
+      "action": "walk_forward_run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: quant_trading工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "quant_trading.walk_forward_run 连续失败 5 次后重试成功",
+        "diagnosis": "工具 quant_trading 调用出错: 'sortino'; 'sortino'; 'sortino'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "quant_trading"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00177",
+      "timestamp": "2026-08-04T18:04:21.809822",
+      "session_id": "7d26108c",
+      "tool_name": "ppt_generator",
+      "action": "generate_ppt",
+      "status": "error",
+      "error_type": "parse_error",
+      "fix_pattern": "工具试错模式: 编码/解析容错",
+      "split": "test",
+      "metadata": {
+        "query": "ppt_generator.generate_ppt 连续失败 2 次后重试成功",
+        "diagnosis": "工具 ppt_generator 调用出错: presentation_data JSON 解析失败：Expecting property name enclosed in double quotes: line 19 column 7 (cha; 数据验证失败：第 4 个幻灯片的布局无效：two-column",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "ppt_generator"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00178",
+      "timestamp": "2026-08-04T18:33:56.765721",
+      "session_id": "7d26108c",
+      "tool_name": "ppt_generator",
+      "action": "generate_ppt",
+      "status": "error",
+      "error_type": "parse_error",
+      "fix_pattern": "工具试错模式: 编码/解析容错",
+      "split": "test",
+      "metadata": {
+        "query": "ppt_generator.generate_ppt 连续失败 2 次后重试成功",
+        "diagnosis": "工具 ppt_generator 调用出错: presentation_data JSON 解析失败：Expecting ',' delimiter: line 1 column 865 (char 864); presentation_data JSON 解析失败：Expecting ',' delimiter: line 1 column 1911 (char 1910)",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "ppt_generator"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00179",
+      "timestamp": "2026-08-04T21:23:36.481904",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "remote_file_share",
+      "action": "send_file",
+      "status": "error",
+      "error_type": "network_error",
+      "fix_pattern": "工具试错模式: 连接重试",
+      "split": "test",
+      "metadata": {
+        "query": "remote_file_share.send_file 连续失败 3 次后重试成功",
+        "diagnosis": "工具 remote_file_share 调用出错: 文件发送失败: 中医急救文献综述_20260804.pdf（可能是上传到服务器失败）; 远程桥接未连接，无法发送文件到 PWA。请检查网络连接或等待重连。; 远程桥接未连接，无法发送文件到 PWA。请检查网络连接或等待重连。",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "remote_file_share"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00180",
+      "timestamp": "2026-08-04T21:28:54.482815",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: 参数修正",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 执行失败: ToolResult.__init__() got an unexpected keyword argument 'text'; Phase 4 产出物内容质检未通过:\n  - p186_phase04_citation_roles_20260804.md: 有效字符数 1038 < 最低要求 3000\n  - p186_pha",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00181",
+      "timestamp": "2026-08-04T22:18:59.280599",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "run_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.run_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - p186_phase06_draft_20260804.md: 有效行数 109 < 200（文件可能过短或为空）\n  - p186_phase06_d; Phase 6 产出物内容质检未通过:\n  - p186_phase06_draft_20260804.md: 有效行数 155 < 200（文件可能过短或为空）\n  - p186_phase06_d",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00182",
+      "timestamp": "2026-08-04T22:21:56.141090",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 6 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 6 产出物内容质检未通过:\n  - p186_phase06_draft_20260804.md: 有效行数 161 < 200（文件可能过短或为空）\n  - p186_phase06_d; 无法标记 Phase 7 为 completed：前置阶段未完成: Phase 6(初稿写作)。请先依次完成前置阶段，或使用 status='skipped' 显式跳过不需要的阶段。; Phase 6 产出物内容质检未通过:\n  - p186_phase06_draft_20260804.md: 有效字符数 18296 < 最低要求 25000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 2,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00183",
+      "timestamp": "2026-08-04T22:25:36.866559",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 7 artifacts 文件不存在: data/academic/projects/186/fig1_framework.html, data/academic/projects/186/; Phase 8 产出物内容质检未通过:\n  - p186_phase08_cross_check_matrix_20260804.md: 有效字符数 908 < 最低要求 2000\n  - p186_",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00184",
+      "timestamp": "2026-08-04T22:27:23.818702",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 2 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 9 产出物内容质检未通过:\n  - p186_phase09_reference_validation_20260804.md: 有效字符数 2221 < 最低要求 3000; Phase 10 产出物内容质检未通过:\n  - p186_phase10_review_report_20260804.md: 有效字符数 2027 < 最低要求 3000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00185",
+      "timestamp": "2026-08-04T22:28:23.836963",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "detect_ai_patterns",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.detect_ai_patterns 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: Phase 11 产出物内容质检未通过:\n  - p186_phase11_response_letter_20260804.md: 有效字符数 1817 < 最低要求 3000; 执行失败: name '项目ID' is not defined; 执行失败: name '项目ID' is not defined",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 1,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00186",
+      "timestamp": "2026-08-04T22:29:33.052374",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785849317746",
+      "tool_name": "paper_lifecycle",
+      "action": "update_phase",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: paper_lifecycle工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "paper_lifecycle.update_phase 连续失败 3 次后重试成功",
+        "diagnosis": "工具 paper_lifecycle 调用出错: 执行失败: name '项目ID' is not defined; Phase 13 产出物内容质检未通过:\n  - p186_phase13_language_revision_20260804.md: 有效字符数 1702 < 最低要求 4000; Phase 13 产出物内容质检未通过:\n  - p186_phase13_language_revision_20260804.md: 有效字符数 3417 < 最低要求 4000",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "paper_lifecycle"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00187",
+      "timestamp": "2026-08-05T06:17:15.229077",
+      "session_id": "0ef43a18",
+      "tool_name": "stock_query",
+      "action": "company",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: stock_query工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "stock_query.company 连续失败 2 次后重试成功",
+        "diagnosis": "工具 stock_query 调用出错: 未获取到 深南电路 的基本面数据; 未获取到 东山精密 的基本面数据",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "stock_query"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00188",
+      "timestamp": "2026-08-05T11:26:30.946359",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785863182350",
+      "tool_name": "remote_file_share",
+      "action": "send_files",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: remote_file_share工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "remote_file_share.send_files 连续失败 3 次后重试成功",
+        "diagnosis": "工具 remote_file_share 调用出错: 文件发送失败: 插图画廊_天局36路地局72略.html（可能是上传到服务器失败）; 文件发送失败: illustration_gallery.html（可能是上传到服务器失败）; 文件发送失败: quanshu_zonglan_tianju_diju.svg（可能是上传到服务器失败）",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "remote_file_share"
+        ],
+        "related_files": [],
+        "hit_count": 3,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00189",
+      "timestamp": "2026-08-05T11:54:00.445641",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785863182350",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00190",
+      "timestamp": "2026-08-05T12:07:55.965308",
+      "session_id": "ca3a503c",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00191",
+      "timestamp": "2026-08-05T12:11:10.241031",
+      "session_id": "ca3a503c",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00192",
+      "timestamp": "2026-08-05T14:36:42.056675",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785863182350",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00193",
+      "timestamp": "2026-08-05T14:37:28.762612",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785863182350",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 4 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00194",
+      "timestamp": "2026-08-05T15:07:30.782001",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785863182350",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00195",
+      "timestamp": "2026-08-05T19:11:37.339106",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1785928204528",
+      "tool_name": "quant_trading",
+      "action": "walk_forward_run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: quant_trading工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "quant_trading.walk_forward_run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 quant_trading 调用出错: 'sortino'; 'sortino'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "quant_trading"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00196",
+      "timestamp": "2026-08-06T20:21:48.235159",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_remote_1786018811930",
+      "tool_name": "shell",
+      "action": "run",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: shell工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "shell.run 连续失败 2 次后重试成功",
+        "diagnosis": "工具 shell 调用出错: 命令退出码: 1; 命令退出码: 1",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "shell"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    },
+    {
+      "event_id": "expdb_temp_exp9_snapshot_20260808_00197",
+      "timestamp": "2026-08-07T18:14:00.496846",
+      "session_id": "pwa_68e2619e-a46d-42d5-a1f1-a70184724017_pwa_68e2619e-a46d-42d5-a1f1-a70184724017_049c1f25307d",
+      "tool_name": "quant_trading",
+      "action": "position_management",
+      "status": "error",
+      "error_type": "generic_tool_retry",
+      "fix_pattern": "工具试错模式: quant_trading工具重试成功",
+      "split": "test",
+      "metadata": {
+        "query": "quant_trading.position_management 连续失败 2 次后重试成功",
+        "diagnosis": "工具 quant_trading 调用出错: 'sortino'; 'sortino'",
+        "source_type": "tool_retry",
+        "tool_names": [
+          "quant_trading"
+        ],
+        "related_files": [],
+        "hit_count": 0,
+        "source_db": "<HOME>\\AppData\\Local\\Temp\\exp9_snapshot_20260808.db",
+        "record_origin": "experience_store_export"
+      }
+    }
+  ]
+}

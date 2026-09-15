@@ -1,0 +1,485 @@
+====================================================================================================
+1. Cluster structure induced by the seeded query generator
+====================================================================================================
+  distinct query texts (clusters) G = 118
+  pooled observations N            = 288
+  queries per seed                 = {42: 96, 43: 96, 44: 96}
+  cluster size distribution        = {1: 10, 2: 46, 3: 62}
+  pairwise seed overlap            = {'42-43': 77, '42-44': 76, '43-44': 79}
+  => observations sharing a query text are positively correlated;
+     methods assuming N independent pairs understate the SE.
+
+====================================================================================================
+2.1 deepseek-v4-flash (n=96 per seed x 3 seeds, pooled N=288, G=118)
+====================================================================================================
+  * pte_fd vs pte
+      cells      b=  37 (A right, B wrong)   c=   2 (A wrong, B right)   discordant=  39   N=288   clusters G=118
+      theta-hat  +12.153 pp
+      McNemar chi2 (continuity corrected) =    29.641   p = 5.19928e-08    <- what the submission quoted
+      McNemar exact binomial                p = 2.84126e-09
+      naive Wald (ignores clustering)  SE= 2.047 pp  z=  5.938  p=2.89191e-09  95% CI=[  +8.14, +16.16] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.848 pp  z=  4.267  p=1.98313e-05  95% CI=[  +6.57, +17.74] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.845 pp  95% CI=[  +6.81, +17.84] pp  p=0.00019998  boot mean= +12.14 pp
+      SE inflation from clustering = 1.392x
+
+  * pte_fd vs static
+      cells      b=  50 (A right, B wrong)   c=  13 (A wrong, B right)   discordant=  63   N=288   clusters G=118
+      theta-hat  +12.847 pp
+      McNemar chi2 (continuity corrected) =    20.571   p = 5.74471e-06    <- what the submission quoted
+      McNemar exact binomial                p = 3.01595e-06
+      naive Wald (ignores clustering)  SE= 2.650 pp  z=  4.848  p=1.24684e-06  95% CI=[  +7.65, +18.04] pp
+      cluster-robust Wald  [REPORTED p]  SE= 3.871 pp  z=  3.319  p=0.000904964  95% CI=[  +5.26, +20.43] pp
+      cluster bootstrap    [REPORTED CI] SE= 3.864 pp  95% CI=[  +5.54, +20.57] pp  p=0.00079992  boot mean= +12.92 pp
+      SE inflation from clustering = 1.461x
+
+  * pte vs static
+      cells      b=  38 (A right, B wrong)   c=  36 (A wrong, B right)   discordant=  74   N=288   clusters G=118
+      theta-hat   +0.694 pp
+      McNemar chi2 (continuity corrected) =     0.014   p = 0.907456    <- what the submission quoted
+      McNemar exact binomial                p = 0.907561
+      naive Wald (ignores clustering)  SE= 2.987 pp  z=  0.233  p=0.816136  95% CI=[  -5.16,  +6.55] pp
+      cluster-robust Wald  [REPORTED p]  SE= 4.327 pp  z=  0.161  p=0.872483  95% CI=[  -7.79,  +9.17] pp
+      cluster bootstrap    [REPORTED CI] SE= 4.314 pp  95% CI=[  -7.88,  +9.12] pp  p=0.89511  boot mean=  +0.68 pp
+      SE inflation from clustering = 1.449x
+
+  * pte_fd vs keyword
+      cells      b=  91 (A right, B wrong)   c=  13 (A wrong, B right)   discordant= 104   N=288   clusters G=118
+      theta-hat  +27.083 pp
+      McNemar chi2 (continuity corrected) =    57.010   p = 4.33686e-14    <- what the submission quoted
+      McNemar exact binomial                p = 1.4016e-15
+      naive Wald (ignores clustering)  SE= 3.161 pp  z=  8.568  p=1.05237e-17  95% CI=[ +20.89, +33.28] pp
+      cluster-robust Wald  [REPORTED p]  SE= 4.722 pp  z=  5.736  p=9.71236e-09  95% CI=[ +17.83, +36.34] pp
+      cluster bootstrap    [REPORTED CI] SE= 4.655 pp  95% CI=[ +17.96, +36.30] pp  p=0.00019998  boot mean= +27.14 pp
+      SE inflation from clustering = 1.494x
+
+====================================================================================================
+2.2 qwen-max (n=96 per seed x 3 seeds, pooled N=288, G=118)
+====================================================================================================
+  * pte_fd vs pte
+      cells      b=   9 (A right, B wrong)   c=   1 (A wrong, B right)   discordant=  10   N=288   clusters G=118
+      theta-hat   +2.778 pp
+      McNemar chi2 (continuity corrected) =     4.900   p = 0.0268567    <- what the submission quoted
+      McNemar exact binomial                p = 0.0214844
+      naive Wald (ignores clustering)  SE= 1.086 pp  z=  2.558  p=0.0105152  95% CI=[  +0.65,  +4.91] pp
+      cluster-robust Wald  [REPORTED p]  SE= 1.282 pp  z=  2.166  p=0.0303036  95% CI=[  +0.26,  +5.29] pp
+      cluster bootstrap    [REPORTED CI] SE= 1.303 pp  95% CI=[  +0.36,  +5.57] pp  p=0.0223978  boot mean=  +2.78 pp
+      SE inflation from clustering = 1.181x
+
+  * pte_fd vs static
+      cells      b=  32 (A right, B wrong)   c=   1 (A wrong, B right)   discordant=  33   N=288   clusters G=118
+      theta-hat  +10.764 pp
+      McNemar chi2 (continuity corrected) =    27.273   p = 1.76686e-07    <- what the submission quoted
+      McNemar exact binomial                p = 7.91624e-09
+      naive Wald (ignores clustering)  SE= 1.891 pp  z=  5.692  p=1.25677e-08  95% CI=[  +7.06, +14.47] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.848 pp  z=  3.779  p=0.000157158  95% CI=[  +5.18, +16.35] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.861 pp  95% CI=[  +5.52, +16.72] pp  p=0.00019998  boot mean= +10.75 pp
+      SE inflation from clustering = 1.506x
+
+  * pte vs static
+      cells      b=  25 (A right, B wrong)   c=   2 (A wrong, B right)   discordant=  27   N=288   clusters G=118
+      theta-hat   +7.986 pp
+      McNemar chi2 (continuity corrected) =    17.926   p = 2.29671e-05    <- what the submission quoted
+      McNemar exact binomial                p = 5.64754e-06
+      naive Wald (ignores clustering)  SE= 1.742 pp  z=  4.585  p=4.53858e-06  95% CI=[  +4.57, +11.40] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.471 pp  z=  3.232  p=0.00122923  95% CI=[  +3.14, +12.83] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.469 pp  95% CI=[  +3.50, +13.19] pp  p=0.00019998  boot mean=  +8.01 pp
+      SE inflation from clustering = 1.419x
+
+  * pte_fd vs keyword
+      cells      b=  63 (A right, B wrong)   c=   1 (A wrong, B right)   discordant=  64   N=288   clusters G=118
+      theta-hat  +21.528 pp
+      McNemar chi2 (continuity corrected) =    58.141   p = 2.44034e-14    <- what the submission quoted
+      McNemar exact binomial                p = 7.04731e-18
+      naive Wald (ignores clustering)  SE= 2.471 pp  z=  8.711  p=3.00033e-18  95% CI=[ +16.68, +26.37] pp
+      cluster-robust Wald  [REPORTED p]  SE= 3.769 pp  z=  5.712  p=1.11737e-08  95% CI=[ +14.14, +28.91] pp
+      cluster bootstrap    [REPORTED CI] SE= 3.773 pp  95% CI=[ +14.47, +29.27] pp  p=0.00019998  boot mean= +21.59 pp
+      SE inflation from clustering = 1.525x
+
+====================================================================================================
+2.3 moonshot-v1-8k (n=96 per seed x 3 seeds, pooled N=288, G=118)
+====================================================================================================
+  * pte_fd vs pte
+      cells      b=  17 (A right, B wrong)   c=   2 (A wrong, B right)   discordant=  19   N=288   clusters G=118
+      theta-hat   +5.208 pp
+      McNemar chi2 (continuity corrected) =    10.316   p = 0.00131897    <- what the submission quoted
+      McNemar exact binomial                p = 0.000728607
+      naive Wald (ignores clustering)  SE= 1.482 pp  z=  3.514  p=0.000441007  95% CI=[  +2.30,  +8.11] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.012 pp  z=  2.589  p=0.00963306  95% CI=[  +1.27,  +9.15] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.018 pp  95% CI=[  +1.66,  +9.42] pp  p=0.00259974  boot mean=  +5.19 pp
+      SE inflation from clustering = 1.358x
+
+  * pte_fd vs static
+      cells      b=  42 (A right, B wrong)   c=   1 (A wrong, B right)   discordant=  43   N=288   clusters G=118
+      theta-hat  +14.236 pp
+      McNemar chi2 (continuity corrected) =    37.209   p = 1.06106e-09    <- what the submission quoted
+      McNemar exact binomial                p = 1.00044e-11
+      naive Wald (ignores clustering)  SE= 2.117 pp  z=  6.726  p=1.74939e-11  95% CI=[ +10.09, +18.38] pp
+      cluster-robust Wald  [REPORTED p]  SE= 3.148 pp  z=  4.523  p=6.11027e-06  95% CI=[  +8.07, +20.41] pp
+      cluster bootstrap    [REPORTED CI] SE= 3.139 pp  95% CI=[  +8.33, +20.57] pp  p=0.00019998  boot mean= +14.22 pp
+      SE inflation from clustering = 1.487x
+
+  * pte vs static
+      cells      b=  31 (A right, B wrong)   c=   5 (A wrong, B right)   discordant=  36   N=288   clusters G=118
+      theta-hat   +9.028 pp
+      McNemar chi2 (continuity corrected) =    17.361   p = 3.09086e-05    <- what the submission quoted
+      McNemar exact binomial                p = 1.29135e-05
+      naive Wald (ignores clustering)  SE= 2.014 pp  z=  4.482  p=7.39788e-06  95% CI=[  +5.08, +12.98] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.771 pp  z=  3.258  p=0.00112022  95% CI=[  +3.60, +14.46] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.749 pp  95% CI=[  +3.85, +14.68] pp  p=0.00039996  boot mean=  +9.06 pp
+      SE inflation from clustering = 1.375x
+
+  * pte_fd vs keyword
+      cells      b=  57 (A right, B wrong)   c=  14 (A wrong, B right)   discordant=  71   N=288   clusters G=118
+      theta-hat  +14.931 pp
+      McNemar chi2 (continuity corrected) =    24.845   p = 6.21277e-07    <- what the submission quoted
+      McNemar exact binomial                p = 2.66592e-07
+      naive Wald (ignores clustering)  SE= 2.790 pp  z=  5.351  p=8.75592e-08  95% CI=[  +9.46, +20.40] pp
+      cluster-robust Wald  [REPORTED p]  SE= 4.315 pp  z=  3.460  p=0.000539832  95% CI=[  +6.47, +23.39] pp
+      cluster bootstrap    [REPORTED CI] SE= 4.265 pp  95% CI=[  +6.62, +23.61] pp  p=0.00039996  boot mean= +14.87 pp
+      SE inflation from clustering = 1.546x
+
+====================================================================================================
+2.4 glm-4-flash (n=96 per seed x 3 seeds, pooled N=288, G=118)
+====================================================================================================
+  * pte_fd vs pte
+      cells      b=   8 (A right, B wrong)   c=   0 (A wrong, B right)   discordant=   8   N=288   clusters G=118
+      theta-hat   +2.778 pp
+      McNemar chi2 (continuity corrected) =     6.125   p = 0.0133283    <- what the submission quoted
+      McNemar exact binomial                p = 0.0078125
+      naive Wald (ignores clustering)  SE= 0.968 pp  z=  2.869  p=0.0041236  95% CI=[  +0.88,  +4.68] pp
+      cluster-robust Wald  [REPORTED p]  SE= 1.187 pp  z=  2.341  p=0.0192373  95% CI=[  +0.45,  +5.10] pp
+      cluster bootstrap    [REPORTED CI] SE= 1.184 pp  95% CI=[  +0.69,  +5.34] pp  p=0.00359964  boot mean=  +2.77 pp
+      SE inflation from clustering = 1.225x
+
+  * pte_fd vs static
+      cells      b=  25 (A right, B wrong)   c=   0 (A wrong, B right)   discordant=  25   N=288   clusters G=118
+      theta-hat   +8.681 pp
+      McNemar chi2 (continuity corrected) =    23.040   p = 1.58666e-06    <- what the submission quoted
+      McNemar exact binomial                p = 5.96046e-08
+      naive Wald (ignores clustering)  SE= 1.659 pp  z=  5.232  p=1.6746e-07  95% CI=[  +5.43, +11.93] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.485 pp  z=  3.494  p=0.000476376  95% CI=[  +3.81, +13.55] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.498 pp  95% CI=[  +4.15, +13.93] pp  p=0.00019998  boot mean=  +8.72 pp
+      SE inflation from clustering = 1.498x
+
+  * pte vs static
+      cells      b=  18 (A right, B wrong)   c=   1 (A wrong, B right)   discordant=  19   N=288   clusters G=118
+      theta-hat   +5.903 pp
+      McNemar chi2 (continuity corrected) =    13.474   p = 0.000241933    <- what the submission quoted
+      McNemar exact binomial                p = 7.62939e-05
+      naive Wald (ignores clustering)  SE= 1.473 pp  z=  4.007  p=6.14103e-05  95% CI=[  +3.02,  +8.79] pp
+      cluster-robust Wald  [REPORTED p]  SE= 2.178 pp  z=  2.710  p=0.00672704  95% CI=[  +1.63, +10.17] pp
+      cluster bootstrap    [REPORTED CI] SE= 2.165 pp  95% CI=[  +2.07, +10.51] pp  p=0.00159984  boot mean=  +5.91 pp
+      SE inflation from clustering = 1.479x
+
+  * pte_fd vs keyword
+      cells      b=  63 (A right, B wrong)   c=   0 (A wrong, B right)   discordant=  63   N=288   clusters G=118
+      theta-hat  +21.875 pp
+      McNemar chi2 (continuity corrected) =    61.016   p = 5.66165e-15    <- what the submission quoted
+      McNemar exact binomial                p = 2.1684e-19
+      naive Wald (ignores clustering)  SE= 2.436 pp  z=  8.980  p=2.70822e-19  95% CI=[ +17.10, +26.65] pp
+      cluster-robust Wald  [REPORTED p]  SE= 3.856 pp  z=  5.673  p=1.40618e-08  95% CI=[ +14.32, +29.43] pp
+      cluster bootstrap    [REPORTED CI] SE= 3.818 pp  95% CI=[ +14.78, +29.54] pp  p=0.00019998  boot mean= +21.96 pp
+      SE inflation from clustering = 1.583x
+
+====================================================================================================
+3. n=500 bilingual evaluation (exp10b): every query distinct, G = N = 500
+====================================================================================================
+  * pte_fd vs pte
+      cells      b=  29 (A right, B wrong)   c=   0 (A wrong, B right)   discordant=  29   N=500   clusters G=500
+      theta-hat   +5.800 pp
+      McNemar chi2 (continuity corrected) =    27.034   p = 1.99858e-07    <- what the submission quoted
+      McNemar exact binomial                p = 3.72529e-09
+      naive Wald (ignores clustering)  SE= 1.045 pp  z=  5.548  p=2.88174e-08  95% CI=[  +3.75,  +7.85] pp
+      cluster-robust Wald  [REPORTED p]  SE= 1.046 pp  z=  5.543  p=2.97464e-08  95% CI=[  +3.75,  +7.85] pp
+      cluster bootstrap    [REPORTED CI] SE= 1.041 pp  95% CI=[  +3.80,  +8.00] pp  p=0.00019998  boot mean=  +5.79 pp
+      SE inflation from clustering = 1.001x
+
+  * pte_fd vs static
+      cells      b=  49 (A right, B wrong)   c=  31 (A wrong, B right)   discordant=  80   N=500   clusters G=500
+      theta-hat   +3.600 pp
+      McNemar chi2 (continuity corrected) =     3.612   p = 0.0573469    <- what the submission quoted
+      McNemar exact binomial                p = 0.0566644
+      naive Wald (ignores clustering)  SE= 1.782 pp  z=  2.021  p=0.0433148  95% CI=[  +0.11,  +7.09] pp
+      cluster-robust Wald  [REPORTED p]  SE= 1.783 pp  z=  2.019  p=0.0435247  95% CI=[  +0.10,  +7.10] pp
+      cluster bootstrap    [REPORTED CI] SE= 1.758 pp  95% CI=[  +0.20,  +7.00] pp  p=0.0465953  boot mean=  +3.62 pp
+      SE inflation from clustering = 1.001x
+
+  * pte vs static
+      cells      b=  26 (A right, B wrong)   c=  37 (A wrong, B right)   discordant=  63   N=500   clusters G=500
+      theta-hat   -2.200 pp
+      McNemar chi2 (continuity corrected) =     1.587   p = 0.207712    <- what the submission quoted
+      McNemar exact binomial                p = 0.207368
+      naive Wald (ignores clustering)  SE= 1.584 pp  z= -1.389  p=0.164973  95% CI=[  -5.31,  +0.91] pp
+      cluster-robust Wald  [REPORTED p]  SE= 1.586 pp  z= -1.387  p=0.165396  95% CI=[  -5.31,  +0.91] pp
+      cluster bootstrap    [REPORTED CI] SE= 1.575 pp  95% CI=[  -5.40,  +0.80] pp  p=0.180982  boot mean=  -2.22 pp
+      SE inflation from clustering = 1.001x
+
+====================================================================================================
+4. Holm-Bonferroni within each declared family (cluster-robust p)
+====================================================================================================
+  family (i) PTE-FD vs Static, four back-ends
+      kimi       raw p= 6.11027e-06   Holm-adjusted= 2.44411e-05   significant
+      qwen       raw p= 0.000157158   Holm-adjusted= 0.000471474   significant
+      glm        raw p= 0.000476376   Holm-adjusted= 0.000952752   significant
+      deepseek   raw p= 0.000904964   Holm-adjusted= 0.000952752   significant
+
+  family (ii) PTE-FD vs PTE, four back-ends plus n=500 (five tests)
+      n500       raw p= 2.97464e-08   Holm-adjusted= 1.48732e-07   significant
+      deepseek   raw p= 1.98313e-05   Holm-adjusted= 7.93252e-05   significant
+      kimi       raw p=  0.00963306   Holm-adjusted=   0.0288992   significant
+      glm        raw p=   0.0192373   Holm-adjusted=   0.0384746   significant
+      qwen       raw p=   0.0303036   Holm-adjusted=   0.0384746   significant
+
+====================================================================================================
+5. Marginal accuracies, Wilson intervals and token reduction
+====================================================================================================
+  deepseek-v4-flash
+      static   pooled 213/288  acc= 73.96 +/- 1.04  Wilson=[ 68.60, 78.69]  tokens/q=  4697.4
+      pte      pooled 215/288  acc= 74.65 +/- 1.59  Wilson=[ 69.33, 79.33]  tokens/q=  2135.4  reduction vs static= 54.54%
+      pte_fd   pooled 250/288  acc= 86.81 +/- 2.41  Wilson=[ 82.41, 90.23]  tokens/q=  2528.9  reduction vs static= 46.16%
+      keyword  pooled 172/288  acc= 59.72 +/- 1.59  Wilson=[ 53.97, 65.22]  tokens/q=   822.5  reduction vs static= 82.49%
+
+  qwen-max
+      static   pooled 251/288  acc= 87.15 +/- 1.59  Wilson=[ 82.79, 90.53]  tokens/q=  5361.6
+      pte      pooled 274/288  acc= 95.14 +/- 2.17  Wilson=[ 92.01, 97.08]  tokens/q=  2384.5  reduction vs static= 55.53%
+      pte_fd   pooled 282/288  acc= 97.92 +/- 1.04  Wilson=[ 95.53, 99.04]  tokens/q=  2465.6  reduction vs static= 54.01%
+      keyword  pooled 220/288  acc= 76.39 +/- 1.59  Wilson=[ 71.16, 80.93]  tokens/q=   862.2  reduction vs static= 83.92%
+
+  moonshot-v1-8k
+      static   pooled 227/288  acc= 78.82 +/- 0.60  Wilson=[ 73.74, 83.14]  tokens/q=  2587.4
+      pte      pooled 253/288  acc= 87.85 +/- 1.59  Wilson=[ 83.57, 91.13]  tokens/q=  1144.9  reduction vs static= 55.75%
+      pte_fd   pooled 268/288  acc= 93.06 +/- 0.60  Wilson=[ 89.52, 95.46]  tokens/q=  1240.5  reduction vs static= 52.06%
+      keyword  pooled 225/288  acc= 78.12 +/- 1.04  Wilson=[ 73.00, 82.51]  tokens/q=   383.3  reduction vs static= 85.19%
+
+  glm-4-flash
+      static   pooled 253/288  acc= 87.85 +/- 2.62  Wilson=[ 83.57, 91.13]  tokens/q=  7682.5
+      pte      pooled 270/288  acc= 93.75 +/- 2.08  Wilson=[ 90.34, 96.01]  tokens/q=  3285.9  reduction vs static= 57.23%
+      pte_fd   pooled 278/288  acc= 96.53 +/- 0.60  Wilson=[ 93.73, 98.10]  tokens/q=  3427.8  reduction vs static= 55.38%
+      keyword  pooled 215/288  acc= 74.65 +/- 1.59  Wilson=[ 69.33, 79.33]  tokens/q=  1018.8  reduction vs static= 86.74%
+
+  n=500 (exp10b)
+      static   367/500  acc= 73.40  Wilson=[ 69.36, 77.08]  tokens/q= 5206.57
+      pte      356/500  acc= 71.20  Wilson=[ 67.08, 75.00]  tokens/q= 3542.54  reduction vs static=31.960%
+      pte_fd   385/500  acc= 77.00  Wilson=[ 73.11, 80.47]  tokens/q= 4531.20  reduction vs static=12.971%
+
+====================================================================================================
+6. Self-checks and manuscript audit
+====================================================================================================
+  [PASS] S1a cluster Var -> closed-form paired Wald Var (G = N)
+           closed=2.242074074074e-03 computed=2.242074074074e-03
+  [PASS] S1b G/(G-1) small-sample factor applied to the VARIANCE
+           ratio=1.003344482 expected=1.003344482
+  [PASS] S2 n=500 pte_fd vs pte: G = N, Var ratio = G/(G-1)
+           G=500 N=500 ratio=1.002004008 expected=1.002004008
+  [PASS] S2 n=500 pte_fd vs static: G = N, Var ratio = G/(G-1)
+           G=500 N=500 ratio=1.002004008 expected=1.002004008
+  [PASS] S2 n=500 pte vs static: G = N, Var ratio = G/(G-1)
+           G=500 N=500 ratio=1.002004008 expected=1.002004008
+  [PASS] S3 deepseek: FD vs pte reproduces committed McNemar
+           committed n01=37 n10=2 chi2=29.641 p=5.19928e-08 | computed b=37 c=2 chi2=29.641 p=5.19928e-08
+  [PASS] S3 deepseek: FD vs static reproduces committed McNemar
+           committed n01=50 n10=13 chi2=20.571 p=5.74471e-06 | computed b=50 c=13 chi2=20.571 p=5.74471e-06
+  [PASS] S3 qwen: FD vs pte reproduces committed McNemar
+           committed n01=9 n10=1 chi2=4.900 p=0.0268567 | computed b=9 c=1 chi2=4.900 p=0.0268567
+  [PASS] S3 qwen: FD vs static reproduces committed McNemar
+           committed n01=32 n10=1 chi2=27.273 p=1.76686e-07 | computed b=32 c=1 chi2=27.273 p=1.76686e-07
+  [PASS] S3 kimi: FD vs pte reproduces committed McNemar
+           committed n01=17 n10=2 chi2=10.316 p=0.00131897 | computed b=17 c=2 chi2=10.316 p=0.00131897
+  [PASS] S3 kimi: FD vs static reproduces committed McNemar
+           committed n01=42 n10=1 chi2=37.209 p=1.06106e-09 | computed b=42 c=1 chi2=37.209 p=1.06106e-09
+  [PASS] S3 glm: FD vs pte reproduces committed McNemar
+           committed n01=8 n10=0 chi2=6.125 p=0.0133283 | computed b=8 c=0 chi2=6.125 p=0.0133283
+  [PASS] S3 glm: FD vs static reproduces committed McNemar
+           committed n01=25 n10=0 chi2=23.040 p=1.58666e-06 | computed b=25 c=0 chi2=23.040 p=1.58666e-06
+  [PASS] S4 sum(cluster size x count) = pooled N
+           reconstructed=288 pooled N=288
+  [PASS] S4b every seed yields 96 queries (not the requested 100)
+           {42: 96, 43: 96, 44: 96}
+  [PASS] S4c exact McNemar p at c = 0 equals 2 * 0.5^(b+c)
+           exact=3.725290e-09 expected=3.725290e-09
+  [PASS] S4d bootstrap p resolution floor is 2/(B+1) = 0.00019998
+           B=10000
+  [PASS] Table 2 fn *: cluster-robust McNemar FD vs PTE p < 1e-4
+           computed=1.98313e-05 paper claims < 0.0001
+  [PASS] Table 2 fn dag: cluster-robust McNemar FD vs Static p < 1e-3
+           computed=0.000904964 paper claims < 0.001
+  [PASS] Table 2 row static: accuracy mean
+           computed=74.0 paper=74.0
+  [PASS] Table 2 row static: SD across seeds
+           computed=1.0 paper=1.0
+  [PASS] Table 2 row static: pooled Wilson 95% CI
+           computed=[+68.60,+78.69] paper=[+68.6,+78.7]
+  [PASS] Table 2 row pte: accuracy mean
+           computed=74.7 paper=74.7
+  [PASS] Table 2 row pte: SD across seeds
+           computed=1.6 paper=1.6
+  [PASS] Table 2 row pte: pooled Wilson 95% CI
+           computed=[+69.33,+79.33] paper=[+69.3,+79.3]
+  [PASS] Table 2 row pte_fd: accuracy mean
+           computed=86.8 paper=86.8
+  [PASS] Table 2 row pte_fd: SD across seeds
+           computed=2.4 paper=2.4
+  [PASS] Table 2 row pte_fd: pooled Wilson 95% CI
+           computed=[+82.41,+90.23] paper=[+82.4,+90.2]
+  [PASS] Table 2 row keyword: accuracy mean
+           computed=59.7 paper=59.7
+  [PASS] Table 2 row keyword: SD across seeds
+           computed=1.6 paper=1.6
+  [PASS] Table 2 row keyword: pooled Wilson 95% CI
+           computed=[+53.97,+65.22] paper=[+54.0,+65.2]
+  [PASS] Ablation text: FD vs PTE cluster-robust p = 2.0e-5
+           computed=2e-05 paper=2e-05
+  [PASS] Ablation text: FD vs Static cluster-robust p = 9.0e-4
+           computed=0.0009 paper=0.0009
+  [PASS] Ablation text: FD vs PTE paired difference (pp)
+           computed=12.2 paper=12.2
+  [PASS] Ablation text: FD vs Static paired difference (pp)
+           computed=12.8 paper=12.8
+  [PASS] Ablation text: FD vs PTE 95% cluster bootstrap CI
+           computed=[+6.81,+17.84] paper=[+6.8,+17.8]
+  [PASS] Ablation text: FD vs Static 95% cluster bootstrap CI
+           computed=[+5.54,+20.57] paper=[+5.5,+20.6]
+  [PASS] Ablation text: PTE vs Static paired difference (pp)
+           computed=0.7 paper=0.7
+  [PASS] Ablation text: PTE vs Static 95% CI
+           computed=[-7.88,+9.12] paper=[-7.9,+9.1]
+  [PASS] Ablation text: PTE vs Static cluster-robust p = 0.87
+           computed=0.87 paper=0.87
+  [PASS] Ablation text: uncorrected McNemar FD vs PTE = 5.2e-8
+           computed=5.2e-08 paper=5.2e-08
+  [PASS] Ablation text: uncorrected McNemar FD vs Static = 5.7e-6
+           computed=5.7e-06 paper=5.7e-06
+  [PASS] Table 9 deepseek-v4-flash: FD-P gain (pp)
+           computed=12.2 paper=12.2
+  [PASS] Table 9 deepseek-v4-flash: FD-St gain (pp)
+           computed=12.8 paper=12.8
+  [PASS] Table 9 qwen-max: FD-P gain (pp)
+           computed=2.8 paper=2.8
+  [PASS] Table 9 qwen-max: FD-St gain (pp)
+           computed=10.8 paper=10.8
+  [PASS] Table 9 moonshot-v1-8k: FD-P gain (pp)
+           computed=5.2 paper=5.2
+  [PASS] Table 9 moonshot-v1-8k: FD-St gain (pp)
+           computed=14.2 paper=14.2
+  [PASS] Table 9 glm-4-flash: FD-P gain (pp)
+           computed=2.8 paper=2.8
+  [PASS] Table 9 glm-4-flash: FD-St gain (pp)
+           computed=8.7 paper=8.7
+  [PASS] Table 9 deepseek-v4-flash static: accuracy mean
+           computed=74.0 paper=74.0
+  [PASS] Table 9 deepseek-v4-flash pte: accuracy mean
+           computed=74.7 paper=74.7
+  [PASS] Table 9 deepseek-v4-flash pte_fd: accuracy mean
+           computed=86.8 paper=86.8
+  [PASS] Table 9 deepseek-v4-flash keyword: accuracy mean
+           computed=59.7 paper=59.7
+  [PASS] Table 9 qwen-max static: accuracy mean
+           computed=87.2 paper=87.2
+  [PASS] Table 9 qwen-max pte: accuracy mean
+           computed=95.1 paper=95.1
+  [PASS] Table 9 qwen-max pte_fd: accuracy mean
+           computed=97.9 paper=97.9
+  [PASS] Table 9 qwen-max keyword: accuracy mean
+           computed=76.4 paper=76.4
+  [PASS] Table 9 moonshot-v1-8k static: accuracy mean
+           computed=78.8 paper=78.8
+  [PASS] Table 9 moonshot-v1-8k pte: accuracy mean
+           computed=87.8 paper=87.8
+  [PASS] Table 9 moonshot-v1-8k pte_fd: accuracy mean
+           computed=93.1 paper=93.1
+  [PASS] Table 9 moonshot-v1-8k keyword: accuracy mean
+           computed=78.1 paper=78.1
+  [PASS] Table 9 glm-4-flash static: accuracy mean
+           computed=87.8 paper=87.8
+  [PASS] Table 9 glm-4-flash pte: accuracy mean
+           computed=93.8 paper=93.8
+  [PASS] Table 9 glm-4-flash pte_fd: accuracy mean
+           computed=96.5 paper=96.5
+  [PASS] Table 9 glm-4-flash keyword: accuracy mean
+           computed=74.7 paper=74.7
+  [PASS] Table 9 caption: |paired gain - difference of rounded accuracies| <= 0.1 pp
+           worst discrepancy = 0.092 pp
+  [PASS] Family (i) FD-vs-Static: every Holm-adjusted p < 0.001
+           computed=0.000952752 paper claims < 0.001
+  [PASS] Family (i): largest Holm-adjusted p = 9.5e-4
+           computed=0.00095 paper=0.00095
+  [PASS] Family (ii) FD-vs-PTE: every Holm-adjusted p < 0.05
+           computed=0.0384746 paper claims < 0.05
+  [PASS] Family (ii): largest Holm-adjusted p = 3.8e-2
+           computed=0.038 paper=0.038
+  [PASS] Family (ii): qwen-max uncorrected cluster-robust p = 3.0e-2
+           computed=0.03 paper=0.03
+  [PASS] n=500 FD vs PTE: Holm-adjusted p < 1e-6
+           computed=1.48732e-07 paper claims < 1e-06
+  [PASS] Table 7 static: accuracy
+           computed=73.4 paper=73.4
+  [PASS] Table 7 static: Wilson CI matches the committed summary
+           computed=[69.36,77.08] summary=[69.36, 77.08] paper=[69.36, 77.08]
+  [PASS] Table 7 static: tokens/query
+           computed=5207.0 paper=5207
+  [PASS] Table 7 pte: accuracy
+           computed=71.2 paper=71.2
+  [PASS] Table 7 pte: Wilson CI matches the committed summary
+           computed=[67.08,75.00] summary=[67.08, 75.0] paper=[67.08, 75.0]
+  [PASS] Table 7 pte: tokens/query
+           computed=3543.0 paper=3543
+  [PASS] Table 7 pte_fd: accuracy
+           computed=77.0 paper=77.0
+  [PASS] Table 7 pte_fd: Wilson CI matches the committed summary
+           computed=[73.11,80.47] summary=[73.11, 80.47] paper=[73.11, 80.47]
+  [PASS] Table 7 pte_fd: tokens/query
+           computed=4531.0 paper=4531
+  [PASS] n=500 FD vs PTE discordant cells b=29, c=0
+           computed b,c=(29, 0) paper=(29, 0)
+  [PASS] n=500 FD vs Static discordant cells b=49, c=31
+           computed b,c=(49, 31) paper=(49, 31)
+  [PASS] n=500 FD vs PTE paired difference (pp)
+           computed=5.8 paper=5.8
+  [PASS] n=500 FD vs PTE 95% bootstrap CI
+           computed=[+3.80,+8.00] paper=[+3.8,+8.0]
+  [PASS] n=500 FD vs PTE exact binomial McNemar p = 3.7e-9
+           computed=3.7e-09 paper=3.7e-09
+  [PASS] n=500 FD vs PTE continuity-corrected McNemar p = 2.0e-7
+           computed=2e-07 paper=2e-07
+  [PASS] n=500 FD vs Static paired difference (pp)
+           computed=3.6 paper=3.6
+  [PASS] n=500 FD vs Static 95% bootstrap CI
+           computed=[+0.20,+7.00] paper=[+0.2,+7.0]
+  [PASS] n=500 FD vs Static cluster-robust Wald p = 0.044
+           computed=0.044 paper=0.044
+  [PASS] n=500 FD vs Static continuity-corrected McNemar p = 0.057
+           computed=0.057 paper=0.057
+  [PASS] n=500 FD vs Static bootstrap p = 0.047
+           computed=0.047 paper=0.047
+  [PASS] n=500 PTE vs Static paired difference (pp)
+           computed=-2.2 paper=-2.2
+  [PASS] n=500 PTE vs Static 95% bootstrap CI
+           computed=[-5.40,+0.80] paper=[-5.4,+0.8]
+  [PASS] n=500 PTE vs Static cluster-robust p = 0.17
+           computed=0.17 paper=0.17
+  [PASS] n=500 text: PTE-FD cuts tokens by 13.0%
+           computed=13.0 paper=13.0
+  [PASS] Abstract/L530/L542 lower bound 46% (PTE-FD vs Static)
+           computed=46.0 paper=46.0
+  [PASS] Abstract/L530/L542 upper bound 55% (PTE-FD vs Static)
+           computed=55.0 paper=55.0
+  [PASS] L534 lower bound 52% (other three back-ends)
+           computed=52.0 paper=52.0
+  [PASS] L534 upper bound 55% (other three back-ends)
+           computed=55.0 paper=55.0
+  [PASS] Ablation text: deepseek PTE-FD ~46% fewer tokens
+           computed=46.0 paper=46.0
+  [PASS] Ablation text: deepseek PTE ~55% fewer tokens
+           computed=55.0 paper=55.0
+  [PASS] Token claim: the 57% endpoint belongs to PTE, not PTE-FD
+           PTE max=57.23% PTE-FD max=55.38%
+  [PASS] Cluster count G = 118 distinct query texts
+           computed=118.0 paper=118.0
+  [PASS] Cluster size distribution {1:10, 2:46, 3:62}
+           {1: 10, 2: 46, 3: 62}
+  [PASS] SE understatement lower bound 18%
+           computed=18.0 paper=18.0
+  [PASS] SE understatement upper bound 58%
+           computed=58.0 paper=58.0
+
+  108/108 checks passed  -- ALL OK

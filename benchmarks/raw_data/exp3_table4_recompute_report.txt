@@ -1,0 +1,94 @@
+========================================================================================
+S1　逐对话原始列表 → 复算均值 → 对照 exp3_summary.json
+========================================================================================
+  [ok  ] raw.api_errors 列表长度 = 30（应 = 30 场对话）
+  [ok  ] raw.api_errors_per_conv: 复算 14.6 == summary 14.6
+  [ok  ] raw.jitter 列表长度 = 30（应 = 30 场对话）
+  [ok  ] raw.jitter_events_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] raw.prefix_hit 列表长度 = 30（应 = 30 场对话）
+  [ok  ] raw.prefix_hit_rate: 复算 0.0 == summary 0.0
+  [ok  ] raw.savings 列表长度 = 30（应 = 30 场对话）
+  [ok  ] raw.compression_savings: 复算 0.0 == summary 0.0
+  [ok  ] pruning.api_errors 列表长度 = 30（应 = 30 场对话）
+  [ok  ] pruning.api_errors_per_conv: 复算 14.6 == summary 14.6
+  [ok  ] pruning.jitter 列表长度 = 30（应 = 30 场对话）
+  [ok  ] pruning.jitter_events_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] pruning.prefix_hit 列表长度 = 30（应 = 30 场对话）
+  [ok  ] pruning.prefix_hit_rate: 复算 0.0 == summary 0.0
+  [ok  ] pruning.savings 列表长度 = 30（应 = 30 场对话）
+  [ok  ] pruning.compression_savings: 复算 49.9 == summary 49.9
+  [ok  ] s1_s4.api_errors 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s4.api_errors_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] s1_s4.jitter 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s4.jitter_events_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] s1_s4.prefix_hit 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s4.prefix_hit_rate: 复算 0.0 == summary 0.0
+  [ok  ] s1_s4.savings 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s4.compression_savings: 复算 49.0 == summary 49.0
+  [ok  ] s1_s5.api_errors 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s5.api_errors_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] s1_s5.jitter 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s5.jitter_events_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] s1_s5.prefix_hit 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s5.prefix_hit_rate: 复算 0.0 == summary 0.0
+  [ok  ] s1_s5.savings 列表长度 = 30（应 = 30 场对话）
+  [ok  ] s1_s5.compression_savings: 复算 49.0 == summary 49.0
+  [ok  ] full_rcr.api_errors 列表长度 = 30（应 = 30 场对话）
+  [ok  ] full_rcr.api_errors_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] full_rcr.jitter 列表长度 = 30（应 = 30 场对话）
+  [ok  ] full_rcr.jitter_events_per_conv: 复算 0.0 == summary 0.0
+  [ok  ] full_rcr.prefix_hit 列表长度 = 30（应 = 30 场对话）
+  [ok  ] full_rcr.prefix_hit_rate: 复算 60.0 == summary 60.0
+  [ok  ] full_rcr.savings 列表长度 = 30（应 = 30 场对话）
+  [ok  ] full_rcr.compression_savings: 复算 48.5 == summary 48.5
+  [ok  ] llmlingua.api_errors 列表长度 = 30（应 = 30 场对话）
+  [ok  ] llmlingua.api_errors_per_conv: 复算 53.9 == summary 53.9
+  [ok  ] llmlingua.jitter 列表长度 = 30（应 = 30 场对话）
+  [ok  ] llmlingua.jitter_events_per_conv: 复算 0.6 == summary 0.6
+  [ok  ] llmlingua.prefix_hit 列表长度 = 30（应 = 30 场对话）
+  [ok  ] llmlingua.prefix_hit_rate: 复算 13.0 == summary 13.0
+  [ok  ] llmlingua.savings 列表长度 = 30（应 = 30 场对话）
+  [ok  ] llmlingua.compression_savings: 复算 34.0 == summary 34.0
+
+========================================================================================
+S2　原始数据自洽（orphan 守恒 + RCR 修复语义）
+========================================================================================
+  [ok  ] metadata.total_orphans 439 == sum(raw.api_errors) 439
+  [ok  ] sum(raw) 439 == sum(pruning) 439（S3 剪枝不动 call/result 配对）
+  [ok  ] raw 与 pruning 的逐对话 api_errors 列表完全相同
+  [ok  ] s1_s4.api_errors 全 0（S1 validate_message_structure 为每个 orphan 补 placeholder）
+  [ok  ] s1_s5.api_errors 全 0（S1 validate_message_structure 为每个 orphan 补 placeholder）
+  [ok  ] full_rcr.api_errors 全 0（S1 validate_message_structure 为每个 orphan 补 placeholder）
+  [ok  ] 14.6 = 439 orphans / 30 conv = 14.6333 → round(_,1) = 14.6
+  [ok  ] 53.9 = sum(llmlingua.api_errors) 1618 / 30 → 53.9
+
+========================================================================================
+S3　两稿 tex Table 4 (tab:ablation_rcr) 逐格对照复算值
+========================================================================================
+  [skip] S3: array_submission/ 不在 artifact bundle 内 —— tex 交叉对照 SKIPPED（S1/S2 数据复算与 S5 负对照照常执行，检测力未降低）
+
+========================================================================================
+S4　Table 4 邻近正文数值对照（两稿）
+========================================================================================
+  [skip] S4: array_submission/ 不在 artifact bundle 内 —— tex 交叉对照 SKIPPED（S1/S2 数据复算与 S5 负对照照常执行，检测力未降低）
+  [ok  ] 正文「to zero」: s1_s4 api_errors 复算 = 0.0
+
+========================================================================================
+S5　负对照（合成偏离值 + 作用域守卫，对照逻辑必须报错）
+========================================================================================
+  [ok  ] 负对照①: tex=14.7 vs 复算=14.6 → 判不一致（检测力在）
+  [ok  ] 负对照②: tex=14.6 vs 复算=14.6 → 判一致
+  [ok  ] 负对照③: tex=--- 但复算=5.0(≠0) → 判不一致
+  [ok  ] 负对照④: tex=--- 且复算=0.0 → 判一致
+  [ok  ] 负对照⑤: tex=60 vs 复算=13 → 判不一致
+  [ok  ] 负对照⑥: 作用域外同名撞车行未被取到（解析出 ['full_rcr']，应 = ['full_rcr']）
+  [ok  ] 负对照⑦: 无 tab:ablation_rcr 标签 → 解析出空字典（不猜表，交由 table4_found 报 FAIL）
+
+========================================================================================
+结论: ALL OK（bundle 模式）—— S1 全 24 格汇总值 + S2 orphan 守恒，均由 exp3_results.json 逐对话列表独立复算吻合；14.6 = 439/30，S4 起 → 0。S3/S4 tex 交叉对照 SKIPPED（array_submission/ 不入 bundle），S5 负对照 7/7 仍有效。
+========================================================================================
+
+运行模式: bundle —— array_submission/ 不在 artifact bundle 内，S3/S4 已 SKIPPED（非静默失效）
+诚实声明：API Errors 为**合成对话**中按 ORPHAN_RATE=0.09 注入的 orphan tool-call 计数
+（HTTP-400 的确定性代理），非生产 API 日志统计；exp3 纯离线、seed=42、可复现。
+更严格的 RCR 质量与变异性证据（≥60 长会话 + 失败注入 + mean±SD + LLM judge）属 E14。
