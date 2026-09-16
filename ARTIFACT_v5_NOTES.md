@@ -7,12 +7,22 @@
 | `paper-array-eval-v1`, `paper-array-eval-v2` | `1431ca31` (2026-06-15) | The **single frozen snapshot** from which every number reported in the submission was produced. The two tags are content-identical. Product version `5.30.1` (`src/__init__.py:3`). |
 | `paper-array-eval-v3` | `3e9b4ce` (2026-09-14) | One commit on top of the frozen snapshot: a completeness and documentation supplement. No benchmark script, no raw-data file changed. |
 | `paper-array-eval-v4` | `acd5c67` (2026-09-15) | One commit on top of v3: recomputation evidence for the revised statistical analysis and for two specific manuscript claims, plus the anonymized production snapshot named in Section 6.4. |
-| `paper-array-eval-v5` | *(this tag)* | One commit on top of v4: the **five-repetition variability study (E12)** behind Table 3 (`tab:ablation_ebe`), the same-trajectory four-way comparison script that produced it, and a zero-API driver that verifies every cell of that table against the shipped records. |
+| `paper-array-eval-v5` | *(this tag)* | The **five-repetition variability study (E12)** behind Table 3 (`tab:ablation_ebe`), the same-trajectory four-way comparison script that produced it, and a zero-API driver that verifies every cell of that table against the shipped records. Published as one additive commit on top of v4 (`a24c56e`), then corrected in a second commit that changes only this Markdown file (see the note below and the erratum in Section 9). |
 
-v5 is a **strictly additive evidence supplement**. It modifies no previously
-published file, changes no experimental input, and re-runs no experiment that was
-already published. Every result reported in v1-v4 is therefore unchanged; v5 adds
-new measurements and makes the revised Table 3 independently recomputable.
+v5 is a **strictly additive evidence supplement** relative to v1-v4. It modifies no
+file published in v1-v4, changes no experimental input, and re-runs no experiment
+that was already published. Every result reported in v1-v4 is therefore unchanged;
+v5 adds new measurements and makes the revised Table 3 independently recomputable.
+
+**This file was corrected once, after the v5 tag was first published.** The first
+version of Section 9 mis-stated which checksums a reader on Windows would obtain
+from a working tree; see the erratum at the end of Section 9. The commit that
+carried the incorrect text (`a24c56e`) is still in this branch's history and has
+not been rewritten. The `paper-array-eval-v5` tag was deleted and re-created so
+that it points at the corrected tree, because nothing cited the tag in the
+interval — no manuscript, no ledger, no release. The artifacts themselves are
+untouched: the fourteen files and their blobs are byte-identical to what the first
+tag carried, and only this Markdown file differs.
 
 The Zenodo archive `10.5281/zenodo.22014311` captures the **v2** tree (85 files,
 559.7 kB). It does not contain the v3, v4 or v5 additions; for those, the Git tags
@@ -160,10 +170,18 @@ checks and a report that is *not* byte-identical to the shipped one. This is the
 opposite of the arrangement v4 chose for `exp3_table4_recompute.py`, and the
 reason is that the two variants are not equally informative:
 
-| Layout | Condition | Checks | Section F |
+| Mode | Condition | Checks | Section F |
 | --- | --- | --- | --- |
 | `paper` | `array_submission/paper_array.tex` reachable from `benchmarks/` | **216** | executed in full — all 41 table-to-data comparisons run |
 | `bundle` | no manuscript source in the tree (this repository) | **174** | loud self-skip, printed as `[skip ]` with the reason |
+
+`paper` and `bundle` are names for **whether the article source is present**. They
+are not values the report prints, and they must not be confused with the report's
+own `layout` field, which says something narrower: where the five repetitions were
+read from. That field is `in-repo` when they came from
+`benchmarks/raw_data/exp12_reps/` — true in both modes above, and true of the
+report shipped here — and `override` only when `WECLAW_E12_REPS_DIR` was set
+deliberately (Section 5.3).
 
 The 42-check difference was enumerated mechanically by diffing the two reports'
 check labels, and it is fully accounted for:
@@ -359,10 +377,32 @@ That decision was measured, not assumed. Inside a clone of this repository:
 | `git hash-object --path <p>` on a CRLF record vs. on its LF copy | **same object id** — the clean filter normalizes on the way in |
 | the same with `--no-filters` | **different object ids** — proving the normalization is what makes them equal, not an identity mapping |
 
-So a reader on Windows who runs `sha256sum <file>` in a working tree gets a
-different digest for the seven CRLF-origin files listed in Section 2, and the same
-digest for the other seven. This is a property of the local end-of-line setting,
-not of the archive. Marking the v5 paths `-text` in a new `.gitattributes` would
+So the digests listed above are **not** what `sha256sum <file>` prints in a working
+tree, and how far off it is depends entirely on the reader's local end-of-line
+setting, not on the archive. Measured in a fresh clone of this repository on
+Windows, where the system-level configuration sets `core.autocrlf=true`:
+
+| Reader's setting | Working-tree bytes | `sha256sum <file>` vs. the list above |
+| --- | --- | --- |
+| `core.autocrlf=true` (the Windows default here) | **all fourteen** files checked out as CRLF | differs for **all fourteen** |
+| `core.autocrlf=false` / `input` (Linux, macOS) | all fourteen checked out as LF | matches for **all fourteen** |
+
+Use the `git show` form given below, which reads the blob and is therefore
+identical under every setting. The seven non-zero deltas in Section 2 describe the
+**authors'** working tree, where seven files happened to be written with CRLF and
+seven with LF; that split says nothing about any reader's checkout, and conflating
+the two is exactly the error the erratum below records.
+
+**Erratum.** The first published version of this section claimed that a reader on
+Windows "gets a different digest for the seven CRLF-origin files listed in Section
+2, and the same digest for the other seven". That is false, and false under every
+configuration: `core.autocrlf=true` converts *every* LF blob to CRLF on checkout,
+so all fourteen differ, while `core.autocrlf=false` leaves all fourteen as LF, so
+all fourteen match. The claim was written from Section 2's authors'-tree deltas
+instead of being measured on a checkout. It was caught by running the reproduction
+commands of Section 5.1 inside a fresh clone of the pushed tag and comparing the
+working-tree digests of all fourteen files with the list below — 14 of 14 differ,
+not 7 of 14. Marking the v5 paths `-text` in a new `.gitattributes` would
 have preserved the working-tree bytes, but it was rejected: it contradicts the
 statement already published in v4 Section 7, and it would leave the repository with
 two competing end-of-line conventions. The rule "original records are never
