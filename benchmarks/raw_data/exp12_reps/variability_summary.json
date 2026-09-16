@@ -1,0 +1,660 @@
+{
+  "backend": {
+    "model": "deepseek-chat",
+    "temperature": 0.0
+  },
+  "n_reps": 5,
+  "denominator": 59,
+  "pp_per_event": 1.6949,
+  "root_cause": "backend non-determinism at temperature=0 (code path verified deterministic: list comprehension / sorted / enumerate, no set iteration => PYTHONHASHSEED-independent)",
+  "root_cause_measured": {
+    "erl": {
+      "n_units": 137,
+      "n_diff": 115,
+      "drift_pct": 83.94,
+      "distinct_kb_fp": 5,
+      "kb_fps": [
+        "48f42b70355e",
+        "7056810db316",
+        "7899070c4a87",
+        "7c106b555399",
+        "dd2b79b155b4"
+      ]
+    },
+    "expel": {
+      "n_units": 73,
+      "n_diff": 67,
+      "drift_pct": 91.78,
+      "distinct_kb_fp": 5,
+      "kb_fps": [
+        "2904d0379146",
+        "5c500f693c1e",
+        "a21b898625b1",
+        "ec451401045b",
+        "f0fcaca886b7"
+      ]
+    },
+    "in_tok": {
+      "values": [
+        577034,
+        575854,
+        576798,
+        576326,
+        579571
+      ],
+      "range": 3717
+    }
+  },
+  "aggregate": {
+    "raw_log": {
+      "recall_at_1": {
+        "n": 5,
+        "mean": 69.49,
+        "sd": 0.0,
+        "min": 69.49,
+        "max": 69.49,
+        "range": 0.0,
+        "values": [
+          69.49,
+          69.49,
+          69.49,
+          69.49,
+          69.49
+        ]
+      },
+      "recall_at_3": {
+        "n": 5,
+        "mean": 74.58,
+        "sd": 0.0,
+        "min": 74.58,
+        "max": 74.58,
+        "range": 0.0,
+        "values": [
+          74.58,
+          74.58,
+          74.58,
+          74.58,
+          74.58
+        ]
+      },
+      "precision": {
+        "n": 5,
+        "mean": 69.49,
+        "sd": 0.0,
+        "min": 69.49,
+        "max": 69.49,
+        "range": 0.0,
+        "values": [
+          69.49,
+          69.49,
+          69.49,
+          69.49,
+          69.49
+        ]
+      },
+      "coverage_rate": {
+        "n": 5,
+        "mean": 100.0,
+        "sd": 0.0,
+        "min": 100.0,
+        "max": 100.0,
+        "range": 0.0,
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "prevention_rate": {
+        "n": 5,
+        "mean": 74.58,
+        "sd": 0.0,
+        "min": 74.58,
+        "max": 74.58,
+        "range": 0.0,
+        "values": [
+          74.58,
+          74.58,
+          74.58,
+          74.58,
+          74.58
+        ]
+      },
+      "false_positive_rate": {
+        "n": 5,
+        "mean": 25.42,
+        "sd": 0.0,
+        "min": 25.42,
+        "max": 25.42,
+        "range": 0.0,
+        "values": [
+          25.42,
+          25.42,
+          25.42,
+          25.42,
+          25.42
+        ]
+      },
+      "top1_hits": {
+        "n": 5,
+        "mean": 41.0,
+        "sd": 0.0,
+        "min": 41,
+        "max": 41,
+        "range": 0,
+        "values": [
+          41,
+          41,
+          41,
+          41,
+          41
+        ]
+      },
+      "top3_hits": {
+        "n": 5,
+        "mean": 44.0,
+        "sd": 0.0,
+        "min": 44,
+        "max": 44,
+        "range": 0,
+        "values": [
+          44,
+          44,
+          44,
+          44,
+          44
+        ]
+      },
+      "predictions": {
+        "n": 5,
+        "mean": 59.0,
+        "sd": 0.0,
+        "min": 59,
+        "max": 59,
+        "range": 0,
+        "values": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ]
+      },
+      "llm_calls": {
+        "n": 5,
+        "mean": 0.0,
+        "sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "erl": {
+      "recall_at_1": {
+        "n": 5,
+        "mean": 74.578,
+        "sd": 1.1985,
+        "min": 72.88,
+        "max": 76.27,
+        "range": 3.39,
+        "values": [
+          74.58,
+          72.88,
+          74.58,
+          74.58,
+          76.27
+        ]
+      },
+      "recall_at_3": {
+        "n": 5,
+        "mean": 78.646,
+        "sd": 0.9257,
+        "min": 77.97,
+        "max": 79.66,
+        "range": 1.69,
+        "values": [
+          79.66,
+          77.97,
+          77.97,
+          77.97,
+          79.66
+        ]
+      },
+      "precision": {
+        "n": 5,
+        "mean": 74.578,
+        "sd": 1.1985,
+        "min": 72.88,
+        "max": 76.27,
+        "range": 3.39,
+        "values": [
+          74.58,
+          72.88,
+          74.58,
+          74.58,
+          76.27
+        ]
+      },
+      "coverage_rate": {
+        "n": 5,
+        "mean": 100.0,
+        "sd": 0.0,
+        "min": 100.0,
+        "max": 100.0,
+        "range": 0.0,
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "prevention_rate": {
+        "n": 5,
+        "mean": 78.646,
+        "sd": 0.9257,
+        "min": 77.97,
+        "max": 79.66,
+        "range": 1.69,
+        "values": [
+          79.66,
+          77.97,
+          77.97,
+          77.97,
+          79.66
+        ]
+      },
+      "false_positive_rate": {
+        "n": 5,
+        "mean": 21.354,
+        "sd": 0.9257,
+        "min": 20.34,
+        "max": 22.03,
+        "range": 1.69,
+        "values": [
+          20.34,
+          22.03,
+          22.03,
+          22.03,
+          20.34
+        ]
+      },
+      "top1_hits": {
+        "n": 5,
+        "mean": 44.0,
+        "sd": 0.7071,
+        "min": 43,
+        "max": 45,
+        "range": 2,
+        "values": [
+          44,
+          43,
+          44,
+          44,
+          45
+        ]
+      },
+      "top3_hits": {
+        "n": 5,
+        "mean": 46.4,
+        "sd": 0.5477,
+        "min": 46,
+        "max": 47,
+        "range": 1,
+        "values": [
+          47,
+          46,
+          46,
+          46,
+          47
+        ]
+      },
+      "predictions": {
+        "n": 5,
+        "mean": 59.0,
+        "sd": 0.0,
+        "min": 59,
+        "max": 59,
+        "range": 0,
+        "values": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ]
+      },
+      "llm_calls": {
+        "n": 5,
+        "mean": 196.0,
+        "sd": 0.0,
+        "min": 196.0,
+        "max": 196.0,
+        "range": 0.0,
+        "values": [
+          196.0,
+          196.0,
+          196.0,
+          196.0,
+          196.0
+        ]
+      }
+    },
+    "expel": {
+      "recall_at_1": {
+        "n": 5,
+        "mean": 72.204,
+        "sd": 0.9257,
+        "min": 71.19,
+        "max": 72.88,
+        "range": 1.69,
+        "values": [
+          72.88,
+          72.88,
+          72.88,
+          71.19,
+          71.19
+        ]
+      },
+      "recall_at_3": {
+        "n": 5,
+        "mean": 78.648,
+        "sd": 1.5161,
+        "min": 77.97,
+        "max": 81.36,
+        "range": 3.39,
+        "values": [
+          77.97,
+          81.36,
+          77.97,
+          77.97,
+          77.97
+        ]
+      },
+      "precision": {
+        "n": 5,
+        "mean": 72.204,
+        "sd": 0.9257,
+        "min": 71.19,
+        "max": 72.88,
+        "range": 1.69,
+        "values": [
+          72.88,
+          72.88,
+          72.88,
+          71.19,
+          71.19
+        ]
+      },
+      "coverage_rate": {
+        "n": 5,
+        "mean": 100.0,
+        "sd": 0.0,
+        "min": 100.0,
+        "max": 100.0,
+        "range": 0.0,
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "prevention_rate": {
+        "n": 5,
+        "mean": 78.648,
+        "sd": 1.5161,
+        "min": 77.97,
+        "max": 81.36,
+        "range": 3.39,
+        "values": [
+          77.97,
+          81.36,
+          77.97,
+          77.97,
+          77.97
+        ]
+      },
+      "false_positive_rate": {
+        "n": 5,
+        "mean": 21.352,
+        "sd": 1.5161,
+        "min": 18.64,
+        "max": 22.03,
+        "range": 3.39,
+        "values": [
+          22.03,
+          18.64,
+          22.03,
+          22.03,
+          22.03
+        ]
+      },
+      "top1_hits": {
+        "n": 5,
+        "mean": 42.6,
+        "sd": 0.5477,
+        "min": 42,
+        "max": 43,
+        "range": 1,
+        "values": [
+          43,
+          43,
+          43,
+          42,
+          42
+        ]
+      },
+      "top3_hits": {
+        "n": 5,
+        "mean": 46.4,
+        "sd": 0.8944,
+        "min": 46,
+        "max": 48,
+        "range": 2,
+        "values": [
+          46,
+          48,
+          46,
+          46,
+          46
+        ]
+      },
+      "predictions": {
+        "n": 5,
+        "mean": 59.0,
+        "sd": 0.0,
+        "min": 59,
+        "max": 59,
+        "range": 0,
+        "values": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ]
+      },
+      "llm_calls": {
+        "n": 5,
+        "mean": 132.0,
+        "sd": 0.0,
+        "min": 132.0,
+        "max": 132.0,
+        "range": 0.0,
+        "values": [
+          132.0,
+          132.0,
+          132.0,
+          132.0,
+          132.0
+        ]
+      }
+    },
+    "ebeac": {
+      "recall_at_1": {
+        "n": 5,
+        "mean": 71.19,
+        "sd": 0.0,
+        "min": 71.19,
+        "max": 71.19,
+        "range": 0.0,
+        "values": [
+          71.19,
+          71.19,
+          71.19,
+          71.19,
+          71.19
+        ]
+      },
+      "recall_at_3": {
+        "n": 5,
+        "mean": 76.27,
+        "sd": 0.0,
+        "min": 76.27,
+        "max": 76.27,
+        "range": 0.0,
+        "values": [
+          76.27,
+          76.27,
+          76.27,
+          76.27,
+          76.27
+        ]
+      },
+      "precision": {
+        "n": 5,
+        "mean": 89.36,
+        "sd": 0.0,
+        "min": 89.36,
+        "max": 89.36,
+        "range": 0.0,
+        "values": [
+          89.36,
+          89.36,
+          89.36,
+          89.36,
+          89.36
+        ]
+      },
+      "coverage_rate": {
+        "n": 5,
+        "mean": 79.66,
+        "sd": 0.0,
+        "min": 79.66,
+        "max": 79.66,
+        "range": 0.0,
+        "values": [
+          79.66,
+          79.66,
+          79.66,
+          79.66,
+          79.66
+        ]
+      },
+      "prevention_rate": {
+        "n": 5,
+        "mean": 76.27,
+        "sd": 0.0,
+        "min": 76.27,
+        "max": 76.27,
+        "range": 0.0,
+        "values": [
+          76.27,
+          76.27,
+          76.27,
+          76.27,
+          76.27
+        ]
+      },
+      "false_positive_rate": {
+        "n": 5,
+        "mean": 3.39,
+        "sd": 0.0,
+        "min": 3.39,
+        "max": 3.39,
+        "range": 0.0,
+        "values": [
+          3.39,
+          3.39,
+          3.39,
+          3.39,
+          3.39
+        ]
+      },
+      "llm_calls": {
+        "n": 5,
+        "mean": 0.0,
+        "sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "per_rep_counters": [
+    {
+      "llm_calls": 328,
+      "cache_hits": 0,
+      "in_tok": 577034,
+      "out_tok": 11196,
+      "extract_failures": 0,
+      "parse_failures": 0,
+      "err_classes": {}
+    },
+    {
+      "llm_calls": 328,
+      "cache_hits": 0,
+      "in_tok": 575854,
+      "out_tok": 11181,
+      "extract_failures": 0,
+      "parse_failures": 0,
+      "err_classes": {}
+    },
+    {
+      "llm_calls": 328,
+      "cache_hits": 0,
+      "in_tok": 576798,
+      "out_tok": 11185,
+      "extract_failures": 0,
+      "parse_failures": 0,
+      "err_classes": {}
+    },
+    {
+      "llm_calls": 328,
+      "cache_hits": 0,
+      "in_tok": 576326,
+      "out_tok": 11186,
+      "extract_failures": 0,
+      "parse_failures": 0,
+      "err_classes": {}
+    },
+    {
+      "llm_calls": 328,
+      "cache_hits": 0,
+      "in_tok": 579571,
+      "out_tok": 11238,
+      "extract_failures": 0,
+      "parse_failures": 0,
+      "err_classes": {}
+    }
+  ]
+}

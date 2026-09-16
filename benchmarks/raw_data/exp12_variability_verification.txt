@@ -1,0 +1,275 @@
+====================================================================================================
+exp12 verification driver -- Table 3 (tab:ablation_ebe) from n=5 independent runs
+====================================================================================================
+  benchmarks dir : .
+  zero API       : True (no section below makes a network call)
+  digest rule    : every sha256 below is over the LF-normalized byte stream,
+                   i.e. the blob this archive stores, so it equals
+                   `git show <tag>:<path> | sha256sum` on any platform and any
+                   core.autocrlf value.  Five shipped records are CRLF on the
+                   workstation that produced them, so a plain `sha256sum <file>`
+                   there differs; NC-G below proves the rule is load-bearing.
+
+=== B. Negative controls on the aggregator (synthetic, zero API) ===
+  [ok   ] NC-A identical reps -> SD exactly 0                            got='0.00' want='0.00'
+  [ok   ] NC-A identical reps -> range exactly 0                         got='0.00' want='0.00'
+  [ok   ] NC-A identical reps -> mean is the common value                got='74.58' want='74.58'
+  [ok   ] NC-B one-event drift -> range is one event (1.69 pp)           got='1.69' want='1.69'
+  [ok   ] NC-B one-event drift -> SD is non-zero                         got=True want=True
+  [ok   ] NC-C tampering one cell changes the mean                       got='75.14' want='75.14'
+  [ok   ] NC-C the untampered aggregate is still 74.58 (the tamper is localized) got='74.58' want='74.58'
+  [ok   ] NC-D dropping one rep reports n=2 (no silent padding)          got=2 want=2
+  [ok   ] NC-E rounding 74.578 prints as 74.58                           got='74.58' want='74.58'
+  [ok   ] NC-E rounding 1.1985 prints as 1.20                            got='1.20' want='1.20'
+  [ok   ] NC-G the production digest of a CRLF record equals its LF blob digest got='e8c628edc9968ef0c668f54e0ba2636b35503357eb1aca0ddc828aeace432f67' want='e8c628edc9968ef0c668f54e0ba2636b35503357eb1aca0ddc828aeace432f67'
+  [ok   ] NC-G normalization is not vacuous (the raw CRLF digest differs) got=False want=False
+  layout         : in-repo
+    rep1: results=FOUND  report=FOUND  sha256=924c5ddadca5ab35
+    rep2: results=FOUND  report=FOUND  sha256=7e7fe309476f3d87
+    rep3: results=FOUND  report=FOUND  sha256=198e6175756ba19d
+    rep4: results=FOUND  report=FOUND  sha256=cd080e8127aa2d56
+    rep5: results=FOUND  report=FOUND  sha256=4c298ae58042e8ac
+
+=== C. Per-repetition integrity (each rep carries its own controls) ===
+  [ok   ] exactly 5 repetitions resolved                                 got=5 want=5
+  [ok   ] rep1 internal control_failures == 0                            got=0 want=0
+  [ok   ] rep1 internal data_failures == 0                               got=0 want=0
+  [ok   ] rep1 status == evaluated (not dry_run)                         got='evaluated' want='evaluated'
+  [ok   ] rep1 api_failures == 0 for every method                        got=[0, 0, 0, 0] want=[0, 0, 0, 0]
+  [ok   ] rep1 denominator n_test_errors == 59 for every method          got=[59] want=[59]
+  [ok   ] rep1 per-method llm_calls sum == run total                     got=328 want=328
+  [ok   ] rep1 per-method llm_calls match the published budget           got=[0, 196, 132, 0] want=[0, 196, 132, 0]
+  [ok   ] rep1 raw_log kb_size == 137                                    got=137 want=137
+  [ok   ] rep1 erl kb_size == 137                                        got=137 want=137
+  [ok   ] rep1 expel kb_size == 73                                       got=73 want=73
+  [ok   ] rep1 EBEAC recall_at_1 == published Section 6.4 value          got=71.19 want=71.19
+  [ok   ] rep1 EBEAC recall_at_3 == published Section 6.4 value          got=76.27 want=76.27
+  [ok   ] rep1 EBEAC precision == published Section 6.4 value            got=89.36 want=89.36
+  [ok   ] rep1 EBEAC coverage_rate == published Section 6.4 value        got=79.66 want=79.66
+  [ok   ] rep1 EBEAC prevention_rate == published Section 6.4 value      got=76.27 want=76.27
+  [ok   ] rep1 EBEAC false_positive_rate == published Section 6.4 value  got=3.39 want=3.39
+  [ok   ] rep1 driver constants agree with the file's own published_reference got={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39} want={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39}
+  [ok   ] rep1 published_reference n_test_errors == 59                   got=59 want=59
+  [ok   ] rep2 internal control_failures == 0                            got=0 want=0
+  [ok   ] rep2 internal data_failures == 0                               got=0 want=0
+  [ok   ] rep2 status == evaluated (not dry_run)                         got='evaluated' want='evaluated'
+  [ok   ] rep2 api_failures == 0 for every method                        got=[0, 0, 0, 0] want=[0, 0, 0, 0]
+  [ok   ] rep2 denominator n_test_errors == 59 for every method          got=[59] want=[59]
+  [ok   ] rep2 per-method llm_calls sum == run total                     got=328 want=328
+  [ok   ] rep2 per-method llm_calls match the published budget           got=[0, 196, 132, 0] want=[0, 196, 132, 0]
+  [ok   ] rep2 raw_log kb_size == 137                                    got=137 want=137
+  [ok   ] rep2 erl kb_size == 137                                        got=137 want=137
+  [ok   ] rep2 expel kb_size == 73                                       got=73 want=73
+  [ok   ] rep2 EBEAC recall_at_1 == published Section 6.4 value          got=71.19 want=71.19
+  [ok   ] rep2 EBEAC recall_at_3 == published Section 6.4 value          got=76.27 want=76.27
+  [ok   ] rep2 EBEAC precision == published Section 6.4 value            got=89.36 want=89.36
+  [ok   ] rep2 EBEAC coverage_rate == published Section 6.4 value        got=79.66 want=79.66
+  [ok   ] rep2 EBEAC prevention_rate == published Section 6.4 value      got=76.27 want=76.27
+  [ok   ] rep2 EBEAC false_positive_rate == published Section 6.4 value  got=3.39 want=3.39
+  [ok   ] rep2 driver constants agree with the file's own published_reference got={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39} want={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39}
+  [ok   ] rep2 published_reference n_test_errors == 59                   got=59 want=59
+  [ok   ] rep3 internal control_failures == 0                            got=0 want=0
+  [ok   ] rep3 internal data_failures == 0                               got=0 want=0
+  [ok   ] rep3 status == evaluated (not dry_run)                         got='evaluated' want='evaluated'
+  [ok   ] rep3 api_failures == 0 for every method                        got=[0, 0, 0, 0] want=[0, 0, 0, 0]
+  [ok   ] rep3 denominator n_test_errors == 59 for every method          got=[59] want=[59]
+  [ok   ] rep3 per-method llm_calls sum == run total                     got=328 want=328
+  [ok   ] rep3 per-method llm_calls match the published budget           got=[0, 196, 132, 0] want=[0, 196, 132, 0]
+  [ok   ] rep3 raw_log kb_size == 137                                    got=137 want=137
+  [ok   ] rep3 erl kb_size == 137                                        got=137 want=137
+  [ok   ] rep3 expel kb_size == 73                                       got=73 want=73
+  [ok   ] rep3 EBEAC recall_at_1 == published Section 6.4 value          got=71.19 want=71.19
+  [ok   ] rep3 EBEAC recall_at_3 == published Section 6.4 value          got=76.27 want=76.27
+  [ok   ] rep3 EBEAC precision == published Section 6.4 value            got=89.36 want=89.36
+  [ok   ] rep3 EBEAC coverage_rate == published Section 6.4 value        got=79.66 want=79.66
+  [ok   ] rep3 EBEAC prevention_rate == published Section 6.4 value      got=76.27 want=76.27
+  [ok   ] rep3 EBEAC false_positive_rate == published Section 6.4 value  got=3.39 want=3.39
+  [ok   ] rep3 driver constants agree with the file's own published_reference got={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39} want={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39}
+  [ok   ] rep3 published_reference n_test_errors == 59                   got=59 want=59
+  [ok   ] rep4 internal control_failures == 0                            got=0 want=0
+  [ok   ] rep4 internal data_failures == 0                               got=0 want=0
+  [ok   ] rep4 status == evaluated (not dry_run)                         got='evaluated' want='evaluated'
+  [ok   ] rep4 api_failures == 0 for every method                        got=[0, 0, 0, 0] want=[0, 0, 0, 0]
+  [ok   ] rep4 denominator n_test_errors == 59 for every method          got=[59] want=[59]
+  [ok   ] rep4 per-method llm_calls sum == run total                     got=328 want=328
+  [ok   ] rep4 per-method llm_calls match the published budget           got=[0, 196, 132, 0] want=[0, 196, 132, 0]
+  [ok   ] rep4 raw_log kb_size == 137                                    got=137 want=137
+  [ok   ] rep4 erl kb_size == 137                                        got=137 want=137
+  [ok   ] rep4 expel kb_size == 73                                       got=73 want=73
+  [ok   ] rep4 EBEAC recall_at_1 == published Section 6.4 value          got=71.19 want=71.19
+  [ok   ] rep4 EBEAC recall_at_3 == published Section 6.4 value          got=76.27 want=76.27
+  [ok   ] rep4 EBEAC precision == published Section 6.4 value            got=89.36 want=89.36
+  [ok   ] rep4 EBEAC coverage_rate == published Section 6.4 value        got=79.66 want=79.66
+  [ok   ] rep4 EBEAC prevention_rate == published Section 6.4 value      got=76.27 want=76.27
+  [ok   ] rep4 EBEAC false_positive_rate == published Section 6.4 value  got=3.39 want=3.39
+  [ok   ] rep4 driver constants agree with the file's own published_reference got={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39} want={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39}
+  [ok   ] rep4 published_reference n_test_errors == 59                   got=59 want=59
+  [ok   ] rep5 internal control_failures == 0                            got=0 want=0
+  [ok   ] rep5 internal data_failures == 0                               got=0 want=0
+  [ok   ] rep5 status == evaluated (not dry_run)                         got='evaluated' want='evaluated'
+  [ok   ] rep5 api_failures == 0 for every method                        got=[0, 0, 0, 0] want=[0, 0, 0, 0]
+  [ok   ] rep5 denominator n_test_errors == 59 for every method          got=[59] want=[59]
+  [ok   ] rep5 per-method llm_calls sum == run total                     got=328 want=328
+  [ok   ] rep5 per-method llm_calls match the published budget           got=[0, 196, 132, 0] want=[0, 196, 132, 0]
+  [ok   ] rep5 raw_log kb_size == 137                                    got=137 want=137
+  [ok   ] rep5 erl kb_size == 137                                        got=137 want=137
+  [ok   ] rep5 expel kb_size == 73                                       got=73 want=73
+  [ok   ] rep5 EBEAC recall_at_1 == published Section 6.4 value          got=71.19 want=71.19
+  [ok   ] rep5 EBEAC recall_at_3 == published Section 6.4 value          got=76.27 want=76.27
+  [ok   ] rep5 EBEAC precision == published Section 6.4 value            got=89.36 want=89.36
+  [ok   ] rep5 EBEAC coverage_rate == published Section 6.4 value        got=79.66 want=79.66
+  [ok   ] rep5 EBEAC prevention_rate == published Section 6.4 value      got=76.27 want=76.27
+  [ok   ] rep5 EBEAC false_positive_rate == published Section 6.4 value  got=3.39 want=3.39
+  [ok   ] rep5 driver constants agree with the file's own published_reference got={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39} want={'recall_at_1': 71.19, 'recall_at_3': 76.27, 'precision': 89.36, 'coverage_rate': 79.66, 'prevention_rate': 76.27, 'false_positive_rate': 3.39}
+  [ok   ] rep5 published_reference n_test_errors == 59                   got=59 want=59
+
+=== D. Aggregation over the five repetitions ===
+  [info ] raw_log n                                                      5
+  [info ] erl n                                                          5
+  [info ] expel n                                                        5
+  [info ] ebeac n                                                        5
+  [ok   ] raw_log is deterministic across reps: SD(recall_at_1) == 0     got='0.00' want='0.00'
+  [ok   ] raw_log is deterministic across reps: SD(recall_at_3) == 0     got='0.00' want='0.00'
+  [ok   ] raw_log is deterministic across reps: SD(precision) == 0       got='0.00' want='0.00'
+  [ok   ] raw_log is deterministic across reps: SD(coverage_rate) == 0   got='0.00' want='0.00'
+  [ok   ] raw_log is deterministic across reps: SD(prevention_rate) == 0 got='0.00' want='0.00'
+  [ok   ] raw_log is deterministic across reps: SD(false_positive_rate) == 0 got='0.00' want='0.00'
+  [ok   ] ebeac is deterministic across reps: SD(recall_at_1) == 0       got='0.00' want='0.00'
+  [ok   ] ebeac is deterministic across reps: SD(recall_at_3) == 0       got='0.00' want='0.00'
+  [ok   ] ebeac is deterministic across reps: SD(precision) == 0         got='0.00' want='0.00'
+  [ok   ] ebeac is deterministic across reps: SD(coverage_rate) == 0     got='0.00' want='0.00'
+  [ok   ] ebeac is deterministic across reps: SD(prevention_rate) == 0   got='0.00' want='0.00'
+  [ok   ] ebeac is deterministic across reps: SD(false_positive_rate) == 0 got='0.00' want='0.00'
+  [ok   ] erl LLM Calls is constant across reps                          got='0.00' want='0.00'
+  [ok   ] expel LLM Calls is constant across reps                        got='0.00' want='0.00'
+  [ok   ] Raw Error Log: kb_size recorded in all five runs               got=True want=True
+  [ok   ] Raw Error Log: KB identical across runs                        got='0.00' want='0.00'
+  [ok   ] Raw Error Log: KB equals the published library size            got=137 want=137
+  [ok   ] ERL: kb_size recorded in all five runs                         got=True want=True
+  [ok   ] ERL: KB identical across runs                                  got='0.00' want='0.00'
+  [ok   ] ERL: KB equals the published library size                      got=137 want=137
+  [ok   ] ExpeL: kb_size recorded in all five runs                       got=True want=True
+  [ok   ] ExpeL: KB identical across runs                                got='0.00' want='0.00'
+  [ok   ] ExpeL: KB equals the published library size                    got=73 want=73
+
+  Aggregated Table 3 values (mean +/- SD, as printed in the manuscript):
+    Raw Error Log    calls=   0 kb=  137  69.49  74.58  69.49  25.42
+    ERL              calls= 196 kb=  137  74.58+/-1.20  78.65+/-0.93  74.58+/-1.20  21.35+/-0.93
+    ExpeL            calls= 132 kb=   73  72.20+/-0.93  78.65+/-1.52  72.20+/-0.93  21.35+/-1.52
+    EBEAC            calls=   0 kb= 137*  71.19  76.27  89.36  3.39
+    (* EBEAC's library size is not reported by exp12; section E measures it.)
+
+=== D2. Prose quantities in sec:ablation_cost must follow from the table ===
+  [ok   ] one event on a 59-event denominator prints as 1.69 pp          got='1.69' want='1.69'
+  [ok   ] lowest SD across the eight LLM cells prints as 0.93            got='0.93' want='0.93'
+  [ok   ] highest SD across the eight LLM cells prints as 1.52           got='1.52' want='1.52'
+  [ok   ] largest full range across the eight LLM cells prints as 3.39   got='3.39' want='3.39'
+  [ok   ] recall@1 gap ERL over EBEAC prints as 3.39                     got='3.39' want='3.39'
+  [ok   ] recall@1 gap ExpeL over EBEAC prints as 1.01                   got='1.01' want='1.01'
+  [ok   ] recall@3 gap (both LLM rows share it) prints as 2.38           got='2.38' want='2.38'
+  [ok   ] recall@3 gap for ExpeL is the same 2.38                        got='2.38' want='2.38'
+  [ok   ] smallest precision advantage prints as 14.8 (one decimal)      got='14.8' want='14.8'
+  [ok   ] largest precision advantage prints as 19.9 (one decimal)       got='19.9' want='19.9'
+  [ok   ] NC-F1 the same advantage at two decimals prints 14.78, not 14.8 got='14.78' want='14.78'
+  [ok   ] lowest FP ratio prints as 6.3 (one decimal)                    got='6.3' want='6.3'
+  [ok   ] highest FP ratio prints as 7.5 (one decimal)                   got='7.5' want='7.5'
+  [ok   ] NC-F2 the same ratio at two decimals prints 6.30, not 6.3      got='6.30' want='6.30'
+  [ok   ] lower end of the FP band prints as 21.35                       got='21.35' want='21.35'
+  [ok   ] upper end of the FP band prints as 25.42                       got='25.42' want='25.42'
+  [ok   ] under the shared judge prevention_rate == recall_at_3 for every method (why the manuscript omits the column) got=[True, True, True, True] want=[True, True, True, True]
+
+=== D3. Extraction drift behind the disclosed non-reproducibility ===
+  sha256(summary) = d6a7f285002512314de8a038f08913eb8e61fbcf5b29a8e9f84c0ba5852243e4
+  [ok   ] summary records five repetitions                               got=5 want=5
+  [ok   ] summary denominator is the 59 test failures                    got=59 want=59
+  [ok   ] summary's own pp-per-event prints as the caption's 1.69        got='1.69' want='1.69'
+  [ok   ] summary backend is deepseek-chat                               got='deepseek-chat' want='deepseek-chat'
+  [ok   ] summary backend temperature is 0, yet the five runs still differ got=0.0 want=0.0
+  [ok   ] erl extraction units == 137                                    got=137 want=137
+  [ok   ] erl drift percentage recomputes from n_diff/n_units            got='83.94' want='83.94'
+  [ok   ] erl recorded drift_pct agrees with the recomputation           got='83.94' want='83.94'
+  [ok   ] erl five distinct library fingerprints                         got=5 want=5
+  [ok   ] erl the five fingerprints are actually distinct                got=5 want=5
+  [ok   ] expel extraction units == 73                                   got=73 want=73
+  [ok   ] expel drift percentage recomputes from n_diff/n_units          got='91.78' want='91.78'
+  [ok   ] expel recorded drift_pct agrees with the recomputation         got='91.78' want='91.78'
+  [ok   ] expel five distinct library fingerprints                       got=5 want=5
+  [ok   ] expel the five fingerprints are actually distinct              got=5 want=5
+  [ok   ] input-token spread across the five runs is recorded (3717 tokens) got=3717 want=3717
+  [ok   ] that spread is non-zero, i.e. the back end was fed differently-sized prompts got=True want=True
+
+=== E. EBEAC library size, measured through the shipped exp9 code path ===
+  [info ] dataset used                                                   'planned_artifacts/weclaw_ebeac_log_replay_realdb_20260808_anon.json'
+  sha256(dataset) = dcd3d6f4bf472d4e566e6c0c727c33a88dd503703362a4d082c7db52f7bc6139
+  [ok   ] exp9 resolved inside this benchmarks directory                 got=True want=True
+  [ok   ] exp12 resolved inside this benchmarks directory                got=True want=True
+  [ok   ] snapshot carries 196 records                                   got=196 want=196
+  [ok   ] train split == 137                                             got=137 want=137
+  [ok   ] test split == 59                                               got=59 want=59
+  [ok   ] seedable(train) == 137 (the filter exp9's seeder applies)      got=137 want=137
+  [ok   ] EBEAC store holds one experience per seedable record           got=137 want=137
+  [ok   ] measured EBEAC library size == the KB cell printed in Table 3  got=137 want=137
+  [info ] distinct abstract_pattern values (recall-time dedup candidates) 20
+    The KB column is the *library size* (rows written).  The recall path
+    additionally de-duplicates by abstract_pattern, which is production
+    behaviour and is what Section 6.4 reports; the two counts differ by
+    design (137 stored vs 20 distinct patterns).
+
+  Negative controls: the row counter must track its input, not return 137.
+  [ok   ] NC-E1 seeding 5 records stores 5 rows                          got=5 want=5
+  [ok   ] NC-E2 blanking every fix_pattern stores 0 rows                 got=0 want=0
+  [ok   ] NC-E3 marking every record status=ok stores 0 rows             got=0 want=0
+  [ok   ] NC-E4 dropping the last record stores 136 rows                 got=136 want=136
+
+  Root cause of the 0 that exp12's own summary prints:
+  [ok   ] exp9 summarize_stats returns no kb_size key                    got=False want=False
+  [ok   ] exp12 falls back to stats.get('kb_size', 0)                    got=True want=True
+  [ok   ] the un-anonymized export gives the same library size (evidence for 'anonymization leaves the metrics unchanged') got=137 want=137
+
+=== F. Cross-check against the manuscript table ===
+  [info ] manuscript                                                     'paper_array.tex'
+  [ok   ] all four Table 3 rows parsed                                   got=['ebeac', 'erl', 'expel', 'raw_log'] want=['ebeac', 'erl', 'expel', 'raw_log']
+  [ok   ] Raw Error Log: LLM Calls cell                                  got='0' want='0'
+  [ok   ] Raw Error Log: KB cell equals the per-run kb_size              got='137' want='137'
+  [ok   ] Raw Error Log: Recall@1 mean cell                              got='69.49' want='69.49'
+  [ok   ] Raw Error Log: Recall@1 carries no +/- because SD is 0         got=None want=None
+  [ok   ] Raw Error Log: Recall@3 mean cell                              got='74.58' want='74.58'
+  [ok   ] Raw Error Log: Recall@3 carries no +/- because SD is 0         got=None want=None
+  [ok   ] Raw Error Log: Precision mean cell                             got='69.49' want='69.49'
+  [ok   ] Raw Error Log: Precision carries no +/- because SD is 0        got=None want=None
+  [ok   ] Raw Error Log: FP Rate mean cell                               got='25.42' want='25.42'
+  [ok   ] Raw Error Log: FP Rate carries no +/- because SD is 0          got=None want=None
+  [ok   ] ERL: LLM Calls cell                                            got='196' want='196'
+  [ok   ] ERL: KB cell equals the per-run kb_size                        got='137' want='137'
+  [ok   ] ERL: Recall@1 mean cell                                        got='74.58' want='74.58'
+  [ok   ] ERL: Recall@1 SD cell                                          got='1.20' want='1.20'
+  [ok   ] ERL: Recall@3 mean cell                                        got='78.65' want='78.65'
+  [ok   ] ERL: Recall@3 SD cell                                          got='0.93' want='0.93'
+  [ok   ] ERL: Precision mean cell                                       got='74.58' want='74.58'
+  [ok   ] ERL: Precision SD cell                                         got='1.20' want='1.20'
+  [ok   ] ERL: FP Rate mean cell                                         got='21.35' want='21.35'
+  [ok   ] ERL: FP Rate SD cell                                           got='0.93' want='0.93'
+  [ok   ] ExpeL: LLM Calls cell                                          got='132' want='132'
+  [ok   ] ExpeL: KB cell equals the per-run kb_size                      got='73' want='73'
+  [ok   ] ExpeL: Recall@1 mean cell                                      got='72.20' want='72.20'
+  [ok   ] ExpeL: Recall@1 SD cell                                        got='0.93' want='0.93'
+  [ok   ] ExpeL: Recall@3 mean cell                                      got='78.65' want='78.65'
+  [ok   ] ExpeL: Recall@3 SD cell                                        got='1.52' want='1.52'
+  [ok   ] ExpeL: Precision mean cell                                     got='72.20' want='72.20'
+  [ok   ] ExpeL: Precision SD cell                                       got='0.93' want='0.93'
+  [ok   ] ExpeL: FP Rate mean cell                                       got='21.35' want='21.35'
+  [ok   ] ExpeL: FP Rate SD cell                                         got='1.52' want='1.52'
+  [ok   ] EBEAC: LLM Calls cell                                          got='0' want='0'
+  [ok   ] EBEAC: KB cell equals the library size measured in section E   got='137' want='137'
+  [ok   ] EBEAC: Recall@1 mean cell                                      got='71.19' want='71.19'
+  [ok   ] EBEAC: Recall@1 carries no +/- because SD is 0                 got=None want=None
+  [ok   ] EBEAC: Recall@3 mean cell                                      got='76.27' want='76.27'
+  [ok   ] EBEAC: Recall@3 carries no +/- because SD is 0                 got=None want=None
+  [ok   ] EBEAC: Precision mean cell                                     got='89.36' want='89.36'
+  [ok   ] EBEAC: Precision carries no +/- because SD is 0                got=None want=None
+  [ok   ] EBEAC: FP Rate mean cell                                       got='3.39' want='3.39'
+  [ok   ] EBEAC: FP Rate carries no +/- because SD is 0                  got=None want=None
+
+====================================================================================================
+RESULT: ALL OK -- 216 checks passed, 0 blocked
+====================================================================================================

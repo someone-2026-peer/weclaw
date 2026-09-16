@@ -1,0 +1,113 @@
+====================================================================================================
+Experiment 12: 同轨迹四方对照（EBEAC / 简化 ERL / ExpeL 式 insight / Raw-Log）
+  model=deepseek-chat  dry_run=False  methods=raw_log,ebeac,erl,expel
+  limit_extract=全量  limit_test=全量
+====================================================================================================
+
+═══ 一、负对照：错误分类器（否则「0 限流」只是没测出来）═══
+  [ok   ] 合成 429 → RATE_LIMIT（可重试）                                 got='RATE_LIMIT' want='RATE_LIMIT'
+  [ok   ] 合成 500 → SERVER_ERROR（可重试）                               got='SERVER_ERROR' want='SERVER_ERROR'
+  [ok   ] 合成 404 → MODEL_NOT_FOUND（不可重试）                           got='MODEL_NOT_FOUND' want='MODEL_NOT_FOUND'
+  [ok   ] 合成 invalid temperature → TEMP_UNSUPPORTED                got='TEMP_UNSUPPORTED' want='TEMP_UNSUPPORTED'
+  [ok   ] 合成 401 → AUTH                                            got='AUTH' want='AUTH'
+  [ok   ] RATE_LIMIT 在可重试集合内                                       got=True want=True
+  [ok   ] MODEL_NOT_FOUND 不在可重试集合内（立即放弃）                           got=False want=False
+
+═══ 二、负对照：排序解析器（自由文本必须被拒，索引越界必须被丢）═══
+  [ok   ] 合法 JSON                                                  got=[2, 0, 1] want=[2, 0, 1]
+  [ok   ] 代码围栏                                                     got=[1] want=[1]
+  [ok   ] 散文被拒（返回 None 而非空答案）                                      got=None want=None
+  [ok   ] 越界索引被丢弃                                                  got=[1] want=[1]
+  [ok   ] 重复索引去重                                                   got=[1, 2] want=[1, 2]
+  [ok   ] 空列表 → None                                               got=None want=None
+  [ok   ] 全部越界 → None                                              got=None want=None
+
+═══ 三、负对照：insight 解析器 ═══
+  [ok   ] 合法                                                       got=True want=True
+  [ok   ] 缺 rule 被拒                                                got=None want=None
+  [ok   ] 空 rule 被拒                                                got=None want=None
+  [ok   ] 非 JSON 被拒                                                got=None want=None
+
+═══ 四、负对照：API 失败绝不污染指标（本脚本的核心效度保障）═══
+  [ok   ] strict 分母恒为 N（失败算 miss）                                  got=10 want=10
+  [ok   ] strict recall@1 = 3/10 = 30%                             got=30.0 want=30.0
+  [ok   ] valid_only 分母 = N - failures = 6                         got=6 want=6
+  [ok   ] valid_only recall@1 = 3/6 = 50%                          got=50.0 want=50.0
+  [ok   ] api_failures 被显式披露                                       got=4 want=4
+  [ok   ] precision 只按真实应答计算 = 3/6                                 got=50.0 want=50.0
+  [ok   ] 反例·失败被当空答案时 precision 被拉低到 30%                           got=30.0 want=30.0
+  [ok   ] 全失败·strict 指标为 0 而非 NaN                                  got=0.0 want=0.0
+  [ok   ] 全失败·valid_only 分母为 0 且不崩                                 got=0 want=0
+  [ok   ] 全失败·valid_only recall 为 0（除零已防护）                         got=0.0 want=0.0
+
+═══ 五、负对照：dry-run 调用器绝不发网络请求 ═══
+  [ok   ] dry-run 返回 ok=False                                      got=False want=False
+  [ok   ] dry-run 错误类为 DRY_RUN                                     got='DRY_RUN' want='DRY_RUN'
+  [ok   ] dry-run attempts=0（未尝试网络）                                got=0 want=0
+
+═══ 六、正对照：summarize 必须能从 §6.4 六数字反推出整数计数 ═══
+  [ok   ] §6.4 反推复现 recall_at_1                                    got=71.19 want=71.19
+  [ok   ] §6.4 反推复现 recall_at_3                                    got=76.27 want=76.27
+  [ok   ] §6.4 反推复现 precision                                      got=89.36 want=89.36
+  [ok   ] §6.4 反推复现 coverage_rate                                  got=79.66 want=79.66
+  [ok   ] §6.4 反推复现 prevention_rate                                got=76.27 want=76.27
+  [ok   ] §6.4 反推复现 false_positive_rate                            got=3.39 want=3.39
+
+═══ 七、负对照：kb 指纹必须让陈旧缓存失效（防跨 limit 的索引污染）═══
+  [ok   ] 首轮真调用并写入缓存（llm_calls=1）                                  got=1 want=1
+  [ok   ] kb 变大后旧缓存失效（cache_hits=0）                                got=0 want=0
+  [ok   ] kb 变大后重新调用（llm_calls=1）                                  got=1 want=1
+  [ok   ] kb 不变时仍命中（防「永远 miss」式假修复）                                got=1 want=1
+  [ok   ] kb 不变时零新调用（llm_calls=0）                                  got=0 want=0
+
+═══ 八、负对照：提取单元 key 必须无碰撞且随内容变化（防跨会话规则错配）═══
+  [ok   ] 旧 key（截断 24）确实碰撞 —— 证明该缺陷真实存在而非臆想                        got=1 want=1
+  [ok   ] 新 key 下三个同前缀会话互不碰撞                                       got=3 want=3
+  [ok   ] erl 三个事件亦互不碰撞                                            got=3 want=3
+  [ok   ] expel key 内容变化 ⇒ key 变化（指纹生效）                            got=False want=False
+  [ok   ] expel key 内容不变 ⇒ key 不变（缓存仍可用，非「永远 miss」）                got=True want=True
+  [ok   ] erl key 内容变化 ⇒ key 变化                                    got=False want=False
+  [ok   ] erl key 内容不变 ⇒ key 不变                                    got=True want=True
+  负对照/正对照合计失败 = 0
+
+═══ 数据装载 ═══
+  dataset=weclaw_ebeac_log_replay  version=0.3.0-real-db-export  items=196
+  train=137  test=59  n_test_errors(分母)=59
+  seedable(train)=137  error_types=7 类
+  sessions=114
+  [ok   ] n_train 与 §6.4 一致  got=137 want=137
+  [ok   ] n_test 与 §6.4 一致  got=59 want=59
+  [ok   ] n_test_errors 与 §6.4 一致  got=59 want=59
+
+═══ 方法 EBEAC（ours）：复用 exp9 `evaluate_experience_store_memory` ═══
+  recall@1=71.19%  recall@3=76.27%  precision=89.36%  prevention=76.27%  coverage=79.66%  FP=3.39%
+  avg_latency=0.8344ms  wall=0.20s  LLM calls=0
+  [ok   ] 精确复现 §6.4 六个已发表数字
+
+═══ 方法 Raw Error Log（零抽象基线，原 Table 3 该行的可复算实现）═══
+  kb_size=137  recall@1=69.49%  recall@3=74.58%  prevention=74.58%  precision=69.49%
+  ⚠️ 原 Table 3 该行写 4 / 7.0% / 5.3%（全仓零出处）；本次可复算值见上
+
+═══ 方法 erl（our simplified re-implementation）═══
+  kb_size=137  recall@1=74.58%  recall@3=79.66%  prevention=79.66%
+  precision=74.58%  coverage=100.0%  api_failures=0  wall=182.8s
+
+═══ 方法 expel（our simplified re-implementation）═══
+  kb_size=73  recall@1=72.88%  recall@3=77.97%  prevention=77.97%
+  precision=72.88%  coverage=100.0%  api_failures=0  wall=124.7s
+
+  LLM 调用合计=328（checkpoint 命中 0）  token in/out=577034/11196
+  提取失败=0  解析失败=0  错误分类={}
+  [ok   ] 各方法 llm_calls 之和 == 累计总数  got=328 want=328
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+四方对照汇总（同一 196 条真实轨迹、同一分母、同一 fix_pattern 精确匹配判据）
+════════════════════════════════════════════════════════════════════════════════════════════════════
+method        LLM    kb     R@1     R@3    Prec    Prev     Cov     FP  fail
+----------------------------------------------------------------------------
+raw_log         0   137   69.49   74.58   69.49   74.58  100.00  25.42     0
+erl           196   137   74.58   79.66   74.58   79.66  100.00  20.34     0
+expel         132    73   72.88   77.97   72.88   77.97  100.00  22.03     0
+ebeac           0     0   71.19   76.27   89.36   76.27   79.66   3.39     0
+
+Saved output file: exp12_same_traces_results.json
