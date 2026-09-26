@@ -1,0 +1,113 @@
+============================================================================================
+E11 REAL-EXECUTION RE-SCORING — 独立零-API 复算 (tab:realexec)
+============================================================================================
+运行模式 TEX_MODE = bundle
+判据: real execution = sandbox.execute(tool,args).status=='success' AND tool in acceptable_tools
+seeds = [42, 43, 44]；full pooled N=600（200q×3），subset pooled N=300（100q×3）；恢复预算 k=2
+
+--------------------------------------------------------------------------------------------
+输入完整性 (14 个冻结 JSON；LF 归一化 blob 的 sha256 前 16 位 + 字节数 = git show <tag>:<path> 口径)
+--------------------------------------------------------------------------------------------
+  exp11_deepseek_full_seed42.json        db11243682fcd9fb    1044550
+  exp11_deepseek_full_seed43.json        0aa8f848de3d36c4    1044145
+  exp11_deepseek_full_seed44.json        215370b33486889b    1043587
+  exp11_glm_full_seed42.json             aa46f052a239b9a9    1050409
+  exp11_glm_full_seed43.json             1e1b34f8dbe45e6c    1051145
+  exp11_glm_full_seed44.json             c3c6118c0f29b76d    1050869
+  exp11_qwen_subset_seed42.json          7d56e4cc57ed01ad     521711
+  exp11_qwen_subset_seed43.json          e4a9afcab8dcc53d     525386
+  exp11_qwen_subset_seed44.json          5112f835bca09b14     523883
+  exp11_kimi_subset_seed42.json          48b3ed0a1d0d5b39     501722
+  exp11_kimi_subset_seed43.json          fde7db3eab3848f7     499901
+  exp11_kimi_subset_seed44.json          85a74caa560021a9     500847
+  exp11_aggregate_full.json              874ef8107b7d70cb       4148
+  exp11_aggregate_subset.json            34e959ee0b06a46c       4155
+
+============================================================================================
+S0　复算出的表（tab:realexec 应逐格等于此；从 records 重导，3-seed 均值）
+============================================================================================
+  Model               arm    St.sgl SR.fin P.sgl  PF.fin  b/c     p           Tok SR/PF    dTok
+  deepseek-v4-flash   full    59.5   64.5   55.7   56.8  54/8   1.1e-08    6528/2383   -63.5%
+  glm-4-flashx        full    56.3   58.7   53.3   54.7  38/14  1.4e-03   10926/3704   -66.1%
+  qwen-max            subset  62.0   65.0   54.7   57.3  23/0   4.5e-06    7372/2670   -63.8%
+  kimi-k2.7-code      subset  27.7   45.0   31.7   41.3  43/32  2.5e-01    4499/1656   -63.2%
+
+============================================================================================
+S1　records → per-run summary（12 文件 × 6 config：single/final/tokens 逐格独立重算）
+============================================================================================
+  [ok  ] deepseek/full/seed42: 6 config × {single,final,tokens} 从 records 重算 == summary（n=200，max|Δ|=0.0e+00）
+  [ok  ] deepseek/full/seed43: 6 config × {single,final,tokens} 从 records 重算 == summary（n=200，max|Δ|=0.0e+00）
+  [ok  ] deepseek/full/seed44: 6 config × {single,final,tokens} 从 records 重算 == summary（n=200，max|Δ|=0.0e+00）
+  [ok  ] glm/full/seed42: 6 config × {single,final,tokens} 从 records 重算 == summary（n=200，max|Δ|=0.0e+00）
+  [ok  ] glm/full/seed43: 6 config × {single,final,tokens} 从 records 重算 == summary（n=200，max|Δ|=0.0e+00）
+  [ok  ] glm/full/seed44: 6 config × {single,final,tokens} 从 records 重算 == summary（n=200，max|Δ|=0.0e+00）
+  [ok  ] qwen/subset/seed42: 6 config × {single,final,tokens} 从 records 重算 == summary（n=100，max|Δ|=0.0e+00）
+  [ok  ] qwen/subset/seed43: 6 config × {single,final,tokens} 从 records 重算 == summary（n=100，max|Δ|=0.0e+00）
+  [ok  ] qwen/subset/seed44: 6 config × {single,final,tokens} 从 records 重算 == summary（n=100，max|Δ|=0.0e+00）
+  [ok  ] kimi/subset/seed42: 6 config × {single,final,tokens} 从 records 重算 == summary（n=100，max|Δ|=0.0e+00）
+  [ok  ] kimi/subset/seed43: 6 config × {single,final,tokens} 从 records 重算 == summary（n=100，max|Δ|=0.0e+00）
+  [ok  ] kimi/subset/seed44: 6 config × {single,final,tokens} 从 records 重算 == summary（n=100，max|Δ|=0.0e+00）
+
+============================================================================================
+S2　3-seed 再聚合 → 存储的 aggregate JSON（single_mean/final_mean + 3 个 McNemar 对照）
+============================================================================================
+  [ok  ] deepseek/full: 6 config 的 single_mean+final_mean 重算 == aggregate（max|Δ|=0.0e+00）
+  [ok  ] deepseek/full McNemar pte_fd_vs_static_retry_final: 重算 b=54 c=8 χ²=32.661 p=1.097e-08 == aggregate
+  [ok  ] deepseek/full McNemar pte_fd_final_vs_static_single: 重算 b=23 c=7 χ²=7.5 p=6.170e-03 == aggregate
+  [ok  ] deepseek/full McNemar pte_fd_vs_pte_single: 重算 b=2 c=0 χ²=0.5 p=4.795e-01 == aggregate
+  [ok  ] glm/full: 6 config 的 single_mean+final_mean 重算 == aggregate（max|Δ|=0.0e+00）
+  [ok  ] glm/full McNemar pte_fd_vs_static_retry_final: 重算 b=38 c=14 χ²=10.173 p=1.425e-03 == aggregate
+  [ok  ] glm/full McNemar pte_fd_final_vs_static_single: 重算 b=31 c=21 χ²=1.558 p=2.120e-01 == aggregate
+  [ok  ] glm/full McNemar pte_fd_vs_pte_single: 重算 b=4 c=5 χ²=0.0 p=1.000e+00 == aggregate
+  [ok  ] qwen/subset: 6 config 的 single_mean+final_mean 重算 == aggregate（max|Δ|=0.0e+00）
+  [ok  ] qwen/subset McNemar pte_fd_vs_static_retry_final: 重算 b=23 c=0 χ²=21.043 p=4.490e-06 == aggregate
+  [ok  ] qwen/subset McNemar pte_fd_final_vs_static_single: 重算 b=17 c=3 χ²=8.45 p=3.650e-03 == aggregate
+  [ok  ] qwen/subset McNemar pte_fd_vs_pte_single: 重算 b=1 c=1 χ²=0.5 p=4.795e-01 == aggregate
+  [ok  ] kimi/subset: 6 config 的 single_mean+final_mean 重算 == aggregate（max|Δ|=0.0e+00）
+  [ok  ] kimi/subset McNemar pte_fd_vs_static_retry_final: 重算 b=43 c=32 χ²=1.333 p=2.482e-01 == aggregate
+  [ok  ] kimi/subset McNemar pte_fd_final_vs_static_single: 重算 b=23 c=64 χ²=18.391 p=1.799e-05 == aggregate
+  [ok  ] kimi/subset McNemar pte_fd_vs_pte_single: 重算 b=27 c=26 χ²=0.0 p=1.000e+00 == aggregate
+
+============================================================================================
+S3　效度负对照（从原始 records 直接扫描，非合成）
+============================================================================================
+  [ok  ] S3.1 合取不变式：21600 个 (记录×config×attempt) 中，ok==1 却非 (success ∧ tool∈acceptable) 的违例 = 0
+  [ok  ] S3.2 out-of-sandbox 零虚假增益：240 条负对照记录 × 6 config，ok_final==1 计数 = 0
+  [ok  ] S3.3 kimi static 空选择 per-seed=[60, 55, 56] 合计=171（正文声称 171）
+  [ok  ] S3.3 kimi 空选择占比 = 171/300 = 57%（正文声称 57%）
+  [ok  ] S3.4 非恢复臂（static/pte/keyword）：single≠final 或 escalate/retry 的违例 = 0
+  [ok  ] S3.5 真实执行 ≤ oracle：ok_final 超出 (tool_final∈acceptable) 的违例 = 0
+  [ok  ] S3.5 严格更难有实证：oracle 会记分但真实执行失败的条数 = 2867（>0）
+
+============================================================================================
+S4　两稿 tex tab:realexec 逐格对照复算值（含 ARCH/ANON 镜像一致）
+============================================================================================
+  [skip] S4: array_submission/ 不在 artifact bundle 内 —— tex 交叉对照 SKIPPED（S0--S3 数据复算/效度与 S6 负对照照常执行，检测力未降低）
+
+============================================================================================
+S5　tab:realexec 邻近正文数字对照（ARCH；找到锚点数字必须对，锚点缺失则 SKIP 留痕）
+============================================================================================
+  [skip] S5: array_submission/ 不在 artifact bundle 内 —— tex 交叉对照 SKIPPED（S0--S3 数据复算/效度与 S6 负对照照常执行，检测力未降低）
+
+============================================================================================
+S6　合成负对照（人为偏离，检测器必须报错）
+============================================================================================
+  [ok  ] 负对照①: 对称基线 b/c = 2/2（应 2/2）
+  [ok  ] 负对照②: 翻转一例后 b/c = 1/2 ≠ 2/2（McNemar 检测力在）
+  [ok  ] 负对照③: 伪造 ok==1∧tool∉acceptable → 合取检测器判违例 1（非空转）
+  [ok  ] 负对照④: 伪造 out_of_sandbox ok_final → 虚假增益检测器数到 6（非空转）
+  [ok  ] 负对照⑤: deepseek Tok PF 复算=2383；单元格用**精确相等**比较，偏 1 即 FAIL
+  [ok  ] 负对照⑥a: _lf 归一化后 CRLF 摘要 == LF 摘要（与 git blob 口径一致，平台无关）
+  [ok  ] 负对照⑥b: 归一化非空转 —— 未归一的 CRLF 原始摘要 != LF 摘要
+
+============================================================================================
+结论: ALL OK（bundle 模式）—— S1 全 12 文件×6 config 汇总值 + S2 双 aggregate 的均值与 3×4 McNemar 对照 + S3 效度负对照（合取不变式/零虚假增益/kimi 171/300/机制/≤oracle）+ S6 合成负对照 7/7，均由逐查询 records 独立复算吻合。S4/S5 tex 交叉对照 SKIPPED（array_submission/ 不入 bundle）。
+============================================================================================
+
+运行模式: bundle —— array_submission/ 不在 artifact bundle 内，S4/S5 已 SKIPPED（非静默失效）
+诚实声明：真实执行需 live LLM API（付费；kimi-k2.7-code 被强制 temperature=1，本质不可逐位复现）。
+本脚本为零-API 复算：只验证「已发布 records → 已发布每个报告数字」的算术与效度，不重跑模型。
+deepseek-v4-flash/glm-4-flashx/qwen-max 在 temperature=0 跑批；kimi 以 3-seed 平均降噪，其 SR-PF
+McNemar 因采样噪声被稀释为不显著（p=0.25），论文如实标注、结论落在 b/c 计数与效应量而非精确 p。
+摘要口径: 上列每个 sha256/字节数均对 LF 归一化 blob 计算，等于 `git show <tag>:<path> | sha256sum`；
+          与读者平台或 core.autocrlf 无关（Windows 检出为 CRLF，直接 `sha256sum <file>` 会不同）。

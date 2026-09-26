@@ -1,0 +1,4471 @@
+{
+  "_meta": {
+    "purpose": "E11 real-execution benchmark query set (upgrades oracle selection-level to execution-level; reviewer R1-1).",
+    "generated_by": "e11_query_set.py",
+    "seed": 20260604,
+    "reuses_read_only": [
+      "exp1_pte_ablation.QUERY_TEMPLATES/INTENT_GROUND_TRUTH/get_all_tool_names",
+      "e11_public_queries.PUBLIC_TOOLBENCH_LITE_E11",
+      "sandbox_env.SANDBOX_FAMILIES"
+    ],
+    "remapping": "sandbox_success_tools = acceptable_tools ∩ SANDBOX_FAMILIES (derived from frozen ground truth).",
+    "arms": {
+      "FULL_200": "deepseek + glm",
+      "SUBSET_100": "qwen + moonshot (stratified 50 own + 50 public)"
+    },
+    "stats": {
+      "universe_size": 75,
+      "sandbox_families": [
+        "ai_writer",
+        "batch_paper_analyzer",
+        "browser",
+        "browser_use",
+        "calculator",
+        "clipboard",
+        "concept_diagrams",
+        "course_schedule",
+        "crawlee_tool",
+        "cron",
+        "daily_task",
+        "data_processor",
+        "data_visualization",
+        "datetime_tool",
+        "diary",
+        "doc_generator",
+        "duckduckgo_search",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "file",
+        "finance",
+        "fitness_nutrition",
+        "format_converter",
+        "fred_query",
+        "health",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "meal_menu",
+        "medication",
+        "meme_generation",
+        "mind_map",
+        "music_player",
+        "notify",
+        "pdf_generator",
+        "pdf_tool",
+        "poetry",
+        "ppt_generator",
+        "python_runner",
+        "quant_trading",
+        "search",
+        "statistics",
+        "stock_photo",
+        "stock_query",
+        "system_monitor",
+        "todo",
+        "user_profile",
+        "weather"
+      ],
+      "coverage_pct": 65.3,
+      "own_total": 100,
+      "own_in_sandbox": 80,
+      "own_out_of_sandbox": 20,
+      "public_total": 100,
+      "public_in_sandbox": 92,
+      "public_out_of_sandbox": 8,
+      "full_total": 200,
+      "subset_total": 100,
+      "subset_own": 50,
+      "subset_public": 50,
+      "full_in_sandbox": 172,
+      "full_out_of_sandbox": 28
+    },
+    "own_intent_dist": {
+      "daily_assistant": 13,
+      "knowledge": 13,
+      "data_analysis": 12,
+      "document_processing": 11,
+      "life_management": 11,
+      "file_operation": 10,
+      "system_monitoring": 6,
+      "document_assembly": 4,
+      "screen_system_control": 5,
+      "speech_voice_control": 5,
+      "image_scan_control": 5,
+      "messaging_share_control": 5
+    },
+    "public_domain_dist": {
+      "weather": 6,
+      "data": 10,
+      "document": 10,
+      "file": 8,
+      "finance": 10,
+      "web": 8,
+      "research": 8,
+      "multimedia": 8,
+      "productivity": 8,
+      "math": 6,
+      "knowledge": 6,
+      "health": 6,
+      "travel": 6
+    }
+  },
+  "queries": [
+    {
+      "qid": "e11_own_000",
+      "query": "设置定时提醒",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_001",
+      "query": "今天天气怎么样，详细一点",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_002",
+      "query": "帮我算一下税费",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_003",
+      "query": "计算折扣后的价格",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_004",
+      "query": "帮我计算一下汇率，谢谢",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_005",
+      "query": "帮我计算一下汇率",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_006",
+      "query": "设置定时任务每天执行",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_007",
+      "query": "查看今天的日程安排",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_008",
+      "query": "设置定时提醒，请帮我处理",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_009",
+      "query": "查询今天的时间和日期",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_010",
+      "query": "计算这组数据的平均值",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_011",
+      "query": "今天天气怎么样",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_012",
+      "query": "设置每天早上的闹钟",
+      "intent": "daily_assistant",
+      "acceptable_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "cron",
+        "datetime_tool",
+        "search",
+        "statistics",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_013",
+      "query": "搜索向量数据库中的内容",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_014",
+      "query": "搜索知识库中的论文",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_015",
+      "query": "帮我分析这批论文",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_016",
+      "query": "索引这些文档到知识库",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_017",
+      "query": "搜索RAG知识库",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_018",
+      "query": "查找关于AI的文献资料",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_019",
+      "query": "推荐一些经典诗词",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_020",
+      "query": "批量分析论文摘要",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_021",
+      "query": "搜索知识库中的论文，详细一点",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_022",
+      "query": "查找关于AI的文献资料，急用",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_023",
+      "query": "帮我分析这批论文，急用",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_024",
+      "query": "找一首李白的诗",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_025",
+      "query": "查询诗词相关的内容",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "file",
+        "knowledge_rag",
+        "literature_review",
+        "literature_search",
+        "poetry",
+        "python_runner",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_026",
+      "query": "统计分析这组数据",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_027",
+      "query": "生成数据分析报告",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_028",
+      "query": "分析CSV数据文件，尽快完成",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_029",
+      "query": "分析CSV数据文件",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_030",
+      "query": "数据透视表分析",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_031",
+      "query": "生成数据可视化图表，请帮我处理",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_032",
+      "query": "生成柱状图和折线图",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_033",
+      "query": "生成数据可视化图表",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_034",
+      "query": "处理Excel表格数据",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_035",
+      "query": "数据分组聚合计算",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_036",
+      "query": "清洗数据中的异常值",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_037",
+      "query": "对比两组数据的差异",
+      "intent": "data_analysis",
+      "acceptable_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "shell",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "data_visualization",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_038",
+      "query": "把Word转换成PDF",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_039",
+      "query": "合并两个PDF文件",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_040",
+      "query": "转换文档格式",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_041",
+      "query": "加密PDF文档",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_042",
+      "query": "格式转换docx到pdf",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_043",
+      "query": "解密受保护的PDF",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_044",
+      "query": "生成PPT演示文稿",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_045",
+      "query": "合并两个PDF文件，急用",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_046",
+      "query": "导出为PPT格式",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_047",
+      "query": "拆分PDF文件",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_048",
+      "query": "生成幻灯片演示",
+      "intent": "document_processing",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_generator",
+        "pdf_tool",
+        "ppt_generator",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_049",
+      "query": "记录今天的日记",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_050",
+      "query": "记录今天的支出",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_051",
+      "query": "管理相册中的照片",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_052",
+      "query": "记录今天的日记，谢谢",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_053",
+      "query": "管理家庭成员信息",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_054",
+      "query": "管理家庭大事记",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_055",
+      "query": "查看课程表安排",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_056",
+      "query": "查看家庭食谱",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_057",
+      "query": "查看我的待办事项",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_058",
+      "query": "记录体重变化",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_059",
+      "query": "设置每日任务清单",
+      "intent": "life_management",
+      "acceptable_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "cron",
+        "daily_task",
+        "diary",
+        "family_album",
+        "family_member",
+        "family_milestone",
+        "finance",
+        "fitness_nutrition",
+        "health",
+        "meal_menu",
+        "medication",
+        "music_player",
+        "todo",
+        "user_profile"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_060",
+      "query": "批量重命名文件夹中的文件",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_061",
+      "query": "重命名文件 report.docx",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_062",
+      "query": "移动文件到指定位置",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_063",
+      "query": "搜索文件中的关键词",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_064",
+      "query": "帮我整理文件夹中的文件",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_065",
+      "query": "复制文件到另一个目录",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_066",
+      "query": "解压压缩文件 archive.zip",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_067",
+      "query": "查看文件内容并总结",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_068",
+      "query": "创建新的目录结构",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_069",
+      "query": "读取文件 content.txt 的内容",
+      "intent": "file_operation",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_070",
+      "query": "电脑运行很慢帮我诊断",
+      "intent": "system_monitoring",
+      "acceptable_tools": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_071",
+      "query": "查看网络使用情况",
+      "intent": "system_monitoring",
+      "acceptable_tools": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_072",
+      "query": "监控系统状态",
+      "intent": "system_monitoring",
+      "acceptable_tools": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_073",
+      "query": "查看CPU和内存使用率",
+      "intent": "system_monitoring",
+      "acceptable_tools": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_074",
+      "query": "查看电池健康状态",
+      "intent": "system_monitoring",
+      "acceptable_tools": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_075",
+      "query": "检查电脑性能",
+      "intent": "system_monitoring",
+      "acceptable_tools": [
+        "app_control",
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_076",
+      "query": "生成一份Word文档报告",
+      "intent": "document_assembly",
+      "acceptable_tools": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "file",
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_077",
+      "query": "制作文档整合本周内容",
+      "intent": "document_assembly",
+      "acceptable_tools": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "file",
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_078",
+      "query": "创建文档包含这些数据",
+      "intent": "document_assembly",
+      "acceptable_tools": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "file",
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_079",
+      "query": "生成一份带图表的报告文档",
+      "intent": "document_assembly",
+      "acceptable_tools": [
+        "doc_generator",
+        "file",
+        "image_generator",
+        "search",
+        "shell",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "file",
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_080",
+      "query": "帮我截取当前电脑屏幕的画面",
+      "intent": "screen_system_control",
+      "acceptable_tools": [
+        "app_control",
+        "screen",
+        "shell"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_081",
+      "query": "在命令行执行一条 shell 命令查看磁盘占用",
+      "intent": "screen_system_control",
+      "acceptable_tools": [
+        "app_control",
+        "screen",
+        "shell"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_082",
+      "query": "自动打开桌面上的记事本应用并点击菜单",
+      "intent": "screen_system_control",
+      "acceptable_tools": [
+        "app_control",
+        "screen",
+        "shell"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_083",
+      "query": "录制一段屏幕操作演示视频",
+      "intent": "screen_system_control",
+      "acceptable_tools": [
+        "app_control",
+        "screen",
+        "shell"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_084",
+      "query": "用系统命令列出当前正在运行的进程",
+      "intent": "screen_system_control",
+      "acceptable_tools": [
+        "app_control",
+        "screen",
+        "shell"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_085",
+      "query": "把这段录音语音转写成文字稿",
+      "intent": "speech_voice_control",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input",
+        "voice_output"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_086",
+      "query": "用语音输入的方式口述一段消息",
+      "intent": "speech_voice_control",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input",
+        "voice_output"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_087",
+      "query": "把这篇文章用语音朗读出来",
+      "intent": "speech_voice_control",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input",
+        "voice_output"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_088",
+      "query": "实时听写我说的话并转成文本",
+      "intent": "speech_voice_control",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input",
+        "voice_output"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_089",
+      "query": "用语音播报今天的日程安排",
+      "intent": "speech_voice_control",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input",
+        "voice_output"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_090",
+      "query": "帮我生成一张科幻风格的概念图片",
+      "intent": "image_scan_control",
+      "acceptable_tools": [
+        "document_scanner",
+        "id_photo",
+        "image_generator",
+        "media_capture",
+        "ocr"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_091",
+      "query": "识别这张照片里的文字并提取出来",
+      "intent": "image_scan_control",
+      "acceptable_tools": [
+        "document_scanner",
+        "id_photo",
+        "image_generator",
+        "media_capture",
+        "ocr"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_092",
+      "query": "扫描一份纸质文档保存为电子版",
+      "intent": "image_scan_control",
+      "acceptable_tools": [
+        "document_scanner",
+        "id_photo",
+        "image_generator",
+        "media_capture",
+        "ocr"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_093",
+      "query": "拍一张标准证件照",
+      "intent": "image_scan_control",
+      "acceptable_tools": [
+        "document_scanner",
+        "id_photo",
+        "image_generator",
+        "media_capture",
+        "ocr"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_094",
+      "query": "用摄像头采集一张图像",
+      "intent": "image_scan_control",
+      "acceptable_tools": [
+        "document_scanner",
+        "id_photo",
+        "image_generator",
+        "media_capture",
+        "ocr"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_095",
+      "query": "给张经理发一封会议通知邮件",
+      "intent": "messaging_share_control",
+      "acceptable_tools": [
+        "email",
+        "remote_file_share",
+        "wechat"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_096",
+      "query": "通过微信给家人发一条消息",
+      "intent": "messaging_share_control",
+      "acceptable_tools": [
+        "email",
+        "remote_file_share",
+        "wechat"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_097",
+      "query": "把这份报告远程分享给同事",
+      "intent": "messaging_share_control",
+      "acceptable_tools": [
+        "email",
+        "remote_file_share",
+        "wechat"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_own_098",
+      "query": "群发一封节日祝福邮件给所有客户",
+      "intent": "messaging_share_control",
+      "acceptable_tools": [
+        "email",
+        "remote_file_share",
+        "wechat"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_own_099",
+      "query": "把本地文件传输到远程服务器",
+      "intent": "messaging_share_control",
+      "acceptable_tools": [
+        "email",
+        "remote_file_share",
+        "wechat"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "own_catalog",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_000",
+      "query": "今天东京的天气怎么样？",
+      "intent": "weather",
+      "acceptable_tools": [
+        "search",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_001",
+      "query": "查一下伦敦周末的天气预报。",
+      "intent": "weather",
+      "acceptable_tools": [
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_002",
+      "query": "新加坡明天会下雨吗？",
+      "intent": "weather",
+      "acceptable_tools": [
+        "search",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_003",
+      "query": "获取巴黎当前的气温和湿度。",
+      "intent": "weather",
+      "acceptable_tools": [
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_004",
+      "query": "比较一下悉尼和首尔的天气。",
+      "intent": "weather",
+      "acceptable_tools": [
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_005",
+      "query": "现在纽约的风速是多少？",
+      "intent": "weather",
+      "acceptable_tools": [
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_006",
+      "query": "读取 sales.csv 并计算总营收。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "file",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "file",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_007",
+      "query": "计算这一列数据的平均值和标准差。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_008",
+      "query": "加载成绩表格并汇总分数。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_009",
+      "query": "清理调查数据集中的缺失值。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor"
+      ],
+      "sandbox_success_tools": [
+        "data_processor"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_010",
+      "query": "计算库存价格的描述性统计量。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_011",
+      "query": "读取这个 CSV 文件并列出所有列。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "file"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_012",
+      "query": "求每月销量的中位数。",
+      "intent": "data",
+      "acceptable_tools": [
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_013",
+      "query": "根据季度营收生成一张柱状图。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_visualization",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_visualization",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_014",
+      "query": "按地区对销售数据分组并汇总合计。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_015",
+      "query": "检测实验测量数据中的异常值。",
+      "intent": "data",
+      "acceptable_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "statistics"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_016",
+      "query": "把这份 markdown 报告转换成 PDF。",
+      "intent": "document",
+      "acceptable_tools": [
+        "format_converter",
+        "pdf_tool"
+      ],
+      "sandbox_success_tools": [
+        "format_converter",
+        "pdf_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_017",
+      "query": "把这三个 PDF 文件合并成一个文档。",
+      "intent": "document",
+      "acceptable_tools": [
+        "pdf_tool"
+      ],
+      "sandbox_success_tools": [
+        "pdf_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_018",
+      "query": "把一个 PDF 拆分成单页文件。",
+      "intent": "document",
+      "acceptable_tools": [
+        "pdf_tool"
+      ],
+      "sandbox_success_tools": [
+        "pdf_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_019",
+      "query": "把 Word 文档转换成纯文本。",
+      "intent": "document",
+      "acceptable_tools": [
+        "format_converter"
+      ],
+      "sandbox_success_tools": [
+        "format_converter"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_020",
+      "query": "根据这些笔记生成一份 Word 报告。",
+      "intent": "document",
+      "acceptable_tools": [
+        "doc_generator",
+        "format_converter"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "format_converter"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_021",
+      "query": "根据这份摘要制作一个 PowerPoint 演示文稿。",
+      "intent": "document",
+      "acceptable_tools": [
+        "doc_generator",
+        "ppt_generator"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "ppt_generator"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_022",
+      "query": "给一份机密 PDF 文档加密码。",
+      "intent": "document",
+      "acceptable_tools": [
+        "pdf_tool"
+      ],
+      "sandbox_success_tools": [
+        "pdf_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_023",
+      "query": "提取一个 PDF 的页数和元数据。",
+      "intent": "document",
+      "acceptable_tools": [
+        "pdf_tool"
+      ],
+      "sandbox_success_tools": [
+        "pdf_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_024",
+      "query": "把 CSV 表格转换成 Excel 电子表格。",
+      "intent": "document",
+      "acceptable_tools": [
+        "data_processor",
+        "format_converter"
+      ],
+      "sandbox_success_tools": [
+        "data_processor",
+        "format_converter"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_025",
+      "query": "把这些幻灯片转成可打印的讲义文档。",
+      "intent": "document",
+      "acceptable_tools": [
+        "doc_generator",
+        "ppt_generator"
+      ],
+      "sandbox_success_tools": [
+        "doc_generator",
+        "ppt_generator"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_026",
+      "query": "读取 notes.txt 的内容。",
+      "intent": "file",
+      "acceptable_tools": [
+        "file"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_027",
+      "query": "把这段文字写入一个名为 draft.txt 的新文件。",
+      "intent": "file",
+      "acceptable_tools": [
+        "file"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_028",
+      "query": "总结这份报告文件的内容。",
+      "intent": "file",
+      "acceptable_tools": [
+        "file"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_029",
+      "query": "列出项目目录下的所有文件。",
+      "intent": "file",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_030",
+      "query": "给当前桌面截一张图。",
+      "intent": "file",
+      "acceptable_tools": [
+        "screen"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_031",
+      "query": "运行一条 shell 命令统计日志的行数。",
+      "intent": "file",
+      "acceptable_tools": [
+        "shell"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_032",
+      "query": "把这些文件打包成一个 zip 压缩包。",
+      "intent": "file",
+      "acceptable_tools": [
+        "file",
+        "shell"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_033",
+      "query": "检查可用磁盘空间和系统负载。",
+      "intent": "file",
+      "acceptable_tools": [
+        "shell",
+        "system_monitor"
+      ],
+      "sandbox_success_tools": [
+        "system_monitor"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_034",
+      "query": "获取苹果公司的最新股价。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "search",
+        "stock_query"
+      ],
+      "sandbox_success_tools": [
+        "search",
+        "stock_query"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_035",
+      "query": "分析特斯拉(TSLA)的交易信号。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "quant_trading",
+        "stock_query"
+      ],
+      "sandbox_success_tools": [
+        "quant_trading",
+        "stock_query"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_036",
+      "query": "从 FRED 获取美国 GDP 增长数据。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "fred_query",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "fred_query",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_037",
+      "query": "当前的 CPI 通胀率是多少？",
+      "intent": "finance",
+      "acceptable_tools": [
+        "fred_query",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "fred_query",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_038",
+      "query": "查询英伟达的股票报价和当日涨跌。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "stock_query"
+      ],
+      "sandbox_success_tools": [
+        "stock_query"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_039",
+      "query": "回测一个均线交易策略。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "quant_trading"
+      ],
+      "sandbox_success_tools": [
+        "quant_trading"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_040",
+      "query": "获取联邦基金利率的历史数据。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "fred_query"
+      ],
+      "sandbox_success_tools": [
+        "fred_query"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_041",
+      "query": "记录一笔 42 美元的午餐个人开支。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "finance"
+      ],
+      "sandbox_success_tools": [
+        "finance"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_042",
+      "query": "汇总我每月的收入和支出。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "finance"
+      ],
+      "sandbox_success_tools": [
+        "finance"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_043",
+      "query": "按 0.92 的汇率把 250 美元换算成欧元。",
+      "intent": "finance",
+      "acceptable_tools": [
+        "calculator",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_044",
+      "query": "打开 example.com 并提取标题文本。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser",
+        "browser_use"
+      ],
+      "sandbox_success_tools": [
+        "browser",
+        "browser_use"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_045",
+      "query": "自动填写一份在线注册表单。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser",
+        "browser_use"
+      ],
+      "sandbox_success_tools": [
+        "browser",
+        "browser_use"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_046",
+      "query": "爬取一批商品页面并收集价格。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser_use",
+        "crawlee_tool"
+      ],
+      "sandbox_success_tools": [
+        "browser_use",
+        "crawlee_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_047",
+      "query": "登录一个网站并下载月度报告。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser",
+        "browser_use"
+      ],
+      "sandbox_success_tools": [
+        "browser",
+        "browser_use"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_048",
+      "query": "在网上搜索最新的 AI 新闻。",
+      "intent": "web",
+      "acceptable_tools": [
+        "duckduckgo_search",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "duckduckgo_search",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_049",
+      "query": "给渲染后的网页截一张图。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser",
+        "screen"
+      ],
+      "sandbox_success_tools": [
+        "browser"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_050",
+      "query": "从一家网店抓取价格表。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser_use",
+        "crawlee_tool"
+      ],
+      "sandbox_success_tools": [
+        "browser_use",
+        "crawlee_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_051",
+      "query": "打开一个网址并读取正文主体。",
+      "intent": "web",
+      "acceptable_tools": [
+        "browser"
+      ],
+      "sandbox_success_tools": [
+        "browser"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_052",
+      "query": "搜索关于大模型工具调用的最新论文。",
+      "intent": "research",
+      "acceptable_tools": [
+        "literature_search",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "literature_search",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_053",
+      "query": "为一批 DOI 查找开放获取的 PDF。",
+      "intent": "research",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "literature_search"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "literature_search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_054",
+      "query": "总结一批论文摘要。",
+      "intent": "research",
+      "acceptable_tools": [
+        "batch_paper_analyzer",
+        "literature_review"
+      ],
+      "sandbox_success_tools": [
+        "batch_paper_analyzer",
+        "literature_review"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_055",
+      "query": "在我的本地知识库里搜索 RAG 笔记。",
+      "intent": "research",
+      "acceptable_tools": [
+        "file",
+        "knowledge_rag"
+      ],
+      "sandbox_success_tools": [
+        "file",
+        "knowledge_rag"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_056",
+      "query": "为一个主题生成文献综述提纲。",
+      "intent": "research",
+      "acceptable_tools": [
+        "ai_writer",
+        "literature_review"
+      ],
+      "sandbox_success_tools": [
+        "ai_writer",
+        "literature_review"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_057",
+      "query": "运行一小段 Python 代码解析结果文件。",
+      "intent": "research",
+      "acceptable_tools": [
+        "file",
+        "python_runner"
+      ],
+      "sandbox_success_tools": [
+        "file",
+        "python_runner"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_058",
+      "query": "把这些文档索引到知识库中。",
+      "intent": "research",
+      "acceptable_tools": [
+        "knowledge_rag"
+      ],
+      "sandbox_success_tools": [
+        "knowledge_rag"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_059",
+      "query": "根据论文标题查询引用元数据。",
+      "intent": "research",
+      "acceptable_tools": [
+        "literature_search",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "literature_search",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_060",
+      "query": "从一张扫描的收据图片中提取文字。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "file",
+        "ocr"
+      ],
+      "sandbox_success_tools": [
+        "file"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_061",
+      "query": "把一段音频录音转写成文字。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_062",
+      "query": "生成一张山间日落的图片。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "image_generator"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_063",
+      "query": "搜索一张笔记本电脑的免费图库照片。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "search",
+        "stock_photo"
+      ],
+      "sandbox_success_tools": [
+        "search",
+        "stock_photo"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_064",
+      "query": "用摄像头拍一张照片。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "media_capture"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_065",
+      "query": "把我说的话转成文字笔记。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "speech_to_text",
+        "voice_input"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_066",
+      "query": "用相机扫描一份纸质文档。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "document_scanner",
+        "ocr"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_067",
+      "query": "画一张系统架构的概念图。",
+      "intent": "multimedia",
+      "acceptable_tools": [
+        "concept_diagrams",
+        "mind_map"
+      ],
+      "sandbox_success_tools": [
+        "concept_diagrams",
+        "mind_map"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_068",
+      "query": "添加一条待办事项：审查这个 pull request。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "todo"
+      ],
+      "sandbox_success_tools": [
+        "todo"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_069",
+      "query": "列出我所有待处理的任务。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "daily_task",
+        "todo"
+      ],
+      "sandbox_success_tools": [
+        "daily_task",
+        "todo"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_070",
+      "query": "现在的日期和时间是多少？",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "datetime_tool"
+      ],
+      "sandbox_success_tools": [
+        "datetime_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_071",
+      "query": "设置一个晚上 8 点提交报告的提醒。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "cron",
+        "notify",
+        "todo"
+      ],
+      "sandbox_success_tools": [
+        "cron",
+        "notify",
+        "todo"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_072",
+      "query": "写一篇关于完成实验的日记。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "diary"
+      ],
+      "sandbox_success_tools": [
+        "diary"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_073",
+      "query": "发送一封带周报总结的邮件。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "email"
+      ],
+      "sandbox_success_tools": [],
+      "in_sandbox": false,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "out_of_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_074",
+      "query": "显示我今天的日程安排。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "course_schedule",
+        "datetime_tool"
+      ],
+      "sandbox_success_tools": [
+        "course_schedule",
+        "datetime_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_075",
+      "query": "在我的日志里记录今天的锻炼。",
+      "intent": "productivity",
+      "acceptable_tools": [
+        "diary",
+        "fitness_nutrition"
+      ],
+      "sandbox_success_tools": [
+        "diary",
+        "fitness_nutrition"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_076",
+      "query": "计算 128 乘以 76。",
+      "intent": "math",
+      "acceptable_tools": [
+        "calculator"
+      ],
+      "sandbox_success_tools": [
+        "calculator"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_077",
+      "query": "计算表达式 (12 + 8) * 3 的值。",
+      "intent": "math",
+      "acceptable_tools": [
+        "calculator",
+        "python_runner"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "python_runner"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_078",
+      "query": "计算 2025 的平方根。",
+      "intent": "math",
+      "acceptable_tools": [
+        "calculator",
+        "python_runner"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "python_runner"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_079",
+      "query": "运行一个 Python 表达式对一段数字求和。",
+      "intent": "math",
+      "acceptable_tools": [
+        "python_runner"
+      ],
+      "sandbox_success_tools": [
+        "python_runner"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_080",
+      "query": "2400 的 15% 是多少？",
+      "intent": "math",
+      "acceptable_tools": [
+        "calculator"
+      ],
+      "sandbox_success_tools": [
+        "calculator"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_081",
+      "query": "把 3.5 小时换算成分钟。",
+      "intent": "math",
+      "acceptable_tools": [
+        "calculator",
+        "datetime_tool"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "datetime_tool"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_082",
+      "query": "在知识库里搜索上下文压缩的相关内容。",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "file",
+        "knowledge_rag"
+      ],
+      "sandbox_success_tools": [
+        "file",
+        "knowledge_rag"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_083",
+      "query": "找一首关于月亮的古诗。",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "poetry"
+      ],
+      "sandbox_success_tools": [
+        "poetry"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_084",
+      "query": "查询李白的诗。",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "poetry",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "poetry",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_085",
+      "query": "在向量索引里查询工具选择相关的文档。",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "knowledge_rag"
+      ],
+      "sandbox_success_tools": [
+        "knowledge_rag"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_086",
+      "query": "推荐一些经典的唐诗。",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "poetry"
+      ],
+      "sandbox_success_tools": [
+        "poetry"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_087",
+      "query": "在我的笔记里搜索 RAG 依据(grounding)的解释。",
+      "intent": "knowledge",
+      "acceptable_tools": [
+        "file",
+        "knowledge_rag"
+      ],
+      "sandbox_success_tools": [
+        "file",
+        "knowledge_rag"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_088",
+      "query": "记录我今天的体重和睡眠质量。",
+      "intent": "health",
+      "acceptable_tools": [
+        "diary",
+        "health"
+      ],
+      "sandbox_success_tools": [
+        "diary",
+        "health"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_089",
+      "query": "记录一次血压读数。",
+      "intent": "health",
+      "acceptable_tools": [
+        "health"
+      ],
+      "sandbox_success_tools": [
+        "health"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_090",
+      "query": "设置一个早上 9 点的服药提醒。",
+      "intent": "health",
+      "acceptable_tools": [
+        "cron",
+        "medication"
+      ],
+      "sandbox_success_tools": [
+        "cron",
+        "medication"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_091",
+      "query": "规划一周的锻炼计划。",
+      "intent": "health",
+      "acceptable_tools": [
+        "fitness_nutrition"
+      ],
+      "sandbox_success_tools": [
+        "fitness_nutrition"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_092",
+      "query": "记录我这一周的每日开支。",
+      "intent": "health",
+      "acceptable_tools": [
+        "finance"
+      ],
+      "sandbox_success_tools": [
+        "finance"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_093",
+      "query": "写一篇关于我今天心情的日记。",
+      "intent": "health",
+      "acceptable_tools": [
+        "diary"
+      ],
+      "sandbox_success_tools": [
+        "diary"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_094",
+      "query": "查一下我去曼谷旅行的天气。",
+      "intent": "travel",
+      "acceptable_tools": [
+        "search",
+        "weather"
+      ],
+      "sandbox_success_tools": [
+        "search",
+        "weather"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_095",
+      "query": "搜索从北京到上海的航班。",
+      "intent": "travel",
+      "acceptable_tools": [
+        "browser",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "browser",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_096",
+      "query": "查询酒店附近的餐厅评价。",
+      "intent": "travel",
+      "acceptable_tools": [
+        "browser_use",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "browser_use",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_097",
+      "query": "通过网站预订一间酒店客房。",
+      "intent": "travel",
+      "acceptable_tools": [
+        "browser_use"
+      ],
+      "sandbox_success_tools": [
+        "browser_use"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": true
+    },
+    {
+      "qid": "e11_pub_098",
+      "query": "获取两个地址之间的路线指引。",
+      "intent": "travel",
+      "acceptable_tools": [
+        "browser",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "browser",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    },
+    {
+      "qid": "e11_pub_099",
+      "query": "查一下我目的地的汇率。",
+      "intent": "travel",
+      "acceptable_tools": [
+        "calculator",
+        "search"
+      ],
+      "sandbox_success_tools": [
+        "calculator",
+        "search"
+      ],
+      "in_sandbox": true,
+      "source": "public_toolbench_lite",
+      "language": "zh",
+      "split": "in_sandbox",
+      "in_full": true,
+      "in_subset": false
+    }
+  ]
+}

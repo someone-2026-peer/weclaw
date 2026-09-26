@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "purpose": "E11 real-execution sandbox fixtures. Deterministic, committed, seed-fixed. Materialized into a per-run temp workspace by sandbox_env.executor.SandboxWorkspace.",
+    "schema_version": "1.0",
+    "note": "Fixture-backed families succeed when the model's arguments are in-domain and return status=error (not_found/invalid_args) when out-of-domain, which is the real, non-oracle signal that drives PTE-FD escalation."
+  },
+  "weather_cache": {
+    "beijing": {"temp_c": 21, "condition": "clear", "humidity": 40, "wind_kmh": 8},
+    "shanghai": {"temp_c": 24, "condition": "cloudy", "humidity": 62, "wind_kmh": 12},
+    "guangzhou": {"temp_c": 29, "condition": "rain", "humidity": 80, "wind_kmh": 6},
+    "shenzhen": {"temp_c": 30, "condition": "cloudy", "humidity": 78, "wind_kmh": 9},
+    "hangzhou": {"temp_c": 23, "condition": "clear", "humidity": 55, "wind_kmh": 7},
+    "chengdu": {"temp_c": 20, "condition": "overcast", "humidity": 70, "wind_kmh": 4},
+    "xian": {"temp_c": 19, "condition": "clear", "humidity": 45, "wind_kmh": 10},
+    "wuhan": {"temp_c": 25, "condition": "cloudy", "humidity": 66, "wind_kmh": 8},
+    "nanjing": {"temp_c": 22, "condition": "clear", "humidity": 52, "wind_kmh": 11},
+    "chongqing": {"temp_c": 27, "condition": "overcast", "humidity": 74, "wind_kmh": 3},
+    "suzhou": {"temp_c": 23, "condition": "clear", "humidity": 58, "wind_kmh": 6},
+    "tianjin": {"temp_c": 20, "condition": "cloudy", "humidity": 48, "wind_kmh": 13},
+    "北京": {"temp_c": 21, "condition": "clear", "humidity": 40, "wind_kmh": 8},
+    "上海": {"temp_c": 24, "condition": "cloudy", "humidity": 62, "wind_kmh": 12},
+    "广州": {"temp_c": 29, "condition": "rain", "humidity": 80, "wind_kmh": 6},
+    "深圳": {"temp_c": 30, "condition": "cloudy", "humidity": 78, "wind_kmh": 9},
+    "杭州": {"temp_c": 23, "condition": "clear", "humidity": 55, "wind_kmh": 7},
+    "成都": {"temp_c": 20, "condition": "overcast", "humidity": 70, "wind_kmh": 4},
+    "tokyo": {"temp_c": 18, "condition": "clear", "humidity": 50, "wind_kmh": 9},
+    "london": {"temp_c": 12, "condition": "rain", "humidity": 85, "wind_kmh": 16},
+    "kuala lumpur": {"temp_c": 31, "condition": "thunderstorm", "humidity": 88, "wind_kmh": 5},
+    "new york": {"temp_c": 15, "condition": "cloudy", "humidity": 60, "wind_kmh": 14},
+    "paris": {"temp_c": 14, "condition": "clear", "humidity": 57, "wind_kmh": 10},
+    "singapore": {"temp_c": 32, "condition": "cloudy", "humidity": 84, "wind_kmh": 7},
+    "seoul": {"temp_c": 17, "condition": "clear", "humidity": 46, "wind_kmh": 8},
+    "bangkok": {"temp_c": 33, "condition": "rain", "humidity": 82, "wind_kmh": 6},
+    "los angeles": {"temp_c": 26, "condition": "clear", "humidity": 38, "wind_kmh": 11},
+    "sydney": {"temp_c": 22, "condition": "cloudy", "humidity": 61, "wind_kmh": 15}
+  },
+  "weather_default": {"temp_c": 22, "condition": "clear", "humidity": 55, "wind_kmh": 8, "city": "local"},
+  "rag_index": [
+    {"doc_id": "rag_001", "title": "Retrieval-Augmented Generation overview", "text": "RAG combines a retriever over a vector index with a generator to ground answers in documents.", "keywords": ["rag", "retrieval", "vector", "index", "knowledge", "grounding", "知识库", "检索", "向量", "索引", "增强检索"]},
+    {"doc_id": "rag_002", "title": "LLM agent tool use survey", "text": "LLM agents select and invoke tools; progressive tool exposure reduces prompt tokens and selection errors.", "keywords": ["agent", "tool", "llm", "exposure", "selection", "survey", "智能体", "大模型", "论文", "文献", "人工智能", "ai", "综述"]},
+    {"doc_id": "rag_003", "title": "Function calling schema design", "text": "Function calling schemas describe tool name, description and JSON parameters for model selection.", "keywords": ["function", "calling", "schema", "json", "parameters", "tool", "函数调用", "参数", "模式"]},
+    {"doc_id": "rag_004", "title": "Context compression for long sessions", "text": "Context compression prunes tool results and summarizes old turns to stay within the token budget.", "keywords": ["context", "compression", "summary", "token", "budget", "session", "上下文", "压缩", "摘要", "会话"]},
+    {"doc_id": "rag_005", "title": "Vector databases and embeddings", "text": "Vector databases store embeddings and support approximate nearest neighbour search for semantic retrieval.", "keywords": ["vector", "database", "embedding", "search", "semantic", "ann", "向量", "数据库", "嵌入", "语义", "检索"]},
+    {"doc_id": "rag_006", "title": "Experience replay in agents", "text": "Experience replay stores past tool outcomes and reuses them to avoid repeated failures.", "keywords": ["experience", "replay", "memory", "failure", "agent", "reuse", "经验", "记忆", "复用", "智能体"]},
+    {"doc_id": "rag_007", "title": "Prompt injection defenses", "text": "Prompt injection defenses validate untrusted content and constrain tool authorization boundaries.", "keywords": ["prompt", "injection", "security", "defense", "authorization", "提示注入", "安全", "防御", "授权"]},
+    {"doc_id": "rag_008", "title": "Evaluating tool selection accuracy", "text": "Tool selection accuracy measures whether the chosen tool is in the acceptable set for a query.", "keywords": ["evaluation", "tool", "selection", "accuracy", "benchmark", "acceptable", "评估", "准确率", "基准", "论文"]},
+    {"doc_id": "rag_009", "title": "Knowledge base construction", "text": "A knowledge base indexes documents by keywords and vectors to support question answering.", "keywords": ["knowledge", "base", "index", "document", "question", "answer", "知识库", "索引", "文档", "问答", "论文", "文献"]},
+    {"doc_id": "rag_010", "title": "Failure-driven escalation", "text": "Failure-driven escalation broadens the exposed tool tier after consecutive execution errors.", "keywords": ["failure", "escalation", "tier", "recovery", "execution", "error", "失败", "升级", "恢复", "执行", "层级"]},
+    {"doc_id": "rag_011", "title": "Semantic search with BM25", "text": "BM25 ranks documents by term frequency and inverse document frequency for keyword search.", "keywords": ["semantic", "search", "bm25", "keyword", "ranking", "retrieval", "语义", "检索", "关键词", "排序"]},
+    {"doc_id": "rag_012", "title": "Multi-step agent planning", "text": "Multi-step planning decomposes a task into tool calls executed in sequence with feedback.", "keywords": ["multi-step", "planning", "agent", "task", "sequence", "feedback", "多步", "规划", "智能体", "任务"]}
+  ],
+  "poetry_db": [
+    {"title": "静夜思", "author": "李白", "dynasty": "唐", "keywords": ["李白", "思乡", "月", "夜"], "text": "床前明月光，疑是地上霜。举头望明月，低头思故乡。"},
+    {"title": "将进酒", "author": "李白", "dynasty": "唐", "keywords": ["李白", "酒", "豪放"], "text": "君不见黄河之水天上来，奔流到海不复回。"},
+    {"title": "望庐山瀑布", "author": "李白", "dynasty": "唐", "keywords": ["李白", "山水", "瀑布"], "text": "日照香炉生紫烟，遥看瀑布挂前川。"},
+    {"title": "春望", "author": "杜甫", "dynasty": "唐", "keywords": ["杜甫", "爱国", "春"], "text": "国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。"},
+    {"title": "登高", "author": "杜甫", "dynasty": "唐", "keywords": ["杜甫", "悲秋", "登高"], "text": "风急天高猿啸哀，渚清沙白鸟飞回。"},
+    {"title": "水调歌头", "author": "苏轼", "dynasty": "宋", "keywords": ["苏轼", "月", "中秋", "豪放"], "text": "明月几时有，把酒问青天。但愿人长久，千里共婵娟。"},
+    {"title": "念奴娇·赤壁怀古", "author": "苏轼", "dynasty": "宋", "keywords": ["苏轼", "赤壁", "怀古"], "text": "大江东去，浪淘尽，千古风流人物。"},
+    {"title": "相思", "author": "王维", "dynasty": "唐", "keywords": ["王维", "相思", "山水"], "text": "红豆生南国，春来发几枝。愿君多采撷，此物最相思。"},
+    {"title": "登鹳雀楼", "author": "王之涣", "dynasty": "唐", "keywords": ["王之涣", "登高", "哲理"], "text": "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。"},
+    {"title": "春晓", "author": "孟浩然", "dynasty": "唐", "keywords": ["孟浩然", "春", "田园"], "text": "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"},
+    {"title": "夜雨寄北", "author": "李商隐", "dynasty": "唐", "keywords": ["李商隐", "思念", "夜雨"], "text": "君问归期未有期，巴山夜雨涨秋池。"},
+    {"title": "游子吟", "author": "孟郊", "dynasty": "唐", "keywords": ["孟郊", "母爱", "游子"], "text": "慈母手中线，游子身上衣。临行密密缝，意恐迟迟归。"}
+  ],
+  "seed_fs": {
+    "content.txt": "WeClaw E11 sandbox seed file.\nThis is the content of content.txt used by file_read queries.\nLine three of the seed document.\n",
+    "report.md": "# Quarterly Report\n\nRevenue rose 12% quarter over quarter.\n\n## Highlights\n- Tool selection accuracy improved.\n- Token budget reduced by progressive exposure.\n",
+    "notes.txt": "Meeting notes: review the real-execution benchmark design.\nAction: build sandbox families and bias-control arms.\n",
+    "report.docx": "DOCX placeholder: quarterly report document used by Word->PDF conversion and file-operation queries.\n",
+    "document.docx": "DOCX placeholder: generic document used by format-conversion and document-processing queries.\n",
+    "data/sales.csv": "month,revenue,units\n2026-01,120000,1500\n2026-02,132000,1610\n2026-03,145000,1720\n2026-04,138000,1680\n2026-05,156000,1810\n2026-06,162000,1900\n",
+    "data/grades.csv": "student,math,english,science\nAlice,88,92,85\nBob,75,80,78\nCarol,93,89,96\nDave,68,71,65\nEve,81,85,88\n",
+    "data/inventory.csv": "sku,name,qty,price\nA1,widget,120,9.99\nA2,gadget,45,24.50\nB1,gizmo,200,4.75\nB2,doohickey,15,99.00\n",
+    "archive.zip": "PK\u0003\u0004 placeholder archive for file/pdf operations\n"
+  },
+  "seed_state": {
+    "todo": [
+      {"id": 1, "text": "Review sandbox families", "done": false},
+      {"id": 2, "text": "Run pilot gate", "done": false},
+      {"id": 3, "text": "Write revision log entry", "done": true}
+    ],
+    "finance": [
+      {"id": 1, "kind": "expense", "amount": 42.5, "category": "food", "note": "lunch"},
+      {"id": 2, "kind": "income", "amount": 3000.0, "category": "salary", "note": "monthly"},
+      {"id": 3, "kind": "expense", "amount": 120.0, "category": "transport", "note": "fuel"}
+    ],
+    "diary": {},
+    "cron": [
+      {"id": 1, "name": "morning_report", "kind": "ai_task", "schedule": "0 8 * * *", "status": "active"},
+      {"id": 2, "name": "weekly_backup", "kind": "cron", "schedule": "0 2 * * 0", "status": "active"}
+    ],
+    "health": [
+      {"id": 1, "metric": "weight", "value": 70.5, "unit": "kg", "date": "2026-09-01"},
+      {"id": 2, "metric": "blood_pressure", "value": "120/80", "unit": "mmHg", "date": "2026-09-02"},
+      {"id": 3, "metric": "heart_rate", "value": 72, "unit": "bpm", "date": "2026-09-03"}
+    ],
+    "medication": [
+      {"id": 1, "name": "维生素D", "dosage": "400IU", "frequency": "daily", "taken": []},
+      {"id": 2, "name": "阿司匹林", "dosage": "100mg", "frequency": "daily", "taken": []}
+    ],
+    "course_schedule": [
+      {"id": 1, "member": "小明", "course": "数学", "weekday": 1, "time": "08:00"},
+      {"id": 2, "member": "小明", "course": "英语", "weekday": 3, "time": "10:00"},
+      {"id": 3, "member": "小红", "course": "语文", "weekday": 2, "time": "09:00"}
+    ],
+    "daily_task": [
+      {"id": 1, "text": "写周报", "status": "pending"},
+      {"id": 2, "text": "回复邮件", "status": "pending"},
+      {"id": 3, "text": "健身30分钟", "status": "done"}
+    ],
+    "meal_menu": [
+      {"id": 1, "name": "学校午餐A", "type": "school", "dishes": ["米饭", "宫保鸡丁", "青菜"]},
+      {"id": 2, "name": "家庭晚餐", "type": "family", "dishes": ["番茄蛋汤", "红烧肉"]}
+    ],
+    "family_member": [
+      {"id": 1, "name": "爸爸", "relation": "father", "birthday": "1985-05-01"},
+      {"id": 2, "name": "妈妈", "relation": "mother", "birthday": "1987-08-15"},
+      {"id": 3, "name": "小明", "relation": "son", "birthday": "2015-03-20"}
+    ],
+    "family_album": [
+      {"id": 1, "name": "2026春节", "photos": ["IMG_001.jpg", "IMG_002.jpg"]},
+      {"id": 2, "name": "旅行相册", "photos": ["IMG_100.jpg"]}
+    ],
+    "family_milestone": [
+      {"id": 1, "title": "小明上小学", "date": "2021-09-01", "type": "education"},
+      {"id": 2, "title": "搬家", "date": "2020-06-15", "type": "life"}
+    ],
+    "user_profile": {
+      "profile": {"name": "用户", "occupation": "researcher"},
+      "members": [{"id": 1, "name": "小明", "relation": "son", "birthday": "2015-03-20"}],
+      "contacts": [{"id": 1, "name": "张同事", "relation": "colleague"}]
+    },
+    "music_player": {
+      "songs": [
+        {"id": 1, "title": "夜曲", "artist": "周杰伦"},
+        {"id": 2, "title": "青花瓷", "artist": "周杰伦"},
+        {"id": 3, "title": "光年之外", "artist": "邓紫棋"}
+      ],
+      "playlists": [{"id": 1, "name": "favorites", "songs": []}],
+      "now_playing": null
+    },
+    "fitness_nutrition": [
+      {"id": 1, "food": "鸡胸肉", "calories": 165, "protein": 31, "date": "2026-09-01"},
+      {"id": 2, "food": "米饭", "calories": 200, "protein": 4, "date": "2026-09-01"}
+    ],
+    "clipboard": {"text": "sandbox seed clipboard", "image": null},
+    "notify_log": [],
+    "doc_brand": {"tone": "professional", "lang": "zh"}
+  },
+  "system_monitor_baseline": {
+    "cpu_percent": 23.5,
+    "mem_percent": 61.2,
+    "disk_percent": 54.8,
+    "note": "Deterministic pseudo-telemetry so repeated runs are reproducible; real os.cpu_count/platform are added at runtime."
+  }
+}

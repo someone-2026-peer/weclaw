@@ -1,0 +1,217 @@
+{
+  "arm": "subset",
+  "per_backend": {
+    "kimi": {
+      "static": {
+        "single_mean": 27.67,
+        "final_mean": 27.67,
+        "single_per_seed": [
+          27.0,
+          27.0,
+          29.0
+        ],
+        "final_per_seed": [
+          27.0,
+          27.0,
+          29.0
+        ]
+      },
+      "static_retry": {
+        "single_mean": 25.67,
+        "final_mean": 45.0,
+        "single_per_seed": [
+          28.0,
+          27.0,
+          22.0
+        ],
+        "final_per_seed": [
+          46.0,
+          44.0,
+          45.0
+        ]
+      },
+      "pte": {
+        "single_mean": 31.67,
+        "final_mean": 31.67,
+        "single_per_seed": [
+          30.0,
+          27.0,
+          38.0
+        ],
+        "final_per_seed": [
+          30.0,
+          27.0,
+          38.0
+        ]
+      },
+      "pte_fd": {
+        "single_mean": 31.33,
+        "final_mean": 41.33,
+        "single_per_seed": [
+          31.0,
+          30.0,
+          33.0
+        ],
+        "final_per_seed": [
+          41.0,
+          41.0,
+          42.0
+        ]
+      },
+      "keyword": {
+        "single_mean": 32.33,
+        "final_mean": 32.33,
+        "single_per_seed": [
+          31.0,
+          32.0,
+          34.0
+        ],
+        "final_per_seed": [
+          31.0,
+          32.0,
+          34.0
+        ]
+      },
+      "keyword_retry": {
+        "single_mean": 34.33,
+        "final_mean": 48.33,
+        "single_per_seed": [
+          33.0,
+          35.0,
+          35.0
+        ],
+        "final_per_seed": [
+          48.0,
+          47.0,
+          50.0
+        ]
+      },
+      "_contrasts": {
+        "pte_fd_vs_static_retry_final": {
+          "n01": 32,
+          "n10": 43,
+          "chi2": 1.333,
+          "p": 0.24821307898992356
+        },
+        "pte_fd_final_vs_static_single": {
+          "n01": 64,
+          "n10": 23,
+          "chi2": 18.391,
+          "p": 1.799241766831399e-05
+        },
+        "pte_fd_vs_pte_single": {
+          "n01": 26,
+          "n10": 27,
+          "chi2": 0.0,
+          "p": 1.0
+        }
+      }
+    },
+    "qwen": {
+      "static": {
+        "single_mean": 62.0,
+        "final_mean": 62.0,
+        "single_per_seed": [
+          62.0,
+          62.0,
+          62.0
+        ],
+        "final_per_seed": [
+          62.0,
+          62.0,
+          62.0
+        ]
+      },
+      "static_retry": {
+        "single_mean": 62.0,
+        "final_mean": 65.0,
+        "single_per_seed": [
+          62.0,
+          62.0,
+          62.0
+        ],
+        "final_per_seed": [
+          65.0,
+          65.0,
+          65.0
+        ]
+      },
+      "pte": {
+        "single_mean": 54.67,
+        "final_mean": 54.67,
+        "single_per_seed": [
+          54.0,
+          55.0,
+          55.0
+        ],
+        "final_per_seed": [
+          54.0,
+          55.0,
+          55.0
+        ]
+      },
+      "pte_fd": {
+        "single_mean": 54.67,
+        "final_mean": 57.33,
+        "single_per_seed": [
+          54.0,
+          56.0,
+          54.0
+        ],
+        "final_per_seed": [
+          57.0,
+          58.0,
+          57.0
+        ]
+      },
+      "keyword": {
+        "single_mean": 53.33,
+        "final_mean": 53.33,
+        "single_per_seed": [
+          54.0,
+          54.0,
+          52.0
+        ],
+        "final_per_seed": [
+          54.0,
+          54.0,
+          52.0
+        ]
+      },
+      "keyword_retry": {
+        "single_mean": 52.67,
+        "final_mean": 56.0,
+        "single_per_seed": [
+          52.0,
+          54.0,
+          52.0
+        ],
+        "final_per_seed": [
+          56.0,
+          56.0,
+          56.0
+        ]
+      },
+      "_contrasts": {
+        "pte_fd_vs_static_retry_final": {
+          "n01": 0,
+          "n10": 23,
+          "chi2": 21.043,
+          "p": 4.4897844986386375e-06
+        },
+        "pte_fd_final_vs_static_single": {
+          "n01": 3,
+          "n10": 17,
+          "chi2": 8.45,
+          "p": 0.0036504344044418764
+        },
+        "pte_fd_vs_pte_single": {
+          "n01": 1,
+          "n10": 1,
+          "chi2": 0.5,
+          "p": 0.4795001221869534
+        }
+      }
+    }
+  }
+}
